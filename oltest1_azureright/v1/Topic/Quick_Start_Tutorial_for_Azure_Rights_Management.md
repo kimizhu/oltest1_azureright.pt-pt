@@ -3,237 +3,235 @@ description: na
 keywords: na
 title: Quick Start Tutorial for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1db923bf-7d19-4fdd-a413-bfeb58af5e03
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Quick Start Tutorial for Azure Rights Management
-Use this tutorial to quickly try out Microsoft Azure Rights Management (also known as Azure RMS) for your organization with just 5 steps that should take you less than 15 minutes. You’ll activate the service, securely send a confidential document by email to somebody in another organization, and then be able to track when that document is opened. When the confidential document is emailed, it is encrypted while in transit and can be read only by the person it is sent to, using the permissions that are set by the sender.
+# Tutorial guia de introdu&#231;&#227;o para o Azure Rights Management
+Utilize este tutorial rapidamente experimentar o Microsoft Azure Rights Management (também conhecido como o Azure RMS) para a sua organização com apenas 5 passos que deverá demorar menos de 15 minutos. Terá de ativar o serviço, enviar em segurança um documento confidencial por correio eletrónico para alguém à outra organização e, em seguida, poderá controlar quando esse documento é aberto. Quando o documento confidencial é enviado por correio eletrónico, é encriptada enquanto se encontram em trânsito e podem ser lidos apenas pela pessoa que é enviado, utilizando as permissões que são definidas pelo remetente.
 
 ![](../Image/AzRMS_QuickStartStepsAll.PNG)
 
-This tutorial is aimed at IT administrators and consultants, to help them evaluate Azure Rights Management as an information protection solution for an organization. In a production environment, the instructions to activate the service would be done by an administrator and the instructions to send the document would be done by end users. Both sets of instructions are included in this tutorial, to demonstrate the end-to-end scenario of securely sending a confidential document to somebody in another organization. If you have any problems completing this tutorial, send an email message to [AskIPTeam](mailto:askipteam@microsoft.com?subject=Having%20problems%20with%20the%20Quick%20Start%20tutorial) and we will help you out.
+Neste tutorial é diversificado os administradores de TI e consultores, para ajudar a avaliar o Azure Rights Management como uma solução de proteção de informações para uma organização. Num ambiente de produção, as instruções para ativar o serviço de teriam de ser feitas por um administrador e as instruções para enviar o documento seriam ser efetuadas por utilizadores finais. Ambos os conjuntos de instruções estão incluídos neste tutorial, para demonstrar o cenário de extremidade a extremidade de forma segura enviar um documento confidencial para alguém à outra organização. Se tiver dificuldades concluir neste tutorial, envie uma mensagem de correio eletrónico para [AskIPTeam](mailto:askipteam@microsoft.com?subject=Having%20problems%20with%20the%20Quick%20Start%20tutorial) e iremos ajudar a.
 
-To complete this tutorial, you will need the following:
+Para concluir este tutorial, terá o seguinte:
 
--   A subscription that supports Azure Rights Management . This can be a paid subscription or a trial subscription. If you want to use document tracking, which is required for step 5 in this tutorial, your subscription must support document tracking. For more information about the subscription options and links to free trials, see the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.
+-   Uma subscrição que suporta a gestão de direitos do Azure. Isto pode ser uma subscrição paga ou de uma subscrição de avaliação. Se pretender utilizar o documento de controlo, o que é necessário para o passo 5 deste tutorial, a subscrição tem de suportar o controlo de documento. Para mais informações sobre as opções de subscrição e ligações para as versões de avaliação gratuitas, consulte o [Subscrições de nuvem que suportam o Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) secção a [Requisitos para o Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tópico.
 
-    Tip: If you need to get a subscription, do this in advance because this process can sometimes take a while to complete.
+    Dica: Se precisar de obter uma subscrição, faça o seguinte com antecedência porque este processo, por vezes, pode demorar algum tempo a concluir.
 
--   An administrator account to sign in to the Office 365 admin center or the Azure classic portal, so that you can activate the Rights Management service. This account must also have an email address and a working email service (for example, Exchange Online or Exchange Server).
+-   Uma conta de administrador para iniciar sessão no Centro de administração do Office 365 ou no portal do Azure, para que pode ativar o serviço de gestão de direitos. Esta conta também tem de ter um endereço de e-mail e um serviço de correio eletrónico de trabalho (por exemplo, Exchange Online ou Exchange Server).
 
--   A computer running Windows (minimum of Windows 7 SP1), and which has installed either Office 2016, Office 2013, or Office 2010.
+-   Um computador a executar o Windows (mínimo do Windows 7 SP1) e qual se encontre instalada 2016 do Office, Office 2013 ou Office 2010.
 
-Let’s get started.
+Vamos começar.
 
-## Step 1: Activate the Rights Management service
+## Passo 1: Ativar o serviço de gestão de direitos
 ![](../Image/AzRMS_QuickStartSteps1.PNG)
 
-Even though you might have a subscription that supports Azure Rights Management, the service is disabled by default. To activate it, you can use either the Office 365 admin center, or the Azure classic portal:
+Apesar de poderá ter uma subscrição que suporta a gestão de direitos do Azure, o serviço está desativado por predefinição. Para ativá-lo, pode utilizar o Centro de administração do Office 365 ou do portal do Azure:
 
--   If you have an Office 365 subscription that includes Azure Rights Management, or an Office 365 subscription that excludes Azure Rights Management but you have a subscription for Azure RMS Premium: **Use the Office 365 admin center**.
+-   Se tiver uma subscrição do Office 365 que inclua Azure Rights Management, ou uma subscrição do Office 365 que exclui Azure Rights Management, mas tiver uma subscrição do Azure RMS autónomo: **Utilizar o Centro de administração do Office 365**.
 
--   If you do not have an Office 365 subscription: **Use the Azure classic portal**.
+-   Se não tiver uma subscrição do Office 365: **Utilizar o portal do Azure**.
 
 ![](../Image/AzRMS_Tutorial_1_Screenshots.png)
 
-#### To activate Rights Management from the Office 365 admin center
+#### Para ativar o Rights Management a partir do Centro de administração do Office 365
 
-1.  Go to the [Office 365 portal](https://portal.office.com/) and sign in with your work or school account.
+1.  Aceda ao [portal do Office 365](https://portal.office.com/) e inicie sessão com a sua conta escolar ou profissional.
 
-2.  If the Office 365 admin center does not automatically display, select the app launcher icon in the upper-left and choose **Admin**. The **Admin** tile appears only to Office 365 administrators.
+2.  Se o Centro de administração do Office 365 não for apresentada automaticamente, selecione o ícone da aplicação de iniciador no canto superior esquerdo e escolha **Admin**. O **Admin** mosaico só aparece aos administradores do Office 365.
 
     > [!TIP]
-    > For admin center help, see [About the Office 365 admin center - Admin Help](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
+    > Para obter ajuda do Centro de administração, consulte o artigo [Centro de administração sobre o Office 365 - ajuda da administração](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
 
-3.  In the left pane, expand **SERVICE SETTINGS**.
+3.  No painel da esquerda, expanda **definições de serviço**.
 
-4.  Click **Rights Management**.
+4.  Clique em **Gestão de direitos de**.
 
-5.  On the **RIGHTS MANAGEMENT** page, click **Manage**.
+5.  No **RIGHTS MANAGEMENT** página, clique em **Gerir**.
 
-6.  On the **rights management** page, click **activate**.
+6.  No **Gestão de direitos de** página, clique em **Ativar**.
 
-7.  When prompted **Do you want to activate Rights Management?**, click **activate**.
+7.  Quando lhe for pedido **que pretende ativar o Rights Management?**, clique em **Ativar**.
 
-You should now see **Rights management is activated** and the option to deactivate (you might need to manually refresh the page)
+Deverá ver **Rights management é ativado** e a opção para desativar (poderá ter de atualizar manualmente a página)
 
-At this time, do not click **advanced features**. This takes you to the Azure classic portal where you can configure templates, which are not needed for this tutorial. Instead, you can close the Office 365 admin center.
+Neste momento, não clique em **funcionalidades avançadas**. Isto leva-o ao portal do Azure onde poderá configurar modelos e que não são necessários para este tutorial. Em vez disso, pode fechar o Centro de administração do Office 365.
 
-#### To activate Rights Management from the Azure portal
+#### Para ativar o Rights Management a partir do portal do Azure
 
-1.  Go to the [Azure classic portal](http://go.microsoft.com/fwlink/p/?LinkID=275081) and sign in.
+1.  Aceda ao [portal do Azure](http://go.microsoft.com/fwlink/p/?LinkID=275081) e inicie sessão.
 
-2.  In the left pane, click **ACTIVE DIRECTORY**.
+2.  No painel da esquerda, clique em **do Active Directory**.
 
-3.  From the **active directory** page, click **RIGHTS MANAGEMENT**.
+3.  A partir de **do Active Directory** página, clique em **RIGHTS MANAGEMENT**.
 
-4.  Select the directory to manage for [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], click **ACTIVATE**, and then confirm your action.
+4.  Selecione o diretório para gerir para [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], clique em **ATIVAR**, e, em seguida, confirme a ação.
 
-The **RIGHTS MANAGEMENT STATUS** should now display **Active** and the **ACTIVATE** option is replaced with **DEACTIVATE**.
+O **Estado da gestão de direitos** deverá agora apresentar **Active Directory** e **ATIVAR** opção é substituída pelo **DESATIVAR**.
 
-Although you can configure other options for Rights Management in the portal, these are not needed for this tutorial, so you can close the Azure classic portal.
+Embora seja possível configurar outras opções para a gestão de direitos no portal, estas não são necessários para este tutorial, pelo que pode fechar o portal do Azure.
 
-That’s all you need to do for this first step. The service is activated so all users in your organization can now start to protect important and sensitive documents. In a production environment, you might want to restrict who can do this initially, for a phased rollout. But it’s not necessary for this tutorial.
+É tudo o que precisa para este passo primeiro. O serviço está ativado para que todos os utilizadores na sua organização podem agora começar a proteger documentos importantes e confidenciais. Num ambiente de produção, poderá querer restringir quem pode fazer isto inicialmente, para uma implementação faseada. Mas não é necessário para este tutorial.
 
-Although not included here, for a production deployment, you probably will also probably want to configure custom templates. Templates make it easier for users to quickly apply the right settings when they need to protect files. When you activate Rights Management, you automatically get 2 default templates and it’s likely you will want to supplement these with your own custom templates in a production environment. But templates are not needed for this tutorial, so you’re ready to go to the next step.
+Embora não incluídos aqui, para uma implementação de produção, provavelmente irá provavelmente também pretende configurar modelos personalizados. Modelos de tornam mais fácil para os utilizadores aplicar rapidamente as definições certas sempre que necessário proteger ficheiros. Quando ativar o Rights Management, obterá o 2 modelos predefinidos automaticamente e é provável que pretende de completar estes com os seus modelos personalizados num ambiente de produção. Mas modelos não são necessários para este tutorial, para que esteja pronto a utilizar para o passo seguinte.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|About activating Rights Management and controlling who can protect files and email when the service is activated   →|[Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)|
-|About the default templates and how to create new, custom templates   →|[Configuring Custom Templates for Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md)|
+|Se pretender obter mais informações|Informações adicionais|
+|---------------------------------------|--------------------------|
+|Sobre a ativação do Rights Management e controlar quem pode proteger ficheiros e correio eletrónico quando o serviço está ativado →|[Ativar o Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)|
+|Sobre modelos predefinidos e como criar um novo, → modelos personalizados|[Configurar modelos personalizados para o Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md)|
 
-## Step 2: Install the Rights Management sharing application
+## Passo 2: Instalar a aplicação de partilha Rights Management
 ![](../Image/AzRMS_QuickStartSteps2.PNG)
 
-The Rights Management sharing application (also known as the “RMS sharing app”) isn’t a requirement for Azure Rights Management, but we recommend it for all computers and mobile devices that support Azure Rights Management. The RMS sharing application integrates with Office applications by installing an Office add-in so that users can easily protect files directly from the ribbon. It also makes it possible to protect all files types by applying generic protection for files that are not natively supported by Azure Rights Management, and a document tracking site for users to track and revoke files that they have protected. We’ll be using the document tracking site later in this tutorial.
+A aplicação partilha Rights Management (também conhecido como "aplicação de partilha RMS") não é um requisito para o Azure Rights Management, mas recomendamos para todos os computadores e dispositivos móveis que suportem gestão de direitos do Azure. A aplicação de partilha RMS integra-se com o Office aplicações através da instalação de um escritório suplemento, para que os utilizadores facilmente podem proteger ficheiros diretamente a partir do Friso. Também torna possível proteger todos os tipos de ficheiros ao aplicar proteção genérica para ficheiros que não são suportados nativamente pela gestão de direitos do Azure e um site para utilizadores de monotorização de documentos para monitorizar e revogar ficheiros que estão protegidos. Vamos irá utilizar o documento de controlo do site posteriormente neste tutorial.
 
-This application is free to download and offers a scripted install for production environments. But for this tutorial, we’ll install it locally.
+Esta aplicação é gratuita para transferir e oferece uma instalação com script para ambientes de produção. Mas, para este tutorial, iremos irá instalá-lo localmente.
 
 ![](../Image/AzRMS_Tutorial_2_Screenshots.png)
 
-#### To download and install the Rights Management sharing application
+#### Para transferir e instalar a aplicação de partilha Rights Management
 
-1.  Go to the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+1.  Aceda ao [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) página no Web site da Microsoft.
 
-2.  In the **Computers** section, click the icon for the **RMS app for Windows** and save the **Setup.exe** file to install the Microsoft Rights Management sharing application.
+2.  No **computadores** secção, clique no ícone para o **aplicação RMS para Windows** e guarde o **Setup.exe** ficheiro para instalar a aplicação de partilha do Microsoft Rights Management.
 
-3.  For a local install, you must use an administrator account to run the Setup.exe file that was downloaded. If you are prompted to continue, click **Yes**.
+3.  Para uma instalação local, tem de utilizar uma conta de administrador para executar o ficheiro de Setup.exe que foi transferido. Se lhe for pedido para continuar, clique em **Sim**.
 
-4.  On the **Setup Microsoft RMS** page, click **Next**, and wait for the installation to finish.
+4.  No **configurar o Microsoft RMS** página, clique em **seguinte**, e aguarde para concluir a instalação.
 
-5.  When the installation finishes, click **Restart** if prompted to restart your computer, or click  **Close** to complete the installation.
+5.  Quando a instalação estiver concluída, clique em **Reiniciar** se lhe for pedido para reiniciar o computador, ou clique em  **Fechar** para concluir a instalação.
 
-You’re now ready to start protecting files that contain information that you want to share but only with the people that you specify.
+Agora está pronto para começar a proteger ficheiros que contêm informações que pretende partilhar, mas apenas com as pessoas que especificar.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|About a local installation of the Rights Management sharing application for Windows and user instructions   →|[Rights Management sharing application user guide](http://technet.microsoft.com/library/dn339006.aspx)|
-|About the scripted installation of the Rights Management sharing application for Windows and more technical information   →|[Rights Management sharing application administrator guide](http://technet.microsoft.com/library/dn339003.aspx)|
-|To understand the difference between native protection and generic protection   →|[What’s the difference between generic protection and built-in (native) protection?](https://technet.microsoft.com/library/dn574738.aspx)|
+|Se pretender obter mais informações|Informações adicionais|
+|---------------------------------------|--------------------------|
+|Sobre uma instalação local da aplicação para o Windows e o utilizador → de instruções de partilha Rights Management|[Guia de utilizador de aplicação partilha do Rights Management](http://technet.microsoft.com/library/dn339006.aspx)|
+|Sobre a instalação com script da aplicação para o Windows e mais técnica → de informações de partilha Rights Management|[Guia partilha Rights Management aplicação administrador](http://technet.microsoft.com/library/dn339003.aspx)|
+|Compreender a diferença entre proteção nativa e proteção genérica →|[O que é a diferença entre proteção genérica e proteção incorporada (nativa)?](https://technet.microsoft.com/library/dn574738.aspx)|
 
-## Step 3: Email your document that you want to protect
+## Passo 3: O documento que pretende proteger de correio eletrónico
 ![](../Image/AzRMS_QuickStartSteps3.PNG)
 
-For this step, first create and save a document using Word that will represent your document that you want to protect, and name it **Confidential.docx**. For this tutorial, it doesn’t matter what text it actually contains, but you will want it to contain some text so you can more easily confirm that the authorized recipient could read it. For example, you might type: **If you can read this from your email attachment, the sender has successfully shared a file that was protected with Azure RMS.**
+Para este passo, primeiro criar e guardar um documento do Word que irá representar o documento que pretende proteger e nome **Confidential.docx**. Para este tutorial, é irrelevante que texto, na verdade, contém, mas pretende que contêm algum texto, pelo que pode mais facilmente confirmar que o destinatário autorizado foi possível lê-lo. Por exemplo, escreva: **Se pode ler isto partir do seu anexo de correio eletrónico, o remetente com êxito partilhou um ficheiro que foi protegido com o Azure RMS.**
 
-You’re then ready to safely share this document by email.
+Em seguida, está pronto para partilhar de forma segura este documento por correio eletrónico.
 
 ![](../Image/AzRMS_Tutorial_3_Screenshots.png)
 
-#### To safely share your document by email
+#### Para partilhar de forma segura o documento por correio eletrónico
 
-1.  Using Outlook, create a new message and attach the file that you just created.
+1.  Utilizar o Outlook, crie uma nova mensagem e anexe o ficheiro que acabou de criar.
 
-2.  In the **To** box, type one or more business email addresses. Make sure you specify a business email address, such as **janetm@contoso.com** or **p.dover@fabrikam.com** because currently, Azure Rights Management doesn’t support personal email addresses that you might use at home from your Internet provider. Don’t worry about whether the person you’re sending it to also has Azure Rights Management or not.
+2.  No **para** caixa, escreva um ou endereços de e-mail da empresa mais. Certifique-se de que especifique um endereço de e-mail empresarial, tal como **janetm@contoso.com** ou **p.dover@fabrikam.com** porque atualmente, o Azure Rights Management não suporta os endereços de e-mail pessoais que poderá utilizar em casa através do seu fornecedor de Internet. Não se preocupe se a pessoa que está a enviar para também tem de Azure Rights Management ou não.
 
-3.  Type a subject, such as  **Confidential document** and then type a short message for the email, such as **Please read this confidential document and do not share it with others.**
+3.  Escreva um assunto, tal como  **documento confidencial** e, em seguida, escreva uma mensagem curta para que o e-mail, tal como **Leia este documento confidencial e não partilhá-lo com outras pessoas.**
 
-4.  Then, on the **Message** tab, in the **RMS** group, click **Share Protected** and then click **Share Protected** again:
+4.  Em seguida, no **mensagem** separador o **RMS** grupo, clique em **partilhar protegido** e, em seguida, clique em **partilhar protegido** novamente:
 
-5.  In the **share protected** dialog box:
+5.  No **partilha protegida** caixa de diálogo:
 
-    1.  Select **Viewer – View Only**.
+    1.  Selecione **Visualizador-ver apenas**.
 
-        This means our recipients will be able to view the document but not edit or print it.
+        Isto significa que o nosso destinatários poderão ver o documento, mas não editar ou imprimir.
 
-    2.  Select **Email me when somebody tries to open these documents**.
+    2.  Selecione **E-Mail-me quando alguém tentar abrir estes documentos**.
 
-        You’ll get an email notification each time the recipients try to open the attachment, and also if somebody else tries to open it—for example, your recipient forwards the email to co-worker. In this last scenario, you’ll see that access was denied and from the user details, you can decide whether to send that person a copy of the document that they can open.
+        Receberá uma notificação por e-mail sempre que os destinatários tentam abrir o anexo e também se outra pessoa tentar abri-lo — por exemplo, o destinatário reencaminha a mensagem de correio eletrónico para colega de trabalho. Neste cenário última, verá que o acesso foi negado e de detalhes de utilizador, pode decidir se pretende enviar uma cópia do documento que podem abrir essa pessoa.
 
-    3.  Select **Allow me to instantly revoke access to these documents**.
+    3.  Selecione **Permitir-me a revogação instantânea do acesso a estes documentos**.
 
-        This option requires the recipients to have an Internet connection each time they open the attachment but with the benefit that if you later revoke the document, the next time they try to open it, they will not be able to. If you do not select this option, the recipients might be able to open it even without an Internet connection but with the disadvantage that if you later revoke the document, there might be a delay for when that takes effect.
+        Esta opção requer que os destinatários com uma ligação à Internet sempre que abrirem o anexo, mas com o benefício que se mais tarde revogar o documento, da próxima vez que tentarem abri-lo, não será possível. Se não selecionar esta opção, os destinatários poderão conseguir abri-lo, mesmo sem uma ligação à Internet, mas com a desvantagem que se mais tarde revogar o documento, poderá haver um atraso de quando que entra em vigor.
 
-    4.  Click **Send Now**.
+    4.  Clique em **Enviar agora**.
 
-        The email with attachment is sent to the email addresses that you specified. In addition to your email message, they will see instructions how to read the attached document that is protected by Azure Rights Management.
+        Mensagem de correio eletrónico com anexo é enviada para os endereços de e-mail que especificou. Para além da sua mensagem de correio eletrónico, Verão instruções como ler o documento anexado que seja protegido pelo Azure Rights Management.
 
-Now you’ve sent your protected document, you’re ready to ask your recipients to wait for it to arrive and then open it. But don’t close Outlook, because we’ll use it again in our final step to track the attachment.
+Agora que enviou o documento protegido, está pronto para pedir os seus destinatários de aguardar até que vão e, em seguida, abri-lo. Mas não feche o Outlook, uma vez que podemos irá utilizá-lo novamente no nosso passo final para controlar o anexo.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|Full instructions and alternative methods for protecting files that you share by email   →|[Protect a file that you share by email by using the Rights Management sharing application](https://technet.microsoft.com/library/dn574735.aspx)|
-|About the options in the **share protected** dialog box   →|[Dialog box options for the Rights Management sharing application](https://technet.microsoft.com/library/dn574738.aspx)|
+|Se pretender obter mais informações|Informações adicionais|
+|---------------------------------------|--------------------------|
+|Métodos alternativos para proteger os ficheiros para partilhar por e-mail → e obter instruções completas|[Proteger um ficheiro para partilhar por e-mail ao utilizar a aplicação de partilha Rights Management](https://technet.microsoft.com/library/dn574735.aspx)|
+|Sobre as opções no **partilha protegida** caixa de diálogo →|[Opções da caixa de diálogo para a aplicação de partilha Rights Management](https://technet.microsoft.com/library/dn574738.aspx)|
 
-## Step 4: Ask your recipients to open the emailed document
+## Passo 4: Pedir os seus destinatários para abrir o documento por correio eletrónico
 ![](../Image/AzRMS_QuickStartSteps4.PNG)
 
-Your recipients can use many devices to read the protected document that you sent as an email attachment. The devices include iPads, iPhones, Android tablets and phones, Mac computers, as well as Windows computers.
+Os destinatários podem utilizar vários dispositivos para ler o documento protegido enviado como anexo de correio eletrónico. Os dispositivos incluem iPads, iPhones, Android tablets e telefones, computadores Mac, bem como computadores com o Windows.
 
-Ask them to read the email message that you sent. They will see your email message and before that, the following text:
+Peça-lhes para ler a mensagem de e-mail que enviou. Irão ver a mensagem de correio eletrónico e antes que o seguinte texto:
 
-**The sender has protected the attachments with Microsoft RMS. You must** [sign in](http://aka.ms/rms)
-      **to open them.**
+**O remetente tenha protegido os anexos com Microsoft RMS. Tem** [sessão](http://aka.ms/rms) **para abri-los.**
 
-When they click the link, it takes them to instructions to install the RMS sharing app and if necessary, sign up for a free account. The free account grants them a subscription for RMS for individuals, which ensures that authorized users can always read a protected document, even if their organization does not have Azure RMS. They are then ready to read the protected attachment by using the following instructions.
+Quando clicar na ligação, que demora-los com instruções para instalar a aplicação de partilha RMS e inicie sessão se for necessário, para uma conta gratuita. A conta gratuita concede aos-las uma subscrição para o RMS para indivíduos, que garante que os utilizadores autorizados podem sempre ler um documento protegido, mesmo se a organização não tiver o Azure RMS. Em seguida, está preparados para ler o anexo protegido utilizando as instruções seguintes.
 
 ![](../Image/AzRMS_Tutorial_4_Screenshots.png)
 
-#### To view the protected document attachment
+#### Para ver o anexo do documento protegido
 
-1.  Because Azure Rights Management protected a Word document, there are two attachments for the email message. These are actually two versions of the same file but with different file name extensions. Open the version that has the **.ppdf** file name extension (**Confidential.ppdf**).
+1.  Como Azure Rights Management protegidas num documento do Word, existem dois anexos da mensagem de e-mail. Estas são, na verdade, duas versões do mesmo ficheiro, mas com extensões de nome de ficheiro diferente. Abra a versão que tenha o **.ppdf** extensão de nome de ficheiro (**Confidential.ppdf**).
 
-    If you have a version of [Office on your device that supports Rights Management](https://technet.microsoft.com/library/dn655136.aspx), you can open the other version of the file (**Confidential.docx**), so that it opens in Word.
+    Se tiver uma versão do [Office no seu dispositivo que suporte o Rights Management](https://technet.microsoft.com/library/dn655136.aspx), pode abrir a outra versão do ficheiro (**Confidential.docx**), de modo a que é aberto no Word.
 
-2.  If you are prompted for your user name and password, enter your user name in the same format as the email address that was used to send you the email and attachment. For example, **janetm@contoso.com** or **p.dover@fabrikam.com**. For your password, type the password that you supplied when you signed up for RMS for individuals. Or, if your organization has Azure RMS, enter your usual work password.
+2.  Se lhe for pedido para o seu nome de utilizador e palavra-passe, introduza o seu nome de utilizador no mesmo formato como o endereço de e-mail que foi utilizado para enviar o correio eletrónico e o anexo. Por exemplo, **janetm@contoso.com** ou **p.dover@fabrikam.com**. Para a sua palavra-passe, escreva a palavra-passe que especificou quando se inscreveu para RMS para indivíduos. Ou, se a sua organização tiver Azure RMS, introduza a palavra-passe de trabalho habituais.
 
-The document opens and you can now read the contents. For example, it might say **If you can read this from your email attachment, the sender has successfully shared a file that was protected with Azure RMS.** Because it’s read-only, you cannot change the contents.
+O documento é aberto e agora pode ler o conteúdo. Por exemplo, poderá dizer que **se pode ler isto partir do seu anexo de correio eletrónico, o remetente com êxito partilhou um ficheiro que foi protegido com o Azure RMS** Porque é só de leitura, não é possível alterar o conteúdo.
 
-As an optional step, you could ask your recipient to forward the email to other people that you didn’t include in your original email. Even if those other people work for an organization that has Azure Rights Management or they apply for their own RMS for individuals subscription, they won’t be able to open the attachment. When they are promoted for their user name, access to the document will be denied.
+Como um passo opcional, foi peça ao seu destinatário para reencaminhar o e-mail para outras pessoas que não tenha incluído no seu e-mail original. Mesmo que as outras pessoas de uma organização que tenha Azure Rights Management profissional ou aplicam-se para os seus próprios RMS para a subscrição de indivíduos, não poderão abrir o anexo. Quando estes são promovidos para o respetivo nome de utilizador, acesso ao documento será rejeitado.
 
-Now that the recipient has opened the attachment and optionally, forwarded it to somebody else, expect to get an email notification that reports this activity. But email messages are easy to lose over time, so a better way to track who accessed your document is to use the document tracking site, which is covered in the final step.
+Agora que o destinatário tem de abrir o anexo e, opcionalmente, reencaminhadas-la para outra pessoa, espera-se obter uma notificação de correio eletrónico que relatórios esta atividade. Mas mensagens de correio eletrónico são fáceis de perder ao longo do tempo, para que uma melhor forma de controlar quem aceder ao seu documento é utilizar o site, o que é abrangido no último passo de monotorização de documentos.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|Full instructions for viewing files that are protected by Azure Rights Management   →|[View and use files that have been protected by Rights Management](https://technet.microsoft.com/library/dn574741.aspx)|
-|About the free subscription, RMS for individuals   →|[RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md)|
-|About the two versions of the file that you see attached to the email message   →|[What’s the .ppdf file that’s automatically created?](https://technet.microsoft.com/library/dn574738.aspx)|
+|Se pretender obter mais informações|Informações adicionais|
+|---------------------------------------|--------------------------|
+|Obter instruções completas para visualização de ficheiros que estão protegidos pelo Azure Rights Management →|[Ver e utilizar ficheiros que foram protegidos por Rights Management](https://technet.microsoft.com/library/dn574741.aspx)|
+|Sobre a subscrição gratuita, RMS para indivíduos →|[RMS para indivíduos e Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md)|
+|Sobre as duas versões do ficheiro que verá anexado à mensagem de correio eletrónico →|[O que é o ficheiro. ppdf criado automaticamente?](https://technet.microsoft.com/library/dn574738.aspx)|
 
-## Step 5: Track your protected document
+## Passo 5: Controlar o seu documento protegido
 ![](../Image/AzRMS_QuickStartSteps5.PNG)
 
 > [!NOTE]
-> For this step, you must have a subscription that supports document tracking. To check whether your subscription includes document tracking, see [Comparison of Rights Management Services (RMS) Offerings](https://technet.microsoft.com/dn858608.aspx).
+> Para este passo, tem de ter uma subscrição que suporta o controlo de documento. Para verificar se a sua subscrição incluir monotorização documentos, consulte o artigo [ofertas de comparação do Rights Management Services (RMS)](https://technet.microsoft.com/dn858608.aspx).
 
-This step is optional, but most people like to know if the attachment they sent to people has been opened, when, and even from where. For example:
+Este passo é opcional, mas a maioria das pessoas gosta de saber se o anexo que enviada às pessoas ter sido aberto, quando e até mesmo a partir da qual. Por exemplo:
 
--   You’re expecting a response from somebody by a specified time and you can see from the document tracking site that she hasn’t opened the document even though the deadline is approaching. You send her a follow-up email or telephone her as a timely reminder.
+-   Está estava à espera uma resposta a partir de uma pessoa por um período de tempo especificado e pode ver o site de controlo do documento que ela ainda não tenha aberto o documento mesmo que está a atingir o prazo. Enviar-lhe um e-mail de seguimento ou telefone ao mesmo como um lembrete atempadamente.
 
--   After seeing that somebody has opened the document, you follow up to ask her if she has any questions or requires additional information.
+-   Depois de vê que alguém abriu o documento, dar seguimento pedir dela se ela tem todas as perguntas ou necessita de informações adicionais.
 
 ![](../Image/AzRMS_Tutorial_5_Screenshots.png)
 
-#### To track your protected document
+#### Para controlar o seu documento protegido
 
-1.  Using Outlook, on the **Home** tab, in the **RMS** group, click **Track Usage**.
+1.  Utilizar o Outlook, no **base** separador o **RMS** grupo, clique em **controlar a utilização**.
 
-2.  If you see the **Protect and share on your terms** page, click **Sign in** and supply your user name and password again.
+2.  Se vir o **proteger e partilhar nos seus termos** página, clique em **sessão** e fornecer o nome de utilizador e palavra-passe novamente.
 
-3.  On the **Your shared documents** page, you’ll see the document that you attached to the email, **Confidential.docx**. At this point, it’s the only file displayed but as you share additional protected documents, the list will grow.
+3.  No **os documentos partilhados** página, irá ver o documento que anexado à mensagem de e-mail, **Confidential.docx**. Neste momento, é o único ficheiro apresentado, mas como partilhar documentos protegidos adicionais, a lista irá aumentar.
 
-    From this page, you’ll see when you shared the document (when you sent the email with the protected attachment), the date of the last activity, and the name of the recipient you sent the email to. Click the document name for additional details.
+    A partir desta página, irá ver quando partilhou o documento (quando que enviou a mensagem de correio eletrónico com o anexo protegido), a data da última atividade e o nome do destinatário que enviou a mensagem de correio eletrónico para. Clique no nome do documento para obter detalhes adicionais.
 
-4.  On the new page, which has the name of the file that you clicked, you’ll see summary details for that document only, and a list of other options that are available for the document (**List**, **Timeline**, **Map**, **Settings**).
+4.  A nova página, que tem o nome do ficheiro que em que clicou, poderá ver detalhes de resumo para apenas esse documento e uma lista de outras opções que estão disponíveis para o documento (**lista**, **linha cronológica**, **mapa**, **definições**).
 
-    Click each option to explore different ways to track your protected document. Or, still on the **Summary** page, click **Open in Excel** to export the information to a spreadsheet, or click **Revoke access** to stop sharing the document.
+    Clique em cada opção para explorar formas diferentes para controlar o seu documento protegido. Ou, ainda no **resumo** página, clique em **Abrir no Excel** para exportar as informações numa folha de cálculo, ou clique em **revogar o acesso** para parar de partilhar o documento.
 
-You can return to this site to track further activity for your protected document, or revoke access if necessary. You can even access the site from your mobile device or tablet, by using a browser with this link: [document tracking](http://go.microsoft.com/fwlink/?LinkId=529562)
+Pode voltar a este site para controlar a atividade para o seu documento protegido ou revogar o acesso se for necessário. Ainda pode aceder ao site do seu dispositivo móvel ou tablet, utilizando um browser com esta ligação: [documento controlo](http://go.microsoft.com/fwlink/?LinkId=529562)
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|Full instructions for tracking your documents   →|[Track and revoke your documents when you use the RMS sharing application](https://technet.microsoft.com/library/dn986611.aspx)|
-|Two minute video that explains and shows document tracking   →|[Azure RMS Document Tracking and Revocation](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)|
-|For troubleshooting and customer questions   →|[FAQ for Document Tracking](https://technet.microsoft.com/dn947488)|
+|Se pretender obter mais informações|Informações adicionais|
+|---------------------------------------|--------------------------|
+|Obter instruções completas para controlar o seu → de documentos|[Monitorizar e revogar os seus documentos ao utilizar a aplicação de partilha RMS](https://technet.microsoft.com/library/dn986611.aspx)|
+|Minuto dois vídeo que explica e mostra monotorização → documentos|[Controlo de documento do Azure RMS e de revogação.](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)|
+|Para apoio a clientes e resolução de problemas → perguntas|[FAQ para o controlo de documento](https://technet.microsoft.com/dn947488)|
 
-## Next Steps
-This tutorial stepped you through just one scenario for how Azure RMS can help protect your data. To see other common uses, see the [Azure RMS in action](https://technet.microsoft.com/library/jj585026.aspx) section from the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) article. There are other sections in this article that you might also find useful, such as how Azure RMS works and what business problems it can solve.
+## Próximos passos
+Neste tutorial stepped através de apenas um cenário de como o Azure RMS pode ajudar a proteger os seus dados. Para ver outras utilizações comuns, consulte o [Azure RMS em ação](https://technet.microsoft.com/library/jj585026.aspx) secção a partir de [O que é o Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) artigo. Existem outras secções neste artigo que também pode achar úteis, tais como como funciona o Azure RMS e os problemas de empresas pode resolver.
 
-If you’re ready to start deploying Azure RMS, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) for your deployment steps and links for how-to instructions.
+Se estiver pronto para iniciar a implementação do Azure RMS, utilize o [Plano de implementação do Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) para os passos de implementação e ligações para instruções sobre como proceder.
 
-## See Also
-[Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
+## Consultar Também
+[Introdução ao Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
 

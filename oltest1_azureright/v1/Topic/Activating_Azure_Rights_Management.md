@@ -3,111 +3,110 @@ description: na
 keywords: na
 title: Activating Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f8707e01-b239-4d1a-a1ea-0d1cf9a8d214
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Activating Azure Rights Management
-When you activate [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS), your organization can start to protect important data by using applications and services that support this information protection solution. Administrators can also manage and monitor protected files and emails that your organization owns. You must enable [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] before you can begin to use the information rights management (IRM) features within Office, SharePoint, and Exchange, and protect any sensitive or confidential file.
+# Ativar o Azure Rights Management
+Quando ativar [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (RMS) do Azure, a organização pode começar a proteger dados importantes através da utilização de aplicações e serviços que suportam esta solução de proteção de informações. Os administradores também podem gerir e monitorizar ficheiros protegidos e os e-mails que a sua organização é proprietária. Tem de ativar [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] antes de poder começar a utilizar as funcionalidades de gestão (IRM) de direitos de informação no Office, o SharePoint e o Exchange e proteger um ficheiro sensível ou confidencial.
 
-If you want to learn more about Azure Rights Management before you activate the service—for example, what business problems it solves, some typical use cases, and how it works—see [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md)
+Se pretender saber mais sobre a gestão de direitos do Azure antes de ativar o serviço de — por exemplo, os problemas de empresas que resolve, nalguns casos de utilização típica e como funciona, consulte [O que é o Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md)
 
 > [!IMPORTANT]
-> Before you activate [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], make sure that your organization has a service plan that includes [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] services. If not, you will not be able to activate Azure RMS.
+> Para ativar [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], certifique-se de que a sua organização tiver um plano de serviço que inclui [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] serviços. Caso contrário, não será possível ativar o Azure RMS.
 > 
-> For more information, see the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.
+> Para obter mais informações, consulte o [Subscrições de nuvem que suportam o Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) secção a [Requisitos para o Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tópico.
 
-After you have activated Azure RMS, all users in your organization can apply information protection to their files, and all users can open (consume) files that have been protected by Azure RMS. However, if you prefer, you can restrict who can apply information protection, by using onboarding controls for a phased deployment. For more information, see the [Configuring onboarding controls for a phased deployment](../Topic/Activating_Azure_Rights_Management.md#BKMK_OnboardingControls) section in this topic.
+Depois de ter ativado o Azure RMS, todos os utilizadores na sua organização podem aplicar a proteção de informações para os respetivos ficheiros e todos os utilizadores podem abrir (consumir) ficheiros que foram protegidos pelo Azure RMS. No entanto, se preferir, pode restringir quem pode aplicar a proteção de informações, ao utilizar controlos de integração para uma implementação faseada. Para obter mais informações, consulte o [Configurar os controlos de integração para uma implementação faseada](../Topic/Activating_Azure_Rights_Management.md#BKMK_OnboardingControls) deste tópico.
 
-## Activating Rights Management
-Use one of the following procedures to activate [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
+## Ativar o Rights Management
+Utilize um dos seguintes procedimentos para ativar [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
 
 > [!TIP]
-> You can also use the Windows PowerShell cmdlet, [Enable-Aadrm](http://msdn.microsoft.com/library/windowsazure/dn629412.aspx), to activate [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
+> Também pode utilizar o cmdlet do Windows PowerShell, [Ativar Aadrm](http://msdn.microsoft.com/library/windowsazure/dn629412.aspx), para ativar [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
 
-#### To activate Rights Management from the Office 365 admin center
+#### Para ativar o Rights Management a partir do Centro de administração do Office 365
 
-1.  After you have signed up for an Office 365 plan that includes Rights Management, [sign in to Office 365 with your work or school account](https://portal.office.com/) that is an administrator for your Office 365 deployment.
+1.  Depois de se inscreveu para um plano do Office 365 que inclui a gestão de direitos, [Inicie sessão no Office 365 com a sua conta escolar ou profissional](https://portal.office.com/) ou seja, um administrador para a implementação do Office 365.
 
-2.  If the Office 365 admin center does not automatically display, select the app launcher icon in the upper-left and choose **Admin**. The **Admin** tile appears only to Office 365 administrators.
+2.  Se o Centro de administração do Office 365 não for apresentada automaticamente, selecione o ícone da aplicação de iniciador no canto superior esquerdo e escolha **Admin**. O **Admin** mosaico só aparece aos administradores do Office 365.
 
     > [!TIP]
-    > For admin center help, see [About the Office 365 admin center - Admin Help](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
+    > Para obter ajuda do Centro de administração, consulte o artigo [Centro de administração sobre o Office 365 - ajuda da administração](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
 
-3.  In the left pane, expand **SERVICE SETTINGS**.
+3.  No painel da esquerda, expanda **definições de serviço**.
 
-4.  Click **Rights Management**.
-
-    > [!NOTE]
-    > If you do not see this option, it might be because your service plan or product version cannot support Rights Management, or it has not yet been upgraded to support Rights Management.
-    > 
-    > Use the information in the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic to confirm support. If your service plan or product version is supported but you do not see the Rights Management option, it might be because the service is not yet upgraded. For help with this issue, send an email message to [askipteam](mailto:askipteam@microsoft.com?subject=I%20cannot%20activate%20RMS).
-
-5.  On the **RIGHTS MANAGEMENT** page, click **Manage**.
-
-6.  On the **rights management** page, click **activate**.
-
-7.  When prompted **Do you want to activate Rights Management?**, click **activate**.
-
-You should now see **Rights management is activated** and the option to deactivate.
-
-#### To activate Rights Management from the Azure classic portal
-
-1.  After you have signed up for your Azure account, [sign in to the Azure classic portal](http://go.microsoft.com/fwlink/p/?LinkID=275081).
-
-2.  In the left pane, click **ACTIVE DIRECTORY**.
-
-3.  From the **active directory** page, click **RIGHTS MANAGEMENT**.
-
-4.  Select the directory to manage for [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], click **ACTIVATE**, and then confirm your action.
+4.  Clique em **Gestão de direitos de**.
 
     > [!NOTE]
-    > If you see an activation error, it might be because your service plan or product version cannot support [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
+    > Se não visualizar esta opção, poderá ser porque a versão de produtos ou plano de serviço não é possível suportar a gestão de direitos, ou ainda não foi atualizada para suportar a gestão de direitos.
     > 
-    > Use the information in the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic to confirm RMS support. For help with this issue, send an email message to [askipteam](mailto:askipteam?subject=I%20cannot%20activate%20RMS).
+    > Utilize as informações de [Subscrições de nuvem que suportam o Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) secção a [Requisitos para o Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tópico para confirmar o suporte. Se a versão de produtos ou plano de serviço é suportada, mas não vir a opção de gestão de direitos, poderá ser porque o serviço ainda não foi atualizado. Para obter ajuda com este problema, envie uma mensagem de correio eletrónico para [askipteam](mailto:askipteam@microsoft.com?subject=I%20cannot%20activate%20RMS).
 
-The **RIGHTS MANAGEMENT STATUS** should now display **Active** and the **ACTIVATE** option is replaced with **DEACTIVATE**.
+5.  No **RIGHTS MANAGEMENT** página, clique em **Gerir**.
 
-### Rights Management status values and descriptions in the Azure classic portal
-In addition to the **Active** status, which indicates that the Rights Management service is enabled and ready to use, you might also see **Inactive**, **Unavailable**, or **Unauthorized**.
+6.  No **Gestão de direitos de** página, clique em **Ativar**.
 
-|Status value|Description|
-|----------------|---------------|
-|**Active**|[!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] is enabled and ready for use.|
-|**Inactive**|[!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] is disabled and must be activated before your organization can protect files.|
-|**Unavailable**|The [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] service is down. Try again later.|
-|**Unauthorized**|You do not have permissions to view the status of the [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] service. For example, your account is locked out or you are not the global administrator for the selected tenant.|
+7.  Quando lhe for pedido **que pretende ativar o Rights Management?**, clique em **Ativar**.
 
-## <a name="BKMK_OnboardingControls"></a>Configuring onboarding controls for a phased deployment
-If you don’t want all users to be able to protect files immediately by using Azure RMS, you can configure user onboarding controls by using the [Set-AadrmOnboardingControlPolicy](http://msdn.microsoft.com/library/azure/dn857521.aspx) Windows PowerShell command. You can run this command before or after you activate Azure RMS.
+Deverá ver **Rights management é ativado** e a opção para desativar.
+
+#### Para ativar o Rights Management a partir do portal do Azure clássico
+
+1.  Depois de se inscreveu para a sua conta Azure, [Inicie sessão no portal do Azure clássico](http://go.microsoft.com/fwlink/p/?LinkID=275081).
+
+2.  No painel da esquerda, clique em **do Active Directory**.
+
+3.  A partir de **do Active Directory** página, clique em **RIGHTS MANAGEMENT**.
+
+4.  Selecione o diretório para gerir para [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], clique em **ATIVAR**, e, em seguida, confirme a ação.
+
+    > [!NOTE]
+    > Se vir um erro de ativação, poderá ser porque a versão de produtos ou plano de serviço não pode suportar [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
+    > 
+    > Utilize as informações de [Subscrições de nuvem que suportam o Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) secção a [Requisitos para o Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tópico para confirmar suporte RMS. Para obter ajuda com este problema, envie uma mensagem de correio eletrónico para [askipteam](mailto:askipteam?subject=I%20cannot%20activate%20RMS).
+
+O **Estado da gestão de direitos** deverá agora apresentar **Active Directory** e **ATIVAR** opção é substituída pelo **DESATIVAR**.
+
+### Valores de estado de gestão de direitos e as descrições no portal do Azure clássico
+Para além de **Active Directory** Estado, o que indica que o serviço de gestão de direitos está ativado e pronto a ser utilizado, também poderá ver **inativo**, **indisponível**, ou **não autorizado**.
+
+|Valor de estado|Descrição|
+|-------------------|-------------|
+|**Active Directory**|[!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] é ativada e pronto a utilizar.|
+|**Inativo**|[!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] está desativada e tem de ser ativado antes da sua organização pode proteger ficheiros.|
+|**Não disponível**|O [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] o serviço está inativo. Tente novamente mais tarde.|
+|**Não autorizado**|Não tem permissões para ver o estado do [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] serviço. Por exemplo, a sua conta está bloqueada ou não for o administrador global para o inquilino selecionado.|
+
+## <a name="BKMK_OnboardingControls"></a>Configurar os controlos de integração para uma implementação faseada
+Se não pretender que todos os utilizadores para poder proteger ficheiros imediatamente utilizando o Azure RMS, pode configurar os controlos de integração do utilizador utilizando o [conjunto AadrmOnboardingControlPolicy](http://msdn.microsoft.com/library/azure/dn857521.aspx) comando do Windows PowerShell. Pode executar este comando antes ou depois de ativar o Azure RMS.
 
 > [!IMPORTANT]
-> To use this command, you must have at least version **2.1.0.0** of the [Azure RMS Windows PowerShell module](http://go.microsoft.com/fwlink/?LinkId=257721).
+> Para utilizar este comando, tem de ter, pelo menos, versão **2.1.0.0** do [módulo do Windows PowerShell do Azure RMS](http://go.microsoft.com/fwlink/?LinkId=257721).
 > 
-> To check the version you have installed, run: **(Get-Module aadrm –ListAvailable).Version**
+> Para verificar a versão que instalou, execute: **(Get-Module aadrm –ListAvailable).Version**
 
-For example, if you initially want only administrators in the “IT department” group (that has an object ID of fbb99ded-32a0-45f1-b038-38b519009503) to be able to protect content for testing purposes, use the following command:
+Por exemplo, se pretender inicialmente apenas os administradores do grupo de "Departamento de TI" (que tem um ID de objeto de fbb99ded-32a0-45f1-b038-38b519009503) para poder proteger conteúdo para fins de teste, utilize o seguinte comando:
 
 ```
 Set-AadrmOnboardingControlPolicy – SecurityGroupObjectId fbb99ded-32a0-45f1-b038-38b519009503
 ```
-Note that for this configuration option, you must specify a group; you cannot specify individual users.
+Tenha em atenção que para esta opção de configuração, tem de especificar um grupo de; Não é possível especificar os utilizadores individuais.
 
-Or, if you want to ensure that only users who are correctly licensed to use Azure RMS can protect content:
+Ou, se pretender certificar-se de que apenas utilizadores que são licenciados corretamente ao utilizar o Azure RMS podem proteger conteúdo:
 
 ```
 Set-AadrmOnboardingControlPolicy -UseRmsUserLicense $true
 ```
-When you use these onboarding controls, all users in the organization can always consume protected content that has been protected by your subset of users, but they won’t be able to apply information protection themselves from client applications. For example, they won’t see in their Office clients the default templates that are automatically published when Azure RMS is activated, or custom templates that you might configure.  Server-side applications, such as Exchange, can implement their own per-user controls for RMS-integration to achieve the same result.
+Quando utilizar estes controlos de integração, todos os utilizadores na organização sempre podem consumir conteúdo protegido que foi protegido pelo subconjunto de utilizadores, mas não poderão aplicar-se a si proteção de informações a partir de aplicações de cliente. Por exemplo, não poderão ver os seus clientes do Office modelos predefinidos que são automaticamente publicados quando está ativado o Azure RMS ou modelos personalizados que pode configurar.  Aplicações do lado do servidor, como o Exchange, podem implementar os seus próprios controlos por utilizador para a integração do RMS alcançar o mesmo resultado.
 
-## Next steps
-Now that you’ve activated [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] for your organization, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) to check whether there are other configuration steps that you might need to do before you roll out [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] to users and administrators. For example, you might want to use [custom templates](http://technet.microsoft.com/library/dn642472.aspx) to make it easier for users to apply information protection to files, connect your on-premises servers to use [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] by installing the [RMS connector](http://technet.microsoft.com/library/dn375964.aspx), and deploy the [Rights Management sharing application](http://technet.microsoft.com/library/jj585031.aspx) that supports protecting all file types on all devices. Office services,  such as Exchange Online and SharePoint Online require additional configuration before you can use their Information Rights Management (IRM) features. However, if there are no other configuration steps that you need to do, see [Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) for operational guidance to support a successful deployment for your organization.
+## Próximos passos
+Agora que tenha ativado [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] para a sua organização, utilize o [Plano de implementação do Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) para verificar se existem outros passos de configuração que poderá ter de fazer antes de ser realizadas [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] para utilizadores e administradores. Por exemplo, pode querer utilizar [modelos personalizados](http://technet.microsoft.com/library/dn642472.aspx) para tornar mais fácil para os utilizadores aplicar proteção de informações a ficheiros, ligar-se os servidores no local para utilizar [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] instalando o [conector RMS](http://technet.microsoft.com/library/dn375964.aspx), e implementar o [aplicação de partilha Rights Management](http://technet.microsoft.com/library/jj585031.aspx) que suporta proteger todos os tipos de ficheiro em todos os dispositivos. Serviços do Office, como o Exchange Online e no SharePoint Online necessitam de configuração adicional antes de poder utilizar as respetivas funcionalidades de gestão de direitos de informação (IRM). No entanto, se existirem nenhuma outra configuração os passos que necessita, ver [Utilizar o Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) para obter orientações sobre operacional suportar uma implementação efetuada com êxito para a sua organização.
 
-For information about how your applications work with [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], see [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md).
+Para obter informações sobre como as suas aplicações de trabalhar com [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], consulte o artigo [Como as aplicações suportam gestão de direitos do Azure](../Topic/How_Applications_Support_Azure_Rights_Management.md).
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Consultar Também
+[Configurar a gestão de direitos do Azure](../Topic/Configuring_Azure_Rights_Management.md)
 

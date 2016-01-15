@@ -8,43 +8,42 @@ ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 751e5e05-fbe2-4769-a5df-1362c0db2108
-ms.author: f459630d47d34d12a44295cd5237dc68
 ---
-# Privacy Statement for Microsoft Rights Management in RMS-Enlightened Applications
-Applies To: Microsoft Rights Management functionality which is embedded in applications
+# Declara&#231;&#227;o de privacidade do Microsoft Rights Management em aplica&#231;&#245;es suportadas por RMS
+Aplica-se a: Funcionalidade Microsoft Rights Management que está incorporada em aplicações
 
 > [!NOTE]
-> This privacy statement is available in additional languages from the [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=41668).
+> Esta declaração de privacidade está disponível noutros idiomas a [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=41668).
 
-Microsoft is committed to protecting your privacy, while delivering software that brings you the performance, power, and convenience you desire in your personal computing. This privacy statement explains many of the data collection and use practices of the Microsoft Rights Management client software or service and any other Microsoft products or services that display or link to this notice.
+A Microsoft está empenhada em proteger a sua privacidade, enquanto fornece software que proporciona o desempenho, energia e conveniência que pretendidos ao nível da informática pessoal. Esta declaração de privacidade explica muitas das práticas de recolha e utilização de dados do software de cliente Microsoft Rights Management ou serviço e quaisquer outros produtos ou serviços Microsoft que apresentam ou ligam a este aviso.
 
-The Rights Management functionality is designed for client machines and mobile devices to help protect access to and usage of information flowing through enabled applications that use Microsoft Rights Management services, whether installed on premises or running in a Microsoft datacenter.
+A funcionalidade de gestão de direitos foi concebida para máquinas de cliente e dispositivos móveis para ajudar a proteger o acesso e a utilização de informações que circulam pelas aplicações ativadas que utilizam serviços Microsoft Rights Management, se instalada no local ou em execução num centro de dados do Microsoft.
 
-## Processing Your Information On Behalf of Our Customer
-In order to access protected files, you will be asked to log in to Microsoft Rights Management and provide your user name and password (“Credentials”). Microsoft may collect Read Receipt Information and “Standard Device Information” which includes information such as your operating system version and hardware ID, which indicates the device manufacturer, device name, and version, and IP address.
+## Processar as suas informações em nome do cliente
+Para poder aceder aos ficheiros protegidos, será pedido para iniciar sessão Microsoft Rights Management e forneça o nome de utilizador e palavra-passe ("credenciais"). A Microsoft poderá recolher informações de recibo de leitura e "Informações padrão do dispositivo" que inclui informações como a sua versão do sistema operativo e ID de hardware, que indica o fabricante do dispositivo, o nome do dispositivo e a versão e o endereço IP.
 
 > [!IMPORTANT]
-> We may disclose “Read Receipt Information” (such as email address, location, and timestamp associated with opening a file) and Standard Device Information to the person or company that protected the files.
+> Poderá divulgar "Informações de recibo de leitura" (como o endereço de correio eletrónico, localização e timestamp associados a abertura de um ficheiro) e as informações de dispositivo padrão para a pessoa ou empresa que protegeu os ficheiros.
 
-## Microsoft’s Collection and Use of Your Information
-The Credentials and Standard Device Information we collect from you may also be used by Microsoft and its controlled subsidiaries and affiliates to enable the features you are using and provide additional service(s) or carry out the transaction(s) you have requested or authorized. Standard Device Information may also be used to analyze and improve Microsoft products and services.
+## Recolha e utilização de informações da Microsoft
+As credenciais e informações padrão do dispositivo que recolhemos do utilizador também podem ser utilizadas pela Microsoft e pelas subsidiárias e filiais para ativar as funcionalidades que está a utilizar e fornecer serviços adicionais ou realizar as transações solicitadas ou autorizadas. As informações padrão do dispositivo podem também ser utilizadas para analisar e melhorar os produtos e serviços Microsoft.
 
-We will not disclose the Credentials, Read Receipt, and/or Standard Device Information we collect from you outside of Microsoft or its controlled subsidiaries and affiliates except as you direct, or as described in your agreement(s) or this privacy statement.
+Não divulgaremos as credenciais, recibo de leitura e/ou as informações padrão do dispositivo que recolhemos do utilizador fora da Microsoft ou respetivos controladas subsidiárias e afiliadas controladas, exceto como instruir ou conforme descrito nos seus contratos ou nesta declaração de privacidade.
 
-We occasionally contract with other companies to provide services (such as customer support) on our behalf. We may provide these companies with access to your information where necessary for their engagement. These companies are required to maintain the confidentiality of your information and are prohibited from using it for any purpose other than that for which they are engaged by Microsoft.
+Contratamos ocasionalmente outras empresas para fornecerem serviços (por exemplo, o suporte ao cliente) em nosso nome. Podemos fornecer estas empresas acesso às suas informações sempre que necessário para o respetivo compromisso. Estas empresas são necessários para manter a confidencialidade das suas informações e estão proibidas de utilizá-lo para qualquer finalidade sem ser aquela que para o qual estão interessados pela Microsoft.
 
-We will not disclose Credentials, Read Receipt, and/or Standard Device Information to a third party (including law enforcement, other government entity, or civil litigant; excluding our subcontractors) except as you direct, as described in this privacy statement, or unless required by law. Should a third party contact us with a demand for such information, we will attempt to redirect the third party to request it directly from you. As part of that, we may provide your basic contact information to the third party. If compelled to disclose your information to a third party, we will use commercially reasonable efforts to notify you in advance of a disclosure unless legally prohibited.
+Não divulgaremos as credenciais, recibo de leitura e/ou as informações padrão do dispositivo a terceiros (incluindo a aplicação da lei, outra entidade pública ou litigantes civis, excluindo os nossos subcontratantes), exceto como instruir, conforme descrito nesta declaração de privacidade ou quando exigido por lei. Deve terceiros contacte-nos com uma exigência dessas informações, tentaremos o terceiros solicitá-la diretamente a partir de redirecionamento. Como parte do que, podemos fornecer as informações de contacto básicas a terceiros. Se formos obrigados a divulgar as suas informações a terceiros, utilizaremos os esforços comercialmente razoáveis para notificá-lo atempadamente da divulgação, exceto se estivermos legalmente proibidos.
 
-Information that is collected by or sent to Microsoft by Microsoft Rights Management enabled applications may be stored and processed in the United States or any other country in which Microsoft or its affiliates, subsidiaries, or service providers maintain facilities. Microsoft abides by the safe harbor framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of data from the European Union, the European Economic Area, and Switzerland.
+Informações recolhidas por ou enviadas para as aplicações do Microsoft pelo Microsoft Rights Management ativada podem ser armazenadas e processadas nos Estados Unidos ou qualquer outro país no qual a Microsoft ou respetivas empresas afiliadas, subsidiárias ou fornecedores de serviços têm instalações. Microsoft rege-se pelo safe harbor framework conforme estabelecido de comércio dos EUA Department of Commerce, relativamente a recolha, utilização e retenção de dados provenientes da União Europeia, Espaço Económico Europeu e Suíça.
 
 ## Microsoft Update
-When you use Microsoft Rights Management enabled applications with Windows, you may choose to participate in Microsoft Update. Microsoft Update (MU) is a service that provides updates for Microsoft software, including Microsoft Rights Management client for Windows. For details about what information is collected, how it is used and how to change your settings, see the [Update Services Privacy Statement](http://go.microsoft.com/fwlink/?linkid=50142) ([http://go.microsoft.com/fwlink/?linkid=50142](http://go.microsoft.com/fwlink/?linkid=50142)).
+Quando utilizar aplicações compatíveis com Microsoft Rights Management com o Windows, pode optar por participar no Microsoft Update. Microsoft Update (MU) é um serviço que fornece atualizações para software Microsoft, incluindo o cliente Microsoft Rights Management para Windows. Para obter detalhes sobre as informações recolhidas, como são utilizadas e como alterar as suas definições, consulte o [declaração de privacidade do Update Services](http://go.microsoft.com/fwlink/?linkid=50142) ([http://go.microsoft.com/fwlink/?linkid=50142](http://go.microsoft.com/fwlink/?linkid=50142)).
 
-Choice/Control: For silent installation, Microsoft Rights Management enabled applications follow the same MU settings applied to the Windows desktop. For user installations, if MU is not turned on, you may receive a prompt during installation permitting you to turn on MU. If you choose to do so, these MU settings will apply across all Windows-based applications.
+Escolha/controlo: Para uma instalação automática, o Microsoft Rights Management ativada aplicações seguem as mesmas definições do MU aplicadas ao ambiente de trabalho do Windows. Para instalações de utilizador, se o MU não estiver ativado, poderá receber uma linha de comandos durante a instalação, permitindo-lhe ativar MU. Se optar por fazê-lo, estas definições do MU serão aplicadas em todas as aplicações baseadas no Windows.
 
-## Security of your information
-Microsoft is committed to helping protect the security of your information. We use a variety of security technologies and procedures to help protect your information from unauthorized access, use, or disclosure. For example, we store the information you provide on computer systems with limited access, which are located in controlled facilities.
+## Segurança das suas informações
+A Microsoft está empenhada em ajudar a proteger a segurança das suas informações. Utilizamos uma variedade de tecnologias e procedimentos de segurança para o ajudar a proteger as suas informações de acesso não autorizado, utilização ou divulgação não autorizados. Por exemplo, armazenamos as informações que fornece em sistemas informáticos com acesso limitado, que estão localizados em instalações controladas.
 
-## Changes to this privacy statement
-We will occasionally update this privacy statement to reflect changes in our products, services, and customer feedback. When we post changes, we will revise the "last updated" date at the top of this statement. If there are material changes to this statement or in how Microsoft will use your personal information, we will notify you either by posting a notice of such changes prior to implementing the change or by directly sending you a notification. We encourage you to periodically review this statement to be informed of how Microsoft is protecting your information.
+## Alterações à declaração de privacidade
+Ocasionalmente, atualizaremos esta declaração de privacidade para refletir alterações nos nossos produtos, serviços e comentários do cliente. Sempre que publicarmos alterações, alteramos a data da "última atualização" na parte superior da declaração. Se existirem alterações essenciais a esta declaração ou à forma como a Microsoft utiliza as informações pessoais, este será notificado, quer ao publicar um aviso de tais alterações antes de implementar a alteração ou enviada diretamente uma notificação. Aconselhamo-lo a rever periodicamente esta declaração para se manterem informados sobre como estamos a proteger as informações.
 

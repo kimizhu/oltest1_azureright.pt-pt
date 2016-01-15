@@ -6,215 +6,214 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: f10c8e7e-aa83-473d-857a-f01a7908552e
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Rights Management sharing application user guide - revision for single topic
-The Microsoft Rights Management (RMS) sharing application for Windows helps you keep important documents and pictures safe from people who shouldn’t see them, even if you email them or save them to another device. You can also use this application to open and use files that other people have protected by using the same Rights Management technology.
+# Guia de utilizador da aplica&#231;&#227;o de partilha Rights Management - revis&#227;o para t&#243;pico &#250;nico
+A aplicação de partilha Microsoft Rights Management (RMS) para Windows ajuda a proteger documentos e imagens importantes de pessoas que não os deveriam ver, mesmo se os enviar por e-mail ou os guardar noutro dispositivo. Também pode utilizar esta aplicação para abrir e utilizar ficheiros que tenham sido protegidos por terceiros utilizando a mesma tecnologia de Rights Management.
 
-All you need is a computer that runs at least Windows 7, and a local administrator account to install the RMS sharing application. Then [download and install](http://go.microsoft.com/fwlink/?LinkId=303970) this free application from Microsoft.
+Só precisa de um computador que execute, pelo menos, o Windows 7, e uma conta de administrador local para instalar a aplicação de partilha RMS. Em seguida, [transfira e instale](http://go.microsoft.com/fwlink/?LinkId=303970) esta aplicação gratuita da Microsoft.
 
-If you have questions that are not answered by this guide, see [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Caso haja questões que não sejam abordadas neste guia, consulte [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-Here are just some examples of how you might use the sharing application, to help protect your files.
+Seguem-se alguns exemplos de como pode utilizar a aplicação de partilha para ajudar a proteger ficheiros.
 
-|I want to …|How to do this|
-|---------------|------------------|
-|**… safely share financial information with somebody I trust who is outside my organization**<br /><br />You work with a partner company and want to email them an Excel spreadsheet that contains projected sales figures. You want them to be able to view the figures but not change them.|You use the Share Protected button on the ribbon in Excel, type the email addresses of the two people that you work with in the partner company, select Viewer on the slider, and click Send.<br /><br />When the email arrives at the partner company, only the recipients in the email can view the spreadsheet and they cannot save, edit, print, or forward it.<br /><br />Details: See **Protect a file that you share by email** in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.|
-|**… safely send a document by email to somebody who uses an iOS device**<br /><br />You want to email a highly confidential Word document to a coworker, who you know, regularly checks email on their iOS device.|You use File Explorer to right-click the file, and select Share Protected. In the RMS sharing application, you select the Allow consumption on all devices option, and send the file as an attachment to your coworker.<br /><br />The recipient receives the email on their iOS device, clicks the link in the email that tells them how to download the sharing application, installs the version for iOS devices, and then views the document.<br /><br />Details: See **Protect a file that you share by email** in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.|
-|**… read an attachment I’ve received in an email message that has a securely shared file attachment but I can’t read it because my company doesn’t use Rights Management**<br /><br />The email sender is somebody who you trust because you’ve done business with them in the past and you suspect that they might be sending you information about a potential new business opportunity.|You follow the instructions in the email and click the link to sign up for Microsoft Rights Management. Microsoft confirms that your organization does not have a subscription to Office 365, sends you an email to complete the free signup process, and you sign in with your new account. You click the second link in the email to install the Rights Management sharing app and can then open the email attachment to read about the new business opportunity.<br /><br />Details: See **View and use files that have been protected by Rights Management** in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.|
-|**… protect company-confidential files on my laptop so they can’t be accessed by people outside my company**<br /><br />You travel a lot and use your laptop to access and update files in a folder that must be secured against unauthorized access.|You have the RMS sharing application installed on your laptop. You use File Explorer to protect the files by using a template, which quickly protects the files. If your laptop is stolen, you have peace of mind that nobody outside your company can access these documents.<br /><br />Details: See **Protect a file on a device (protect in-place)** in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.|
+|Pretendo...|Como efetuar este procedimento|
+|---------------|----------------------------------|
+|**… partilhar em segurança informações financeiras com uma pessoa em quem confio fora da minha organização**<br /><br />Trabalha com uma empresa parceira e pretende enviar um e-mail com uma folha de cálculo do Excel que contém números de vendas estimados. Pretende que consigam ver os números, mas não alterá-los.|Utilize o botão Partilhar Protegido no friso do Excel, escreva os endereços de e-mail das duas pessoas com quem trabalha na empresa parceira, selecione Visualizador no controlo de deslize e clique em Enviar.<br /><br />Quando o e-mail for entregue à empresa parceira, apenas os destinatários no e-mail podem ver a folha de cálculo e não podem guardar, editar, imprimir ou reencaminhá-la.<br /><br />Detalhes: Consulte **Proteger um ficheiro para partilha por e-mail** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.|
+|**… enviar um documento por e-mail de forma segura a uma pessoa que utiliza um dispositivo iOS**<br /><br />Pretende enviar por e-mail um documento do Word altamente confidencial a um colega que sabe que verifica regularmente o e-mail num dispositivo iOS.|Utilize o Explorador de Ficheiros para clicar com o botão direito do rato no ficheiro, e selecione Partilhar Protegido. Na aplicação de partilha RMS, selecione a opção Permitir consumo em todos os dispositivos e envie o ficheiro como um anexo ao colega.<br /><br />O destinatário recebe o e-mail no dispositivo iOS, clica na ligação do e-mail que o informa como transferir a aplicação de partilha, instala a versão para dispositivos iOS e, por fim, visualiza o documento.<br /><br />Detalhes: Consulte **Proteger um ficheiro para partilha por e-mail** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.|
+|**... ler um anexo que recebi numa mensagem de e-mail que tem um anexo de ficheiro partilhado de forma segura, mas não consigo porque a minha empresa não utiliza o Rights Management**<br /><br />O remetente do e-mail é uma pessoa em quem confia, porque fez negócio com ela anteriormente e suspeita que lhe está a enviar informações sobre uma potencial nova oportunidade de negócio.|Siga as instruções no e-mail e clique na ligação para inscrever-se no Microsoft Rights Management. A Microsoft confirma que a sua organização não tem uma subscrição do Office 365, envia-lhe um e-mail para concluir o processo de inscrição gratuito, e inicia sessão com a sua nova conta. Clique na segunda ligação no e-mail para instalar a aplicação de partilha Rights Management e poderá, então, abrir o anexo do e-mail para verificar a nova oportunidade de negócio.<br /><br />Detalhes: Consulte **Ver e utilizar ficheiros que foram protegidos por Rights Management** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.|
+|**... proteger ficheiros confidenciais da empresa no meu portátil, para que pessoas exteriores à empresa não lhes possam aceder**<br /><br />Viaja muito e utiliza o portátil para aceder e atualizar ficheiros numa pasta que tem de estar protegida contra acesso não autorizado.|Tem a aplicação de partilha RMS instalada no portátil. Utilize o Explorador de Ficheiros para proteger os ficheiros utilizando um modelo, que protege rapidamente os ficheiros. Caso o portátil seja roubado, pode ter a certeza de que ninguém fora da sua empresa pode aceder a estes documentos.<br /><br />Detalhes: Consulte **Proteger um ficheiro num dispositivo (proteger no local)** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.|
 
-## <a name="BKMK_UsingMSRMSApp"></a>What do you want to do?
-Use the following instructions to help you work with protected files.
+## <a name="BKMK_UsingMSRMSApp"></a>O que pretende fazer?
+Utilize as seguintes instruções para o ajudar a trabalhar com ficheiros protegidos.
 
-### <a name="BKMK_DownloadInstall"></a>Download and install the Rights Management sharing application
+### <a name="BKMK_DownloadInstall"></a>Transferir e instalar a aplicação de partilha Rights Management
 
-1.  Go to the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+1.  Aceda à página [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) no site da Microsoft.
 
-2.  In the **Computers** section, click the icon for the **RMS app for Windows** and save the Microsoft Rights Management sharing application installation package to your computer.
+2.  Na secção **Computadores**, clique no ícone da **aplicação RMS para Windows** e guarde o pacote de instalação da aplicação de partilha Microsoft Rights Management no computador.
 
-3.  Double click the compressed file that was downloaded, and then double-click **setup.exe**. If you are prompted to continue, click **Yes**.
+3.  Faça duplo clique no ficheiro comprimido que foi transferido e, em seguida, faça duplo clique em **setup.exe**. Se lhe for perguntado se pretende continuar, clique em **Sim**.
 
     > [!TIP]
-    > You might have to scroll to the bottom of the list in the current folder to see **setup.exe**.
+    > Poderá ser necessário deslocar o ecrã até à parte inferior da lista na pasta atual para ver **setup.exe**.
 
-4.  On the **Setup Microsoft RMS** page, click **Next**, and wait for the installation to finish.
+4.  Na página **Configurar o Microsoft RMS**, clique em **Seguinte** e aguarde que a instalação seja concluída.
 
-5.  When the installation finishes, click **Restart** to restart your computer and complete the installation. Or, click **Close** and restart your computer later to complete the installation.
+5.  Quando a instalação estiver concluída, clique em **Reiniciar** para reiniciar o computador e concluir a instalação. Em alternativa, clique em **Fechar** e reinicie o computador mais tarde para concluir a instalação.
 
-You’re now ready to start protecting your files or read files that others have protected.
+Está agora pronto para começar a proteger os seus ficheiros ou ler ficheiros protegidos por outras pessoas.
 
-#### More information
-You must have a local administrator account to install the sharing application. If you do not log in as a local administrator, you can use the **Run as administrator** option when you run Setup.exe in step 3.
+#### Mais informações
+Tem de ter uma conta de administrador local para instalar a aplicação de partilha. Se não iniciar sessão como administrador local, pode utilizar a opção **Executar como administrador** quando executar o Setup.exe no passo 3.
 
-### <a name="BKMK_ProtectInPlace"></a>Protect a file on a device (protect in-place)
+### <a name="BKMK_ProtectInPlace"></a>Proteger um ficheiro num dispositivo (proteger no local)
 
-1.  In File Explorer, select a file, a folder, or multiple files to protect. Right-click, and then select **Protect in-place**. For example:
+1.  No Explorador de Ficheiros, selecione um ficheiro, uma pasta ou múltiplos ficheiros que pretende proteger. Clique com o botão direito do rato e, em seguida, selecione **Proteger no local**. Por exemplo:
 
     ![](../Image/ADRMS_MSRMSApp_SP_CompanyDefined.png)
 
     > [!NOTE]
-    > If you do not see the **Protect in-place** option, it’s likely that either the sharing application is not installed on your computer, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see the **Download and install the Rights Management sharing application** instructions in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+    > Se a opção **Proteger no local** não estiver disponível, significa que provavelmente a aplicação de partilha não está instalada no computador ou tem de reiniciar o computador para concluir a instalação. Para mais informações sobre como instalar a aplicação de partilha, consulte as instruções **Transferir e instalar a aplicação de partilha Rights Management** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-2.  Do one of the following:
+2.  Efetue uma das seguintes opções:
 
-    -   Select a policy template: These are predefined permissions that restrict access and usage to people in your organization. If this is the first time you have protected a file on this computer, you will first need to select **Company-defined Protection** to download the templates. The name of the templates begin with your company name and then a descriptive name of the permission. For example: **Contoso - Confidential View Only**
+    -   Selecione um modelo de política: Estas são permissões predefinidas que restringem o acesso e a utilização a pessoas na sua organização. Se é a primeira vez que protege um ficheiro neste computador, primeiro tem de selecionar **Proteção Definida pela Empresa** para transferir os modelos. O nome dos modelos começa com o nome da empresa e, em seguida, um nome descritivo da permissão. Por exemplo: **Contoso - Apenas Visualização Confidencial**
 
-    -   Select **Custom permissions**: Choose this option if the templates don’t provide the level of protection that you need. For example, you want to grant access to people outside your organization, or you want to explicitly set the protection options yourself. Specify the options that you want for this file in the **add protection** dialog box, and then click **Apply**.
+    -   Selecione **Personalizar Permissões**: Escolha esta opção se os modelos não fornecerem o nível de proteção de que necessita. Por exemplo, pretende conceder acesso a pessoas exteriores à organização ou pretende definir explicitamente as opções de proteção. Especifique as opções que pretende para este ficheiro na caixa de diálogo **adicionar proteção** e, em seguida, clique em **Aplicar**.
 
         > [!NOTE]
-        > For more information about the options in this dialog box, see the **Specify options in the Rights Management dialog box** instructions in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+        > Para obter mais informações sobre as opções nesta caixa de diálogo, consulte as instruções **Especificar opções na caixa de diálogo do Rights Management** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-3.  You might quickly see a dialog box to tell you that the file is being protected, and the focus then returns to File Explorer. The selected file or files are now protected. In some cases (when adding protection changes the file name extension), the original file in File Explorer is replaced with a new file that has the Rights Management protection lock icon. For example:
+3.  Poderá ver momentaneamente uma caixa de diálogo que indica que o ficheiro está a ser protegido e, em seguida, o foco volta para o Explorador de Ficheiros. O ficheiro ou ficheiros selecionados estão agora protegidos. Em alguns casos (em que a adição de proteção altera a extensão de nome do ficheiro), o ficheiro original do Explorador de Ficheiros é substituído por um novo ficheiro que apresenta o ícone de cadeado de proteção do Rights Management. Por exemplo:
 
     ![](../Image/ADRMS_MSRMSApp_Pfile.png)
 
-If you later need to remove protection from a file, see the **Remove protection from a file** instructions in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+Posteriormente, se for necessário remover a proteção de um ficheiro, consulte as instruções **Remover a proteção de um ficheiro** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-#### More information
-When you protect a file in-place, it replaces the original, unprotected file. You can then leave the file where it is, copy it to another folder or device, or share the folder that it is in and the file will remain protected. You could also attach the protected file to an email message, although the recommended way to share a protected file by email is directly from File Explorer or an Office application (see **Protect a file that you share by email** in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide).
+#### Mais informações
+Quando protege um ficheiro no local, este substitui o ficheiro original, que está desprotegido. Em seguida, pode deixar o ficheiro onde se encontra, copiá-lo para outra pasta ou dispositivo ou partilhar a pasta onde está inserido, e o ficheiro permanece protegido. Também poderia anexar o ficheiro protegido a uma mensagem de e-mail. No entanto, a forma recomendada para partilhar um ficheiro protegido por e-mail é diretamente a partir do Explorador de Ficheiros ou de uma aplicação do Office (consulte **Proteger um ficheiro para partilhar por e-mail** na seção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia).
 
-You can use the same technique to protect multiple files at the same time, or a folder. When you protect a folder, all the files in that folder are automatically selected for protection but new files that you create in that folder will not be automatically protected.
+Pode utilizar a mesma técnica para proteger múltiplos ficheiros ao mesmo tempo ou uma pasta. Ao proteger uma pasta, todos os ficheiros nessa pasta são selecionados automaticamente para proteção, mas os novos ficheiros criados nessa pasta não são protegidos automaticamente.
 
-If you see any errors when you try to protect files, refer to [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Se detetar algum erro quando tenta proteger os ficheiros, consulte as [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-### <a name="BKMK_ProtectSharing"></a>Protect a file that you share by email
+### <a name="BKMK_ProtectSharing"></a>Proteger um ficheiro para partilhar por e-mail
 
-1.  Use one of the following options:
+1.  Utilize uma das seguintes opções:
 
-    -   For File Explorer: Right-click the file and select **Share Protected**:
+    -   No Explorador de Ficheiros: Clique com o botão direito do rato e selecione **Partilhar Protegido**:
 
         ![](../Image/ADRMS_MSRMSApp_ShareProtectedMenu.png)
 
-    -   For Office application: Make sure that you have first saved the file. Then, on the **Protection** group, click **Share Protected**.
+    -   Para uma aplicação do Office: Certifique-se de que guardou primeiro o ficheiro. Em seguida, no grupo **Proteção**, clique em **Partilhar Protegido**.
 
         ![](../Image/ADRMS_MSRMSApp_SP_OfficeToolbar.png)
 
     > [!NOTE]
-    > If you do not see these options for sharing protection, it’s likely that either the sharing application is not installed on your computer, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see the **Download and install the Rights Management sharing application** instructions in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+    > Se estas opções para a proteção de partilha não estiverem disponíveis, significa que provavelmente a aplicação de partilha não está instalada no computador ou tem de reiniciar o computador para concluir a instalação. Para mais informações sobre como instalar a aplicação de partilha, consulte as instruções **Transferir e instalar a aplicação de partilha Rights Management** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-2.  Specify the options that you want for this file in the **share protected** dialog box, and then click **Send**.
+2.  Especifique as opções que pretende para este ficheiro na caixa de diálogo **partilhar protegido** e, em seguida, clique em **Enviar**.
 
     ![](../Image/ADRMS_MSRMSAPP_SP_ShareProtected.gif)
 
     > [!NOTE]
-    > For more information about the options in this dialog box, see the **Specify options in the Rights Management dialog box** instructions in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+    > Para obter mais informações sobre as opções nesta caixa de diálogo, consulte as instruções **Especificar opções na caixa de diálogo do Rights Management** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-3.  You might quickly see a dialog box to tell you that the file is being protected, and then you see an email message created for you that has the subject **I have securely shared file(s) with you**. In this email message, the file that you selected is attached and protected, and the text in the email contains links for the following:
+3.  Poderá ver momentaneamente uma caixa de diálogo que indica que o ficheiro está a ser protegido e, em seguida, aparece uma mensagem de e-mail criada automaticamente com o assunto **Partilhei ficheiro(s) consigo de forma segura**. Nesta mensagem de e-mail, o ficheiro selecionado está anexado e protegido e o texto no e-mail inclui ligações para o seguinte:
 
-    -   RMS for individuals
+    -   RMS para utilizadores
 
-    -   The RMS sharing application
+    -   A aplicação de partilha RMS
 
-    -   This user guide
+    -   Este guia de utilizador
 
-    Example:
+    Exemplo:
 
     ![](../Image/ADRMS_MSRMSApp_EmailMessage.PNG)
 
-4.  Optional: You can change anything that you want in this email message. For example, you can add to or change the subject or text in the message.
+4.  Opcional: Pode alterar tudo o que pretender nesta mensagem de e-mail. Por exemplo, pode adicionar ou alterar o assunto ou o texto na mensagem.
 
     > [!WARNING]
-    > Although you can add or remove people from this email message, this does not change the permissions for the attachment that you specified in the **share protected** dialog box. If you want to change those permissions, for example, give a new person permissions to open the file, close the email message without saving or sending it, and return to step 1.
+    > Apesar de ser possível adicionar ou remover pessoas desta mensagem de e-mail, isto não altera as permissões do anexo que especificou na caixa de diálogo **partilhar protegido**. Se pretender alterar estas permissões, por exemplo, conceder permissões a uma nova pessoa para abrir o ficheiro, feche a mensagem de e-mail sem a guardar ou enviar e volte ao passo 1.
 
-5.  Send the email message.
+5.  Envie a mensagem de e-mail.
 
-#### More information
-When you protect a file that you share by email, it creates a new version of the original file. The original file remains unprotected and the new version is protected and automatically attached to an email that you then send.
+#### Mais informações
+Quando protege um ficheiro para partilhar por e-mail, é criada uma nova versão do ficheiro original. O ficheiro original mantém-se desprotegido e a nova versão é protegida e anexada automaticamente a um e-mail que poderá, então, enviar.
 
-The email message has a default subject and default text that you can change before sending it.
+A mensagem de e-mail tem um assunto predefinido e um texto predefinido que pode alterar antes de enviar.
 
-There are two ways to protect a file that you share by email:
+Existem três formas de proteger um ficheiro para partilhar por e-mail:
 
--   From File Explorer: This method works for all files.
+-   A partir do Explorador de Ficheiros: Este método funciona para todos os ficheiros.
 
--   From an Office application: This method works for applications that the Rights Management sharing application supports by using the Office add-in so that you see the **Protection** group on the ribbon.
+-   A partir de uma aplicação do Office: Este método funciona para as aplicações que a aplicação de partilha Rights Management suporta, utilizando o suplemento do Office, de forma a poder ver o grupo **Proteção** no friso.
 
 > [!NOTE]
-> In this version of the Rights Management sharing application, there is no add-in for Outlook that lets you protect files and email messages directly from the Outlook application. Instead, use the procedure in this section.
+> Nesta versão da aplicação de partilha Rights Management, não existe suplemento para o Outlook que permita proteger ficheiros e mensagens de e-mail diretamente a partir da aplicação do Outlook. Em alternativa, utilize o procedimento neste secção.
 
-### <a name="BKMK_ViewUseProtected"></a>View and use files that have been protected by Rights Management
+### <a name="BKMK_ViewUseProtected"></a>Ver e utilizar ficheiros que foram protegidos por Rights Management
 
-#### <a name="BKMK_ViewPFILE"></a>To view a protected file
-By using File Explorer or the email message that contains the attachment, double-click the protected file, and enter your credentials if prompted to do so. How the file opens depends on how it was protected.
+#### <a name="BKMK_ViewPFILE"></a>Para ver um ficheiro protegido
+Ao utilizar o Explorador de Ficheiros ou a mensagem de e-mail que inclui o anexo, faça duplo clique no ficheiro protegido e introduza as credenciais, se lhe for pedido. A forma como o ficheiro abre depende de como foi protegido.
 
--   If the file was generically protected (it has a .pfile file extension):
+-   Se o ficheiro foi protegido genericamente (tem uma extensão de ficheiro .pfile):
 
-    You see a **protected file** dialog box from the sharing application that tells you who protected the file and that you are expected to honor the co-owner permissions. You are informed that when you open the file, this action is audited.
+    Aparece a caixa de diálogo **ficheiro protegido** da aplicação de partilha que indica quem protegeu o ficheiro e que terá de cumprir as permissões de coproprietário. É informado de que, quando abre o ficheiro, esta ação é auditada.
 
     ![](../Image/ADRMS_MSRMSApp_PfilePermission.png)
 
-    Click **Open** to read the file.
+    Clique em **Abrir** para ler o ficheiro.
 
--   If the file was natively protected (it does not have a .pfile file extension):
+-   Se o ficheiro foi protegido nativamente (não tem uma extensão de ficheiro .pfile):
 
-    The file opens by using the application that is associated with the original file name extension, and a restriction banner is displayed at the top of the file. The banner might display the permissions that are applied to the file, or it might provide a link to display them. For example, you might see the following where you must click **Permission is currently restricted** to see the actual permissions that are applied to the file and the people that can access it:
+    O ficheiro abre utilizando a aplicação associada à extensão de nome de ficheiro original e é apresentada uma faixa de restrição na parte superior do ficheiro. A faixa pode mostrar as permissões que são aplicadas ao ficheiro ou pode disponibilizar uma ligação para mostrá-las. Por exemplo, pode ver o seguinte, onde tem de clicar em **Permissão está atualmente restrita** para ver as permissões atuais aplicadas ao ficheiro e as pessoas que lhe podem aceder:
 
     ![](../Image/ADRMS_MSRMSApp_RestrictedAccess.png)
 
-    This file is also audited and remains audited as long as it is protected.
+    Este ficheiro também é auditado e permanece auditado desde que esteja protegido.
 
-##### More information
-Before you can view the protected file, RMS must first confirm that you are authorized to view the file, which it does by checking your user name and password. In some cases, this might be cached and you will not see a prompt that asks for your credentials. In other cases, you will be prompted to supply your credentials.
+##### Mais informações
+Antes de conseguir ver o ficheiro protegido, primeiro o RMS tem de confirmar se está autorizado a ver o ficheiro. Para fazê-lo, verifica o nome de utilizador e a palavra-passe. Em alguns casos, esta informação pode estar em cache e o utilizador não vê um pedido que peça as credenciais. Noutros casos, ser-lhe-á pedido que forneça as credenciais.
 
-If your organization does not use either Windows Azure Rights Management (Windows Azure RMS) or AD RMS, you can apply for a free account that will accept your credentials so that you can open files that are protected by using RMS. To apply for this account, click the link to apply for [RMS for individuals](http://go.microsoft.com/fwlink/?LinkId=309469).
+Se a organização não utilizar o Windows Azure Rights Management (Windows Azure RMS) nem o AD RMS, pode pedir uma conta gratuita que aceitará as credenciais, para que possa abrir ficheiros que estão protegidos utilizando o RMS. Para pedir esta conta, clique na ligação para inscrever-se em [RMS para utilizadores](http://go.microsoft.com/fwlink/?LinkId=309469).
 
-#### <a name="BKMK_UserDefined"></a>To use files that have been protected (for example, edit and print the file)
-If the protected file has a .pfile file extension:
+#### <a name="BKMK_UserDefined"></a>Para utilizar ficheiros que foram protegidos (por exemplo, editar e imprimir o ficheiro)
+Se o ficheiro protegido tiver uma extensão de ficheiro .pfile:
 
--   Save the opened file and give it a new file name extension that is associated with the application that you want to use.
+-   Guarde o ficheiro aberto e atribua uma nova extensão de nome de ficheiro associada à aplicação que pretende utilizar.
 
-    For example, if a file was protected by using the file name document.vsdx.pfile, view the file and in File Explorer, save the file as document.vsdx.
+    Por exemplo, se um ficheiro foi protegido utilizando o nome de ficheiro documento.vsdx.pfile, visualize o ficheiro e, no Explorador de Ficheiros, guarde o ficheiro como documento.vsdx.
 
-    The new file is no longer protected. If you want to protect it, you must do this manually. For instructions, see **How to protect a file on a device (protect in-place) by using the Rights Management sharing application** in the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+    O novo ficheiro já não está protegido. Se pretender protegê-lo, tem de o fazer manualmente. Para obter instruções, consulte **Como proteger um ficheiro num dispositivo (proteger no local) utilizando a aplicação de partilha Rights Management** na secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-If the originally protected file did not have a .pfile extension:
+Se o ficheiro protegido originalmente não tinha uma extensão .pfile:
 
--   You cannot do anything other than view the file unless you have an application that understands Rights Management. These applications are called Rights Management enlightened applications. Applications from Office 2013 and Office 2010 (such as Word, Excel, PowerPoint, and Outlook) are examples of applications that are enlightened for Rights Management. But applications that do not come from Microsoft, such as other software companies and your own line-of-business applications, might also be enlightened for Rights Management.
+-   Não pode fazer nada mais do que visualizar o ficheiro, a menos que tenha uma aplicação que leia Rights Management. Estas aplicações chamam-se aplicações suportadas por Rights Management. As aplicações do Office 2013 e do Office 2010 (como o Word, o Excel, o PowerPoint e o Outlook) são exemplos de aplicações suportadas por Rights Management. Mas as aplicações que não são da Microsoft, como, por exemplo, de outras empresas e aplicações da sua própria linha de negócios, também podem ser suportadas por Rights Management.
 
-    Applications that are enlightened for Rights Management know how to open files that have been protected by other Rights Management enlightened applications. They also persist the protection that is applied to them, even if you edit the file or save it to another file name or another location. These applications let you use the file according to the permissions that are currently applied to the file, so that if you have permissions to use the file, you can do so. For example, if the file was protected as Read-only, you will not be able to make changes or print the file.
+    As aplicações que são suportadas por Rights Management conseguem abrir ficheiros que foram protegidos por outras aplicações suportadas por Rights Management. Também mantêm a proteção que lhes foi aplicada, mesmo se editar o ficheiro ou guardá-lo com outro nome de ficheiro ou noutra localização. Estas aplicações permitem utilizar o ficheiro de acordo com as permissões aplicadas atualmente ao ficheiro, para que, se tiver permissões para utilizar o ficheiro, possa fazê-lo. Por exemplo, se o ficheiro foi protegido como Só de Leitura, não poderá efetuar alterações nem imprimir o ficheiro.
 
-### <a name="BKMK_RemoveProtection"></a>Remove protection from a file
-From File Explorer, right-click the file (for example, Sample.ptxt), click **Protect in-place**, and then click **Remove Protection**:
+### <a name="BKMK_RemoveProtection"></a>Remover a proteção de um ficheiro
+A partir do Explorador de Ficheiros, clique com o botão direito do rato no ficheiro (por exemplo, Amostra.ptxt), clique em **Proteger no local** e, em seguida, clique em **Remover Proteção**:
 
 ![](../Image/ADRMS_MSRMSApp_RemoveProtection.png)
 
-You might be prompted for credentials.
+Poderão ser-lhe pedidas credenciais.
 
-#### More information
-The original protected file is deleted (for example, Sample.ptxt) and replaced with a file that has the same name but with the unprotected file name extension (for example, Sample.txt).
+#### Mais informações
+O ficheiro original protegido é eliminado (por exemplo, Amostra.ptxt) e substituído por um ficheiro com o mesmo nome, mas com a extensão de nome de ficheiro desprotegida (por exemplo, Amostra.txt).
 
-To remove protection from a file (that is, unprotect a file) that was previously protected by using the RMS sharing application, use the **Remove Protection** option from File Explorer.
+Para remover a proteção de um ficheiro (ou seja, desproteger um ficheiro) que foi protegido anteriormente através da aplicação de partilha RMS, utilize a opção **Remover Proteção** do Explorador de Ficheiros.
 
 > [!IMPORTANT]
-> You must be an owner of the file to remove protection.
+> Tem de ser proprietário do ficheiro para remover a proteção.
 
-### <a name="BKMK_ShortcutKeys"></a>Use keyboard shortcuts in the Rights Management sharing application
-Press the **Alt** key to see the available access keys, and then press **Alt** + the access key to select an option.
+### <a name="BKMK_ShortcutKeys"></a>Utilizar os atalhos do teclado na aplicação de partilha Rights Management
+Prima a tecla **Alt** para ver as teclas de acesso disponíveis e, em seguida, prima **Alt** + a tecla de acesso para selecionar uma opção.
 
-#### More information
-As an example, in the **share protected** dialog box, press **Alt** to see the access keys, and then press **Alt + u** to select the **Users must login every time they open this file** check box.
+#### Mais informações
+Por exemplo, na caixa de diálogo **partilhar protegido**, prima **Alt** para ver as teclas de acesso e, em seguida, prima **Alt + u** para selecionar a caixa de verificação **Os utilizadores têm de iniciar sessão sempre que abrem este ficheiro**.
 
 ![](../Image/ADRMS_MSRMSApp_AccessKeys.png)
 
-### <a name="BKMK_SpecifyDialogOptions"></a>Specify options in the Rights Management dialog box
+### <a name="BKMK_SpecifyDialogOptions"></a>Especificar opções na caixa de diálogo do Rights Management
 
-|Option|Description|
-|----------|---------------|
-|**USERS**|Type the email addresses of the people that you want to be able to open the file. Use semicolons for multiple addresses. These can be email addresses inside your organization, or outside.<br /><br />For example: janetm@contoso.com; pdover@fabricom.com|
-|**Allow consumption on all devices**|When you choose this option that lets users open the file on mobile devices such as an iPad, the permissions is automatically set to **CO-OWNER** (all permissions) so that generic protection is used to protect the file.|
-|**PERMISSIONS**|Move the slider to the permission that you want for this file.<br /><br />In some cases, the permissions are automatically set to CO-OWNER and cannot be changed. This happens if you select **Allow consumption on all devices**. And it also happens if you are protecting a file that cannot be natively protected by RMS, and so must be generically protected. The sharing application makes this determination, based on the file name extension. **Tip:** You can use the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website to quickly check which applications support built-in protection.|
-|**Users must login every time they open this file**|Select this option when you need higher security for a file because it requires that the users you specify are always authenticated, every time they access the file. To do this, if their credentials are not cached, they will be prompted for their user name and password. However, this setting requires that these users always have Internet access to open the file, and being prompted to unlock a file and waiting for the authentication process to finish can be frustrating.|
-|**Content expires on**|Select this option only for time-sensitive files that the users that you selected should not be able to open after a date that you specify. You will still be able to open the original file.|
+|Opção|Descrição|
+|---------|-------------|
+|**UTILIZADORES**|Escreva os endereços de e-mail das pessoas que pretende que possam abrir o ficheiro. Utilize ponto e vírgula para múltiplos endereços. Podem ser endereços de e-mail dentro ou fora da sua organização.<br /><br />Por exemplo: janetm@contoso.com; pdover@fabricom.com|
+|**Permitir consumo em todos os dispositivos**|Ao escolher esta opção que permite aos utilizadores abrirem o ficheiro em dispositivos móveis, como um iPad, as permissões são definidas automaticamente para **COPROPRIETÁRIO** (todas as permissões), para que a proteção genérica seja utilizada para proteger o ficheiro.|
+|**PERMISSÕES**|Mova o controlo de deslize para a permissão pretendida para este ficheiro.<br /><br />Em alguns casos, as permissões são definidas automaticamente como COPROPRIETÁRIO e não podem ser alteradas. Isto acontece se selecionar **Permitir consumo em todos os dispositivos**. Também acontece se estiver a proteger um ficheiro que não pode ser protegido nativamente pelo RMS, pelo que tem de ser protegido genericamente. A aplicação de partilha RMS faz esta determinação, com base na extensão de nome de ficheiro. **Tip:** Pode utilizar a página [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) no site da Microsoft para verificar rapidamente quais as aplicações que suportam proteção incorporada.|
+|**Os utilizadores têm de iniciar sessão sempre que abrem este ficheiro**|Selecione esta opção quando necessitar de maior segurança para um ficheiro, porque exige aos utilizadores especificados que estejam autenticados sempre que acedem ao ficheiro. Para fazê-lo, se as credenciais não estiverem em cache, é-lhes pedido o nome de utilizador e a palavra-passe. No entanto, esta definição necessita que estes utilizadores tenham sempre acesso à Internet para abrir o ficheiro, mas pode ser frustrante o sistema pedir para desbloquear um ficheiro e aguardar a conclusão do processo de autenticação.|
+|**O conteúdo expira a**|Selecione esta opção apenas para ficheiros sensíveis ao tempo que os utilizadores selecionados não poderão abrir após uma data especificada. Continuará a conseguir abrir o ficheiro original.|
 
-#### More information
-Use the table to help you specify the options in the sharing application **add protection** dialog box or the **share protected** dialog box. You will see this dialog box when you protect a file in place and choose custom permissions, or you protect a file to share.
+#### Mais informações
+Utilize a tabela para o ajudar a especificar as opções na caixa de diálogo **adicionar proteção** ou a caixa de diálogo **partilhar protegido** da aplicação de partilha. Esta caixa de diálogo aparece quando protege um ficheiro no local e escolhe permissões personalizadas ou quando protege um ficheiro a partilhar.
 
-For more information about protecting a file in place and protecting a file to share, see the [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) section of this guide.
+Para mais informações sobre como proteger um ficheiro no local e proteger um ficheiro a partilhar, consulte a secção [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide_-_revision_for_single_topic.md#BKMK_UsingMSRMSApp) deste guia.
 
-## See Also
-[Rights Management sharing application administrator guide](../Topic/Rights_Management_sharing_application_administrator_guide.md)
- [Microsoft Rights Management sharing application download](http://go.microsoft.com/fwlink/?LinkId=303970)
- [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
+## Consultar Também
+[Guia partilha Rights Management aplicação administrador](../Topic/Rights_Management_sharing_application_administrator_guide.md)
+ [Transferência da aplicação de partilha Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970)
+ [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
 

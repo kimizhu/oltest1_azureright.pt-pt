@@ -3,36 +3,35 @@ description: na
 keywords: na
 title: Remove protection from a file by using the Rights Management sharing application
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da95b938-eaad-4c83-a21e-ff1d4872aae4
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Remove protection from a file by using the Rights Management sharing application
-To remove protection from a file (that is, unprotect a file) that was previously protected by using the RMS sharing application, use the **Remove Protection** option from File Explorer.
+# Remover a prote&#231;&#227;o de um ficheiro, utilizando a aplica&#231;&#227;o de partilha Rights Management
+Para remover a proteção de um ficheiro (ou seja, desproteger um ficheiro) anteriormente protegido utilizando a aplicação de partilha RMS, utilize o **Remover proteção** opção do Explorador de ficheiros.
 
 > [!IMPORTANT]
-> You must be an owner of the file to remove protection.
+> Tem de ser um proprietário do ficheiro para remover a proteção.
 
-### To remove protection from a file
+### Para remover a proteção de um ficheiro
 
-1.  From File Explorer, right-click the file (for example, Sample.ptxt), select **Protect with RMS**, click **Protect in-place**, and then click **Remove Protection**:
+1.  A partir do Explorador de ficheiros, com o botão direito no ficheiro (por exemplo, amostra. ptxt), selecione **proteger com RMS**, clique em **proteger no local**, e, em seguida, clique em **Remover proteção**:
 
     ![](../Image/ADRMS_MSRMSApp_RemoveProtection.png)
 
-    You might be prompted for credentials.
+    Poderá ser-lhe pedido para credenciais.
 
-The original protected file is deleted (for example, Sample.ptxt) and replaced with a file that has the same name but with the unprotected file name extension (for example, Sample.txt).
+O ficheiro protegido original é eliminado (por exemplo, amostra. ptxt) e substituído com um ficheiro que tem o mesmo nome mas com a extensão de nome de ficheiro não protegido (por exemplo, amostra).
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Exemplos e outras instruções
+Para obter exemplos de como pode utilizar a aplicação e instruções sobre como proceder de partilha Rights Management, consulte as secções seguintes a partir do Guia do utilizador aplicação partilha Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Exemplos para utilizar a aplicação de partilha RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Consultar Também
+[Guia de utilizador de aplicação partilha do Rights Management](../Topic/Rights_Management_sharing_application_user_guide.md)
 

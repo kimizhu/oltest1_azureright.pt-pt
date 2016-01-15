@@ -6,67 +6,66 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: 846f1895-1daf-4164-8cf6-e4a691384c41
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Revised Version 3: Microsoft Rights Management sharing application guide
-Use this guide for the Microsoft Rights Management (RMS) sharing application for Windows to help you keep important documents and pictures safe from people who should not see them, even if you email them or save them to another device. Similarly, this application lets you open and use files that other people have protected by using the same Rights Management technology.
+# Vers&#227;o Revista 3: Guia da aplica&#231;&#227;o de partilha Microsoft Rights Management
+Utilize este guia da aplicação de partilha Microsoft Rights Management (RMS) para Windows para ajudar a proteger documentos e imagens importantes de pessoas que não os deveriam ver, mesmo se os enviar por e-mail ou os guardar noutro dispositivo. De igual forma, esta aplicação permite abrir e utilizar ficheiros que tenham sido protegidos por terceiros utilizando a mesma tecnologia de Rights Management.
 
-This sharing application provides this protection for your files in the following ways:
+Esta aplicação de partilha fornece esta proteção aos seus ficheiros das seguintes formas:
 
--   It adds functionality to File Explorer (also known as Windows Explorer in Windows 7 and earlier versions) so that when you manage files in a folder, you can easily protect a single file, bulk-protect multiple files, or protect all files within a folder.
+-   Adiciona funcionalidade ao Explorador de Ficheiros (também conhecido como Explorador do Windows no Windows 7 e versões anteriores) para que, quando gerir ficheiros numa pasta, possa proteger facilmente um único ficheiro, proteger em massa vários ficheiros ou proteger todos os ficheiros numa pasta.
 
--   It provides protection for all file types and has a built-in viewer for commonly used text and image file types.
+-   Fornece proteção a todos os tipos de ficheiro e tem um visualizador incorporado para tipos de ficheiro de texto e imagem utilizados frequentemente.
 
--   It adds the **Share Protected** button to the Microsoft Office toolbar for Word, PowerPoint, and Excel.
+-   Adiciona o botão **Partilhar Protegido** à barra de ferramentas do Microsoft Office para Word, PowerPoint e Excel.
 
-All you need is a computer that runs Windows 7 or Windows 8, and a local administrator account to install the RMS sharing application. Then download and install this free application from Microsoft.
+Tudo o que necessita é de um computador com o Windows 7 ou o Windows 8 e uma conta de administrador local para instalar a aplicação de partilha RMS. Em seguida, transfira e instale esta aplicação gratuita da Microsoft.
 
-If you have questions that are not answered by this guide, see [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Caso haja questões que não sejam abordadas neste guia, consulte [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## Examples for using the RMS sharing application
-Here are just some examples of how you might use the RMS sharing application, to help protect your files.
+## Exemplos para utilizar a aplicação de partilha RMS
+Seguem-se alguns exemplos de como pode utilizar a aplicação de partilha RMS para ajudar a proteger os seus ficheiros.
 
-|Scenario|Solution using the RMS sharing application|
-|------------|----------------------------------------------|
-|**I want to safely copy a company-confidential document to another device**<br /><br />You’re using your PC to work on a strategy paper that is company-confidential and you want to copy it to a USB thumb drive so that you can continue to work on it when you leave the office and do not have access to the company network.|You have the RMS sharing application installed on both your PC and your laptop. You use File Explorer on your PC to protect the file by using a template, so that it cannot be accessed by people outside your company. You then copy the file to your thumb drive, attach the thumb drive to you laptop and continue to work on the document. If you drop the thumb drive or your laptop is stolen, nobody outside your company can access the document.|
-|**I want to safely share financial information with somebody I trust who is outside my organization**<br /><br />You work with a partner company and want to email them an Excel spreadsheet that contains projected sales figures. You want them to be able to view the figures but not change them.|You use the **Share Protected** button on the ribbon in Excel, type the email addresses of the two people that you work with in the partner company, select **Viewer** on the slider, and click **Send**.<br /><br />When the email arrives at the partner company, only the recipients in the email can view the spreadsheet and they cannot save, edit, print, or forward it.|
-|**I need to safely send an engineering diagram by email to somebody who uses an iOS device**<br /><br />Your company uses a custom engineering application and you want to email a highly confidential diagram to a coworker, who you know, regularly checks email on their iOS device.|You use File Explorer to right-click the file, and select **Share Protected**. The RMS sharing application recognizes that the file extension is not from an application that natively supports RMS, so when it attaches the file to an email message, it automatically converts it to a generically protected file, and automatically selects the **Allow consumption on all devices** option.<br /><br />The recipient receives the email on their iOS device, clicks the link in the email that tells them how to download the RMS sharing application, installs the version for iOS devices, and then views the diagram.|
-|**My company doesn’t use Rights Management, but I’ve received an email message with an attachment that’s protected by RMS**<br /><br />The email sender is somebody who you trust because you’ve done business with them in the past and you suspect that they might be sending you information about a potential new business opportunity.|You click the link in the email that tells you how to download the RMS sharing application for your computer, install it, and then sign up for RMS for individuals. Microsoft confirms that your organization does not have a subscription to Office 365, sends you an email to complete the free signup process, and you sign in with your new account. You can then open the email attachment to read about the new business opportunity.|
+|Cenário|Solução utilizando a aplicação de partilha RMS|
+|-----------|--------------------------------------------------|
+|**Pretendo copiar em segurança um documento confidencial da empresa para outro dispositivo**<br /><br />Está a utilizar o seu PC para trabalhar num documento de estratégia confidencial da empresa e pretende copiá-lo para uma pen USB para poder continuar a trabalhar no mesmo quando sair do escritório e não tiver acesso à rede da empresa.|Tem a aplicação de partilha RMS instalada no PC e no portátil. Utiliza o Explorador de Ficheiros no PC para proteger o ficheiro utilizando um modelo, para que não possa ser acedido por pessoas fora da empresa. Em seguida, copia o ficheiro para a pen, liga-a ao portátil e continua a trabalhar no documento. Se perder a pen ou o portátil for roubado, ninguém fora da empresa poderá aceder ao documento.|
+|**Pretendo partilhar em segurança informações financeiras com uma pessoa em quem confio fora da minha organização**<br /><br />Trabalha com uma empresa parceira e pretende enviar um e-mail com uma folha de cálculo do Excel que contém números de vendas estimados. Pretende que consigam ver os números, mas não alterá-los.|Utilize o botão **Partilhar Protegido** no friso do Excel, escreva os endereços de e-mail das duas pessoas com quem trabalha na empresa parceira, selecione **Visualizador** no controlo de deslize e clique em **Enviar**.<br /><br />Quando o e-mail for entregue à empresa parceira, apenas os destinatários no e-mail podem ver a folha de cálculo e não podem guardar, editar, imprimir ou reencaminhá-la.|
+|**Preciso de enviar em segurança um diagrama de engenharia por e-mail a uma pessoa que utiliza um dispositivo iOS**<br /><br />A sua empresa utiliza uma aplicação de engenharia personalizada e pretende enviar por e-mail um diagrama altamente confidencial a um colega que verifica regularmente o e-mail no respetivo dispositivo iOS.|Utilize o Explorador de Ficheiros para clicar com o botão direito do rato no ficheiro, e selecione **Partilhar Protegido**. A aplicação de partilha RMS reconhece que a extensão de ficheiro não é de uma aplicação que suporta nativamente o RMS, pelo que, quando anexa o ficheiro a uma mensagem de e-mail, converte-o automaticamente para um ficheiro protegido genericamente e seleciona automaticamente a opção **Permitir consumo em todos os dispositivos**.<br /><br />O destinatário recebe o e-mail no dispositivo iOS, clica na ligação do e-mail que o informa como transferir a aplicação de partilha RMS, instala a versão para dispositivos iOS e, por fim, visualiza o diagrama.|
+|**A minha empresa não utiliza o Rights Management, mas recebi uma mensagem de e-mail com um anexo protegido por RMS**<br /><br />O remetente do e-mail é uma pessoa em quem confia, porque fez negócio com ela anteriormente e suspeita que lhe está a enviar informações sobre uma potencial nova oportunidade de negócio.|Clica na ligação no e-mail que indica como transferir a aplicação de partilha RMS para o computador, instala-a e, em seguida, inscreve-se no RMS para utilizadores. A Microsoft confirma que a sua organização não tem uma subscrição do Office 365, envia-lhe um e-mail para concluir o processo de inscrição gratuito, e inicia sessão com a sua nova conta. Em seguida, pode abrir o anexo do e-mail para ler sobre a nova oportunidade de negócio.|
 
-## <a name="BKMK_Install"></a>How to download and install the RMS sharing application
+## <a name="BKMK_Install"></a>Como transferir e instalar a aplicação de partilha RMS
 > [!IMPORTANT]
-> You must have a local administrator account to install the RMS sharing application. If you do not log in as a local administrator, you can use the **Run as administrator** option when you run Setup.exe in step 3.
+> Tem de ter uma conta de administrador local para instalar a aplicação de partilha RMS. Se não iniciar sessão como administrador local, pode utilizar a opção **Executar como administrador** quando executar o Setup.exe no passo 3.
 
-To install the RMS sharing application, follow these steps:
+Para instalar a aplicação de partilha RMS, siga estes passos:
 
-1.  Go to the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+1.  Aceda à página [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) no site da Microsoft.
 
-2.  In the **Computers** section, click the icon for the **RMS app for Windows** and save the Microsoft Rights Management sharing application installation package to your computer.
+2.  Na secção **Computadores**, clique no ícone da **aplicação RMS para Windows** e guarde o pacote de instalação da aplicação de partilha Microsoft Rights Management no computador.
 
-3.  Double click the compressed file that was downloaded, and then double-click **setup.exe**. If you are prompted to continue, click **Yes**.
+3.  Faça duplo clique no ficheiro comprimido que foi transferido e, em seguida, faça duplo clique em **setup.exe**. Se lhe for perguntado se pretende continuar, clique em **Sim**.
 
-4.  On the **Setup Microsoft RMS** page, click **Next**, and wait for the installation to finish.
+4.  Na página **Configurar o Microsoft RMS**, clique em **Seguinte** e aguarde que a instalação seja concluída.
 
-5.  When the installation finishes, click **Restart** to restart your computer and complete the installation. Or, click **Close** and restart your computer later to complete the installation.
+5.  Quando a instalação estiver concluída, clique em **Reiniciar** para reiniciar o computador e concluir a instalação. Em alternativa, clique em **Fechar** e reinicie o computador mais tarde para concluir a instalação.
 
-You’re now ready to start protecting your files or read files that others have protected.
+Está agora pronto para começar a proteger os seus ficheiros ou ler ficheiros protegidos por outras pessoas.
 
-## <a name="BKMK_UsingMSRMSApp"></a>What do you want to do?
-Use the following instructions to help you work with protected files.
+## <a name="BKMK_UsingMSRMSApp"></a>O que pretende fazer?
+Utilize as seguintes instruções para o ajudar a trabalhar com ficheiros protegidos.
 
-### <a name="BKMK_CreatePTXT"></a>Create a protected text file
-You can convert a regular text (.txt) file into a protected file that then has a .ptxt file extension.
+### <a name="BKMK_CreatePTXT"></a>Criar um ficheiro de texto protegido
+Pode converter um ficheiro de texto normal (.txt) num ficheiro protegido que passa a ter a extensão de ficheiro .ptxt.
 
-##### To create a protected text (.ptxt) file
+##### Para criar um ficheiro de texto protegido (.ptxt)
 
-1.  In File Explorer, right-click in a folder, click **New**, and then click **Text Document**.
+1.  No Explorador de Ficheiros, clique com o botão direito do rato numa pasta, clique em **Novo** e, em seguida, clique em **Documento de Texto**.
 
-2.  Rename the file (for example, Sample.txt).
+2.  Mude o nome do ficheiro (por exemplo, Amostra.txt).
 
-3.  Double-click the file to open it in Notepad.
+3.  Faça duplo clique no ficheiro para o abrir no Bloco de notas.
 
-4.  In Notepad, add a few lines of text to the file, and then save it. You can use the following as your example text.
+4.  No Bloco de Notas, adicione algumas linhas de texto ao ficheiro e, em seguida, guarde-o. Pode utilizar o seguinte como texto de exemplo.
 
     ```
     This is a sample text file.
@@ -77,114 +76,114 @@ You can convert a regular text (.txt) file into a protected file that then has a
     This is a sample text file.
     ```
 
-5.  Right-click the file, click **Protect in-place**, and select a template from the list. If this is the first time you have used the RMS sharing application, you will first need to select **Company- Protection**, which downloads the templates for your organization.
+5.  Clique com o botão direito do rato no ficheiro, clique em **Proteger no local** e selecione um modelo na lista. Se foi a primeira vez que utilizou a aplicação de partilha RMS, terá de selecionar primeiro **Proteção da Empresa**, o que transfere os modelos para a sua organização.
 
-6.  On the **Microsoft Rights Management sharing application** screen, confirm the policy you want to apply, click **Apply**, and after the file is protected, click **Close**.
+6.  No ecrã **Aplicação de partilha Microsoft Rights Management**, confirme a política que pretende aplicar, clique em **Aplicar** e, depois de o ficheiro ser protegido, clique em **Fechar**.
 
-### <a name="BKMK_ViewPTXT"></a>View a protected text file (.ptxt) or a protected image file
-To view a protected text (.ptxt) file, in File Explorer, double-click the file (for example, Sample.ptxt). You might be prompted for credentials. When the file opens, you’ll see the file’s protection policy at the top of the file.
+### <a name="BKMK_ViewPTXT"></a>Ver um ficheiro de texto protegido (.ptxt) ou um ficheiro de imagem protegido
+Para ver um ficheiro de texto protegido (.ptxt), no Explorador de Ficheiros, faça duplo clique no ficheiro (por exemplo, Amostra.ptxt). Poderão ser-lhe pedidas credenciais. Quando o ficheiro for aberto, verá a política de proteção na parte superior do ficheiro.
 
-You view and open protected images in the same way.
+Visualize e abra imagens protegidas da mesma forma.
 
-### <a name="BKMK_CreatePFILE"></a>Create a generic protected file
-Use the generic protection (.pfile) file format to offer a generic level of protection for file types that are not directly supported by the RMS sharing application or other applications that provide built-in RMS-type protection. You can use the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website to quickly check which applications support RMS built-in protection.
+### <a name="BKMK_CreatePFILE"></a>Criar um ficheiro protegido genérico
+Utilize o formato de ficheiro de proteção genérica (.pfile) para oferecer um nível genérico de proteção para tipos de ficheiro não suportados diretamente pela aplicação de partilha RMS ou outras aplicações que fornecem proteção de tipo RMS incorporada. Pode utilizar a página [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) no site da Microsoft para verificar rapidamente as aplicações que suportam a proteção incorporada do RMS.
 
-For example, because Microsoft Visio does not currently support built-in protection for RMS, you can use generic protection for .vsd files that you create with Microsoft Visio.
+Por exemplo, visto que o Microsoft Visio não suporta atualmente a proteção incorporada para o RMS, pode utilizar a proteção genérica para ficheiros .vsd criados com o Microsoft Visio.
 
 > [!TIP]
-> What’s the difference between built-in (native) protection and generic protection?
+> Qual a diferença entre proteção incorporada (nativa) e proteção genérica?
 > 
-> -   When you generically protect a file, unauthorized people cannot open the file. But after authorized people open the file, they could then forward it unprotected to other people or save it in a location that others could access. They do, however, see a message at the top of the file that tells them  what permissions they have for the file, and they are asked to honor these, but this protection cannot be enforced. In addition, when you generically protect a file, you cannot restrict the permissions further than authorization. For example, if you use custom permissions, the slider in the RMS sharing application automatically selects **CO_OWNER** and you cannot change this for more restrictive permissions, such as **VIEWER** or **CO-AUTHOR**.
-> -   In comparison, when you use the built-in protection of RMS with applications that support this (for example, Office files), the protection applies to the file even if the file is then sent to somebody else or saved in another location. And, when you protect these files, you can use restrictive permissions such as read-only, or the permission to edit but not print or copy. For example, if you use custom permissions, the slider in the RMS sharing application automatically selects **REVIEWER** for the permissions, which you can then change to be more or less restrictive.
+> -   Quando protege genericamente um ficheiro, pessoas não autorizadas não podem abrir o ficheiro. Mas, depois de pessoas autorizadas abrirem o ficheiro, podem reencaminhá-lo desprotegido para outras pessoas ou guardá-lo numa localização que pode ser acedida por outras pessoas. No entanto, visualizam uma mensagem na parte superior do ficheiro que indica as permissões que têm para o ficheiro e é-lhes pedido que as cumpram, mas esta proteção não pode ser imposta. Além disso, quando protege genericamente um ficheiro, não pode restringir as permissões além da autorização. Por exemplo, se utilizar permissões personalizadas, o controlo de deslize na aplicação de partilha RMS seleciona automaticamente **COPROPRIETÁRIO** e não pode alterar para permissões mais restritivas, como **VISUALIZADOR** ou **COAUTOR**.
+> -   Em comparação, quando utiliza a proteção incorporada do RMS com aplicações que a suportam (por exemplo, ficheiros do Office), a proteção é aplicada ao ficheiro mesmo se este for enviado a outra pessoa ou guardado noutra localização. Quando protege estes ficheiros, pode utilizar permissões restritivas como só de leitura ou a permissão para editar, mas não para imprimir ou copiar. Por exemplo, se utilizar permissões personalizadas, o controlo de deslize na aplicação de partilha RMS seleciona automaticamente **REVISOR** para as permissões, que pode depois alterar para serem mais ou menos restritivas.
 
-##### Example: To create a generic protected file (.pfile) from a Visio drawing (.vsd) file
+##### Exemplo: Para criar um ficheiro protegido genérico (.pfile) a partir de um ficheiro de desenho do Visio (.vsd)
 
-1.  In File Explorer, right-click in a folder, click **New**, and then click **New Visio Document**.
+1.  No Explorador de Ficheiros, clique com o botão direito do rato numa pasta, clique em **Novo** e, em seguida, clique em **Novo Documento do Visio**.
 
-2.  Rename the file (for example, Sample.vsd).
+2.  Mude o nome do ficheiro (por exemplo, Amostra.vsd).
 
-3.  Double-click the file to open it in Visio.
+3.  Faça duplo clique no ficheiro para o abrir no Visio.
 
-4.  In Visio, add elements to the drawing, and then save and close the file.
+4.  No Visio, adicione elementos ao desenho e, em seguida, guarde e feche o ficheiro.
 
-5.  Right-click the file, click **Protect in-place**, and select a policy template from the list. If this is the first time you have used the RMS sharing application, you will first need to select **Company- Protection**, which downloads the templates for your organization.
+5.  Clique com o botão direito do rato no ficheiro, clique em **Proteger no local** e selecione um modelo de política na lista. Se foi a primeira vez que utilizou a aplicação de partilha RMS, terá de selecionar primeiro **Proteção da Empresa**, o que transfere os modelos para a sua organização.
 
-6.  On the **Microsoft Rights Management sharing application** screen, select the policy you want to apply, and then click **Apply**.
+6.  No ecrã **Aplicação de partilha Microsoft Rights Management**, selecione a política que pretende aplicar e, em seguida, clique em **Aplicar**.
 
-7.  A message states your protected file was saved as a .pfile file (for example, Sample.vsd.pfile). The original file is deleted.
+7.  Uma mensagem indica que o ficheiro protegido foi guardado como ficheiro .pfile (por exemplo, Amostra.vsd.pfile). O ficheiro original é eliminado.
 
-### <a name="BKMK_ViewPFILE"></a>View a generic protected (.pfile) file
-To view a generic protected (.pfile) file, in File Explorer, double-click the generic protected (.pfile) file (for example, Sample.vsd.pfile), and click **Open**.
+### <a name="BKMK_ViewPFILE"></a>Ver um ficheiro protegido genérico (.pfile)
+Para ver um ficheiro protegido genérico (.pfile), no Explorador de Ficheiros, faça duplo clique no ficheiro protegido genérico (.pfile) (por exemplo, Amostra.vsd.pfile) e clique em **Abrir**.
 
-### <a name="BKMK_Unprotect"></a>Remove protection from a file
-To remove protection from a file (that is, unprotect a file) that was previously protected, use the **Remove Protection** option:
+### <a name="BKMK_Unprotect"></a>Remover a proteção de um ficheiro
+Para remover a proteção de um ficheiro (ou seja, desproteger um ficheiro) anteriormente protegido, utilize a opção **Remover Proteção**:
 
-1.  Right-click the file (for example, Sample.ptxt), click **Protect in-place**, and then click **Remove Protection**. You might be prompted for credentials.
+1.  Clique com o botão direito do rato no ficheiro (por exemplo, Amostra.ptxt), clique em **Proteger no local** e, em seguida, clique em **Remover Proteção**. Poderão ser-lhe pedidas credenciais.
 
-2.  The original protected file is deleted (for example, Sample.ptxt) and replaced with a file that has the same name but with the unprotected file name extension (for example, Sample.txt).
+2.  O ficheiro original protegido é eliminado (por exemplo, Amostra.ptxt) e substituído por um ficheiro com o mesmo nome, mas com a extensão de nome de ficheiro desprotegida (por exemplo, Amostra.txt).
 
-### <a name="BKMK_ProtectCustom"></a>Protect a file with your own custom permissions
-The easiest way to protect a file is to use templates but you can also specify your own permissions. This is called user-authored protection and it is useful for the following situations:
+### <a name="BKMK_ProtectCustom"></a>Proteger um ficheiro com as suas próprias permissões personalizadas
+A forma mais fácil de proteger um ficheiro é utilizar modelos, mas também pode especificar as suas próprias permissões. A isto chama-se proteção criada pelo utilizador, e é útil para as seguintes situações:
 
--   You want to limit file access to only a specific list of individual users that are identified by their email addresses.
+-   Pretende limitar o acesso ao ficheiro a apenas uma lista específica de utilizadores individuais identificados pelos respetivos endereços de e-mail.
 
--   You want to limit the use of the file to only specific rights, such as read-only rights to a document.
+-   Pretende limitar a utilização do ficheiro a apenas direitos específicos, como direitos só de leitura para um documento.
 
-To protect a file with user-authored permissions, right-click the file, click **Protect in-place**, and then click **Custom Permissions**. You will see the following screen:
+Para proteger um ficheiro com permissões criadas pelo utilizador, clique com o botão direito do rato no ficheiro, clique em **Proteger no local** e, em seguida, clique em **Permissões Personalizadas**. Verá o seguinte ecrã:
 
 ![](../Image/ADRMS_MSRMSApp_ProtectCustom.gif)
 
-Type the email addresses of the users, use the slider to select permissions for the file, and then click **Apply**.
+Escreva os endereços de e-mail dos utilizadores, utilize o controlo de deslize para selecionar as permissões do ficheiro e, em seguida, clique em **Aplicar**.
 
-### <a name="BKMK_UserDefined"></a>Use files that have custom protection
-Most protected files that you open will have been protected by applying templates. However, users can also protect files by using their own custom permissions, which is called user-authored protection.
+### <a name="BKMK_UserDefined"></a>Utilizar ficheiros com proteção personalizada
+A maioria dos ficheiros protegidos que abre terão sido protegidos através da aplicação de modelos. No entanto, os utilizadores também podem proteger ficheiros utilizando as suas próprias permissões personalizadas, designado por proteção criada pelo utilizador.
 
-For text and image file formats, this level of protection requires that any applications that you use to edit, save, or restrict these files have been designed to support RMS protection and that they implement the protection APIs that are provided in the AD RMS SDK.
+Para formatos de ficheiros de texto e imagem, este nível de proteção requer que todas as aplicações utilizadas para editar, guardar ou restringir estes ficheiros tenham sido concebidas para suportar a proteção RMS e implementem as APIs de proteção fornecidas no SDK do AD RMS.
 
-When you view a protected text file that has user-authored protection, you will notice a slight difference in the permissions as they are displayed for the file as shown in the following example.
+Quando visualiza um ficheiro de texto protegido com proteção criada pelo utilizador, observará uma ligeira diferença nas permissões à medida que são apresentadas para o ficheiro, conforme mostrado no exemplo seguinte.
 
-For files that are protected by using the generic protection (.pfile) file format, the specific rights or permissions that were specified by the user appears in the confirmation screen instead of the name of the template that was used to protect the file, as shown in the following picture.
+Para os ficheiros protegidos utilizando o formato de ficheiro de proteção genérica (.pfile), os direitos ou permissões especificadas pelo utilizador são apresentadas no ecrã de confirmação em vez do nome do modelo utilizado para proteger o ficheiro, conforme mostrado na imagem seguinte.
 
 ![](../Image/ADRMS_MSRMSApp_SP_ConsumePfile.gif)
 
-### <a name="BKMK_ShareProtected"></a>Protect content to share by email
-To protect content that you want to share by using an email message, right-click the file, and click **Share Protected**. You will see the following screen:
+### <a name="BKMK_ShareProtected"></a>Proteger conteúdo a partilhar por e-mail
+Para proteger conteúdo que pretende partilhar através de uma mensagem de e-mail, clique com o botão direito do rato no ficheiro e clique em **Partilhar Protegido**. Verá o seguinte ecrã:
 
 ![](../Image/ADRMS_MSRMSAPP_SP_ShareProtected.gif)
 
-Type the email addresses of the list of users, use the slider to select permissions for the file, and click **Send**. Outlook then creates an email message for the recipients with a short message that you can change, and attaches the protected file attached. The original file is not protected.
+Escreva os endereços de e-mail da lista de utilizadores, utilize o controlo de deslize para selecionar as permissões do ficheiro e clique em **Enviar**. Em seguida, o Outlook cria uma mensagem de e-mail para os destinatários com uma breve mensagem que pode alterar, e anexa o ficheiro protegido. O ficheiro original não fica protegido.
 
-To let people view protected files on non-Windows devices, click **Allow consumption on all devices**. Users might have to download the RMS sharing application for their device, and there is a link to do this in the email.
+Para permitir que as pessoas visualizem ficheiros protegidos em dispositivos não Windows, clique em **Permitir consumo em todos os dispositivos**. Os utilizadores podem ter de transferir a aplicação de partilha RMS para o respetivo dispositivo, e existe uma ligação para fazê-lo no e-mail.
 
-### <a name="BKMK_Multiple"></a>Apply protection to multiple files and folders
-You don’t have to apply protection to files one-by one when you use File Explorer. Instead, you can select multiple files, or all files in a folder if these files are not already protected.
+### <a name="BKMK_Multiple"></a>Aplicar proteção a vários ficheiros e pastas
+Não tem de aplicar proteção a ficheiros um a um quando utiliza o Explorador de Ficheiros. Em vez disso, pode selecionar vários ficheiros ou todos os ficheiros numa pasta, caso ainda não estejam protegidos.
 
-##### To protect multiple files or all files within a selected folder
+##### Para proteger vários ficheiros ou todos os ficheiros numa pasta selecionada
 
-1.  In File Explorer, either select multiple files or select a folder that contains files to be protected.
+1.  No Explorador de Ficheiros, selecione vários ficheiros ou uma pasta que contenha os ficheiros a proteger.
 
-2.  Right-click the selected folder or files, click **Protect in-place**, and select a template from the list. If this is the first time you have used the RMS sharing application, you will first need to select **Company- Protection**, which downloads the templates for your organization.
+2.  Clique com o botão direito do rato na pasta ou nos ficheiros selecionados, clique em **Proteger no local** e selecione um modelo na lista. Se foi a primeira vez que utilizou a aplicação de partilha RMS, terá de selecionar primeiro **Proteção da Empresa**, o que transfere os modelos para a sua organização.
 
-3.  On the **Microsoft Rights Management sharing application** screen, confirm the files have been protected.
+3.  No ecrã **Aplicação de partilha Microsoft Rights Management**, confirme se os ficheiros foram protegidos.
 
 > [!TIP]
-> If you see any errors, refer to [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+> Se vir algum erro, consulte [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-### <a name="BKMK_OfficeToolbar"></a>Use the Office toolbar add-in
-You can protect and share files in Word, PowerPoint, and Excel  directly from within Microsoft Office by using the Office ribbon add-in for Microsoft Rights Management sharing application.
+### <a name="BKMK_OfficeToolbar"></a>Utilizar o suplemento da barra de ferramentas do Office
+Pode proteger e partilhar ficheiros no Word, PowerPoint e Excel diretamente a partir do Microsoft Office, utilizando o suplemento do friso do Office para a aplicação de partilha Microsoft Rights Management.
 
-In the **Protection** group, click **Share Protected** to start the Microsoft Rights Management sharing application.
+No grupo **Proteção**, clique em **Partilhar Protegido** para iniciar a aplicação de partilha Microsoft Rights Management.
 
 ![](../Image/ADRMS_MSRMSApp_SP_OfficeToolbar.png)
 
-### <a name="BKMK_AccessKeys"></a>Use keyboard shortcuts
-Press the **Alt** key to see the available access keys, and then press **Alt** + the access key to select an option.
+### <a name="BKMK_AccessKeys"></a>Utilizar atalhos de teclado
+Prima a tecla **Alt** para ver as teclas de acesso disponíveis e, em seguida, prima **Alt** + a tecla de acesso para selecionar uma opção.
 
-For example, in the **share protected** dialog box, press **Alt** to see the access keys, and then press **Alt + u** to select the **Users must login every time they open this file** check box.
+Por exemplo, na caixa de diálogo **partilhar protegido**, prima **Alt** para ver as teclas de acesso e, em seguida, prima **Alt + u** para selecionar a caixa de verificação **Os utilizadores têm de iniciar sessão sempre que abrem este ficheiro**.
 
 ![](../Image/ADRMS_MSRMSApp_AccessKeys.png)
 
-## See Also
-[Microsoft Rights Management sharing application download](http://go.microsoft.com/fwlink/?LinkId=303970)
- [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
+## Consultar Também
+[Transferência da aplicação de partilha Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970)
+ [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
 

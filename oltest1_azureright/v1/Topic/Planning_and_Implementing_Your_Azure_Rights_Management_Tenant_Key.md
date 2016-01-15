@@ -3,29 +3,28 @@ description: na
 keywords: na
 title: Planning and Implementing Your Azure Rights Management Tenant Key
 search: na
-ms.date: 2015-10-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0d33c5f-a6a6-44a1-bdec-5be1bc8e1e14
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Planning and Implementing Your Azure Rights Management Tenant Key
-Use the information in this topic to help you plan for and manage your Rights Management service (RMS) tenant key for Azure RMS. For example, instead of Microsoft managing your tenant key (the default), you might want to manage your own tenant key to comply with specific regulations that apply to your organization.  Managing your own tenant key is also referred to as bring your own key, or BYOK.
+# Planear e implementar a sua chave de inquilino do Azure Rights Management
+Utilize as informações deste tópico para o ajudar a planear e gerir a sua chave de inquilino do Rights Management (RMS) do serviço para o Azure RMS. Por exemplo, em vez do Microsoft gerir a sua chave de inquilino (predefinição), poderá gerir a sua própria chave de inquilino para cumprir as normas específicas que se aplicam à sua organização.  Gerir a sua própria chave do inquilino é também referido como colocar o seu próprio chave ou BYOK.
 
 > [!NOTE]
-> The RMS tenant key is also known as the Server Licensor Certificate (SLC) key. Azure RMS maintains one or more keys for each organization that subscribes to Azure RMS. Whenever a key is used for RMS within an organization (such as user keys, computer keys, document encryption keys), they cryptographically chain to your RMS tenant key.
+> A chave do RMS inquilino também é conhecido como a chave do certificado de licenciante de servidor (SLC). Azure RMS mantém uma ou mais teclas para cada organização que subscreve Azure RMS. Sempre que é utilizada uma chave para o RMS numa organização (por exemplo, as chaves de utilizador, chaves de computador, as chaves de encriptação do documento), estes encadeiam cryptographically a sua chave de inquilino do RMS.
 
-**At a glance:** Use the following table as a quick guide to your recommended tenant key topology. Then, use the additional sections for more information.
+**Uma visão:** Utilize a tabela seguinte como um guia rápido para a topologia de chave do inquilino recomendado. Em seguida, utilize as secções adicionais para obter mais informações.
 
-If you deploy Azure RMS by using a tenant key that is managed by Microsoft, you can change to BYOK later. However, you cannot currently change your Azure RMS tenant key from BYOK to managed by Microsoft.
+Se implementar o Azure RMS utilizando uma chave de inquilino que é gerida pelo Microsoft, pode alterar para BYOK mais tarde. No entanto, atualmente não é possível alterar a chave de inquilino do Azure RMS a partir do BYOK gerido pela Microsoft.
 
-|Business requirement|Recommended tenant key topology|
-|------------------------|-----------------------------------|
-|Deploy Azure RMS quickly and without requiring special hardware|Managed by Microsoft|
-|Need full IRM functionality in Exchange Online with Azure RMS|Managed by Microsoft|
-|Your keys are created by you and protected in a hardware security module (HSM)|BYOK<br /><br />Currently, this configuration will result in reduced IRM functionality in Exchange Online. For more information, see the [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) section.|
-Use the following sections to help you choose which tenant key topology to use, understand the tenant key lifecycle, how to implement bring your own key (BYOK), and what steps to take next:
+|Necessidade comercial|Topologia de chaves de inquilino recomendado|
+|-------------------------|------------------------------------------------|
+|Implementar o Azure RMS rapidamente e sem necessidade de hardware especial|Gerido pela Microsoft|
+|Precisarem de funcionalidades IRM completa no Exchange Online com o Azure RMS|Gerido pela Microsoft|
+|As chaves são criadas por si e protegidas de um módulo de segurança de hardware (HSM)|BYOK<br /><br />Atualmente, esta configuração irá resultar na funcionalidade reduzida do IRM no Exchange Online. Para obter mais informações, consulte o [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) secção.|
+Utilize as secções seguintes para ajudar a escolher a chave de inquilino topologia para utilizar, compreender o ciclo de vida de chaves de inquilino, como implementar colocar o seu próprio chave (BYOK) e o que os passos para efetuar o seguinte:
 
 -   [Choose your tenant key topology: Managed by Microsoft (the default) or managed by you (BYOK)](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_ChooseTenantKey)
 
@@ -35,76 +34,76 @@ Use the following sections to help you choose which tenant key topology to use, 
 
 -   [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps)
 
-## <a name="BKMK_ChooseTenantKey"></a>Choose your tenant key topology: Managed by Microsoft (the default) or managed by you (BYOK)
-Decide which tenant key topology is best for your organization. By default, Azure RMS generates your tenant key and manages most aspects of the tenant key lifecycle. This is the simplest option with the lowest administrative overheads. In most cases, you do not even need to know that you have a tenant key. You just sign up for Azure RMS and the rest of the key management process is handled by Microsoft.
+## <a name="BKMK_ChooseTenantKey"></a>Selecione o seu inquilino topologia chave: Geridos pela Microsoft (predefinição) ou geridos por si (BYOK)
+Decida qual topologia de chave do inquilino é melhor para a sua organização. Por predefinição, o Azure RMS gera a chave de inquilino e gere a maioria dos aspetos do ciclo de vida de chaves de inquilino. Esta é a opção mais simples com mais sobrecargas administrativas. Na maioria dos casos, não, mesmo que terá de saber o que tem uma chave de inquilino. Apenas inscrever-se para o Azure RMS e o resto do processo de gestão de chaves é processado pela Microsoft.
 
-Alternatively, you might want complete control over your tenant key, which involves creating your tenant key and keeping the master copy on your premises. This scenario is often referred to as bring your own key (BYOK). With this option, the following happens:
+Em alternativa, pode querer controlo total sobre a chave de inquilino, o que envolve criar a sua chave de inquilino e manter a cópia principal no local. Este cenário é frequentemente referido como colocar o seu próprio chave (BYOK). Com esta opção, ocorrerá o seguinte:
 
-1.  You generate your tenant key on your premises, in line with your IT policies.
+1.  Gerar a chave de inquilino no local, de acordo com as políticas de TI.
 
-2.  You securely transfer the tenant key from a Hardware Security Module (HSM) in your possession to HSMs that are owned and managed by Microsoft. Throughout this process, your tenant key never leaves the hardware protection boundary.
+2.  Em segurança transferir a chave do inquilino a partir de um módulo de segurança de Hardware (HSM) na sua posse para HSMs que são propriedade e são geridos pela Microsoft. Durante este processo, a chave de inquilino nunca deixa o limite de proteção de hardware.
 
-3.  When you transfer your tenant key to Microsoft, it stays protected by Thales HSMs. Microsoft has worked with Thales to ensure that your tenant key cannot be extracted from Microsoft’s HSMs.
+3.  Ao transferir a chave de inquilino para a Microsoft, permanece protegido por Thales HSMs. Microsoft trabalhou com Thales para se certificar de que a chave de inquilino não pode ser extraída a contar HSMs da Microsoft.
 
-Although it’s optional, you will also probably want to use the near real-time usage logs from Azure RMS to see exactly how and when your tenant key is being used.
+Embora seja opcional, irá provavelmente também pretende utilizar a utilização em tempo real near registos a partir do Azure RMS para ver exatamente como e quando está a ser utilizada a chave de inquilino.
 
 > [!NOTE]
-> As an additional protection measure, Azure RMS uses separate security worlds for its data centers in North America, EMEA (Europe, Middle East and Africa), and Asia. When you manage your own tenant key, it is tied to the security world of the region in which your RMS tenant is registered. For example, a tenant key from a European customer cannot be used in data centers in North America or Asia.
+> Uma medida adicional de proteção, o Azure RMS utiliza mundo de segurança para os respetivos centros de dados na América do Norte, EMEA (Europa, Médio Oriente e África) e da Ásia. Quando gere a sua própria chave do inquilino, está associado para o mundo de segurança de região no qual está registado o seu inquilino do RMS. Por exemplo, não é possível utilizar uma chave de inquilino a partir de um cliente Europeu na América do Norte ou da Ásia os centros de dados.
 
-## <a name="BKMK_OverviewLifecycle"></a>The tenant key lifecycle
-If you decide that Microsoft should manage your tenant key, Microsoft handles most of the key lifecycle operations. However, if you decide to manage your tenant key, you are responsible for many of the key lifecycle operations and some additional procedures.
+## <a name="BKMK_OverviewLifecycle"></a>O ciclo de vida de chaves de inquilino
+Se decidir que Microsoft deve gerir a sua chave de inquilino, o Microsoft processa a maioria das operações de ciclo de vida de chave. No entanto, se optar por gerir a sua chave de inquilino, é responsável por muitas das operações de ciclo de vida de chave e alguns procedimentos adicionais.
 
-The following diagrams show and compares these two options. The first diagram shows how little administrator overheads there are for you in the default configuration when Microsoft manages the tenant key.
+Os diagramas seguintes mostram e compara estas duas opções. O diagrama primeiro mostra como pouca sobrecargas de administrador que existem por si na configuração predefinida quando Microsoft gere a chave de inquilino.
 
 ![](../Image/RMS_BYOK_cloud.png)
 
-The second diagram shows the additional steps required when you manage your own tenant key.
+O segundo diagrama mostra os passos adicionais necessários quando gere a sua própria chave do inquilino.
 
 ![](../Image/RMS_BYOK_onprem.png)
 
-If you decide to let Microsoft manage your tenant key, no further action is required for you to generate the key and you can skip the following sections and go straight to [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
+Se decidir deixar de gerir a sua chave de inquilino do Microsoft, é necessária gerar a chave mais nenhuma ação e pode ignorar as seguintes secções e ir diretamente para [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
 
-If you decide to manage your tenant key yourself, read the following sections for more information.
+Se optar por gerir a sua chave de inquilino sozinho, leia as secções seguintes para obter mais informações.
 
-### More information about Thales HSMs and Microsoft additions
-Azure RMS uses Thales HSMs to protect your keys.
+### Mais informações sobre as adições Thales HSMs e da Microsoft
+Azure RMS utiliza Thales HSMs para proteger as suas chaves.
 
-Thales e-Security is a leading global provider of data encryption and cyber security solutions to the financial services, high technology, manufacturing, government, and technology sectors. With a 40-year track record of protecting corporate and government information, Thales solutions are used by four of the five largest energy and aerospace companies, 22 NATO countries, and secure more than 80 per cent of worldwide payment transactions.
+Segurança i Thales é um fornecedor global à esquerda da encriptação de dados e soluções de segurança de cyber para os serviços financeiros, tecnologia de alta, fabrico, administração pública e setores de tecnologia. Com um ano de 40 registar registo proteger empresarial e informações para a administração pública, soluções Thales são utilizadas pelos quatro dos cinco energia maior e empresas aerospace, 22 NATO países/regiões e proteger mais de 80 por cento de transações de pagamento todo o mundo.
 
-Microsoft has collaborated with Thales to enhance the state of art for HSMs. These enhancements enable you to get the typical benefits of hosted services without relinquishing control over your keys. Specifically, these enhancements let Microsoft manage the HSMs so that you do not have to. As a cloud service, Azure RMS scales up at short notice to meet your organization’s usage spikes. At the same time, your key is protected inside Microsoft’s HSMs: You retain control over the key lifecycle because you generate the key and transfer it to Microsoft’s HSMs.
+A Microsoft tem colaborado com Thales para melhorar o estado do ClipArt para HSMs. Estes melhoramentos permitem-lhe obtém as vantagens típicas do serviços alojados sem relinquishing controlo sobre as chaves. Especificamente, estas melhorias de permitem Microsoft gerir os HSMs para que não é necessário. Como um serviço em nuvem, o Azure RMS dimensiona em breve aviso para satisfazer as pontas de utilização da sua organização. Ao mesmo tempo, a chave está protegida no interior HSMs da Microsoft: Manter o controlo sobre o ciclo de vida chave porque gerar a chave e transferi-lo para HSMs da Microsoft.
 
-For more information, see [Thales HSMs and Azure RMS](http://www.thales-esecurity.com/msrms/cloud) on the Thales web site.
+Para obter mais informações, consulte o artigo [Thales HSMs e o Azure RMS](http://www.thales-esecurity.com/msrms/cloud) no Thales web site.
 
-## <a name="BKMK_Pricing"></a>BYOK pricing and restrictions
-Organization that have an IT-managed Azure subscription can use BYOK and log its usage at no extra charge. Organizations that use RMS for individuals cannot use BYOK and logging because they do not have a tenant administrator to configure these features.
+## <a name="BKMK_Pricing"></a>As restrições e BYOK preços
+Organização que tenham uma subscrição do Azure gestão de TI pode utilizar BYOK e inicie a sua utilização sem qualquer custo adicional. As organizações que utilizam o RMS para indivíduos não é possível utilizar BYOK e registo porque não têm um administrador de inquilino para configurar estas funcionalidades.
 
 > [!NOTE]
-> For more information about RMS for individuals, see [RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md).
+> Para mais informações sobre RMS para indivíduos, consulte o artigo [RMS para indivíduos e Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md).
 
 ![](../Image/RMS_BYOK_noExchange.png)
 
-BYOK and logging work seamlessly with every application that integrates with Azure RMS. This includes cloud services such as SharePoint Online, on-premises servers that run Exchange and SharePoint that work with Azure RMS by using the RMS connector, and client applications such as Office 2013. You will get key usage logs regardless of which application makes requests of Azure RMS.
+BYOK e o registo de forma totalmente integrada trabalhar com todas as aplicações que se integra com o Azure RMS. Isto inclui serviços em nuvem como o SharePoint Online, servidores que executem o Exchange e SharePoint que funcionam com o Azure RMS utilizando o conector do RMS e aplicações de cliente, como o Office 2013 no local a pedido. Irá obter registos de utilização de chave, independentemente do que a aplicação torna pedidos do Azure RMS.
 
-There is one exception: Currently, **Azure RMS BYOK is not compatible with Exchange Online**.  If you want to use Exchange Online, we recommend that you deploy Azure RMS in the default key management mode now, where Microsoft generates and manages your key. You have the option to move to BYOK later, for example, when Exchange Online does support Azure RMS BYOK. However, if you cannot wait, another option is to deploy Azure RMS with BYOK now, with reduced RMS functionality for Exchange Online (unprotected emails and unprotected attachments remain fully functional):
+Existe uma exceção: Atualmente, **Azure RMS BYOK não é compatível com o Exchange Online**.  Se pretender utilizar o Exchange Online, recomendamos que implementa o Azure RMS no agora, o modo de gestão de chaves predefinido onde o Microsoft gera e gere a sua chave. Tem a opção para mover para BYOK mais tarde, por exemplo, quando o Exchange Online suporta BYOK do Azure RMS. No entanto, se não puder aguardar, outra opção é implementar o Azure RMS com BYOK agora, com a funcionalidade reduzida do RMS para o Exchange Online (desprotegidas mensagens de correio eletrónico e anexos desprotegidos permanecem totalmente funcional):
 
--   Protected emails or protected attachments in Outlook Web Access cannot be displayed.
+-   Não não possível apresentar mensagens de correio eletrónico protegidas ou anexos protegidos no Outlook Web Access.
 
--   Protected emails on mobile devices that use Exchange ActiveSync IRM cannot be displayed.
+-   Não não possível apresentar mensagens de e-mail protegidas em dispositivos móveis que utilizam o Exchange ActiveSync IRM.
 
--   Transport decryption (for example, to scan for malware) and journal  decryption is not possible, so protected emails and protected attachments will be skipped.
+-   Transporte desencriptação (por exemplo, para procurar software maligno) e desencriptação do diário não for possível, por isso, são protegidos os e-mails e anexos protegidos serão ignorados.
 
--   Transport protection rules and data loss prevention (DLP) that enforce IRM policies is not possible, so RMS protection cannot be applied by using these methods.
+-   Transporte proteção regras e os dados prevenção de perda (DLP) que impor políticas IRM não é possível, pelo que não é possível aplicar a proteção RMS utilizando estes métodos.
 
--   Server-based search for protected emails, so protected emails will be skipped.
+-   Baseada em servidor procure protegidas mensagens de correio eletrónico, para que os e-mails protegidos serão ignorados.
 
-When you use Azure RMS BYOK with reduced RMS functionality for Exchange Online, RMS will work with email clients in Outlook on Windows and Mac, and on other email clients that don't use Exchange ActiveSync IRM.
+Quando utiliza o Azure RMS BYOK com funcionalidade reduzida do RMS para o Exchange Online, o RMS irá funcionar com os clientes de e-mail no Outlook no Windows e Mac e em outros clientes de correio eletrónico que não utilizam o Exchange ActiveSync IRM.
 
-If you are migrating to Azure RMS from AD RMS, you might have imported your key as a trusted publishing domain (TPD) to Exchange Online (also called BYOK in Exchange terminology, which is separate from Azure RMS BYOK). In this scenario, you must remove the TPD from Exchange Online to avoid conflicting templates and policies. For more information, see [Remove-RMSTrustedPublishingDomain](https://technet.microsoft.com/library/jj200720%28v=exchg.150%29.aspx) from the Exchange Online cmdlets library.
+Caso esteja a migrar para o Azure RMS a partir do AD RMS, possa ter importado a chave como um domínio de publicação fidedigno (TPD) para o Exchange Online (também denominada BYOK na terminologia de Exchange, que é separada do Azure RMS BYOK). Neste cenário, tem de remover o TPD a partir do Exchange Online para evitar modelos e as políticas em conflito. Para obter mais informações, consulte o artigo [Remover RMSTrustedPublishingDomain](https://technet.microsoft.com/library/jj200720%28v=exchg.150%29.aspx) da biblioteca de cmdlets do Exchange Online.
 
-Sometimes, the Azure RMS BYOK  exception for Exchange Online is not a problem in practice. For example, organizations that need BYOK and logging run their data applications (Exchange, SharePoint, Office) on-premises, and use Azure RMS for functionality that is not easily available with on-premises AD RMS (for example, collaboration with other companies and access from mobile clients). Both BYOK and logging work well in this scenario and allow the organization to have full control over their Azure RMS subscription.
+Por vezes, a exceção de BYOK do Azure RMS para o Exchange Online não é um problema na prática. Por exemplo, as organizações que precisam de BYOK e o registo de executam os seus dados aplicações (Exchange, SharePoint, escritório) no local e utilizar o Azure RMS para a funcionalidade que não está disponível facilmente com o AD local RMS (por exemplo, a colaboração com outras empresas e o acesso a partir de clientes móveis). BYOK e trabalho do registo well neste cenário e permitem a sua organização têm controlo total sobre a subscrição do Azure RMS.
 
-## <a name="BKMK_ImplementBYOK"></a>Implementing bring your own key (BYOK)
-Use the information and procedures in this section if you have decided to generate and manage your tenant key; the bring your own key (BYOK) scenario:
+## <a name="BKMK_ImplementBYOK"></a>Implementar a colocar a sua própria chave (BYOK)
+Utilize as informações e procedimentos nesta secção se decidiu gerar e gerir a sua chave de inquilino; a colocar o seu cenário de chave (BYOK):
 
 -   [Prerequisites for BYOK](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Preqs)
 
@@ -113,43 +112,43 @@ Use the information and procedures in this section if you have decided to genera
 -   [Generate and transfer your tenant key – in person](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_BYOK_InPerson)
 
 > [!IMPORTANT]
-> If you have already started to use [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (the service is activated) and you have users who run Office 2010, contact Microsoft Customer Support Services (CSS) before you run these procedures. Depending on your scenario and requirements, you can still use BYOK but with some limitations or additional steps.
+> Se já tiver iniciado a utilizar [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (o serviço está ativado) e tiver utilizadores que executar o Office 2010, contacte a Microsoft suporte ao cliente (CSS) antes de executar estes procedimentos. Dependendo do seu cenário e requisitos, pode continuar a utilizar BYOK mas com algumas limitações ou passos adicionais.
 > 
-> Also contact CSS if your organization has specific policies for handling keys.
+> Contacte o CSS também se a sua organização tiver políticas específicas para processamento de chaves.
 
-### <a name="BKMK_Preqs"></a>Prerequisites for BYOK
-See the following table for a list of prerequisites for bring your own key (BYOK).
+### <a name="BKMK_Preqs"></a>Pré-requisitos para BYOK
+Consulte a tabela seguinte para obter uma lista de pré-requisitos para colocar a sua própria chave (BYOK).
 
-|Requirement|More information|
-|---------------|--------------------|
-|A subscription that supports Azure RMS.|For more information about the available subscriptions, see the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.|
-|You do not use RMS for individuals or Exchange Online. Or, if you use Exchange Online, you understand and accept the limitations of using BYOK with this configuration.|For more information about the restrictions and current limitations for BYOK, see the [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) section in this topic.<br /><br />**Important**: Currently, BYOK is not compatible with Exchange Online.|
-|Thales HSM, smartcards, and support software.<br /><br />**Note**: If you are migrating from AD RMS to Azure RMS by using software key to hardware key, you must have a minimum version of 11.62 for the Thales drivers.|You must have access to a Thales Hardware Security Module and basic operational knowledge of Thales HSMs. See [Thales Hardware Security Module](http://www.thales-esecurity.com/msrms/buy) for the list of compatible models, or to purchase an HSM if you do not have one.|
-|If you want to transfer your tenant key over the Internet rather than physically be present in Redmond, USA. there are 3 requirements:<br /><br />Requirement 1: An offline x64 workstation with a minimum Windows operation system of Windows 7 and Thales nShield software that is at least version 11.62.<br /><br />If this workstation runs Windows 7, you must [install Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkId=225702).<br /><br />Requirement 2: A workstation that is connected to the Internet and has a minimum Windows operation system of Windows 7.<br /><br />Requirement 2: A USB drive or other portable storage device that has at least 16 MB free space.|These prerequisites are not required if you travel to Redmond and transfer your tenant key in person.<br /><br />For security reasons, we recommend that the first workstation is not connected to a network. However, this is not programmatically enforced.<br /><br />Note: In the instructions that follow, this first workstation is referred to as the **disconnected workstation**.<br /><br />In addition, if your tenant key is for a production network, we recommend that you use a second, separate workstation to download the toolset and upload the tenant key. But for testing purposes, you can use the same workstation as the first one.<br /><br />Note: In the instructions that follow, this second workstation is referred to as the **Internet-connected workstation**.|
-|Optional: Azure subscription.|If you want to log your tenant key usage (and Rights Management usage), you must have a subscription to Azure and sufficient storage on Azure to store your logs.|
-The procedures to generate and use your own tenant key depend on whether you want to do this over the Internet or in person:
+|Requisito|Obter mais informações|
+|-------------|--------------------------|
+|Uma subscrição que suporta o Azure RMS|Para mais informações sobre as subscrições disponíveis, consulte o [Subscrições de nuvem que suportam o Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) secção a [Requisitos para o Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tópico.|
+|Não utilize RMS para indivíduos ou ao Exchange Online. Ou, se utilizar o Exchange Online, compreender e aceitar as limitações da utilização BYOK com esta configuração.|Para mais informações sobre as restrições e limitações atuais para BYOK, consulte o [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) deste tópico. **Important:** Atualmente, BYOK não é compatível com o Exchange Online.|
+|Thales HSM, smart cards e software de suporte<br /><br />Caso esteja a migrar a partir do AD RMS para o Azure RMS utilizando a chave de software a chave de hardware, tem de ter a versão mínima do 11.62 para obter os controladores de Thales.|Tem de ter acesso a um módulo de segurança de Hardware Thales e conhecimento operacional básico dos Thales HSMs. Consulte o artigo [Thales Hardware segurança módulo](http://www.thales-esecurity.com/msrms/buy) para a lista de modelos compatíveis ou comprar um HSM se não tiver um.|
+|Se pretende transferir a chave de inquilino através da Internet em vez de estar fisicamente presentes na Redmond, EUA:<br /><br />1.  Um x64 offline estação de trabalho com um sistema de operação mínimo do Windows do Windows 7 e Thales nShield software, pelo menos, versão 11.62.<br />    Se esta estação de trabalho executa o Windows 7, tem de [instalar Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkId=225702).<br />2.  Uma estação de trabalho que está ligada à Internet e tem um sistema de operação mínimo do Windows do Windows 7.<br />3.  Uma unidade USB ou outro dispositivo de armazenamento portátil que tenha pelo menos 16 MB de espaço livre.|Estes pré-requisitos não são necessários se viajam para Redmond e transferir a sua chave de inquilino na pessoa.<br /><br />Por motivos de segurança, recomendamos que a primeira estação de trabalho não está ligada a uma rede. No entanto, isto não é através de programação imposto. **Note:** As instruções que se seguem, esta estação de trabalho é referida como a estação de trabalho desligada.<br />Além disso, se a chave de inquilino destina-se numa rede de produção, recomendamos que utilize uma estação de trabalho segunda separada para o conjunto de ferramentas de transferir e carregar a chave de inquilino. Mas, para fins de teste, pode utilizar a mesma estação de trabalho como primeiro. **Note:** As instruções que se seguem, esta estação de trabalho segunda é referida como a estação de trabalho ligado à Internet.|
+|Opcional: Subscrição do Azure|Se pretender iniciar a utilização de chave de inquilino (e utilização do Rights Management), tem de ter uma subscrição do Azure e suficiente armazenamento no Azure para armazenar os seus registos.|
+Os procedimentos para gerar e utilizar a sua própria chave inquilino dependem se pretende fazê-lo através da Internet ou na pessoa:
 
--   **Over the Internet:** This requires some extra configuration steps, such as downloading and using a toolset and Windows PowerShell cmdlets. However, you do not have to physically be in a Microsoft facility to transfer your tenant key. Security is maintained by the following methods:
+-   **Através da Internet:** Isto requer que alguns passos de configuração adicionais, tais como transferir e utilizar um conjunto de ferramentas e cmdlets do Windows PowerShell. No entanto, não terá de estar fisicamente no efectuar Microsoft para transferir a chave de inquilino. Segurança é mantida através dos seguintes métodos:
 
-    -   You generate the tenant key from an offline workstation, which reduces the attack surface.
+    -   Gerar a chave do inquilino a partir de uma estação de trabalho offline, o que reduz a superfície de ataque.
 
-    -   The tenant key is encrypted with a Key Exchange Key (KEK), which stays encrypted until it is transferred to the Azure RMS HSMs. Only the encrypted version of your tenant key leaves the original workstation.
+    -   A chave do inquilino é encriptada com uma chave Exchange chave (KEK), que permanece encriptados até serem transferidos para o HSMs de RMS do Azure. Apenas a versão encriptada do sua chave de inquilino deixa a estação de trabalho original.
 
-    -   A tool sets properties on your tenant key that binds your tenant key to the Azure RMS security world. So after the Azure RMS HSMs receive and decrypt your tenant key, only these HSMs can use it. Your tenant key cannot be exported. This binding is enforced by the Thales HSMs.
+    -   Uma ferramenta define as propriedades chave do inquilino que une a sua chave de inquilino para o mundo de segurança do Azure RMS. Por isso, depois do HSMs de RMS do Azure receber e desencriptar a chave do inquilino, apenas estas HSMs podem utilizá--lo. Não é possível exportar a chave de inquilino. Este enlace é imposta pelo HSMs Thales.
 
-    -   The Key Exchange Key (KEK) that is used to encrypt your tenant key is generated inside the Azure RMS HSMs and is not exportable. The HSMs enforce that there can be no clear version of the KEK outside the HSMs. In addition, the toolset includes attestation from Thales that the KEK is not exportable and was generated inside a genuine HSM that was manufactured by Thales.
+    -   A chave de Exchange de chave (KEK) que é utilizado para encriptar a chave do inquilino é gerado no interior do HSMs de RMS do Azure e não é exportável. Os HSMs impor que pode ser não limpar qualquer versão do KEK fora dos HSMs. Além disso, o conjunto de ferramentas inclui atestado de Thales que o KEK não é exportável e foi gerado no interior de um HSM genuine que foi fabricado por Thales.
 
-    -   The toolset includes attestation from Thales that the Azure RMS security world was also generated on a genuine HSM manufactured by Thales. This proves to you that Microsoft is using genuine hardware.
+    -   O conjunto de ferramentas inclui atestado de Thales que o mundo de segurança do Azure RMS também foi gerado num HSM genuine produzido por Thales. Isto prove a para a Microsoft está a utilizar genuine hardware.
 
-    -   Microsoft uses separate KEKs as well as separate Security Worlds in each geographical region, which ensures that your tenant key can be used only in data centers in the region in which you encrypted it. For example, a tenant key from a European customer cannot be used in data centers in North American or Asia.
+    -   Microsoft utiliza KEKs separados, bem como separar mundo de segurança de cada região geográfica, o que garante que a chave de inquilino pode ser utilizada apenas nos centros de dados na região no qual é encriptado. Por exemplo, não é possível utilizar uma chave de inquilino a partir de um cliente Europeu na América American ou da Ásia os centros de dados.
 
     > [!NOTE]
-    > Your tenant key can safely move through untrusted computers and networks because it is encrypted and secured with access control level permissions, which makes it usable only within your HSMs and Microsoft’s HSMs for Azure RMS. You can use the scripts that are provided in the toolset to verify the security measures and read more information about how this works from Thales: [Hardware Key management in the RMS Cloud](https://www.thales-esecurity.com/knowledge-base/white-papers/hardware-key-management-in-the-rms-cloud).
+    > A chave de inquilino pode mover em segurança através de computadores não fidedignos e redes porque é encriptada e protegida com permissões ao nível do controlo de acesso, que torna utilizável apenas dentro do seu HSMs e HSMs da Microsoft para o Azure RMS. Pode utilizar os scripts que são fornecidos no conjunto de ferramentas para verificar as medidas de segurança e ler mais informações sobre como isto funciona de Thales: [a gestão de chaves de hardware na nuvem RMS](https://www.thales-esecurity.com/knowledge-base/white-papers/hardware-key-management-in-the-rms-cloud).
 
--   **In person:** This requires that you contact Microsoft Customer Support Services (CSS) to schedule a key transfer appointment for Azure RMS. You must travel to a Microsoft office in Redmond, Washington, United States of America to transfer your tenant key to the Azure RMS security world.
+-   **Na pessoa:** Isto requer que contacte o Microsoft suporte ao cliente (CSS) para agendar um compromisso de transferência da chave para o Azure RMS. Tem viajam para um Microsoft office no Redmond, Washington, Unidos Estados of America para transferir a chave de inquilino para o mundo de segurança do Azure RMS.
 
-### <a name="BKMK_BYOK_Internet"></a>Generate and transfer your tenant key – over the Internet
-Use the following procedures if you want to transfer your tenant key over the Internet rather than travel to a Microsoft facility to transfer the tenant key in person:
+### <a name="BKMK_BYOK_Internet"></a>Gerar e transferir a chave de inquilino – através da Internet
+Se pretende transferir a chave de inquilino através da Internet em vez de viajam para efectuar uma Microsoft para transferir a chave de inquilino na pessoa, utilize os seguintes procedimentos:
 
 -   [Prepare your Internet-connected workstation](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetPrepareWorkstation)
 
@@ -161,8 +160,8 @@ Use the following procedures if you want to transfer your tenant key over the In
 
 -   [Transfer your tenant key to Azure RMS](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetTransfer)
 
-#### <a name="BKMK_InternetPrepareWorkstation"></a>Prepare your Internet-connected workstation
-To prepare your workstation that is connected to the Internet, follow these 3 steps:
+#### <a name="BKMK_InternetPrepareWorkstation"></a>Preparar a estação de trabalho ligado à Internet
+Para preparar a estação de trabalho que está ligada à Internet, siga estes 3 passos:
 
 -   [Step 1: Install Windows PowerShell for Azure Rights Management](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation1)
 
@@ -170,89 +169,89 @@ To prepare your workstation that is connected to the Internet, follow these 3 st
 
 -   [Step 3: Download the BYOK toolset](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation3)
 
-##### <a name="BKMK_PrepareInternetConnectedWorkstation1"></a>Step 1: Install Windows PowerShell for Azure Rights Management
-From the Internet-connected workstation, download and install the Windows PowerShell module for Azure Rights Management.
+##### <a name="BKMK_PrepareInternetConnectedWorkstation1"></a>Passo 1: Instalar o Windows PowerShell para o Azure Rights Management
+A partir da estação de trabalho ligado à Internet, transfira e instale o módulo Windows PowerShell para o Azure Rights Management.
 
 > [!NOTE]
-> If you have previously downloaded this Windows PowerShell module, run the following command to check that your version number is at least 2.1.0.0: `(Get-Module aadrm -ListAvailable).Version`
+> Se tiver transferido anteriormente este módulo do Windows PowerShell, execute o seguinte comando para verificar se o seu número de versão está, pelo menos, 2.1.0.0: `(Get-Module aadrm -ListAvailable).Version`
 
-For installation instructions, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+Para instruções de instalação, consulte o artigo [Instalação do Windows PowerShell para o Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-##### <a name="BKMK_PrepareInternetConnectedWorkstation2"></a>Step 2: Get your Azure Active Directory tenant ID
-Start Windows PowerShell with the **Run as administrator** option, and then run the following commands:
+##### <a name="BKMK_PrepareInternetConnectedWorkstation2"></a>Passo 2: Obter o ID de inquilino do Azure Active Directory
+Inicie o Windows PowerShell com o **Executar como administrador** opção e, em seguida, execute os seguintes comandos:
 
--   Use the [Connect-AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629415.aspx) cmdlet to connect to the Azure RMS service:
+-   Utilize o [Ligar AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629415.aspx) cmdlet para ligar ao serviço do Azure RMS:
 
     ```
     Connect-AadrmService
     ```
-    When prompted, enter your [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] tenant administrator credentials (typically, you will use an account that is a global administrator for Azure Active Directory or Office 365).
+    Quando lhe for pedido, introduza o [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] credenciais de administrador de inquilinos (normalmente, utilizará uma conta que seja um administrador global do Azure Active Directory ou do Office 365).
 
--   Use the [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet to display the configuration of your tenant:
+-   Utilize o [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet para visualizar a configuração do seu inquilino:
 
     ```
     Get-AadrmConfiguration
     ```
-    From the output, save the GUID from the first line (BPOSId). This is your Azure Active Directory tenant ID, which you will need later when you prepare your tenant key for upload.
+    A partir da saída, guarde o GUID da primeira linha (BPOSId). Este é o ID de inquilino do Azure Active Directory, que irá precisar mais tarde quando a preparar-se a chave de inquilino para carregamento.
 
--   Use the [Disconnect-AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629416.aspx) cmdlet to disconnect from the Azure RMS service until you are ready to upload your key:
+-   Utilize o [Desligar AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629416.aspx) cmdlet para desligar do serviço do Azure RMS até estar pronto para carregar a chave:
 
     ```
     Disconnect-AadrmService
     ```
 
-Do not close the Windows PowerShell window.
+Não feche a janela do Windows PowerShell.
 
-##### <a name="BKMK_PrepareInternetConnectedWorkstation3"></a>Step 3: Download the BYOK toolset
-Go to the Microsoft Download Center and [download the BYOK toolset](http://go.microsoft.com/fwlink/?LinkId=335781) for your region:
+##### <a name="BKMK_PrepareInternetConnectedWorkstation3"></a>Passo 3: Transferir o toolset BYOK
+Aceda ao Center Download Microsoft e [Transferir o toolset BYOK](http://go.microsoft.com/fwlink/?LinkId=335781) para sua região:
 
-|Region|Package name|
-|----------|----------------|
-|North America|AzureRMS-BYOK-tools-UnitedStates.zip|
-|Europe|AzureRMS-BYOK-tools-Europe.zip|
-|Asia|AzureRMS-BYOK-tools-AsiaPacific.zip|
-The toolset includes the following :
+|Região|Nome do pacote|
+|----------|------------------|
+|América do Norte|United de AzureRMS BYOK ferramentas States.zip|
+|Europe|AzureRMS-BYOK-ferramentas-Europe.zip|
+|Ásia|AzureRMS-BYOK-ferramentas-AsiaPacific.zip|
+O conjunto de ferramentas inclui o seguinte:
 
--   A Key Exchange Key (KEK) package that has a name beginning with **BYOK-KEK-pkg-**.
+-   Um pacote de chave Exchange chave (KEK) que tenha uma nome a partir **BYOK-KEK-pkg -**.
 
--   A Security World package that has a name beginning with **BYOK-SecurityWorld-pkg-**.
+-   Um pacote de mundo de segurança que tenha uma nome a partir **BYOK-SecurityWorld-pkg -**.
 
--   A python script named **verifykeypackage.py**.
+-   Um script de python com o nome **verifykeypackage.py**.
 
--   A command-line executable file named **KeyTransferRemote.exe**, a metadata file named **KeyTransferRemote.exe.config**, and associated DLLs.
+-   Um ficheiro executável da linha de comandos com o nome **KeyTransferRemote.exe**, um ficheiro de metadados com o nome **KeyTransferRemote.exe.config**, e associou DLLs.
 
--   A Visual C++ Redistributable Package, named **vcredist_x64.exe**.
+-   Um Visual C++ Redistributable Package, com o nome **vcredist_x64.exe**.
 
-Copy the package to a USB drive or other portable storage.
+Copie o pacote para outro armazenamento portátil ou uma unidade USB.
 
-#### <a name="BKMK_DisconnectedPrepareWorkstation"></a>Prepare your disconnected workstation
-To prepare your workstation that is not connected to a network (either the Internet or your internal network), follow these 2 steps:
+#### <a name="BKMK_DisconnectedPrepareWorkstation"></a>Preparar a estação de trabalho desligada
+Para preparar a estação de trabalho que não está ligada a uma rede (Internet ou a rede interna), siga estes passos de 2:
 
 -   [Step 1: Prepare the disconnected workstation with Thales HSM](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareDisconnectedWorkstation1)
 
 -   [Step 2: Install the BYOK toolset on the disconnected workstation](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareDisconnectedWorkstation2)
 
-##### <a name="BKMK_PrepareDisconnectedWorkstation1"></a>Step 1: Prepare the disconnected workstation with Thales HSM
-On the disconnected workstation, install the nCipher (Thales) support software on a Windows computer, and then attach a Thales HSM to that computer.
+##### <a name="BKMK_PrepareDisconnectedWorkstation1"></a>Passo 1: Preparar a estação de trabalho desligada com Thales HSM
+Na estação de trabalho desligada, instalar o software de suporte de nCipher (Thales) num computador Windows e, em seguida, anexe um HSM Thales nesse computador.
 
-Ensure that the Thales tools are in your path **(%nfast_home%\bin** and **%nfast_home%\python\bin**). For example, type the following:
+Certifique-se de que as ferramentas de Thales o caminho de **(%nfast_home%\bin** e **%nfast_home%\python\bin**). Por exemplo, escreva o seguinte:
 
 ```
 set PATH=%PATH%;”%nfast_home%\bin”;”%nfast_home%\python\bin”
 ```
-For more information, see the user guide included with the Thales HSM, or visit the Thales website for Azure RMS at [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
+Para mais informações, consulte o guia de utilizador incluído com o HSM Thales ou visitar o Web site Thales para o Azure RMS em [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
 
-##### <a name="BKMK_PrepareDisconnectedWorkstation2"></a>Step 2: Install the BYOK toolset on the disconnected workstation
-Copy the BYOK toolset package from the USB drive or other portable storage, and then do the following:
+##### <a name="BKMK_PrepareDisconnectedWorkstation2"></a>Passo 2: Instalar o conjunto de ferramentas BYOK na estação de trabalho desligada
+Copie o pacote de toolset BYOK a pen USB ou outro armazenamento portátil e, em seguida, efetue o seguinte procedimento:
 
-1.  Extract the files from the downloaded package into any folder.
+1.  Extraia os ficheiros do pacote transferido para qualquer pasta.
 
-2.  From that folder, run vcredist_x64.exe.
+2.  A partir da pasta a que, execute vcredist_x64.exe.
 
-3.  Follow the instructions to the install the Visual C++ runtime components for Visual Studio 2012.
+3.  Siga as instruções para a instalar os componentes de tempo de execução do Visual C++ para Visual Studio 2012.
 
-#### <a name="BKMK_InternetGenerate"></a>Generate your tenant key
-On the disconnected workstation, following these 3 steps to generate your own tenant key:
+#### <a name="BKMK_InternetGenerate"></a>Gerar a chave de inquilino
+Na estação de desligado trabalho, a seguir estes 3 passos para gerar a sua própria chave do inquilino:
 
 -   [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1)
 
@@ -260,107 +259,107 @@ On the disconnected workstation, following these 3 steps to generate your own te
 
 -   [Step 3: Create a new key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate3)
 
-##### <a name="BKMK_InternetGenerate1"></a>Step 1: Create a security world
-Start a command prompt and run the Thales new-world program.
+##### <a name="BKMK_InternetGenerate1"></a>Passo 1: Criar um mundo de segurança
+Começar uma linha de comandos e executar o programa de novo mundo Thales.
 
 ```
 new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 ```
-This program creates a **Security World** file at %NFAST_KMDATA%\local\world, which corresponds to the C:\ProgramData\nCipher\Key Management Data\local folder. You can use different values for the quorum but in our example, you’re prompted to enter three blank cards and pins for each one. Then, any two cards will be required to have administrative access to the security world (your specified quorum).  These cards become the **Administrator Card Set** for the new security world. At this stage, you can specify the password or PIN for each ACS card, or add it later with a command.
+Este programa cria um **segurança mundo** ficheiro em % NFAST_KMDATA%\local\world, que corresponde à pasta C:\ProgramData\nCipher\Key Data\local de gestão. Pode utilizar valores diferentes para o quórum mas no nosso exemplo, lhe for pedido para introduzir três cartões em branco e pins para cada um deles. Em seguida, pode ser necessário qualquer dois cartões que têm acesso administrativo para o mundo de segurança (o quórum especificado).  Estes cartões tornam-se a **administrador cartão definido** para o novo mundo de segurança. Nesta fase, pode especificar a palavra-passe ou PIN para cada cartão de ACS ou adicioná-lo mais tarde com um comando.
 
 > [!TIP]
-> You can verify the current configuration status of your HSM by using the `nkminfo` command.
+> Pode verificar o estado da configuração atual da sua HSM utilizando o `nkminfo` comando.
 
-Then do the following:
+Em seguida, efetue o seguinte:
 
-1.  Install the Thales CNG provider as described in the Thales documentation, and configure it to use the new security world.
+1.  Instalar o fornecedor de Thales CNG conforme descrito na documentação do Thales e configure-o para utilizar o novo mundo de segurança.
 
-2.  Back up the world file in **%nfast_kmdata%\local**. Secure and protect the world file, the Administrator Cards, and their pins, and make sure that no single person has access to more than one card.
+2.  Criar uma cópia de segurança o ficheiro mundo **%nfast_kmdata%\local**. Proteger e proteger o ficheiro do mundo, os cartões de administrador e os respetivos pins e certifique-se de que nenhum única pessoa tem acesso a mais do que um cartão.
 
-##### <a name="BKMK_InternetGenerate2"></a>Step 2: Validate the downloaded package
-This step is optional but recommended so that you can validate the following:
+##### <a name="BKMK_InternetGenerate2"></a>Passo 2: Validar o pacote transferido
+Este passo é opcional mas recomendada para que possa validar o seguinte:
 
--   The Key Exchange Key that is included in the toolset has been generated from a genuine Thales HSM.
+-   A chave de troca de chave que está incluído no toolset foi gerada a partir de um HSM Thales genuine.
 
--   The hash of the Azure RMS Security World that is included in the toolset has been generated in a genuine Thales HSM.
+-   O hash do mundo de segurança do Azure RMS que está incluído no toolset foi gerado num HSM Thales genuine.
 
--   The Key Exchange Key is non-exportable.
+-   A chave de troca de chave é não exportável.
 
 > [!NOTE]
-> To validate the downloaded package, the HSM must be connected, powered on, and must have a security world on it (such as the one you’ve just created).
+> Para validar o pacote transferido, o HSM tem de estar ligado, ligado e tem de ter um mundo de segurança no mesmo (tal como a que acabou de criar).
 
-###### To validate the downloaded package
+###### Para validar o pacote transferido
 
-1.  Run the verifykeypackage.py script by tying one of the following, depending on your region:
+1.  Execute o script de verifykeypackage.py por associando um dos seguintes, consoante a região do utilizador:
 
-    -   For North America:
+    -   Na América do Norte:
 
         ```
         python verifykeypackage.py -k BYOK-KEK-pkg-NA-1 -w BYOK-SecurityWorld-pkg-NA-1
         ```
 
-    -   For Europe:
+    -   Para Europa:
 
         ```
         python verifykeypackage.py -k BYOK-KEK-pkg-EU-1 -w BYOK-SecurityWorld-pkg-EU-1
         ```
 
-    -   For Asia:
+    -   Da Ásia:
 
         ```
         python verifykeypackage.py -k BYOK-KEK-pkg-AP-1 -w BYOK-SecurityWorld-pkg-AP-1
         ```
 
     > [!TIP]
-    > The Thales software includes a Python interpreter at %NFAST_HOME%\python\bin
+    > O software de Thales inclui um interpretador Python em %NFAST_HOME%\python\bin
 
-2.  Confirm that you see the following, which indicates successful validation: **Result:  SUCCESS**
+2.  Confirme que verá o seguinte, o que indica a validação com êxito: **Resultado:  ÊXITO**
 
-This script validates the signer chain up to the Thales root key. The hash of this root key is embedded in the script and its value should be **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. You can also confirm this value separately by visiting the [Thales website](http://www.thalesesec.com/).
+Este script valida a cadeia de signatário até a chave de raiz Thales. O hash desta chave de raiz é incorporado no script e respetivo valor deve ser **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. Pode também confirmar este valor separadamente, visitando o [Web site Thales](http://www.thalesesec.com/).
 
-You’re now ready to create a new key that will be your RMS tenant key.
+Agora está pronto para criar uma nova chave que será a sua chave de inquilino do RMS.
 
-##### <a name="BKMK_InternetGenerate3"></a>Step 3: Create a new key
-Generate a CNG key by using the Thales **generatekey** and **cngimport** programs.
+##### <a name="BKMK_InternetGenerate3"></a>Passo 3: Crie uma nova chave
+Gerar uma chave CNG utilizando o Thales **generatekey** e **cngimport** programas.
 
-Run the following command to generate the key:
+Execute o seguinte comando para gerar a chave:
 
 ```
 generatekey --generate simple type=RSA size=2048 protect=module ident=contosokey plainname=contosokey nvram=no pubexp=
 ```
-When you run this command, use these instructions:
+Quando executar este comando, utilize estas instruções:
 
--   For the key size, we recommend 2048 but also support 1024-bit RSA keys for existing AD RMS customers who have such keys and are migrating to Azure RMS.
+-   Para o tamanho da chave, é recomendável 2048 mas também suportam chaves RSA de 1024 bits para clientes existentes do AD RMS que tem estas chaves e estão a migrar para o Azure RMS.
 
--   Replace the value of *contosokey* for the **ident** and **plainname** with any string value. To minimize administrative overheads and reduce the risk of errors, we recommend that you use the same value for both, and use all lower case characters.
+-   Substitua o valor do *contosokey* para o **ident** e **plainname** com qualquer valor de cadeia. Para minimizar a sobrecargas administrativas e reduzir o risco de erros, recomendamos que utilize o mesmo valor para ambos e utilize todos os carateres minúsculos.
 
--   The pubexp is left blank (default) in this example, but you can specify specific values. For more information, see the Thales documentation.
+-   O pubexp fica em branco (predefinição), neste exemplo, mas pode especificar valores específicos. Para mais informações, consulte a documentação de Thales.
 
-Then run the following command to import the key to CNG:
+Em seguida, execute o seguinte comando para importar a chave para CNG:
 
 ```
 cngimport --import -M --key=contosokey --appname=simple contosokey
 ```
-When you run this command, use these instructions:
+Quando executar este comando, utilize estas instruções:
 
--   Replace *contosokey* with the same value that you specified in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+-   Substituir *contosokey* com o mesmo valor que especificou no [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) a partir de *gerar a chave de inquilino* secção.
 
--   Use the **-M** option so that the key is suitable for this scenario. Without this, the resultant key will be a user-specific key for the current user.
+-   Utilize o **- M** opção para que a chave é adequada para este cenário. Sem esta situação, a chave resultante será uma chave de específica do utilizador para o utilizador atual.
 
-This command creates a Tokenized Key file in your %NFAST_KMDATA%\local folder with a name starting with **key_caping_** followed by a SID. For example: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. This file contains an encrypted key.
+Este comando cria um ficheiro de chave foi Atomizada na sua pasta %NFAST_KMDATA%\local com um nome, começando **key_caping_** seguido por um SID. Por exemplo: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. Este ficheiro contém uma chave encriptada.
 
 > [!TIP]
-> You can see the current configuration status of your keys by using the `nkminfo –k` command.
+> Pode ver o estado da configuração atual chaves de utilizando o `nkminfo –k` comando.
 
-Back up this Tokenized Key File in a safe location.
+Agregar este ficheiro de chave foi Atomizada numa localização segura.
 
 > [!IMPORTANT]
-> When you later transfer your key to Azure RMS, Microsoft cannot export this key back to you so it becomes extremely important that you back up your key and security world safely. Contact Thales for guidance and best practices for backing up your key.
+> Ao transferir a chave para o Azure RMS mais tarde, a Microsoft não é possível exportar esta chave devolver para que fique muito importante que uma cópia de segurança do mundo de chave e segurança com segurança. Procure Thales orientações e melhores práticas para a sua chave de segurança.
 
-You are now ready to transfer your tenant key to Azure RMS.
+Agora está pronto para transferir a chave de inquilino para o Azure RMS.
 
-#### <a name="BKMK_InternetPrepareTransfer"></a>Prepare your tenant key for transfer
-On the disconnected workstation, following these 4 steps to prepare your own tenant key:
+#### <a name="BKMK_InternetPrepareTransfer"></a>Preparar a sua chave de inquilino para transferência
+Na estação de desligado trabalho, estes 4 passos para preparar a sua própria chave do inquilino:
 
 -   [Step 1: Create a copy of your key with reduced permissions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetPrepareTransfer1)
 
@@ -370,39 +369,39 @@ On the disconnected workstation, following these 4 steps to prepare your own ten
 
 -   [Step 4: Copy your key transfer package to the Internet-connected workstation](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetPrepareTransfer4)
 
-##### <a name="BKMK_InternetPrepareTransfer1"></a>Step 1: Create a copy of your key with reduced permissions
-To reduce the permissions on your tenant key, do the following:
+##### <a name="BKMK_InternetPrepareTransfer1"></a>Passo 1: Criar uma cópia da sua chave com permissões reduzidas
+Para reduzir as permissões na sua chave de inquilino, efetue o seguinte:
 
--   From a command prompt, run one of the following, depending on your region:
+-   A partir de uma linha de comandos, execute um dos seguintes procedimentos, consoante a região do utilizador:
 
-    -   For North America:
+    -   Na América do Norte:
 
         ```
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-NA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-NA-1
         ```
 
-    -   For Europe:
+    -   Para Europa:
 
         ```
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-EU-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-EU-1
         ```
 
-    -   For Asia:
+    -   Da Ásia:
 
         ```
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AP-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AP-1
         ```
 
-When you run this command, replace *contosokey* with the same value you specified in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+Quando executar este comando, substitua *contosokey* com o mesmo valor que especificou no [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) a partir de *gerar a chave de inquilino* secção.
 
-You will be asked to plug in your security world ACS cards, and if specified, their password or PIN..
+Será pedido de fixação no seus cartões de ACS de mundo de segurança e se for especificado, a respetiva palavra-passe ou PIN..
 
-When the command completes, you will see **Result: SUCCESS** and the copy of your tenant key with reduced permissions will be in the file named key_xferacId_*&lt;contosokey&gt;*.
+Quando o comando for concluído, verá **resultado: Êxito** e a cópia da sua chave de inquilino com permissões reduzidas vai estar num ficheiro denominado key_xferacId_*&lt; contosokey &gt;*.
 
-##### <a name="BKMK_InternetPrepareTransfer2"></a>Step 2: Inspect the new copy of the key
-Optionally, run the Thales utilities to confirm the minimal permissions on the new tenant key:
+##### <a name="BKMK_InternetPrepareTransfer2"></a>Passo 2: Inspecione a nova cópia da chave
+Opcionalmente, execute o Thales utilitários para confirmar o mínimo de permissões a nova chave de inquilino:
 
--   aclprint.py:
+-   aclprint.PY:
 
     ```
     "%nfast_home%\bin\preload.exe" -m 1 -A xferacld -K contosokey "%nfast_home%\python\bin\python" "%nfast_home%\python\examples\aclprint.py"
@@ -414,47 +413,47 @@ Optionally, run the Thales utilities to confirm the minimal permissions on the n
     "%nfast_home%\bin\kmfile-dump.exe" "%NFAST_KMDATA%\local\key_xferacld_contosokey"
     ```
 
-When you run these command, replace *contosokey* with the same value you specified in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+Quando executar estes comando, substitua *contosokey* com o mesmo valor que especificou no [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) a partir de *gerar a chave de inquilino* secção.
 
-##### <a name="BKMK_InternetPrepareTransfer3"></a>Step 3: Encrypt your key by using Microsoft’s Key Exchange Key
-Run one of the following commands, depending on your region:
+##### <a name="BKMK_InternetPrepareTransfer3"></a>Passo 3: Encriptar a chave, utilizando a chave de troca de chave da Microsoft
+Execute um dos comandos seguintes, consoante a região do utilizador:
 
--   For North America:
+-   Na América do Norte:
 
     ```
     KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-NA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-NA-1 -TenantBposId GUID -KeyFriendlyName ContosoFirstkey
     ```
 
--   For Europe:
+-   Para Europa:
 
     ```
     KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-EU-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-EU-1 -TenantBposId GUID -KeyFriendlyName ContosoFirstkey
     ```
 
--   For Asia:
+-   Da Ásia:
 
     ```
     KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AP-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AP-1 -TenantBposId GUID -KeyFriendlyName ContosoFirstkey
     ```
 
-When you run this command, use these instructions:
+Quando executar este comando, utilize estas instruções:
 
--   Replace *contosokey* with the identifier that you used to generate the key in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+-   Substituir *contosokey* com o identificador que utilizou para gerar a chave no [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) a partir de *gerar a chave de inquilino* secção.
 
--   Replace *GUID* with your Azure Active Directory tenant ID that you retrieved in [Step 2: Get your Azure Active Directory tenant ID](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation2) from the *Prepare your Internet-connected workstation* section.
+-   Substituir *GUID* com o Azure Active Directory inquilino ID obtidas em [Step 2: Get your Azure Active Directory tenant ID](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation2) a partir de *preparar a estação de trabalho ligado à Internet* secção.
 
--   Replace *ContosoFirstKey* with a label that will be used for your output file name.
+-   Substituir *ContosoFirstKey* com uma etiqueta que será utilizada para o seu nome de ficheiro de saída.
 
-When this completes successfully it displays **Result: SUCCESS** and there will be a new file in the current folder that has the following name: TransferPackage-*ContosoFirstkey*.byok
+Quando esta ação for concluída com êxito-apresenta **resultado: Êxito** e haverá um novo ficheiro na pasta atual que tem o seguinte nome: TransferPackage -*ContosoFirstkey*.byok
 
-##### <a name="BKMK_InternetPrepareTransfer4"></a>Step 4: Copy your key transfer package to the Internet-connected workstation
-Use a USB drive or other portable storage to copy the output file from the previous step (KeyTransferPackage-*ContosoFirstkey*.byok) to your Internet-connected workstation.
+##### <a name="BKMK_InternetPrepareTransfer4"></a>Passo 4: Copie o pacote de transferência da chave para a estação de trabalho ligado à Internet
+Utilizar uma unidade USB ou outro armazenamento portátil para copiar o ficheiro de saída do passo anterior (KeyTransferPackage -*ContosoFirstkey*.byok) para a estação de trabalho ligado à Internet.
 
 > [!NOTE]
-> Use security practices to protect the file because it includes your private key.
+> Utilize as práticas de segurança para proteger o ficheiro, pois inclui a chave privada.
 
-#### <a name="BKMK_InternetTransfer"></a>Transfer your tenant key to Azure RMS
-On the Internet-connected workstation,  follow these 3 steps To transfer your new tenant key to Azure RMS, :
+#### <a name="BKMK_InternetTransfer"></a>Transferir a chave de inquilino para o Azure RMS
+Na estação de trabalho ligado à Internet, siga estes passos para transferir a nova chave de inquilino para o Azure RMS, 3:
 
 -   [Step 1: Connect to Azure RMS](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetTransfer1)
 
@@ -462,53 +461,53 @@ On the Internet-connected workstation,  follow these 3 steps To transfer your ne
 
 -   [Step 3: Enumerate your tenant keys – as needed](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetTransfer3)
 
-##### <a name="BKMK_InternetTransfer1"></a>Step 1: Connect to Azure RMS
-Return to the Windows PowerShell window and type the following:
+##### <a name="BKMK_InternetTransfer1"></a>Passo 1: Ligar ao Azure RMS
+Regressar à janela do Windows PowerShell e escreva o seguinte:
 
-1.  Reconnect to the [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] service:
+1.  Restabelecer a ligação a [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] serviço:
 
     ```
     Connect-AadrmService
     ```
 
-2.  Use the [Get-AadrmKeys](http://msdn.microsoft.com/library/windowsazure/dn629420.aspx) cmdlet to see your current tenant key configuration:
+2.  Utilize o [Get-AadrmKeys](http://msdn.microsoft.com/library/windowsazure/dn629420.aspx) cmdlet para ver a configuração atual da chave do inquilino:
 
     ```
     Get-AadrmKeys
     ```
 
-##### <a name="BKMK_InternetTransfer2"></a>Step 2: Upload the key package
-Use the [Add-AadrmKey](http://msdn.microsoft.com/library/windowsazure/dn629418.aspx) cmdlet to upload the key transfer package that you copied from the disconnected workstation:
+##### <a name="BKMK_InternetTransfer2"></a>Passo 2: Carregar o pacote de chave
+Utilize o [Adicionar AadrmKey](http://msdn.microsoft.com/library/windowsazure/dn629418.aspx) cmdlet para carregar o pacote de transferência da chave que copiou de estação de trabalho desligada:
 
 ```
 Add-AadrmKey –KeyFile <PathToPackageFile> -Verbose
 ```
 > [!WARNING]
-> You are prompted to confirm this action. It’s important to understand that this action cannot be undone. When you upload a tenant key, it automatically becomes your organization’s primary tenant key and users will start to use this tenant key when they protect documents and files.
+> Lhe for pedido para confirmar esta ação. É importante compreender que esta ação não pode ser anulada. Ao carregar uma chave de inquilino, é assumida automaticamente a chave de inquilino principal da sua organização e utilizadores irão começar a utilizar esta chave de inquilino quando estes protegem documentos e ficheiros.
 
-If the upload is successful, you will see the following message: **The Rights management service successfully added the key.**
+Se o carregamento for bem-sucedido, verá a seguinte mensagem: **O serviço de gestão de direitos adicionada com êxito a chave.**
 
-Expect a replication delay for the change to propagate to all [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] data centers.
+Esperado um atraso de replicação para que a alteração a ser propagada para todas as [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] centros de dados.
 
-##### <a name="BKMK_InternetTransfer3"></a>Step 3: Enumerate your tenant keys – as needed
-Use the Get-AadrmKeys cmdlet again to see the change in your tenant key, and whenever you want to see a list of your tenant keys. The tenant keys displayed include the initial tenant key that Microsoft generated for you, and any tenant keys that you added:
+##### <a name="BKMK_InternetTransfer3"></a>Passo 3: Enumerar as chaves de inquilino – conforme necessário
+Utilize o cmdlet Get-AadrmKeys novamente para ver a alteração na sua chave de inquilino e, sempre que pretender ver uma lista das chaves de inquilino. As chaves de inquilino apresentadas incluem a chave de inquilino inicial Microsoft gerado por si e as chaves de inquilino que adicionou:
 
 ```
 Get-AadrmKeys
 ```
-The tenant key that is marked **Active** is the one that your organization is currently using to protect documents and files.
+A chave do inquilino que está marcada **Active Directory** é o que a sua organização está atualmente a utilizar para proteger documentos e ficheiros.
 
-You have now completed all the steps required for bring your own key over the Internet and can go to [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
+Agora concluiu todos os passos necessários para colocar a sua própria chave através da Internet e podem aceder ao [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
 
-### <a name="BKMK_BYOK_InPerson"></a>Generate and transfer your tenant key – in person
-Use the following procedures if you do not want to transfer your tenant key over the Internet, but instead, transfer your tenant key in person.
+### <a name="BKMK_BYOK_InPerson"></a>Gerar e transferir a chave de inquilino – pessoalmente
+Utilize os procedimentos seguintes se não pretende transferir a chave de inquilino através da Internet, mas em vez disso, transferir a chave de inquilino na pessoa.
 
 -   [Generate your tenant key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateKey)
 
 -   [Transfer your tenant key to Azure RMS](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Transfer)
 
-#### <a name="BKMK_GenerateKey"></a>Generate your tenant key
-To generate your own tenant key, follow these 3 steps:
+#### <a name="BKMK_GenerateKey"></a>Gerar a chave de inquilino
+Para gerar a sua própria chave do inquilino, siga estes 3 passos:
 
 -   [Step 1: Prepare a workstation with Thales HSM](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey1)
 
@@ -516,63 +515,63 @@ To generate your own tenant key, follow these 3 steps:
 
 -   [Step 3: Create a new key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey3)
 
-##### <a name="BKMK_GenerateYourKey1"></a>Step 1: Prepare a workstation with Thales HSM
-Install the nCipher (Thales) support software on a Windows computer. Attach a Thales HSM to that computer. Ensure the Thales tools are in your path. For more information, see the user guide included with the Thales HSM, or visit the Thales website for Azure RMS at [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
+##### <a name="BKMK_GenerateYourKey1"></a>Passo 1: Preparar uma estação de trabalho com Thales HSM
+Instale o software de suporte nCipher (Thales) num computador Windows. Anexe um HSM Thales nesse computador. Certifique-se de que as ferramentas de Thales estão no seu caminho. Para mais informações, consulte o guia de utilizador incluído com o HSM Thales ou visitar o Web site Thales para o Azure RMS em [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
 
-##### <a name="BKMK_GenerateYourKey2"></a>Step 2: Create a security world
-Start a command prompt and run the Thales new-world program.
+##### <a name="BKMK_GenerateYourKey2"></a>Passo 2: Criar um mundo de segurança
+Começar uma linha de comandos e executar o programa de novo mundo Thales.
 
 ```
 new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 ```
-This program creates a **Security World** file at %NFAST_KMDATA%\local\world, which corresponds to the C:\ProgramData\nCipher\Key Management Data\local folder. You can use different values for the quorum but in our example, you’re prompted to enter three blank cards and pins for each one. Then, any two cards will give full access to the security world.  These cards become the **Administrator Card Set** for the new security world.
+Este programa cria um **segurança mundo** ficheiro em % NFAST_KMDATA%\local\world, que corresponde à pasta C:\ProgramData\nCipher\Key Data\local de gestão. Pode utilizar valores diferentes para o quórum mas no nosso exemplo, lhe for pedido para introduzir três cartões em branco e pins para cada um deles. Em seguida, quaisquer dois cartões dará acesso total para o mundo de segurança.  Estes cartões tornam-se a **administrador cartão definido** para o novo mundo de segurança.
 
-Then do the following:
+Em seguida, efetue o seguinte:
 
-1.  Install the Thales CNG provider as described in the Thales documentation, and configure it to use the new security world.
+1.  Instalar o fornecedor de Thales CNG conforme descrito na documentação do Thales e configure-o para utilizar o novo mundo de segurança.
 
-2.  Back up the world file. Secure and protect the world file, the Administrator Cards, and their pins, and make sure that no single person has access to more than one card.
+2.  Agregar o ficheiro do mundo. Proteger e proteger o ficheiro do mundo, os cartões de administrador e os respetivos pins e certifique-se de que nenhum única pessoa tem acesso a mais do que um cartão.
 
-You’re now ready to create a new key that will be your RMS tenant key.
+Agora está pronto para criar uma nova chave que será a sua chave de inquilino do RMS.
 
-##### <a name="BKMK_GenerateYourKey3"></a>Step 3: Create a new key
-Generate a CNG key by using the Thales **generatekey** and **cngimport** programs.
+##### <a name="BKMK_GenerateYourKey3"></a>Passo 3: Crie uma nova chave
+Gerar uma chave CNG utilizando o Thales **generatekey** e **cngimport** programas.
 
-Run the following command to generate the key:
+Execute o seguinte comando para gerar a chave:
 
 ```
 generatekey --generate simple type=RSA size=2048 protect=module ident=contosokey plainname=contosokey nvram=no pubexp=
 ```
-When you run this command, use these instructions:
+Quando executar este comando, utilize estas instruções:
 
--   For the key size, we recommend 2048 but also support 1024-bit RSA keys for existing AD RMS customers who have such keys and are migrating to Azure RMS.
+-   Para o tamanho da chave, é recomendável 2048 mas também suportam chaves RSA de 1024 bits para clientes existentes do AD RMS que tem estas chaves e estão a migrar para o Azure RMS.
 
--   Replace the value of *contosokey* for the **ident** and **plainname** with any string value. To minimize administrative overheads and reduce the risk of errors, we recommend that you use the same value for both, and use all lower case characters.
+-   Substitua o valor do *contosokey* para o **ident** e **plainname** com qualquer valor de cadeia. Para minimizar a sobrecargas administrativas e reduzir o risco de erros, recomendamos que utilize o mesmo valor para ambos e utilize todos os carateres minúsculos.
 
--   The pubexp is left blank (default) in this example, but you can specify specific values. For more information, see the Thales documentation.
+-   O pubexp fica em branco (predefinição), neste exemplo, mas pode especificar valores específicos. Para mais informações, consulte a documentação de Thales.
 
-Then run the following command to import the key to CNG:
+Em seguida, execute o seguinte comando para importar a chave para CNG:
 
 ```
 cngimport --import –M --key=contosokey --appname=simple contosokey
 ```
-When you run this command, use these instructions:
+Quando executar este comando, utilize estas instruções:
 
--   Replace *contosokey* with the same value that you specified in Step 1.
+-   Substituir *contosokey* com o mesmo valor que especificou no passo 1.
 
--   Use the **-M** option so that the key is suitable for this scenario. Without this, the resultant key will be a user-specific key for the current user.
+-   Utilize o **- M** opção para que a chave é adequada para este cenário. Sem esta situação, a chave resultante será uma chave de específica do utilizador para o utilizador atual.
 
-This command creates a Tokenized Key file in your %NFAST_KMDATA%\local folder with a name starting with **key_caping_** followed by a SID. For example: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. This file contains an encrypted key.
+Este comando cria um ficheiro de chave foi Atomizada na sua pasta %NFAST_KMDATA%\local com um nome, começando **key_caping_** seguido por um SID. Por exemplo: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. Este ficheiro contém uma chave encriptada.
 
-Back up this Tokenized Key File in a safe location.
+Agregar este ficheiro de chave foi Atomizada numa localização segura.
 
 > [!IMPORTANT]
-> When you later transfer your key to Azure RMS, Microsoft will have a non-recoverable copy of your key. This means that nobody can retrieve your key from the HSMs at Microsoft. This allows you to retain exclusive control over your tenant key. Therefore it becomes extremely important that you back up your key and security world safely. Contact Thales for guidance and best practices for backing up your key.
+> Ao transferir a chave para o Azure RMS mais tarde, Microsoft terá uma cópia da sua chave não recuperável. Isto significa que ninguém pode obter a sua chave de HSMs na Microsoft. Isto permite-lhe manter exclusivo controlo sobre a sua chave de inquilino. E por isso torna muito importante que uma cópia de segurança do mundo de chave e de segurança em segurança. Procure Thales orientações e melhores práticas para a sua chave de segurança.
 
-You are now ready to transfer your tenant key to Azure RMS.
+Agora está pronto para transferir a chave de inquilino para o Azure RMS.
 
-#### <a name="BKMK_Transfer"></a>Transfer your tenant key to Azure RMS
-After you have generated your own key, you must transfer it to Azure RMS before you use it. For the highest level of security, this transfer is a manual process that requires you to fly to the Microsoft office in Redmond, Washington, United States of America. To complete this process, follow these 3 steps:
+#### <a name="BKMK_Transfer"></a>Transferir a chave de inquilino para o Azure RMS
+Depois de ter gerado a sua própria chave, tem de transferi-lo para o Azure RMS antes de o utilizar. Para o nível mais elevado de segurança, esta transferência é um processo manual que requer que surgir para Microsoft office no Redmond, Washington, Unidos Estados of America. Para concluir este processo, siga estes 3 passos:
 
 -   [Step 1: Bring your key to Microsoft](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_TransferYourKey1)
 
@@ -580,70 +579,70 @@ After you have generated your own key, you must transfer it to Azure RMS before 
 
 -   [Step 3: Closing procedures](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_TransferYourKey3)
 
-###### Step 1: Bring your key to Microsoft
+###### Passo 1: Colocar a chave para a Microsoft
 
--   Contact Microsoft Customer Support Services (CSS) to schedule a key transfer appointment for Azure RMS. Bring the following to Microsoft in Redmond:
+-   Contacte o Microsoft suporte ao cliente (CSS) para agendar um compromisso de transferência da chave para o Azure RMS. Trazer o seguinte procedimento para a Microsoft na Redmond:
 
-    -   A quorum of your Administrative Cards. If you followed the previous instructions in [Step 2: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey2), these are any two of your three cards.
+    -   Um quórum dos seus cartões administrativo. Se se seguiu as instruções anteriores no [Step 2: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey2), estes são os dois dos seus três cartões.
 
-    -   Personnel authorized to carry your Administrative Cards and pins, typically two (one for each card).
+    -   Técnico autorizado para realizar o seu cartões administrativas e pins, normalmente duas (uma para cada cartão).
 
-    -   Your Security World file (%NFAST_KMDATA%\local\world) on a USB drive.
+    -   O ficheiro de segurança mundo (% NFAST_KMDATA%\local\world) numa unidade USB.
 
-    -   Your Tokenized Key File on a USB drive.
+    -   O ficheiro chave, Atomizada, numa unidade USB.
 
-###### Step 2: Transfer your key to the Window Azure RMS security world
+###### Passo 2: Transferir a chave para o mundo de segurança de janela Azure RMS
 
-1.  When you arrive at Microsoft to transfer your key, the following happens:
+1.  Quando chegar ao Microsoft para transferir a chave, ocorrerá o seguinte:
 
-    -   Microsoft provides you with an offline workstation that has a Thales HSM attached, Thales software installed, and a Azure RMS Security World file pre-loaded into the folder C:\Temp\Destination.
+    -   A Microsoft fornece-lhe uma estação de trabalho offline com um HSM Thales ligado, o software de Thales instalado e um ficheiro do mundo de segurança do Azure RMS previamente carregado para a pasta C:\Temp\Destination.
 
-    -   On this workstation, you load your Security World file and Tokenized Key File from your USB drive into the C:\Temp\Source folder.
+    -   Desta estação de trabalho, carregar o ficheiro de segurança mundo e Atomizada ficheiro da chave a partir da sua unidade USB para a pasta C:\Temp\Source.
 
-    -   Azure RMS operators securely transfer your key to the Azure RMS security world by using Thales utilities.
+    -   Operadores do Azure RMS em segurança transferem a chave para o mundo de segurança do Azure RMS utilizando utilitários Thales.
 
-    This process will look similar to the following, where the last parameter of key-xfer-im in this example is replaced by your Tokenized Key File name:
+    Este processo será semelhante ao seguinte, onde o último parâmetro da chave xfer MI neste exemplo é substituído pelo seu nome de ficheiro de chave foi Atomizada:
 
-    **C:\&gt; mk-reprogram.exe --owner c:\Temp\Destination add c:\Temp\Source**
+    **C:\ &gt; mk-reprogram.exe - c:\Temp\Destination proprietário adicionar c:\Temp\Source**
 
-    **C:\&gt; key-xfer-im.exe c:\Temp\Source c:\Temp\Destination --module c:\Temp\Source\key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**
+    **C:\ &gt; chave-xfer-im.exe c:\Temp\Source c:\Temp\Destination - c:\Temp\Source\key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb módulo**
 
-2.  Mk-reprogram will ask you and the Azure RMS operators to plug in their respective Administrator cards and pins. These commands output a Tokenized Key File in C:\Temp\Destination that contains your key protected by Azure RMS security world.
+2.  MK reprogram irá pedir-lhe e os operadores do Azure RMS para ligar os seus respetivos cartões de administrador e pins. Estes comandos gera um ficheiro de chave foi Atomizada no C:\Temp\Destination que contém a chave de protegidos pelo mundo de segurança do Azure RMS.
 
-###### Step 3: Closing procedures
+###### Passo 3: Fechar procedimentos
 
--   In your presence, Azure RMS operators do the following:
+-   No seu estado de presença, os operadores do Azure RMS, efetue o seguinte:
 
-    -   Run a tool that Microsoft developed in collaboration with Thales that removes two permissions: The permission to recover the key, and the permission to change permissions. After this is done, this copy of your key is locked to the Azure RMS security world. Thales HSMs will not allow Azure RMs operators with their Administrator cards to recover the plaintext copy of your key.
+    -   Execute uma ferramenta que desenvolvida pela Microsoft em colaboração com Thales que remove as duas permissões: A permissão para recuperar a chave e a permissão para alterar as permissões. Depois de terminar, esta cópia da sua chave está bloqueada para o mundo de segurança do Azure RMS. Thales HSMs irão permitir que os operadores do Azure RMs com os seus cartões de administrador para recuperar a cópia de texto simples da sua chave.
 
-    -   Copy the resulting key file to a USB drive to later upload to the Azure RMS service.
+    -   Copie o ficheiro de chave resultante para uma unidade USB mais tarde carregar para o serviço do Azure RMS.
 
-    -   Factory-reset the HSM, and wipe the workstation clean.
+    -   Reposição de fábrica do HSM e apagar a estação de trabalho correto.
 
-You have now completed all the steps required for bring your own key in person and can return to your organization for the next steps.
+Agora concluiu todos os passos necessários para colocar a sua própria chave na pessoa e podem regressar à sua organização para conhecer os passos seguintes.
 
-## <a name="BKMK_NextSteps"></a>Next steps
+## <a name="BKMK_NextSteps"></a>Próximos passos
 
-1.  Start to use your tenant key:
+1.  Começa a utilizar a sua chave de inquilino:
 
-    -   If you haven’t already done so, you must now activate Rights Management so that your organization can start to use RMS. Users immediately start to use your tenant key (managed by Microsoft or managed by you).
+    -   Se ainda não o fez, tem agora a ativar a gestão de direitos para que a sua organização pode começar a utilizar o RMS. Os utilizadores imediatamente a começar a utilizar a sua chave de inquilino (geridos pela Microsoft ou geridos por si).
 
-        For more information about activation, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
+        Para obter mais informações sobre a ativação, consulte o artigo [Ativar o Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
 
-    -   If you had already activated Rights Management and then decided to manage your own tenant key, users gradually transition from the old tenant key to the new tenant key, and this staggered transition can take a few weeks to complete. Documents and files that were protected with the old tenant key remains accessible to authorized users.
+    -   Se tinha já ativado a gestão de direitos e, em seguida, decidiu gerir a sua própria chave do inquilino, os utilizadores gradualmente transição a partir da chave de inquilino antiga para a nova chave de inquilino e esta transição escalonada pode demorar alguns semanas a concluir. Documentos e ficheiros que foram protegidos com a chave de inquilinos antigo permanece acessível a utilizadores autorizados.
 
-2.  Consider enabling usage logging, which logs every transaction that RMS performs.
+2.  Considere ativar o registo de utilização, que regista todas as transações que efetua RMS.
 
-    If you decided to manage your own tenant key, logging includes information about using your tenant key. See the following example of a log file displayed in Excel where the **Decrypt** and **SignDigest** Request Types show that the tenant key is being used.
+    Se decidiu gerir a sua própria chave do inquilino, o registo inclui informações sobre como utilizar a sua chave de inquilino. Consulte o exemplo seguinte de um ficheiro de registo apresentado no Excel onde o **desencriptar** e **SignDigest** pedido tipos mostrar que está a ser utilizada a chave de inquilino.
 
     ![](../Image/RMS_Logging.gif)
 
-    For more information about usage logging, see [Logging and Analyzing Azure Rights Management Usage](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md).
+    Para obter mais informações sobre o registo de utilização, consulte o artigo [Registo e analisar a utilização de gestão de direitos do Azure](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md).
 
-3.  Maintain your tenant key.
+3.  Manter a sua chave de inquilino.
 
-    For more information, see [Operations for Your Azure Rights Management Tenant Key](../Topic/Operations_for_Your_Azure_Rights_Management_Tenant_Key.md).
+    Para obter mais informações, consulte o artigo [Operações para a sua chave de inquilino do Azure Rights Management](../Topic/Operations_for_Your_Azure_Rights_Management_Tenant_Key.md).
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Consultar Também
+[Configurar a gestão de direitos do Azure](../Topic/Configuring_Azure_Rights_Management.md)
 

@@ -3,327 +3,315 @@ description: na
 keywords: na
 title: Logging and Analyzing Azure Rights Management Usage
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a735f3f7-6eb2-4901-9084-8c3cd3a9087e
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Logging and Analyzing Azure Rights Management Usage
-Use the information in this topic to help you understand how you can use usage logging with Azure Rights Management (Azure RMS). The Azure Rights Management service can log every request that it makes for your organization, which includes requests from users, actions performed by Rights Management administrators in your organization, and actions performed by Microsoft operators to support your Azure Rights Management deployment.
+# Registo e analisar a utiliza&#231;&#227;o de gest&#227;o de direitos do Azure
+Utilize as informações deste tópico para o ajudar a compreender como pode utilizar o registo com o Azure Rights Management (RMS do Azure) de utilização. O serviço Azure Rights Management pode iniciar cada pedido que faz para a sua organização, incluindo pedidos de utilizadores, ações efetuadas por administradores de gestão de direitos na sua organização e ações efetuadas por operadores de Microsoft para suportar a implementação do Azure Rights Management.
 
-You can then use these Azure Rights Management logs to support the following business scenarios:
+Em seguida, pode utilizar estes registos Azure Rights Management para suportar os seguintes cenários de negócio:
 
--   Analyze for business insights.
+-   Analise para informações empresariais.
 
-    Azure Rights Management writes logs in W3C extended log format into an Azure storage account that you provide. You can then direct these logs into a repository of your choice (such as a database, an online analytical processing (OLAP) system, or a map-reduce system) to analyze the information and produce reports. As an example, you could identify who is accessing your RMS-protected data. You can determine what RMS-protected data people are accessing, and from what devices and from where. You can find out whether people can successfully read protected content. You can also identify which people have read an important document that was protected.
+    Azure Rights Management escreve registos num formato de registo expandido de W3C para uma conta de armazenamento do Azure que indicar. Em seguida, pode direcionar estes registos para um repositório à sua escolha (tal como uma base de dados, um sistema de processamento analítico online (OLAP), ou um reduzir mapa system) a analisar as informações e elaborar relatórios. Por exemplo, foi possível identificar quem está a aceder os dados protegidos pelo RMS. Pode determinar o que as pessoas de dados protegidos pelo RMS estão a aceder e que dispositivos e a partir da qual. Pode saber se as pessoas com êxito podem ler conteúdo protegido. Pode também identificar que pessoas leu um documento importante que estava protegido.
 
--   Monitor for abuse.
+-   Monitor de abuso.
 
-    Azure Rights Management logging information is available to you in near-real time, so that you can continuously monitor your company’s use of Rights Management . 99.9% of logs are available within 15 minutes of an RMS-initiated action.
+    Informações de registo de gestão de direitos do Azure estão disponíveis para si no tempo de perto real, para que possa continuamente monitorizar utilização da sua empresa de gestão de direitos. 99,9% de registos estão disponíveis em 15 minutos de uma ação iniciada por RMS.
 
-    For example, you might want to be alerted if there is a sudden increase of people reading RMS-protected data outside standard working hours, which could indicate that a malicious user is collecting information to sell to competitors. Or, if the same user apparently accesses data from two different IP addresses within a short time frame, which could indicate that a user account has been compromised.
+    Por exemplo, poderá ser alertado se existir um aumento repentino das pessoas a leitura de dados protegida por RMS fora do horário de trabalho padrão, que pode indicar que um utilizador mal intencionado está a recolher informações sobre a vender concorrência. Em alternativa, se o mesmo utilizador acede gráfico dados a partir de dois endereços IP diferentes num período de hora abreviada, que pode indicar que uma conta de utilizador tiver sido comprometida.
 
--   Perform forensic analysis.
+-   Efetue análise forense.
 
-    If you have an information leak, you are likely to be asked who recently accessed specific documents and what information did a suspected person access recently. You can answer these type of questions when you use Azure Rights Management and logging because people who use protected content must always get a Rights Management license to open documents and pictures that are protected by Azure Rights Management, even if these files are moved by email or copied to USB drives or other storage devices. This means that you can use Azure Rights Management logs as a definitive source of information for forensic analysis when you protect your data by using Azure Rights Management.
-
-> [!NOTE]
-> If you are interested only in the logging of administrative tasks for Azure Rights Management, and do not want to track how users are using Rights Management, you can use the [Get-AadrmAdminLog](https://msdn.microsoft.com/library/azure/dn629430.aspx) Windows PowerShell cmdlet for Azure Rights Management.
-> 
-> You can also use the Azure classic portal for high-level usage reports that include **RMS usage**, **Most active RMS users**, **RMS device usage**, and **RMS enabled application usage**. To access these reports from the Azure classic portal, click **Active Directory**, select and open a directory, and then click **REPORTS**,
-
-Use the following sections for more information about Azure Rights Management usage logging.
-
--   [How to enable Azure Rights Management usage logging](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_EnableRMSLogging)
-
--   [How to access and use your Azure Rights Management usage logs](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_AccesAndUseLogs)
-
--   [How to manage your Azure Rights Management log storage](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_ManageStorage)
-
--   [How to delegate access to your Azure Rights Management usage logs](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Delegate)
-
--   [How to interpret your Azure Rights Management usage logs](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Interpret)
-
--   [Windows PowerShell reference](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_PowerShell)
-
-## <a name="BKMK_EnableRMSLogging"></a>How to enable Azure Rights Management usage logging
-Azure Rights Management usage logging is optional, so if you want to use it, you must take specific steps. When you use Azure Rights Management usage logging, there is no change in how  Rights Management works and the logging process itself is free. However, you must provide an Azure storage account for the logs and you will be charged for this storage.
-
-Before you begin, make sure that you meet the following prerequisites to use Azure Rights Management usage logging:
-
-|Requirement|More information|
-|---------------|--------------------|
-|An IT-managed subscription that includes Azure Rights Management|You must have a Microsoft Azure Rights Management subscription that is managed by your organization. Organizations that use RMS for individuals cannot use Azure Rights Management usage logging.<br /><br />If your organization has users who use RMS for individuals, Azure Rights Management usage logging provides a very compelling business reason to convert RMS for individuals into a Microsoft Azure Rights Management subscription.<br /><br />For more information about the subscriptions that include Azure RMS, see the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.<br /><br />For more information about RMS for individuals, see [RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md)|
-|Azure subscription|You must have a subscription to Azure and sufficient storage on Azure for your Azure Rights Management logs.|
-|Windows PowerShell for Azure Rights Management|If you haven’t already done so, download and install the Windows PowerShell module for Azure Rights Management. You will use Windows PowerShell cmdlets to configure and manage your Azure Rights Management usage logs.<br /><br />For more information, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).|
-Use the following procedure to enable Azure Rights Management usage logging, which includes steps to create an Azure storage account and then configure Azure to use this storage account for your  Rights Management logs.
+    Se tiver uma fuga de informações, é provável que ser-lhe pedido que tenha acedido recentemente documentos específicos e as informações que uma pessoa potencialmente acesso recentemente. Pode atender destes tipos de perguntas quando utiliza o Azure Rights Management e registo porque as pessoas que utilizam protegido conteúdo sempre tem de obter uma licença de gestão de direitos para abrir documentos e imagens que são protegidas pelo Azure Rights Management, mesmo que estes ficheiros são movidos por correio eletrónico ou copiados para unidades USB ou outros dispositivos de armazenamento. Isto significa que pode utilizar os registos do Azure Rights Management como definitivo fonte de informações para análise forense quando proteger os seus dados, utilizando a gestão de direitos do Azure.
 
 > [!NOTE]
-> This procedure assumes that you have an Azure account. Azure Rights Management usage logging supports individual accounts but as a best practice, use work or school accounts. In addition, we recommend that you create a dedicated storage account for your Rights Management logs. You must share the storage access keys with Azure Rights Management, and potentially with other people if they will also use the log files.
+> Se estiver interessado apenas o registo de tarefas administrativas para gestão de direitos do Azure e execute não as pretender controlar como os utilizadores estão a utilizar gestão de direitos, pode utilizar o [Get-AadrmAdminLog](https://msdn.microsoft.com/library/azure/dn629430.aspx) cmdlet do Windows PowerShell para o Azure Rights Management.
 > 
-> For more information about Azure storage, see the [Azure documentation for Storage](http://azure.microsoft.com/documentation/services/storage/).
+> Também pode utilizar o portal do Azure para relatórios de utilização de alto nível que incluem **utilização RMS**, **utilizadores RMS mais ativos**, **utilização do dispositivo de RMS**, e **RMS ativou a utilização de aplicação**. Para aceder a estes relatórios a partir do portal do Azure, clique em **do Active Directory**, selecione e abra um diretório e, em seguida, clique em **relatórios**,
 
-#### How to create your storage account and enable Azure Rights Management usage logging
+Utilize as secções seguintes para obter mais informações sobre o registo de utilização do Azure Rights Management.
 
-1.  Sign in to the [Azure portal](https://portal.azure.com/).
+-   [Como ativar o registo de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_EnableRMSLogging)
 
-2.  On the Hub menu, select **New** -&gt; **Data + Storage** -&gt; **Storage account**.
+-   [Como aceder e utilizar os seus registos de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_AccesAndUseLogs)
+
+-   [Como gerir o armazenamento de registo do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_ManageStorage)
+
+-   [Como delegar acesso para os seus registos de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Delegate)
+
+-   [Interpretar os seus registos de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Interpret)
+
+-   [Referência do Windows PowerShell](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_PowerShell)
+
+## <a name="BKMK_EnableRMSLogging"></a>Como ativar o registo de utilização do Azure Rights Management
+Registo de utilização do Azure Rights Management é opcional, por isso se pretender utilizá-lo, terá de efetuar passos específicos. Quando utiliza o registo de utilização do Azure Rights Management, não existe qualquer alteração de como funciona o Rights Management e o processo de registo propriamente dito está livre. No entanto, tem de fornecer uma conta de armazenamento do Azure para os registos e será cobrada por este armazenamento.
+
+Antes de começar, certifique-se de que cumpre os seguintes pré-requisitos para utilizar o registo de utilização do Azure Rights Management:
+
+|Requisito|Obter mais informações|
+|-------------|--------------------------|
+|Uma subscrição de gestão de TI que inclui o Azure Rights Management|Tem de ter uma subscrição do Microsoft Azure Rights Management é gerida pela sua organização. As organizações que utilizam o RMS para indivíduos não é possível utilizar o registo de utilização do Azure Rights Management.<br /><br />Se a sua organização tiver utilizadores que utilizam o RMS para indivíduos, o registo de utilização do Azure Rights Management fornece uma razão comercial muito apelativa para converter o RMS para indivíduos para uma subscrição do Microsoft Azure Rights Management.<br /><br />Para mais informações sobre as subscrições que incluem o Azure RMS, consulte o [Subscrições de nuvem que suportam o Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) secção a [Requisitos para o Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tópico.<br /><br />Para mais informações sobre RMS para indivíduos, consulte [RMS para indivíduos e Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md)|
+|Subscrição do Azure|Tem de ter uma subscrição do Azure e suficiente armazenamento no Azure para os seus registos do Azure Rights Management.|
+|Windows PowerShell para o Azure Rights Management|Se ainda não o fez, transfira e instale o módulo Windows PowerShell para o Azure Rights Management. Irá utilizar cmdlets do Windows PowerShell para configurar e gerir os seus registos de utilização do Azure Rights Management.<br /><br />Para obter mais informações, consulte o artigo [Instalação do Windows PowerShell para o Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).|
+Utilize o procedimento seguinte para ativar o registo de utilização do Azure Rights Management, que inclui passos para criar uma conta de armazenamento do Azure e, em seguida, configurar o Azure para utilizar esta conta de armazenamento para os seus registos do Rights Management.
+
+> [!NOTE]
+> Este procedimento assume que tem uma conta do Azure. Registo de utilização do Azure Rights Management suporta contas individuais, mas como uma melhor prática, utilizar escolar ou profissional contas. Além disso, recomendamos que crie uma conta de armazenamento dedicado para os seus registos do Rights Management. Tem de partilhar as chaves de acesso de armazenamento com o Azure Rights Management e, potencialmente com outras pessoas se também utilizarão os ficheiros de registo.
+> 
+> Para mais informações sobre armazenamento do Azure, consulte o [documentação do Azure para armazenamento](http://azure.microsoft.com/documentation/services/storage/).
+
+#### Como criar a sua conta de armazenamento e ativar o registo de utilização do Azure Rights Management
+
+1.  Início de sessão para o [portal do Azure](https://manage.windowsazure.com/).
+
+2.  Selecione **armazenamento**.
 
     > [!TIP]
-    > If you do not see this option, check that you have an Azure subscription in addition to your subscription for Rights Management.
+    > Se não vir esta opção, verifique se tem uma subscrição do Azure, além da sua subscrição para o Rights Management.
 
-3.  Keep the default deployment model of **Classic**, and then click **Create**.
+3.  Clique em **criar conta de armazenamento de um** e para o **URL**, introduza um nome exclusivo para a conta de armazenamento e, se necessário, altere o **grupo de AFINIDADES/localização** para que corresponde a sua região.
 
-    Specify the name for your storage account, and if necessary, change the selected options for the **Pricing tier**, **Resource Group**, **Subscription**, and whether to **Pin to dashboard**. and then click **CREATE**. Wait for the **Creating Storage Account** activity to complete.
+4.  Clique em **OK**, e aguarde até ver o nome do seu armazenamento mostram um Estado de **Online**.
 
-4.  Click the newly created storage account, and then click **Settings**.
+5.  Clique em **Gerir as chaves de acesso**.
 
-5.  In the **Settings** blade, click the **Keys** icon.
+6.  A partir de **Gerir as chaves de acesso** caixa de diálogo que mostra as chaves de acesso primária e secundária, copie a chave de acesso primária para a área de transferência e, em seguida, feche a caixa de diálogo.
 
-6.  In the **Manage keys** blade, copy the value of the  **PRIMARY ACCESS KEY** and close the blade.
-
-7.  Start Windows PowerShell with the **Run as administrator** option. Run the [Connect-AadrmService](https://msdn.microsoft.com/library/azure/dn629415.aspx) command to connect to the Azure Rights Management service:
+7.  Inicie o Windows PowerShell com o **Executar como administrador** opção. Executar o [Ligar AadrmService](https://msdn.microsoft.com/library/azure/dn629415.aspx) comando para ligar ao serviço de gestão de direitos do Azure:
 
     ```
     Connect-AadrmService
     ```
 
-8.  Use the [Set-AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629426.aspx) command to specify where you want to keep your Azure Rights Management usage logs, replacing *&lt;Access_Key&gt;* with the primary access key that you copied in step 6 and *&lt;StorageAccount&gt;* with the name of the storage account that you created in step 3:
+8.  Utilize o [conjunto AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629426.aspx) comandos para especificar para onde pretende manter os seus registos de utilização do Azure Rights Management, substituindo *&lt; Access_Key &gt;* com a chave de acesso primária que copiou no passo 6 e *&lt; StorageAccount &gt;* com o nome da conta de armazenamento que criou no passo 3:
 
     ```
-    $accesskey = convertto-securestring -asplaintext -force –string <Access_Key>
-    Set-AadrmUsageLogStorageAccount -AccessKey $accesskey -StorageAccount <StorageAccount>
+    $accesskey = convertto-securestring -asplaintext -force –string <Access_Key> Set-AadrmUsageLogStorageAccount -AccessKey $accesskey -StorageAccount <StorageAccount>
     ```
 
-9. Use the [Enable-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629421.aspx) command to enable Azure Rights Management usage logging:
+9. Utilize o [Ativar AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629421.aspx) comando para ativar o registo de utilização do Azure Rights Management:
 
     ```
     Enable-AadrmUsageLogFeature
     ```
-    You should see the message: **The usage log feature is enabled for the Rights management service.**
+    Deverá ver a mensagem: **A funcionalidade de registo de utilização é ativada para o serviço de gestão de direitos.**
 
-Now that usage logging is enabled, Azure Rights Management starts to log all actions for your organization and saves this information to your storage account. Logging information is not available before this point.
+Agora que o registo de utilização é ativado, o Azure Rights Management começa a registar todas as ações para a sua organização e guarda estas informações para a sua conta de armazenamento. As informações de registo não estão disponíveis antes deste ponto.
 
-For more information about how to create storage accounts, see the  [Create a storage account](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/) section from the [About Azure storage accounts](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/) in the Azure documentation.
+## <a name="BKMK_AccesAndUseLogs"></a>Como aceder e utilizar os seus registos de utilização do Azure Rights Management
+Azure Rights Management escreve registos à sua conta de armazenamento do Azure como uma série de blobs. Cada blob contém um ou mais registos de registo, num formato de registo expandido de W3C. Os nomes de blob são números, pela ordem em que foram criados. O [Interpretar os seus registos de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Interpret) secção mais à frente neste documento contém mais informações sobre os conteúdos de registo e a respetiva criação.
 
-## <a name="BKMK_AccesAndUseLogs"></a>How to access and use your Azure Rights Management usage logs
-Azure Rights Management writes logs to your Azure storage account as a series of blobs. Each blob contains one or more log records, in W3C extended log format. The blob names are numbers, in the order in which they were created. The [How to interpret your Azure Rights Management usage logs](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Interpret) section later in this document contains more information about the log contents and their creation.
+Pode demorar algum tempo para os registos a aparecer na sua conta de armazenamento após uma ação de Azure Rights Management. A maioria dos registos são apresentados em 15 minutos.
 
-It can take a while for logs to appear in your storage account after an Azure Rights Management action. Most logs appear within 15 minutes.
+A conta de armazenamento que criou para os seus registos de utilização do Azure Rights Management é como uma caixa de correio e suporta leitura diretamente a partir da conta de armazenamento, mas não está otimizada para serem utilizados desta forma. Em vez disso, para um melhor desempenho e para ajudar a reduzir os custos, recomendamos que transfira os registos para o armazenamento local, tal como uma pasta local, uma base de dados, ou um repositório de reduzir mapa.
 
-The storage account that you created for your Azure Rights Management usage logs is like a mailbox and supports reading directly from the storage account, but it is not optimized to be used in this way. Instead, for best performance and to help reduce costs, we recommend that you download the logs to local storage, such as a local folder, a database, or a map-reduce repository.
+Pode transferir os seus registos de utilização de duas formas:
 
-You can download your usage logs in two ways:
+-   Utilize o cmdlet do Windows PowerShell [Get-AadrmUsageLog](https://msdn.microsoft.com/library/azure/dn629401.aspx).
 
--   Use the Windows PowerShell cmdlet [Get-AadrmUsageLog](https://msdn.microsoft.com/library/azure/dn629401.aspx).
+    Esta é a forma mais simples para aceder aos seus registos de utilização. Este cmdlet transfere registos para o seu computador, transferir cada blob como um ficheiro para uma localização que especificou.
 
-    This is the simplest way to access your usage logs. This cmdlet downloads logs to your computer, downloading each blob as a file to a location that you specify.
+-   Utilize o [SDK de armazenamento do Azure](http://www.windowsazure.com/en-us/develop/net/) ao escrever a sua própria aplicação personalizada para transferir os registos.
 
--   Use the [Azure Storage SDK](http://www.windowsazure.com/en-us/develop/net/) to write your own custom application to download the logs.
+    Uma aplicação personalizada pode fornecer mais flexibilidade do que o cmdlet Get-AadrmUsageLogs. Por exemplo, poderá querer delegar a transferência de registos a pessoa ou um processo que não tem de utilizar as credenciais administrativas do Azure Rights Management. Em alternativa, pode querer são consultados os registos em tempo real, uma vez que pretende monitorizar utilização indevida.
 
-    A custom application can provide more flexibility than the Get-AadrmUsageLogs cmdlet. For example, you might want to delegate the download of logs to somebody or a process that must not use your Azure Rights Management administrative credentials. Or, you might want to poll the logs in real time because you want to monitor for misuse.
+#### Para transferir os seus registos de utilização utilizando o PowerShell
 
-#### To download your usage logs by using PowerShell
+-   Inicie o Windows PowerShell com o **Executar como administrador** opção e execute **Get-AadrmUsageLog –Path &lt;location&gt;**. Por exemplo, depois de criar uma pasta denominada **logs** no disco I:
 
--   Start Windows PowerShell with the **Run as administrator** option and run **Get-AadrmUsageLog –Path &lt;location&gt;**. For example, after creating a folder named **logs** on your E drive:
+    -   Para transferir todos os registos disponíveis para a pasta E:\logs: `Get-AadrmUsageLog -Path "e:\logs"`
 
-    -   To download all available logs to your E:\logs folder: `Get-AadrmUsageLog -Path "e:\logs"`
+    -   Para transferir um intervalo específico de blobs: `Get-AadrmUsageLog –Path "e:\logs" –FromCounter 1024 –ToCounter 2047`
 
-    -   To download a specific range of blobs: `Get-AadrmUsageLog –Path "e:\logs" –FromCounter 1024 –ToCounter 2047`
+Quando execute estes cmdlets, o Windows PowerShell apresenta o nome do último blob que foi transferido. Pode atribuir este nome a uma variável, o que lhe permite executar Get-AadrmUsageLog uma tarefa de agenda ou um ciclo, transferir apenas os registos incrementais cada vez.
 
-When you run these cmdlets, Windows PowerShell displays the name of the last blob that was downloaded. You can assign this name to a variable, which lets you run Get-AadrmUsageLog in a loop or a schedule job, downloading only the incremental logs each time.
+Por exemplo:
 
-For example:
-
-**PS C:\&gt; $LastBlobName = Get-AadrmUsageLog –Path "e:\logs"**
+**PS C:\ &gt; $LastBlobName = Get-AadrmUsageLog – o caminho "e:\logs"**
 
 **1527**
 
-**PS C:\&gt; $LastBlobName**
+**PS C:\ &gt; $LastBlobName**
 
 **1527**
 
 > [!TIP]
-> You can aggregate all your downloaded log files into a CSV format by using [Microsoft’s Log Parser](http://www.microsoft.com/download/details.aspx?id=24659), which is a tool to convert between various well-known log formats. You can also use this tool to convert data to SYSLOG format, or import it into a database. After you have installed the tool, run **LogParser.exe /?** for help and information to use this tool. For example, you might run the following command to import all information into a .log file format: **logparser –i:w3c –o:csv “SELECT &#42; INTO AllLogs.csv FROM &#42;.log”**.
+> Pode agregar todos os ficheiros de registo do transferido para um formato CSV, utilizando [Parser de registo da Microsoft](http://www.microsoft.com/download/details.aspx?id=24659), que é uma ferramenta para converter entre vários formatos de registo bem conhecidas. Também pode utilizar esta ferramenta para converter os dados para formato SYSLOG ou importá-lo para uma base de dados. Depois de instalar a ferramenta, executar **LogParser.exe /?** para obter ajuda e informações para utilizar esta ferramenta. Por exemplo, poderá executar o seguinte comando para importar todas as informações para um formato de ficheiro. log: **logparser –i:w3c –o:csv “SELECT &#42; INTO AllLogs.csv FROM &#42;.log”**.
 
-You can suspend and resume usage logging. When you suspend logging, Azure Rights Management retains your storage account information, so that you can easily resume logging again.
+Pode suspender e retomar o registo de utilização. Quando suspende o registo, o Azure Rights Management mantém as informações da conta de armazenamento, para que possa a retomar facilmente o registo novamente.
 
-#### To suspend and resume usage logging
+#### Suspender e retomar o registo de utilização
 
--   To suspend logging, use the following cmdlet: [Disable-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629404.aspx)
+-   Para suspender o registo, utilize o seguinte cmdlet: [Desativar AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629404.aspx)
 
--   To resume logging, use the following cmdlet: [Enable-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629421.aspx)
+-   Para retomar o registo, utilize o seguinte cmdlet: [Ativar AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629421.aspx)
 
--   To check whether logging is enabled or disabled, use the following cmdlet: [Get-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629425.aspx)
+-   Para verificar se o registo está ativado ou desativado, utilize o seguinte cmdlet: [Get-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629425.aspx)
 
-    A value of **True** means that usage logging is enabled for Azure Rights Management and a value of **False** means that usage logging is disabled.
+    Um valor de **Verdadeiro** significa que o registo de utilização é ativado para gestão de direitos do Azure e um valor de **Falso** significa que o registo de utilização é desativado.
 
-## <a name="BKMK_ManageStorage"></a>How to manage your Azure Rights Management log storage
-You are charged for the storage space that is used to keep your Azure Rights Management logs.
+## <a name="BKMK_ManageStorage"></a>Como gerir o armazenamento de registo do Azure Rights Management
+São cobradas para o espaço de armazenamento que é utilizado para manter os seus registos do Azure Rights Management.
 
-Azure Rights Management does no automatic management of your usage log files. If you take no action, they will remain in your storage account. However, to conserve space and reduce storage costs, you might want to delete them after you have downloaded them. Or you can choose which files to delete. With one exception, Azure Rights Management does not use these log files, so there are no restrictions about when you can delete them.
+Azure Rights Management não sem gestão automática dos seus ficheiros de registo de utilização. Se não tomar medidas, irão permanecer na sua conta de armazenamento. No entanto, para poupar espaço e reduzir os custos de armazenamento, poderá eliminá-las depois de ter transferido-los. Ou pode escolher quais os ficheiros para eliminar. Com uma exceção, Azure Rights Management não utiliza estes ficheiros de registo, por isso, não sem restrições sobre quando pode eliminá-las.
 
-The file that you must not delete (or modify) is named **metadata** that is in the **rms-metadata** container. Azure Rights Management uses this blob to keep track of the last blob number that it used. If this file is deleted, Azure Rights Management starts a new container for logs, with a blob number that starts from 1, and all future downloads that use the Get-AadrmUsageLog cmdlet use this new container to download log files. As a result, any logs in the original container are retained, but orphaned. The only way to download these orphaned logs is to use the Azure storage SDK.
+Chama-se o ficheiro que não tem eliminar (ou modificar) **metadados** que está a **rms metadados** contentor. Azure Rights Management utiliza esta blob para controlar o último número de blob utilizado. Se este ficheiro é eliminado, Azure Rights Management começa um novo contentor para os registos, com um número de blob que começa a 1 e todas as transferências futuras que utilizam o cmdlet Get-AadrmUsageLog utilizam este novo contentor para transferir ficheiros de registo. Como resultado, nenhum registo no contentor original é mantido, mas órfãos. É a única forma de transferir estes registos órfãos utilizar o SDK de armazenamento Azure.
 
 > [!TIP]
-> Instead of managing your Azure Rights Management log storage yourself, you can delegate this management function to another company by sharing your storage account name and access key. For more information, see the [How to delegate access to your Azure Rights Management usage logs](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Delegate) section later in this topic.
+> Em vez de gerir o armazenamento de registo do Azure Rights Management-la sozinho, pode delegar esta função de gestão a outra empresa ao partilhar a sua chave de acesso e o nome da conta de armazenamento. Para obter mais informações, consulte o [Como delegar acesso para os seus registos de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_Delegate) secção mais à frente neste tópico.
 
-In some circumstances, you might want to regenerate your storage access keys. For example:
+Em algumas circunstâncias, pode querer voltar a gerar as chaves de acesso de armazenamento. Por exemplo:
 
--   You change the company that manages your Azure Rights Management usage logs.
+-   Alterar a empresa que gere os seus registos de utilização do Azure Rights Management.
 
--   You suspect that your storage access key is compromised.
+-   Se suspeita que a sua chave de acesso de armazenamento estiver comprometido.
 
-If this happens to you, this is when you use the secondary access key (on the assumption that you were previously using the primary access key) to ensure service continuity. When you regenerate the access key that you were not previously using, you then configure Azure Rights Management to use the new key. Use the following procedure to regenerate the secondary access key and configure Azure Rights Management to use it:
+Se isto acontecer, esta é quando utiliza a chave de acesso secundária (-se no pressuposto que anteriormente estava a usar a chave de acesso primária) para assegurar a continuidade do serviço. Quando voltar a gerar a chave de acesso que ainda não foram anteriormente utilizar, em seguida, configure Azure Rights Management para utilizar a nova chave. Utilize o procedimento seguinte para gerar a chave de acesso secundária e configurar o Azure Rights Management para utilizá-lo:
 
-#### To regenerate the secondary access key
+#### A gerar a chave de acesso secundária
 
-1.  Sign in to the [Azure  portal](https://portal.azure.com/).
+1.  Início de sessão para o [portal do Azure](https://manage.windowsazure.com/).
 
-2.  Click **All Resources**, and search for your storage by typing the storage name in the text box..
+2.  Selecione **armazenamento**.
 
-3.  Select your storage, and click **Settings**.
+3.  Clique em **Gerir as chaves de acesso**.
 
-4.  Click the **Keys** icon.
+4.  No **Gerir as chaves de acesso** caixa de diálogo, clique em **regenerar** junto a chave de acesso secundária e copie-a nova chave de acesso secundária para a área de transferência.
 
-5.  In the **Manage  keys** section, click **Regenerate secondary key** click Yes to confirm that you want to regenerate secondary access key, and copy the new secondary access key to the clipboard.
-
-    Do not close the Azure portal.
-
-6.  Start Windows PowerShell with the **Run as administrator** option and use the [Set-AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629426.aspx) cmdlet to configure Azure Rights Management to use this new access key, replacing *&lt;StorageAccount&gt;* with the name of your storage account and *&lt;Access_Key&gt;* with the regenerated secondary access key that you just copied:
+5.  Inicie o Windows PowerShell com o **Executar como administrador** opção e utilizar o [conjunto AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629426.aspx) cmdlet para configurar o Azure Rights Management para utilizar esta nova chave de acesso, substituindo *&lt; StorageAccount &gt;* com o nome da sua conta de armazenamento e *&lt; Access_Key &gt;* com a chave de acesso secundária regenerada que acabou de copiar:
 
     ```
     Set-AadrmUsageLogStorageAccount -StorageAccount <StorageAccount>-AccessKey <Access_Key>
     ```
     > [!WARNING]
-    > Although you can switch to another storage account when you run this command, this action orphans your previous logs and they will no longer be accessible to the Set-AadrmUsageLogStorageAccount cmdlet or similar management commands and functions.
+    > Apesar de, pode mudar para outra conta de armazenamento ao executar este comando, esta ação orphans os seus registos do anterior e estes deixarão de estar acessíveis para o cmdlet Set-AadrmUsageLogStorageAccount ou semelhante comandos de gestão e funções.
 
-7.  Back in the Azure portal, **Manage  Keys** section, regenerate your primary access key.
+6.  Voltar a **Gerir as chaves de acesso** diálogo caixa, regenerar a chave de acesso primária.
 
-For more information about how to manage your storage access keys, see the  [Manage your storage access keys](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/) section from the [About Azure storage accounts](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/) in the Azure documentation.
+## <a name="BKMK_Delegate"></a>Como delegar acesso para os seus registos de utilização do Azure Rights Management
+Pode delegar acesso para os seus registos do RMS através da partilha a sua chave de acesso e o nome da conta de armazenamento. Pode querer delegar acesso a outro utilizador administrativo para um programador na sua própria organização ou para um fabricante independente de software (ISV). Porque não terão as credenciais de administrador de RMS, estes não podem utilizar o cmdlet Get-AardrmUsageLog para transferir os registos do RMS. Em vez disso, terão de utilizar o SDK de armazenamento do Windows para transferir os registos. Em alternativa, estes podem escrever uma aplicação para ler os registos diretamente a partir do armazenamento do Azure.
 
-## <a name="BKMK_Delegate"></a>How to delegate access to your Azure Rights Management usage logs
-You can delegate access to your RMS logs by sharing your storage account name and access key. You might want to delegate access to another administrative user, to a developer within your own organization, or to an independent software vendor (ISV). Because they will not have your RMS administrator credentials, they cannot use the Get-AardrmUsageLog cmdlet to download the RMS logs. Instead, they must use the Windows Storage SDK to download the logs. Alternatively, they can write an application to read the logs directly from Azure Storage.
+É seguro partilhar a sua chave de acesso e o nome de conta de armazenamento desta forma, quando a conta de armazenamento dedicada para os seus registos do RMS. Mesmo que outras pessoas tenham a chave de acesso, não é possível utilizar esta para aceder a qualquer outra conta de armazenamento ou utilizar a sua conta de inquilino do RMS.
 
-It is safe to share your storage account name and access key in this way when the storage account is dedicated to your RMS logs. Even though other people have your access key, they cannot use this to access any other storage account or use your RMS tenant account.
+## <a name="BKMK_Interpret"></a>Interpretar os seus registos de utilização do Azure Rights Management
+Utilize as seguintes informações para ajudar a interpretá os registos de utilização do Azure Rights Management.
 
-## <a name="BKMK_Interpret"></a>How to interpret your Azure Rights Management usage  logs
-Use the following information to help you interpret the Azure Rights Management usage  logs.
+### O esquema de conta de armazenamento
+Na primeira vez que o Azure Rights Management escreve registos à sua conta de armazenamento, cria os seguintes duas contentores:
 
-### The storage account layout
-The first time Azure Rights Management writes logs to your storage account, it creates the following two containers:
+-   **Rms metadados**: Este contentor de está reservado para o Azure Rights Management. Não modificar ou eliminar neste contentor.
 
--   **Rms-metadata**: This container is reserved for Azure Rights Management . Do not modify or delete this container.
+-   **Rms - registos - &lt; guid &gt;**: Este contentor é onde o Azure Rights Management cria e guarda os registos. Pode eliminar em segurança todos os ficheiros neste contentor se já não pretender que as informações de registo que contêm.
 
--   **Rms-logs-&lt;guid&gt;**: This container is where Azure Rights Management creates and saves the logs. You can safely delete any files in this container if you no longer want the logging information that they contain.
+Ao longo do tempo, o Azure Rights Management pode criar adicional **Rms - registos - &lt; guid &gt;** contentores. Por exemplo, se o **Rms metadados** contentor fica danificado ou é eliminada acidentalmente, Azure Rights Management repõe o respetivo conteúdo e cria uma nova **Rms - registos - &lt; guid &gt;** contentor para todos os registos futuros. Os registos antigos no contentor antigo não são eliminados mas ficarão órfãos.
 
-Over time, Azure Rights Management might create additional **Rms-logs-&lt;guid&gt;** containers. For example, if the **Rms-metadata** container becomes corrupted or it is accidentally deleted, Azure Rights Management resets its contents and creates a new **Rms-logs-&lt;guid&gt;** container for all future logs. The old logs in the old container are not deleted but are orphaned.
+### A sequência de registo
+Azure Rights Management escreve os registos de como uma série de blobs. Cada blob contém um ou mais registos de registo, num formato de registo W3C expandido.
 
-### The log sequence
-Azure Rights Management writes the logs as a series of blobs. Each blob contains one or more log records, in extended W3C log format.
-
-The name of each blob is a number. Within each log container the first blob is named 000000001. Each blob is named sequentially in the order in which it was created. Each blob contains one or more log records. Each log record has a UTC time stamp that indicates when the corresponding request was served by Azure Rights Management.
+O nome de cada blob é um número. Dentro do contentor cada registo o blob primeiro é denominado 000000001. Cada blob é denominado sequencialmente pela ordem em que foi criada. Cada blob contém um ou mais registos de registo. Cada registo tem um carimbo de hora UTC que indica quando o pedido correspondente servido pelo Azure Rights Management.
 
 > [!IMPORTANT]
-> The Azure Rights Management logging system is optimized to provide you with logs quickly, rather than in strict sequential order. The order of the blobs, as well as the order of log records within a blob, might be out of chronological sequence. The only reason the blobs are named sequentially is to enable you to efficiently download them incrementally.
+> O sistema de registo do Azure Rights Management está otimizado para lhe fornecer registos rapidamente, em vez de por ordem sequencial estrita. A ordem dos blobs, bem como a ordem dos registos dentro de um blob, poderá ter ficado sem sequência cronológica. A razão apenas que BLOBs são denominados sequencialmente é permitem-lhe de forma eficiente transferi-los de forma incremental.
 > 
-> Two examples of potential log sequence results:
+> Dois exemplos de potenciais resultados de sequência de registo:
 > 
-> -   The log records in blob 000000004 might overlap chronologically with the log records in blob 000000003. In an extreme case, all log records in blob 000000004 might have been generated before all log records in blob 000000003.
-> -   The second log record in a blob might have been generated before the first log record, but was written to storage in reverse order.
+> -   Os registos no blob 000000004 poderão sobrepor-se cronologicamente com os registos no blob 000000003. Num cenário extremos, todos os registos no blob 000000004 poderão ter sido gerados antes de todos os registos no blob 000000003.
+> -   O segundo registo de registo num blob poderá ter sido gerado antes do primeiro registo de registo, mas tenha sido escrito para armazenamento na ordem inversa.
 
-Before you analyze your Azure Rights Management usage logs, we recommend that you download and import the log into a repository where you can sort the logs based on their timestamp. For more information about to download the logs, see the [How to access and use your Azure Rights Management usage logs](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_AccesAndUseLogs) section in this topic.
+Antes de analisar os seus registos de utilização do Azure Rights Management, recomendamos que transfira e importe-o registo para um repositório de onde pode ordenar os registos com base no respetivo timestamp. Para obter mais informações sobre como transferir os registos, consulte o [Como aceder e utilizar os seus registos de utilização do Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md#BKMK_AccesAndUseLogs) deste tópico.
 
-Because the logs are not necessarily chronological but the majority of them are written within 15 minutes of the request, when you identify the logs that you want by using their timestamp , add 15 minutes to the time that you are interested in. Then download these logs. This strategy should ensure that you get almost all logs.
+Uma vez que os registos não são necessariamente cronológicos mas a maioria dos mesmos são escritos em 15 minutos do pedido, quando identifica os registos que pretende, utilizando os respetivos timestamp, adicione 15 minutos até ao momento em que está interessado. Em seguida, transferir estes registos. Esta estratégia deve garantir que obtém quase todos os registos.
 
-One other thing to remember is that the timestamp on each log record is the local time of the Azure Rights Management service that processed the request. Because Azure Rights Management runs on multiple servers across multiple data center, sometimes the logs might seem to be out of sequence, even when they are sorted by their timestamp. However, the different is small and usually within a minute. In most cases, this is not an issue that would be a problem for log analysis.
+Outra coisa a memorizar os é que o timestamp em cada registo é a hora local do serviço Azure Rights Management que processar o pedido. Porque Azure Rights Management é executada em vários servidores em vários centros de dados, por vezes, os registos podem parecer ter fora da sequência, mesmo quando estes são ordenados pelo respetivo timestamp. No entanto, os diferentes situação pequeno e normalmente dentro de um minuto. Na maioria dos casos, isto não é um problema de é um problema para análise do registo.
 
-### The blob format
-Each blob is in W3C extended log format. It starts with the following two lines:
+### O formato de blob
+Cada blob está num formato de registo expandido de W3C. Comece com as seguintes duas linhas:
 
 **#Software: RMS**
 
 **#Version: 1.1**
 
-The first line identifies that these are Azure Rights Management logs. The second line identifies that the rest of the blob follows the version 1.1 specification. We recommend that any applications that parse these logs verify these two lines before continuing to parse the rest of the blob.
+A primeira linha identifica que estes são os registos do Azure Rights Management. A segunda linha identifica que o resto do blob segue a especificação de versão 1.1. Recomendamos que todas as aplicações que analisar estes registos verificar estas duas linhas antes de continuar a analisar o resto do blob.
 
-The third line enumerates a list of field names that are separated by tabs:
+A terceira linha enumera uma lista de nomes de campos que são separados por separadores:
 
-**#Fields: date            time            row-id        request-type           user-id       result          correlation-id          content-id                owner-email           issuer                     template-id             file-name                  date-published      c-info         c-ip**
+**#Fields: data tempo id de linha tipo de pedido id de utilizador resultado id de correlação id de conteúdo. o proprietário-e-mail emissor id do modelo-nome do ficheiro publicados data c informações c-ip**
 
-Each of the subsequent lines is a log record. The values of the fields are in the same order as the preceding line, and are separated by tabs. Use the following table to interpret the fields.
+Cada uma das linhas subsequentes é um registo de registo. Os valores dos campos estão na mesma ordem que a linha anterior e são separados por separadores. Utilize a tabela seguinte para interpretar os campos.
 
-|Field name|W3C data type|Description|Example value|
-|--------------|-----------------|---------------|-----------------|
-|date|Date|UTC date when the request was served.<br /><br />The source is the local clock on the server that served the request.|2013-06-25|
-|time|Time|UTC time in 24-hour format when the request was served.<br /><br />The source is the local clock on the server that served the request.|21:59:28|
-|row-id|Text|Unique GUID for this log record.<br /><br />This value is useful when you aggregate logs or copy logs into another format.|1c3fe7a9-d9e0-4654-97b7-14fafa72ea63|
-|request-type|Name|Name of the RMS API that was requested.|AcquireLicense|
-|user-id|String|The user who made the request.<br /><br />The value is enclosed in single quotation marks. Some request types are anonymous, in which case the value is ”.|‘joe@contoso.com’|
-|result|String|‘Success’ if the request was served successful.<br /><br />The error type in single quotation marks if the request failed.|‘Success’|
-|correlation-id|Text|GUID that is common between the RMS client log and server log for a given request.<br /><br />This value can be useful to help troubleshooting client issues.|cab52088-8925-4371-be34-4b71a3112356|
-|content-id|Text|GUID, enclosed in curly braces that identifies the protected content (for example, a document).<br /><br />This field has a value only if request-type is AcquireLicense and is blank for all other request types.|{bb4af47b-cfed-4719-831d-71b98191a4f2}|
-|owner-email|String|Email address of the owner of the document.|alice@contoso.com|
-|issuer|String|Email address of the document issuer.|alice@contoso.com (or) FederatedEmail.4c1f4d-93bf-00a95fa1e042@contoso.onmicrosoft.com'|
-|Template-id|String|ID of the template used to protect the document.|{6d9371a6-4e2d-4e97-9a38-202233fed26e}|
-|File-name|String|File name of the document that was protected.|TopSecretDocument.docx|
-|Date-published|Date|Date when the document was protected.|2015-10-15T21:37:00|
-|c-info|String|Information about the client platform that is making the request.<br /><br />The specific string varies, depending on the application (for example, the operating system or the browser).|'MSIPC;version=1.0.623.47;AppName=WINWORD.EXE;AppVersion=15.0.4753.1000;AppArch=x86;OSName=Windows;OSVersion=6.1.7601;OSArch=amd64'|
-|c-ip|Address|IP address of the client that makes the request.|64.51.202.144|
+|Nome do campo|Tipo de dados de W3C|Descrição|Valor de exemplo|
+|-----------------|------------------------|-------------|--------------------|
+|data|Data|Data UTC quando o pedido foi servido.<br /><br />A origem é o relógio local no servidor que servida o pedido.|2013-06-25|
+|tempo|Tempo|Hora UTC no formato de 24 horas, quando o pedido foi servido.<br /><br />A origem é o relógio local no servidor que servida o pedido.|21:59:28|
+|id de linha|Texto|GUID exclusivo para este registo.<br /><br />Este valor é útil quando agregar registos ou registos de cópia noutro formato.|1c3fe7a9-d9e0-4654-97b7-14fafa72ea63|
+|tipo de pedido|Nome|Nome da API do RMS que foi pedido.|AcquireLicense|
+|id de utilizador|Cadeia|O utilizador que efetuou o pedido.<br /><br />O valor está escrito entre plicas. Alguns tipos de pedido são anónimos, caso em que é o valor ".|'joe@contoso.com'|
+|resultado|Cadeia|"Êxito" se o pedido foi servido com êxito.<br /><br />O tipo de erro plicas se o pedido falhou.|"Êxito"|
+|id de correlação|Texto|GUID que é comum entre o registo de cliente do RMS e o registo de servidor para um pedido específico.<br /><br />Este valor pode ser útil para ajudar a resolução de problemas do cliente.|cab52088-8925-4371-be34-4b71a3112356|
+|id de conteúdo|Texto|GUID, entre chavetas que identifica o conteúdo protegido (por exemplo, um documento).<br /><br />Este campo tem um valor apenas se o tipo de pedido é AcquireLicense e está em branco para todos os outros tipos de pedido.|{bb4af47b-cfed-4719-831d-71b98191a4f2}|
+|proprietário do e-mail|Cadeia|Endereço de e-mail do proprietário do documento.|Alice@contoso.com|
+|emissor|Cadeia|Endereço de e-mail do emissor do documento.|Alice@contoso.com (ou) FederatedEmail.4c1f4d-93bf-00a95fa1e042@contoso.onmicrosoft.com'|
+|Id do modelo|Cadeia|ID do modelo utilizado para proteger o documento.|{6d9371a6-4e2d-4e97-9a38-202233fed26e}|
+|Nome de ficheiro|Cadeia|Nome de ficheiro do documento que estava protegido.|TopSecretDocument.docx|
+|Publicado por data|Data|Data quando o documento foi protegido.|2015-10-15T21:37:00|
+|informações de c|Cadeia|Informações sobre a plataforma de cliente que está a fazer o pedido.<br /><br />A cadeia específica varia, dependendo da aplicação (por exemplo, o sistema operativo ou o browser).|' MSIPC;) versão = 1.0.623.47; AppName = WINWORD. EXE; AppVersion = 15.0.4753.1000; AppArch = x86; OSName = Windows; OSVersion = 6.1.7601; OSArch = amd64'|
+|c-ip|Endereço|Endereço IP do cliente que faz com que o pedido.|64.51.202.144|
 
-#### Exceptions for the user-id field
-Although the user-id field usually indicates the user who made the request, there are two exceptions where the value does not map to a real user:
+#### Exceções para o campo de id de utilizador
+Apesar do campo de id de utilizador indica normalmente o utilizador que efetuou o pedido, existem duas exceções onde o valor não é mapeado para um utilizador real:
 
--   The value **'microsoftrmsonline@&lt;YourTenantID&gt;.rms.&lt;region&gt;.aadrm.com'**.
+-   O valor **' microsoftrmsonline @&lt; YourTenantID &gt;. &lt; Região &gt; do RMS. aadrm.com'**.
 
-    This indicates an Office 365 service, such as Exchange Online or Sharepoint Online, is making the request. In the string, *&lt;YourTenantID&gt;* is the GUID for your tenant and *&lt;region&gt;* is the region where your tenant is registered. For example, **na** represents North America, **eu** represents Europe, and **ap** represents Asia.
+    Isto indica que um serviço do Office 365, como o Exchange Online ou Sharepoint Online, está a fazer o pedido. Na cadeia de *&lt; YourTenantID &gt;* é o GUID para o seu inquilino e *&lt; Região &gt;* é a região onde está registado o seu inquilino. Por exemplo, **ND** representa América do Norte – **UE** representa Europa, e **ap** representa da Ásia.
 
--   If you are using the RMS connector.
+-   Se estiver a utilizar o conector do RMS.
 
-    Requests from this connector are logged with the service principal name that RMS automatically generates when you install the RMS connector.
+    Pedidos deste conector são registados com o nome principal de serviço que RMS gera automaticamente ao instalar o conector do RMS.
 
-#### Typical request types
-There are many request types for Azure Rights Management but the following table identifies some of the most typically used request types.
+#### Tipos de pedido típica
+Existem vários tipos de pedido para o Azure Rights Management, mas a tabela seguinte identifica alguns dos tipos de pedido normalmente utilizados.
 
-|Request type|Description|
-|----------------|---------------|
-|AcquireLicense|A client from a Windows based machine is requesting a license for RMS-protected content.|
-|AcquirePreLicense|A client, on behalf of the user, is requesting for a license for RMS-protected content.|
-|AcquireTemplates|A call was made to acquires templates based on template IDs|
-|AcquireTemplateInformation|A call was made to get the IDs of the template from the service.|
-|AddTemplate|A call is  made from the Azure classic portal to add a template.|
-|BECreateEndUserLicenseV1|A call is  made from a mobile device to create an end-user license.|
-|BEGetAllTemplatesV1|A call is  made from a mobile device (back-end) to get all the templates.|
-|Certify|The client is certifying the content for protection.|
-|Decrypt|The client is attempting to decrypt the RMS-protected content.|
-|DeleteTemplateById|A call is  made from the Azure classic portal, to delete a template by template  ID.|
-|ExportTemplateById|A call is  made from the Azure classic portal to export a template based on a template ID.|
-|FECreateEndUserLicenseV1|Similar to the AcquireLicense request but from mobile devices.|
-|FECreatePublishingLicenseV1|The same as Certify and GetClientLicensorCert combined, from mobile clients.|
-|FEGetAllTemplates|A call is  made, from a mobile device (front-end) to get the templates.|
-|GetAllTemplates|A call is  made from the Azure classic portal, to get all the templates.|
-|GetClientLicensorCert|The client is requesting a publishing certificate (that is later used to protect content) from a Windows-based computer.|
-|GetConfiguration|An Azure PowerShell cmdlet is called to get the configuration of the Azure RMS tenant.|
-|GetConnectorAuthorizations|A call  is made from the RMS connectors to get their configuration from the cloud.|
-|GetTenantFunctionalState|The Azure classic portal is checking whether Azure RMS is activated.|
-|GetTemplateById|A call is  made from the Azure classic portal to get a template by specifying a template ID.|
-|ExportTemplateById|A call is being made from the Azure classic portal to export a template by specifying a template ID.|
-|FindServiceLocationsForUser|A call is made to query for URLs, which is used to call Certify or AcquireLicense.|
-|ImportTemplate|A call is  made from the Azure classic portal to import a template.|
-|ServerCertify|A call is  made from an RMS-enabled client (such as SharePoint) to certify the server.|
-|SetUsageLogFeatureState|A call is  made to enable usage logging.|
-|SetUsageLogStorageAccount|A call is  made to specify the location of the Azure RMS logs.|
-|SignDigest|A call is made when a key is used for signing purposes. This is called typically once per AcquireLicence (or FECreateEndUserLicenseV1), Certify, and GetClientLicensorCert (or FECreatePublishingLicenseV1).|
-|UpdateTemplate|A call is  made from the Azure classic portal to update an existing template.|
+|Tipo de pedido|Descrição|
+|------------------|-------------|
+|AcquireLicense|um cliente a partir de um computador baseado no Windows está a solicitar uma licença para o conteúdo protegido por RMS.|
+|AcquirePreLicense|um cliente, em nome do utilizador, está a solicitar por uma licença para o conteúdo protegido por RMS.|
+|AcquireTemplates|foi feita uma chamada para adquire modelos com base no modelo IDs|
+|AcquireTemplateInformation|foi feita uma chamada para obter os IDs do modelo de serviço.|
+|AddTemplate|é feita uma chamada a partir do portal do Azure para adicionar um modelo.|
+|BECreateEndUserLicenseV1|é feita uma chamada a partir de um dispositivo móvel para criar uma licença do utilizador final.|
+|BEGetAllTemplatesV1|é feita uma chamada a partir de um dispositivo móvel (back-end) para obter todos os modelos.|
+|Certify|o cliente é certifying o conteúdo para proteção.|
+|Desencriptar|o cliente está a tentar desencriptar o conteúdo protegido por RMS.|
+|DeleteTemplateById|é feita uma chamada a partir do portal do Azure, para eliminar um ID de modelo pelo modelo.|
+|ExportTemplateById|é feita uma chamada a partir do portal do Azure para exportar um modelo baseado num modelo ID|
+|FECreateEndUserLicenseV1|é semelhante ao pedido de AcquireLicense mas a partir de dispositivos móveis.|
+|FECreatePublishingLicenseV1|igual Certify e GetClientLicensorCert combinados, a partir de clientes móveis.|
+|FEGetAllTemplates|é feita uma chamada, a partir de um dispositivo móvel (front-end) para obter os modelos.|
+|GetAllTemplates|é feita uma chamada a partir do portal do Azure, para obter todos os modelos.|
+|GetClientLicensorCert|o cliente está a solicitar um certificado de publicação (que é posteriormente utilizado para proteger conteúdo) a partir de um computador baseado em Windows.|
+|GetConfiguration|cmdlet do PowerShell do Azure um chama-se para obter a configuração do inquilino do Azure RMS.|
+|GetConnectorAuthorizations|é feita uma chamada a partir de conectores do RMS para obter a configuração a partir da nuvem.|
+|GetTenantFunctionalState|portal do Azure está a verificar se o Azure RMS é ativado.|
+|GetTemplateById|é feita uma chamada a partir do portal do Azure para obter um modelo, especificando um ID de modelo|
+|ExportTemplateById|está a ser feita uma chamada a partir do portal do Azure para exportar um modelo, especificando um ID de modelo|
+|FindServiceLocationsForUser|é feita uma chamada para consultar os URLs, que é utilizada para telefonar Certify ou AcquireLicense.|
+|ImportTemplate|é feita uma chamada a partir do portal do Azure para importar um modelo.|
+|ServerCertify|é feita uma chamada a partir de um cliente preparados para RMS (por exemplo, o SharePoint) para o servidor de certificar.|
+|SetUsageLogFeatureState|é feita uma chamada para ativar o registo de utilização.|
+|SetUsageLogStorageAccount|é feita uma chamada para especificar a localização dos registos do Azure RMS.|
+|SignDigest|é feita uma chamada quando é utilizada uma chave para fins de assinatura. Esta opção é denominada normalmente uma vez por AcquireLicence (ou FECreateEndUserLicenseV1), Certify e GetClientLicensorCert (ou FECreatePublishingLicenseV1).|
+|UpdateTemplate|é feita uma chamada a partir do portal do Azure para atualizar um modelo existente.|
 
-## <a name="BKMK_PowerShell"></a>Windows PowerShell reference
-Use the following Windows PowerShell cmdlets to help you configure and use Azure Rights Management usage logging:
+## <a name="BKMK_PowerShell"></a>Referência do Windows PowerShell
+Utilize os seguintes cmdlets do Windows PowerShell para o ajudar a configurar e utilizar o registo de utilização do Azure Rights Management:
 
--   [Disable-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629404.aspx)
+-   [Desativar AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629404.aspx)
 
--   [Enable-AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629421.aspx)
+-   [Ativar AadrmUsageLogFeature](https://msdn.microsoft.com/library/azure/dn629421.aspx)
 
 -   [Get-AadrmUsageLog](https://msdn.microsoft.com/library/azure/dn629401.aspx)
 
@@ -333,10 +321,10 @@ Use the following Windows PowerShell cmdlets to help you configure and use Azure
 
 -   [Get-AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629419.aspx)
 
--   [Set-AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629426.aspx)
+-   [Conjunto AadrmUsageLogStorageAccount](https://msdn.microsoft.com/library/azure/dn629426.aspx)
 
-For more information about using Windows PowerShell for Azure Rights Management, see [Administering Azure Rights Management by Using Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md).
+Para obter mais informações sobre como utilizar o Windows PowerShell para o Azure Rights Management, consulte o artigo [Administrar o Azure Rights Management utilizando o Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md).
 
-## See Also
-[Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md)
+## Consultar Também
+[Utilizar o Azure Rights Management](../Topic/Using_Azure_Rights_Management.md)
 

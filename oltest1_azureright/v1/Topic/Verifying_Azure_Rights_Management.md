@@ -3,25 +3,24 @@ description: na
 keywords: na
 title: Verifying Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 08664a01-81a5-4fa5-884c-7306ee55dba0
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Verifying Azure Rights Management
-After you have activated [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS) and performed any additional configuration steps that are required for your organization, you can verify that the service is working as expected by protecting a file or email message by using one  user account, and then attempting to open and use that protected content from another user account.
+# Verificar Azure Rights Management
+Depois de ter ativado [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (RMS do Azure) e executar passos de configuração adicionais que são necessários para a sua organização, pode verificar que o serviço está a funcionar conforme esperado ao proteger uma ficheiro ou mensagem de e-mail utilizando uma conta de utilizador e, em seguida, tentar abrir e utilizar que protegeu o conteúdo a partir de outra conta de utilizador.
 
-To do this testing, you can use the information in [Helping Users to Protect Files by Using Azure Rights Management](../Topic/Helping_Users_to_Protect_Files_by_Using_Azure_Rights_Management.md).
+Para fazer neste teste, pode utilizar as informações no [Ajudar os utilizadores a proteger ficheiros utilizando o Azure Rights Management](../Topic/Helping_Users_to_Protect_Files_by_Using_Azure_Rights_Management.md).
 
-If your testing is unsuccessful, review the configuration steps in [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md), and use the [RMS Analyzer tool](http://www.microsoft.com/en-us/download/details.aspx?id=46437) to help identify and fix potential problems. You can also run this tool periodically, as a general health check.
+Se os testes for bem-sucedida, reveja os passos de configuração no [Plano de implementação do Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md), e utilizar o [ferramenta Analisador de RMS](http://www.microsoft.com/en-us/download/details.aspx?id=46437) para ajudar a identificar e corrigir problemas potenciais. Também pode executar esta ferramenta periodicamente, como uma verificação de estado de funcionamento geral.
 
 > [!TIP]
-> If you need additional help, see the [Support options and community resources](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_SupportOptions) section in the [Information and Support for Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md) topic.
+> Se precisar de ajuda adicional, consulte o [Opções de suporte e recursos da Comunidade](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_SupportOptions) secção a [Informações e suporte para o Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md) tópico.
 
-You can monitor how your organization is using information protection by using usage logging. For more information, see [Logging and Analyzing Azure Rights Management Usage](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md).
+Pode monitorizar a forma como a sua organização utiliza proteção de informações através da utilização de registo de utilização. Para obter mais informações, consulte o artigo [Registo e analisar a utilização de gestão de direitos do Azure](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md).
 
-## See Also
-[Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md)
+## Consultar Também
+[Utilizar o Azure Rights Management](../Topic/Using_Azure_Rights_Management.md)
 

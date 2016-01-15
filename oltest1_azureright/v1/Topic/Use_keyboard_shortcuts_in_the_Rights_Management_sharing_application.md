@@ -3,27 +3,26 @@ description: na
 keywords: na
 title: Use keyboard shortcuts in the Rights Management sharing application
 search: na
-ms.date: 2015-09-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72760134-94e0-4699-b20c-07b96aa061f1
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Use keyboard shortcuts in the Rights Management sharing application
-When you use the RMS sharing application, press the **Alt** key to see the available access keys, and then press **Alt** + the access key to select an option.
+# Utilizar atalhos de teclado na aplica&#231;&#227;o de partilha Rights Management
+Quando utilizar a aplicação de partilha RMS, prima a **Alt** chave para ver as teclas de acesso disponíveis e, em seguida, prima **Alt** + a tecla de acesso para selecionar uma opção.
 
-For example, in the **share protected** dialog box, press **Alt** to see the access keys, and then press **Alt + m** to select the **Email me when somebody tries to open these documents** check box.
+Por exemplo, no **partilha protegida** caixa de diálogo, prima **Alt** para ver as teclas de acesso e, em seguida, prima **Alt + m** para selecionar o **E-Mail-me quando alguém tentar abrir estes documentos** caixa de verificação.
 
 ![](../Image/ADRMS_MSRMSApp_AccessKeys.png)
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Exemplos e outras instruções
+Para obter exemplos de como pode utilizar a aplicação e instruções sobre como proceder de partilha Rights Management, consulte as secções seguintes a partir do Guia do utilizador aplicação partilha Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Exemplos para utilizar a aplicação de partilha RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Consultar Também
+[Guia de utilizador de aplicação partilha do Rights Management](../Topic/Rights_Management_sharing_application_user_guide.md)
 
