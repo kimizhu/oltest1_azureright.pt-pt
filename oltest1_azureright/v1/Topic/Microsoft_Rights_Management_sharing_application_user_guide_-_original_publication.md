@@ -6,11 +6,10 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: 350b6869-084d-4e8a-a4d3-df44a40fa13b
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Microsoft Rights Management sharing application user guide - original publication
-This user guide for Microsoft Rights Management sharing application for Windows includes the following sections:
+# Manual do utilizador da aplica&#231;&#227;o de partilha Microsoft Rights Management - publica&#231;&#227;o original
+Este manual do utilizador da aplicação de partilha Microsoft Rights Management para Windows inclui as secções seguintes:
 
 -   [Evaluating and Installing Microsoft Rights Management sharing application](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_Eval)
 
@@ -22,10 +21,10 @@ This user guide for Microsoft Rights Management sharing application for Windows 
 
 -   [Administrator’s guidance for Microsoft Rights Management sharing application](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_AdminGuide)
 
-For frequently asked questions and troubleshooting information, see [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Para obter mais informações sobre as perguntas mais frequentes e a resolução de problemas, consulte [FAQ para a Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## <a name="BKMK_Eval"></a>Evaluating and Installing Microsoft Rights Management sharing application
-This section explains what Microsoft Rights Management sharing application is and how to install it:
+## <a name="BKMK_Eval"></a>Avaliar e Instalar a aplicação de partilha Microsoft Rights Management
+Esta secção explica o que é a aplicação de partilha Microsoft Rights Management e como instalá-la:
 
 -   [What is the Microsoft Rights Management sharing application?](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_WhatIs)
 
@@ -33,35 +32,35 @@ This section explains what Microsoft Rights Management sharing application is an
 
 -   [Installing the Microsoft Rights Management sharing application](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_Install)
 
-### <a name="BKMK_WhatIs"></a>What is the Microsoft Rights Management sharing application?
-Microsoft Rights Management sharing application is an optional downloadable application for Microsoft Windows that provides the following:
+### <a name="BKMK_WhatIs"></a>O que é a aplicação de partilha Microsoft Rights Management?
+A aplicação de partilha Microsoft Rights Management é uma aplicação transferível e opcional para o Microsoft Windows e que proporciona o seguinte:
 
--   Enhances File Explorer (also known as Windows Explorer in Windows 7 and earlier versions) to allow you to protect a single file, or bulk protect multiple files as well as all files within a selected folder.
+-   Melhora o Explorador de Ficheiros (também conhecido como Explorador do Windows no Windows 7 e em versões anteriores) para permitir a proteção de um único ficheiro ou de uma grande quantidade de ficheiros, assim como de todos os ficheiros contidos numa pasta selecionada.
 
--   Adds support for protection of any type of file and a built-in viewer for commonly used text and image file types.
+-   Adiciona suporte para a proteção de qualquer tipo de ficheiro e um visualizador incorporado para tipos de ficheiros de texto e de imagens normalmente utilizados.
 
--   Adds new buttons to the Microsoft Office toolbar for Word, PowerPoint, and Excel.
+-   Adiciona novos botões à barra de ferramentas do Microsoft Office para Word, PowerPoint e Excel.
 
-### <a name="BKMK_Reqs"></a>Requirements for Microsoft Rights Management sharing application
-To use the Microsoft Rights Management sharing application, your computer must be running Windows 8.1, Windows 8, or Windows 7.
+### <a name="BKMK_Reqs"></a>Requisitos da aplicação de partilha Microsoft Rights Management
+Para utilizar a aplicação de partilha Microsoft Rights Management, o seu computador tem de executar o Windows 8.1, o Windows 8 ou o Windows 7.
 
-The Microsoft Rights Management sharing application requires the AD RMS Client 2.1, which is installed as part of the installation package. The Microsoft Rights Management sharing application will only work with this version of the AD RMS client.
+A aplicação de partilha Microsoft Rights Management requer o Cliente 2.1 de AD RMS, que é instalado como parte do pacote de instalação. A aplicação de partilha Microsoft Rights Management só funciona com esta versão do cliente de AD RMS.
 
-### <a name="BKMK_Install"></a>Installing the Microsoft Rights Management sharing application
-To install the Microsoft Rights Management sharing application, do the following:
+### <a name="BKMK_Install"></a>Instalar a aplicação de partilha Microsoft Rights Management
+Para instalar a aplicação de partilha Microsoft Rights Management, proceda da seguinte forma:
 
-1.  Go to the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+1.  Aceda à página [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) no site da Microsoft.
 
-2.  In the **Computers** section, click the icon for the **RMS app for Windows** and save the Microsoft Rights Management sharing application installation package to your computer.
+2.  Na secção **Computadores**, clique no ícone da **aplicação RMS para Windows** e guarde o pacote de instalação da aplicação de partilha Microsoft Rights Management no computador.
 
-3.  Double click the compressed file that was downloaded, and then double-click **setup.exe**. If you are prompted to continue, click **Yes**.
+3.  Faça duplo clique no ficheiro comprimido que foi transferido e, em seguida, faça duplo clique em **setup.exe**. Se lhe for perguntado se pretende continuar, clique em **Sim**.
 
-4.  On the **Setup Microsoft RMS** page, click **Next**, and wait for the installation to finish.
+4.  Na página **Configurar o Microsoft RMS**, clique em **Seguinte** e aguarde que a instalação seja concluída.
 
-5.  When the installation finishes, click **Restart** to restart your computer and complete the installation. Or, click **Close** and restart your computer later to complete the installation.
+5.  Quando a instalação estiver concluída, clique em **Reiniciar**, para reiniciar o computador e concluir a instalação. Em alternativa, clique em **Fechar** e reinicie o computador mais tarde para concluir a instalação.
 
-## <a name="BKMK_UsingMSRMSApp"></a>Using Microsoft Rights Management sharing application
-This section covers different ways to use Microsoft Rights Management sharing application:
+## <a name="BKMK_UsingMSRMSApp"></a>Utilizar a aplicação de partilha Microsoft Rights Management
+Esta secção abrange formas diferentes de utilizar a aplicação de partilha Microsoft Rights Management:
 
 -   [Creating a protected text (.ptxt) file](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_CreatePTXT)
 
@@ -73,18 +72,18 @@ This section covers different ways to use Microsoft Rights Management sharing ap
 
 -   [Removing protection from a file](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_Unprotect)
 
-### <a name="BKMK_CreatePTXT"></a>Creating a protected text (.ptxt) file
-Microsoft Rights Management sharing application can be used to convert a regular text (.txt) file into a protected (.ptxt) file.
+### <a name="BKMK_CreatePTXT"></a>Criar um ficheiro de texto protegido (.ptxt)
+A aplicação de partilha Microsoft Rights Management pode ser utilizada para converter um ficheiro de texto normal (.txt) num ficheiro protegido (.ptxt).
 
-##### To create a protected text (.ptxt) file
+##### Para criar um ficheiro de texto protegido (.ptxt)
 
-1.  In File Explorer, right-click in a folder, point to **New**, and then click **Text Document**.
+1.  No Explorador de Ficheiros, clique com o botão direito do rato numa pasta, aponte para **Novo** e, em seguida, clique em **Documento de Texto**.
 
-2.  Rename the file (for example, Sample.txt).
+2.  Mude o nome do ficheiro (por exemplo, Amostra.txt).
 
-3.  Double-click the file to open it in Notepad.
+3.  Faça duplo clique no ficheiro para o abrir no Bloco de notas.
 
-4.  In Notepad, add a few lines of text to the file, such as the following, and then save it:
+4.  No Bloco de notas, adicione algumas linhas de texto ao ficheiro, como as seguintes, e depois guarde-o:
 
     ```
     This is a sample text file.
@@ -95,53 +94,53 @@ Microsoft Rights Management sharing application can be used to convert a regular
     This is a sample text file.
     ```
 
-5.  Right-click the file, point to **Protect in-place**, and select a template from the list. (Note that if this is the first time you have used the tool, you will need to select **Company- Protection** to initiate download of the templates for your organization.)
+5.  Clique com o botão direito do rato no ficheiro, aponte para **Proteger no local** e selecione um modelo na lista. (Tenha em atenção que, se for a primeira vez que utiliza a ferramenta, terá de selecionar **Empresa - Proteção** para começar a transferir os modelos para a sua empresa.)
 
-6.  On the **Microsoft Rights Management sharing application** screen, confirm the policy you want to apply, click **Apply**, and after the file is protected, click **Close**.
+6.  No ecrã da **aplicação de partilha Microsoft Rights Management**, confirme a política que pretende aplicar, clique em **Aplicar** e, depois de o ficheiro estar protegido, clique em **Fechar**.
 
-### <a name="BKMK_ViewPTXT"></a>Viewing a protected text (.ptxt) or a protected image file
-To view a protected text (.ptxt) file, in File Explorer, double-click the file (for example, Sample.ptxt). You may be prompted to authorize the application to obtain rights. The protection policy appears at the top of the file.
+### <a name="BKMK_ViewPTXT"></a>Ver um ficheiro de texto protegido (.ptxt) ou um ficheiro de imagem protegido
+Para ver um ficheiro de texto protegido (.ptxt), no Explorador de Ficheiros, faça duplo clique no ficheiro (por exemplo, Amostra.ptxt). Pode ser-lhe pedido que autorize a aplicação a obter direitos. A política de proteção é apresentada na parte superior do ficheiro.
 
-Protected images can be similarly opened and viewed.
+As imagens protegidas podem ser abertas e vistas de forma semelhante.
 
-### <a name="BKMK_CreatePFILE"></a>Creating a generic protected (.pfile) file
-The generic protection (.pfile) file format can be used to offer a generic level of protection for file types that are not directly supported by Microsoft Rights Management sharing application or other applications that provide built-in RMS-type protection.
+### <a name="BKMK_CreatePFILE"></a>Criar um ficheiro de proteção genérica (.pfile)
+O formato de ficheiro de proteção genérica (.pfile) pode ser utilizado para fornecer um nível de proteção genérica a tipos de ficheiro que não são suportados diretamente pela aplicação de partilha Microsoft Rights Management ou por outras aplicações que forneçam proteção incorporada do tipo RMS.
 
-For example, the generic protection file format can protect .vsd files made using Microsoft Visio (which does not currently support built-in protection).
+Por exemplo, o formato de ficheiro de proteção genérica pode proteger ficheiros .vsd criados através do Microsoft Visio (que atualmente não suporta proteção incorporada).
 
 > [!NOTE]
-> Files that use general protection are secured only for authentication. A user who is authorized to use the protected file (.pfile) will be authenticated and the user’s rights and permissions are displayed but cannot be enforced once the file is opened in its original format (for example, once the .vsd file is opened in Visio). A user who is not authorized or cannot be authenticated will not be able to open the protected file.
+> Os ficheiros que utilizam a proteção geral só estão protegidos para autenticação. Um utilizador que esteja autorizado a utilizar o ficheiro protegido (.pfile) será autenticado e os respetivos direitos e permissões são apresentados, mas não podem ser forçados depois de o ficheiro ter sido aberto no formato original (por exemplo, depois de o ficheiro .vsd ter sido aberto no Visio). Um utilizador que não esteja autorizado ou que não possa ser autenticado não conseguirá abrir o ficheiro protegido.
 
-##### To create a generic protected file (.pfile) from a Visio drawing (.vsd) file
+##### Para criar um ficheiro de proteção genérica (.pfile) a partir de um ficheiro de desenho do Visio (.vsd)
 
-1.  In File Explorer, right-click in a folder, point to **New**, and then click **New Visio Document**.
+1.  No Explorador de Ficheiros, clique com o botão direito do rato numa pasta, aponte para **Novo** e, em seguida, clique em **Novo Documento do Visio**.
 
-2.  Rename the file (for example, Sample.vsd).
+2.  Mude o nome do ficheiro (por exemplo, Amostra.vsd).
 
-3.  Double-click the file to open it in Visio.
+3.  Faça duplo clique no ficheiro para o abrir no Visio.
 
-4.  In Visio, add elements to the drawing, and then save and close the file.
+4.  No Visio, adicione elementos ao desenho e, depois, guarde e feche o ficheiro.
 
-5.  Right-click the file, point to **Protect in-place**, and select a policy template from the list. (Note that if this is the first time you have used the tool, you will need to select **Company- Protection** to initiate download of the templates for your organization.)
+5.  Clique com o botão direito do rato no ficheiro, aponte para **Proteger no local** e selecione um modelo de política na lista. (Tenha em atenção que, se for a primeira vez que utiliza a ferramenta, terá de selecionar **Empresa - Proteção** para começar a transferir os modelos para a sua empresa.)
 
-6.  On the **Microsoft Rights Management sharing application** screen, select the policy you want to apply, and then click **Apply**.
+6.  No ecrã da **aplicação de partilha Microsoft Rights Management**, selecione a política que pretende aplicar e, em seguida, clique em **Aplicar**.
 
-7.  A message states your protected file was saved as Sample.vsd.pfile (the original file is deleted).
+7.  Uma mensagem informa-o de que o seu ficheiro protegido foi guardado como Sample.vsd.pfile (o ficheiro original é eliminado).
 
-### <a name="BKMK_ViewPFILE"></a>Viewing a generic protected (.pfile) file
-To view a generic protected (.pfile) file, in File Explorer, double-click the generic protected (.pfile) file (for example, Sample.vsd.pfile), and click **Open**.
+### <a name="BKMK_ViewPFILE"></a>Ver um ficheiro de proteção genérica (.pfile)
+Para ver um ficheiro de proteção genérica (.pfile), no Explorador de Ficheiros, faça duplo clique no ficheiro de proteção genérica (.pfile) (por exemplo, Sample.vsd.pfile) e clique em **Abrir**.
 
-### <a name="BKMK_Unprotect"></a>Removing protection from a file
-Microsoft Rights Management sharing application gives you the option to remove protection from files that you have previously protected.
+### <a name="BKMK_Unprotect"></a>Remover a proteção de um ficheiro
+A aplicação de partilha Microsoft Rights Management oferece-lhe a opção de remover a proteção de ficheiros que protegeu anteriormente.
 
-To remove protection (that is, unprotect) a file previously protected, you apply the **Remove Protection** option, as follows:
+Para remover a proteção (isto é, desproteger) de um ficheiro anteriormente protegido, tem de aplicar a opção **Remover Proteção**, da seguinte forma:
 
-1.  Right-click **Sample.ptxt**, point to **Protect in-place**, and click **Remove Protection**. You may be prompted to authorize the application to obtain rights.
+1.  Clique com o botão direito do rato em **Sample.ptxt**, aponte para **Proteger no local** e clique em **Remover Proteção**. Pode ser-lhe pedido que autorize a aplicação a obter direitos.
 
-2.  Sample.ptxt will be deleted, and replaced with Sample.txt.
+2.  O ficheiro Sample.ptxt será eliminado e substituído por Sample.txt.
 
-## <a name="BKMK_Custom"></a>Using User-Authored Permissions and Sharing Protected Content
-This section covers how to protect and consume a file using user-authored permissions, how to share protected content, and how to protect multiple files:
+## <a name="BKMK_Custom"></a>Utilizar as Permissões de Criação do Utilizador e Partilhar Conteúdo Protegido
+Esta secção explica como proteger e consumir um ficheiro ao utilizar permissões de criação do utilizador, como partilhar conteúdo protegido e como proteger vários ficheiros:
 
 -   [Protecting a file with user-authored permissions](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_ProtectCustom)
 
@@ -153,70 +152,70 @@ This section covers how to protect and consume a file using user-authored permis
 
 -   [Applying protection to multiple files and folders](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_Multiple)
 
-### <a name="BKMK_ProtectCustom"></a>Protecting a file with user-authored permissions
-User-authored protection can be used to achieve the following:
+### <a name="BKMK_ProtectCustom"></a>Proteger um ficheiro com permissões de criação do utilizador
+A proteção da criação do utilizador pode ser utilizada para conseguir o seguinte:
 
--   To limit file access to only a specific list of individual users identified by their email addresses.
+-   Para limitar o acesso a ficheiros a apenas uma lista específica de utilizadores individuais identificados pelos respetivos endereços de e-mail.
 
--   To limit the use of the file to only specific rights, such as read-only rights to a document.
+-   Para limitar a utilização de um ficheiro a apenas direitos específicos, como direitos só de leitura de um documento.
 
-To protect a file with user-authored permissions, right-click the file, click **Protect in-place** and click **Custom Permissions**. The following screen will launch:
+Para proteger um ficheiro com permissões de criação do utilizador, clique com o botão direito do rato no ficheiro, clique em **Proteger no local** e em **Personalizar Permissões**. É apresentado o ecrã seguinte:
 
 ![](../Image/ADRMS_MSRMSApp_ProtectCustom.gif)
 
-Type the email addresses of the list of users, use the slider to select permissions for the file, and click **Apply**.
+Escreva os endereços de e-mail da lista de utilizadores, utilize o controlo de deslize para selecionar as permissões para o ficheiro e clique em **Aplicar**.
 
-### <a name="BKMK_UserDefined"></a>Consuming files that have user-authored protection
-Most protected files that are handled by Microsoft Rights Management sharing application will have been protected by applying template-based levels of protection. It is possible, however, for Microsoft Rights Management sharing application to also support files that have been given a user-authored level of protection.
+### <a name="BKMK_UserDefined"></a>Consumir ficheiros que têm proteção de criação do utilizador
+A maioria dos ficheiros protegidos que é processada pela aplicação de partilha Microsoft Rights Management foi protegida através da aplicação de níveis de proteção baseados em modelos. No entanto, é possível, que a aplicação de partilha Microsoft Rights Management suporte igualmente ficheiros aos quais foi conferido um nível de proteção de criação do utilizador.
 
-User-authored protection can be used to achieve the following types of protection for a file:
+A proteção de criação do utilizador pode ser utilizada para obter os tipos seguintes de proteção para um ficheiro:
 
--   To limit file access to only a very specific list of individual users identified by their email addresses.
+-   Para limitar o acesso a ficheiros a apenas uma lista muito específica de utilizadores individuais identificados pelos respetivos endereços de e-mail.
 
--   To limit the use of the file to only a single specific right such as print-only rights to the document.
+-   Para limitar a utilização de um ficheiro a apenas um direito específico, como direitos só de impressão do documento.
 
-For text and image file formats, this level of protection requires that any applications that are used to edit, save or restrict text or image files have been designed to support RMS protection and implement the protection APIs provided in the AD RMS SDK.
+Nos formatos de ficheiro de texto e de imagem, este nível de proteção requer que todas as aplicações que forem utilizadas para editar, guardar ou restringir ficheiros de texto ou de imagem tenham sido concebidos de modo a suportar proteção RMS e a implementar as API de proteção fornecidas no AD RMS SDK.
 
-When viewing a protected text file that has had user- protection applied to it, you will notice a slight difference in the permissions as they are displayed for the file as shown in the following sample.
+Quando visualiza um ficheiro de texto protegido ao qual tenha sido aplicada proteção de criação do utilizador, observa uma ligeira diferença nas permissões, uma vez que estas são apresentadas para o ficheiro, conforme apresentado no exemplo seguinte.
 
-For files that are protected using the generic protection (.pfile) file format, the specific rights or permissions that were  by the user appear in the confirmation screen instead of the name of the template that was used to protect the file, as shown in the following figure.
+Nos ficheiros que são protegidos através do formato de ficheiro de proteção genérica (.pfile), os direitos ou permissões que tenham sido definidos pelo utilizador aparecem no ecrã de confirmação, em vez do nome do modelo que foi utilizado para proteger o ficheiro, conforme exemplificado na ilustração seguinte.
 
 ![](../Image/ADRMS_MSRMSApp_SP_ConsumePfile.gif)
 
-### <a name="BKMK_ShareProtected"></a>Sharing protected content
-To protect and share content, right-click the file, and click **Share Protected**. The following screen will launch:
+### <a name="BKMK_ShareProtected"></a>Partilhar conteúdo protegido
+Para proteger e partilhar conteúdo, clique com o botão direito do rato no ficheiro e clique em **Partilhar Protegido**. É apresentado o ecrã seguinte:
 
 ![](../Image/ADRMS_MSRMSAPP_SP_ShareProtected.gif)
 
-Type the email addresses of the list of users, use the slider to select permissions for the file, and click **Send**. The application will launch Outlook with a pre- email, with the protected file attached. The original file will not be protected.
+Escreva os endereços de e-mail da lista de utilizadores, utilize o controlo de deslize para selecionar as permissões para o ficheiro e clique em **Enviar**. A aplicação abre o Outlook com um pré-e-mail, com o ficheiro protegido anexado. O ficheiro original não será protegido.
 
-To enable users to view protected files on non-Windows devices, click **Allow consumption on all devices**. Users will need to [download the Microsoft Rights Management sharing application](http://go.microsoft.com/fwlink/?LinkId=303970) for their device.
+Para permitir que os utilizadores vejam ficheiros protegidos em dispositivos que não tenham o Windows instalado, clique em **Permitir consumo em todos os dispositivos**. Os utilizadores terão de [transferir a aplicação de partilha Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) para o respetivo dispositivo.
 
-### <a name="BKMK_AccessKeys"></a>Using keyboard shortcuts
-Press the **Alt** key to see the available access keys. Press **Alt** + the access key to select an option. For example, on the **Share Protected** dialog, press **Alt** to see the access keys and press **Alt + u** to select **Users must login every time they open this file**.
+### <a name="BKMK_AccessKeys"></a>Utilizar atalhos de teclado
+Prima a tecla **Alt** para ver as teclas de acesso disponíveis. Prima **Alt** + a tecla de acesso para selecionar uma opção. Por exemplo, na caixa de diálogo **Partilhar Protegido**, prima **Alt** para ver as teclas de acesso e prima **Alt + u** para selecionar **Os utilizadores têm de iniciar sessão sempre que abrem este ficheiro**.
 
 ![](../Image/ADRMS_MSRMSApp_AccessKeys.png)
 
-### <a name="BKMK_Multiple"></a>Applying protection to multiple files and folders
-Microsoft Rights Management sharing application can also be used to apply protection to more than a single file, such as by selecting multiple files or a folder that contains unprotected files in File Explorer.
+### <a name="BKMK_Multiple"></a>Aplicar proteção a vários ficheiros e pastas
+A aplicação de partilha Microsoft Rights Management também pode ser utilizada para aplicar proteção a mais do que um ficheiro, selecionando, por exemplo, vários ficheiros ou uma pasta que contenha ficheiros desprotegidos no Explorador de Ficheiros.
 
-##### To protect multiple files or all files within a selected folder
+##### Para proteger vários ficheiros ou todos os ficheiros contidos numa pasta selecionada
 
-1.  In File Explorer, either select multiple files or select a folder containing multiple files to be protected.
+1.  No Explorador de Ficheiros, selecione vários ficheiros ou uma pasta que contenha vários ficheiros a proteger.
 
-2.  Right-click the selected folder or files, point to **Protect in-place**, and select a template from the list. (Note that if this is the first time you have used the tool, you will need to select **Company- Protection** to initiate download of the templates for your organization.)
+2.  Clique com o botão direito do rato na pasta ou nos ficheiros selecionados, aponte para **Proteger no local** e selecione um modelo na lista. (Tenha em atenção que, se for a primeira vez que utiliza a ferramenta, terá de selecionar **Empresa - Proteção** para começar a transferir os modelos para a sua empresa.)
 
-3.  On the **Microsoft Rights Management sharing application** screen, confirm the files have been protected.
+3.  No ecrã da **aplicação de partilha Microsoft Rights Management**, confirme que os ficheiros foram protegidos.
 
-If you have errors, refer to [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Se lhe tiverem sido apresentadas mensagens de erro, consulte [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## <a name="BKMK_OfficeToolbar"></a>Using the Office Toolbar Add-in
-You can protect and share Word, PowerPoint, Excel files right from within Microsoft Office by using the Office ribbon add-in for Microsoft Rights Management sharing application. Click **Share Protected** on the ribbon to start the Microsoft Rights Management sharing application.
+## <a name="BKMK_OfficeToolbar"></a>Utilizar o Suplemento da Barra de Ferramentas do Office
+É possível proteger e partilhar ficheiros do Word, do PowerPoint e do Excel diretamente no Microsoft Office com o suplemento do friso do Office da aplicação de partilha Microsoft Rights Management. Clique em **Partilhar Protegido**, no friso, para iniciar a aplicação de partilha Microsoft Rights Management.
 
 ![](../Image/ADRMS_MSRMSApp_SP_OfficeToolbar.png)
 
-## <a name="BKMK_AdminGuide"></a>Administrator’s guidance for Microsoft Rights Management sharing application
-The Administrator's Guide for Microsoft Rights Management sharing application includes the following sections:
+## <a name="BKMK_AdminGuide"></a>Documentação de orientação do administrador para a aplicação de partilha Microsoft Rights Management
+Este Manual do Administrador da aplicação de partilha Microsoft Rights Management para Windows inclui as secções seguintes:
 
 -   [Microsoft Rights Management sharing application Technical Overview](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_AdminOverview)
 
@@ -224,417 +223,417 @@ The Administrator's Guide for Microsoft Rights Management sharing application in
 
 -   [Automatic deployment for the Microsoft Rights Management sharing application](../Topic/Microsoft_Rights_Management_sharing_application_user_guide_-_original_publication.md#BKMK_ScriptedInstall)
 
-### <a name="BKMK_AdminOverview"></a>Microsoft Rights Management sharing application Technical Overview
-The Microsoft Rights Management sharing application is an optional downloadable application for Microsoft Windows and other platforms that provides the following:
+### <a name="BKMK_AdminOverview"></a>Descrição Geral Técnica da aplicação de partilha Microsoft Rights Management
+A aplicação de partilha Microsoft Rights Management é uma aplicação transferível e opcional para o Microsoft Windows e outras plataformas e que proporciona o seguinte:
 
--   Protection of a single file or bulk protection of multiple files as well as all files within a selected folder.
+-   Proteção de um único ficheiro ou de uma grande quantidade de ficheiros, assim como de todos os ficheiros contidos numa pasta selecionada.
 
--   Full support for protection of any type of file and a built-in viewer for commonly used text and image file types.
+-   Suporte completo para a proteção de qualquer tipo de ficheiro e um visualizador incorporado para tipos de ficheiros de texto e de imagens normalmente utilizados.
 
--   Generic protection for files that do not support RMS protection.
+-   Proteção genérica para ficheiros que não suportem proteção RMS.
 
--   Full interoperability with files protected using Office Information Rights Management (IRM)
+-   Interoperabilidade completa com ficheiros protegidos através da Gestão de Direitos de Informação (IRM) do Office
 
--   Full interoperability with PDF files protected using SharePoint, FCI, and supported PDF authoring tools
+-   Interoperabilidade completa com ficheiros PDF protegidos através de SharePoint, FCI e de ferramentas de criação de PDF suportadas
 
-The Microsoft Rights Management sharing application uses the new [AD RMS Client 2.1 runtime](http://www.microsoft.com/download/details.aspx?id=38396). It provides users the ability to protect content using pre-defined or user-defined templates that you can customize and deploy for your organization. By using the functionality of AD RMS 2.1, the Microsoft Rights Management sharing application provides end users a simple protection and consumption experience.
+A aplicação de partilha Microsoft Rights Management utiliza o novo runtime [Cliente 2.1 de AD RMS](http://www.microsoft.com/download/details.aspx?id=38396). Fornece aos utilizadores a capacidade de proteger conteúdo através de modelos predefinidos ou definidos pelo utilizador, que pode personalizar e implementar na sua organização. Ao utilizar a funcionalidade do AD RMS 2.1, a aplicação de partilha Microsoft Rights Management fornece aos utilizadores finais proteção e uma experiência de consumo simples.
 
-With the October 2013 release of Windows Azure AD RMS, you can natively protect documents by using Office 2010 and send them to people in another company, who can then consume them by using Windows Azure AD RMS. In addition, with this release, if you use AD RMS in Cryptographic Mode 2, you can use RMS for individuals and consume content from people in another company that uses Windows Azure AD RMS. For more information about Cryptographic Mode 2, see [AD RMS Cryptographic Modes](http://technet.microsoft.com/library/hh867439%28v=ws.10%29.aspx).
+Com a versão de outubro de 2013 do Microsoft Azure AD RMS, é possível proteger documentos nativamente com o Office 2010 e enviá-los para pessoas de outra empresa, que, por sua vez, podem utilizar o Microsoft Azure AD RMS para os consumir. Além disso, com esta versão, se utilizar o AD RMS em Modo Criptográfico 2, pode utilizar RMS para indivíduos e consumir conteúdo de pessoas de outra empresa que utilize o Microsoft Azure AD RMS. Para obter mais informações sobre o Modo Criptográfico 2, consulte [Modos Criptográficos de AD RMS](http://technet.microsoft.com/library/hh867439%28v=ws.10%29.aspx).
 
-To download Microsoft Rights Management sharing application, do the following:
+Para transferir a aplicação de partilha Microsoft Rights Management, proceda da seguinte forma:
 
-1.  Sign in to [Microsoft Connect](http://connect.microsoft.com/) with your Microsoft Account (formerly known as Live ID).
+1.  Inicie sessão no [Microsoft Connect](http://connect.microsoft.com/) com a sua Conta Microsoft (anteriormente denominada Live ID).
 
-2.  On the **Home** page, search for **Rights Management Services** and join the group.
+2.  Na página **Home**, procure **Serviços de Gestão de Direitos** e adira ao grupo.
 
-3.  Click **Downloads**, and then click **Microsoft Rights Management sharing application**.
+3.  Clique em **Transferências** e, em seguida, em **aplicação de partilha Microsoft Rights Management**.
 
-4.  On the **Download Details** page, select **Microsoft Rights Management sharing application.zip** and click **Download**.
+4.  Na página **Detalhes da Transferência**, selecione **Microsoft Rights Management sharing application.zip** e clique em **Transferir**.
 
-5.  If necessary, install Microsoft File Transfer Manager and complete the steps to download Microsoft Rights Management sharing application.
+5.  Se necessário, instale o Microsoft File Transfer Manager e conclua os passos para transferir a aplicação de partilha Microsoft Rights Management.
 
-#### Levels of Protection Supported by Microsoft Rights Management sharing application
-Microsoft Rights Management sharing application supports protection at two different levels, as described in the following table.
+#### Níveis de Proteção Suportados pela aplicação de partilha Microsoft Rights Management
+A aplicação de partilha Microsoft Rights Management suporta proteção em dois níveis diferentes, conforme descrito na tabela seguinte.
 
 ||||
 |-|-|-|
-|Type of protection|Native|Generic|
-|Description|For text, image, Microsoft Office (Word, Excel, PowerPoint) files, .pdf files, and other application file types that support AD RMS, native protection provides a strong level of protection that includes both encryption and enforcement of rights (permissions).|For all other applications and file types, generic protection provides a level of protection that includes both file encapsulation using the .pfile file type and authentication to verify if a user is authorized to open the file.|
-|Protection|Files are fully encrypted and protection is enforced in the following ways:<br /><br />-   Before protected content is rendered, successful authentication must occur for those who receive the file through email or are given access to it through file or share permissions.<br />-   Additionally, usage rights and policy set by the content owner when files are protected are fully enforced when the content is rendered in either IP Viewer (for protected text and image files) or the associated application (for all other supported file types).|File protection is enforced in the following ways:<br /><br />-   Before protected content is rendered, successful authentication must occur for those who are authorized to open the file and given access to it. If authorization fails, the file does not open.<br />-   Usage rights and policy set by the content owner are displayed to inform authorized users of the intended usage policy.<br />-   Audit logging of authorized users opening and accessing files occurs, however, no usage rights are enforced by non-supporting applications.|
-|Default for file types|This is the default level of protection for the following file types:<br /><br />-   Text and image files<br />-   Microsoft Office (Word, Excel, PowerPoint) files<br />-   Portable document format (.pdf)<br /><br />For more information, see Supported File Types.|This is the default protection for all other file types (such as .vsdx, .rtf, and so on) not supported through full protection.|
+|Tipo de proteção|Nativa|Genérica|
+|Descrição|Nos ficheiros de texto, imagem, do Microsoft Office (Word, Excel e PowerPoint), .pdf e outros tipos de ficheiros de aplicação que suportem AD RMS, a proteção nativa fornece um elevado nível de proteção que inclui encriptação e imposição de direitos (permissões).|Em todas as outras aplicações e tipos de ficheiros, a proteção genérica fornece um nível de proteção que inclui encapsulamento de ficheiros através do tipo de ficheiro .pfile e autenticação, para verificar se um utilizador está autorizado a abrir o ficheiro.|
+|Proteção|Os ficheiros são totalmente encriptados e a proteção é imposta das formas seguintes:<br /><br />-   Antes de o conteúdo protegido ser apresentado, tem de ocorrer a autenticação com êxito para aqueles que recebam o ficheiro por e-mail ou a quem for facultado o acesso através de um ficheiro ou de permissões de partilha.<br />-   Além disso, os direitos de utilização e a política definidos pelo proprietário do conteúdo, quando os ficheiros estão protegidos, são totalmente impostos quando o conteúdo é apresentado no Visualizador IP (para ficheiros de texto e de imagem protegidos) ou na aplicação associada (para todos os outros tipos de ficheiros suportados).|A proteção de ficheiros pode ser imposta das formas seguintes:<br /><br />-   Antes de o conteúdo protegido ser apresentado, tem de ocorrer a autenticação com êxito para aqueles que estão autorizados a abrir o ficheiro e a quem foi facultado o acesso ao mesmo. Se a autorização falhar, o ficheiro não abre.<br />-   Os direitos de utilização e a política definidos pelo proprietário do conteúdo são apresentados para informar os utilizadores autorizados da política de utilização pretendida.<br />-   O registo de auditoria dos utilizadores autorizados que abrem e acedem aos ficheiros é efetuado; no entanto, não são impostos quaisquer direitos de utilização por aplicações que não os suportem.|
+|Predefinições dos tipos de ficheiros|Este é o nível de proteção predefinido para os tipos de ficheiros seguintes:<br /><br />-   Ficheiros de texto e de imagem<br />-   Ficheiros do Microsoft Office (Word, Excel e PowerPoint)<br />-   Portable document format (.pdf)<br /><br />Para obter mais informações, consulte Tipos de Ficheiros Suportados.|Esta é a proteção predefinida para todos os outros tipos de ficheiros (como .vsdx, .rtf e outros) que não são suportados através da proteção completa.|
 
-### <a name="BKMK_SupportFileTypes"></a>Supported File Types
-The following table lists file types that are supported by Microsoft Rights Management sharing application.
+### <a name="BKMK_SupportFileTypes"></a>Tipos de Ficheiros Suportados
+A tabela seguinte lista os tipos de ficheiros que são suportados pela aplicação de partilha Microsoft Rights Management.
 
-|File extension|Description|Original file extension|
-|------------------|---------------|---------------------------|
-|.ptxt|Protected Text file|.txt|
-|.pxml|Protected XML file|.xml|
-|.pjpg|Protected JPG image file|.jpg|
-|.pjpeg|Protected JPEG image file|.jpeg|
-|.ppng|Protected PNG image file|.png|
-|.ptiff|Protected TIFF image file|.tiff|
-|.pbmp|Protected Windows Bitmap file|.bmp|
-|.pgif|Protected GIF image file|.gif|
-|.pgiff|Protected GIFF image file|.giff|
-|.pjpe|Protected JPE image file|.jpe|
-|.pjfif|Protected JFIF image file|.jfif|
-|.pjif|Protected JIF image file|.jif|
-The following table lists the file types that are supported by Microsoft Office 2013, Office 2010, and Office 2007. There are two protector types: MsoIrmProtector and the OpcIrmProtector. For more information about these protector types, see [Microsoft Office File Format Protectors](http://archive.msdn.microsoft.com/OfficeProtectors).
+|Extensão de nome de ficheiro|Descrição|Extensão de nome de ficheiro original|
+|--------------------------------|-------------|-----------------------------------------|
+|.ptxt|Ficheiro de texto protegido|.txt|
+|.pxml|Ficheiro XML protegido|.xml|
+|.pjpg|Ficheiro de imagem JPG protegido|.jpg|
+|.pjpeg|Ficheiro de imagem JPEG protegido|.jpeg|
+|.ppng|Ficheiro de imagem PNG protegido|.png|
+|.ptiff|Ficheiro de imagem TIFF protegido|.tiff|
+|.pbmp|Ficheiro de mapa de bits do Windows protegido|.bmp|
+|.pgif|Ficheiro de imagem GIF protegido|.gif|
+|.pgiff|Ficheiro de imagem GIFF protegido|.giff|
+|.pjpe|Ficheiro de imagem JPE protegido|.jpe|
+|.pjfif|Ficheiro de imagem JFIF protegido|.jfif|
+|.pjif|Ficheiro de imagem JIF protegido|.jif|
+A tabela seguinte lista os tipos de ficheiros que são suportados pelo Microsoft Office 2013, o Office 2010 e o Office 2007. Existem dois tipos de protetores: O MsoIrmProtector e o OpcIrmProtector. Para obter mais informações sobre estes tipos de protetores, consulte [Protetores de Formatos de Ficheiros do Microsoft Office](http://archive.msdn.microsoft.com/OfficeProtectors).
 
 |||
 |-|-|
-|MsoIrmProtector supports the following file types:<br /><br />-   doc<br />-   dot<br />-   xla<br />-   xls<br />-   xlt<br />-   pps<br />-   ppt|OpcIrmProtector supports the following file types:<br /><br />-   docm<br />-   docx<br />-   dotm<br />-   dotx<br />-   xlam<br />-   xlsb<br />-   xlsm<br />-   xlsx<br />-   xltm<br />-   xltx<br />-   xps<br />-   potm<br />-   potx<br />-   ppsx<br />-   ppsm<br />-   pptm<br />-   pptx<br />-   thmx|
+|O MsoIrmProtector suporta os tipos de ficheiros seguintes:<br /><br />-   doc<br />-   dot<br />-   xla<br />-   xls<br />-   xlt<br />-   pps<br />-   ppt|O OpcIrmProtector suporta os tipos de ficheiros seguintes:<br /><br />-   docm<br />-   docx<br />-   dotm<br />-   dotx<br />-   xlam<br />-   xlsb<br />-   xlsm<br />-   xlsx<br />-   xltm<br />-   xltx<br />-   xps<br />-   potm<br />-   potx<br />-   ppsx<br />-   ppsm<br />-   pptm<br />-   pptx<br />-   thmx|
 
-### <a name="BKMK_ScriptedInstall"></a>Automatic deployment for the Microsoft Rights Management sharing application
-The Windows version of the RMS sharing application supports a scripted installation, which makes it suitable for enterprise deployments.
+### <a name="BKMK_ScriptedInstall"></a>Implementação automática da aplicação de partilha Microsoft Rights Management
+A versão do Windows da aplicação de partilha RMS suporta uma instalação através de ficheiro script, o que a torna adequada para implementações em empresas.
 
-##### To download the RMS sharing application for automatic deployment
+##### Para transferir a aplicação de partilha RMS para implementação automática
 
-1.  Go to the [Microsoft Rights Management sharing application for Windows](http://www.microsoft.com/download/details.aspx?id=40857) page in the Microsoft Download Center, and click **Download**.
+1.  Vá para a página da [Aplicação de Partilha Microsoft Rights Management para Windows](http://www.microsoft.com/en-us/download/details.aspx?id=40857), no Centro de Transferências da Microsoft, e clique em **Transferir**.
 
-2.  Select and download the files that you need. There are two client installation packages: one for Windows 64-bit (Microsoft Rights Management sharing application x64.zip), and another for Windows 32-bit (Microsoft Rights Management sharing application x86.zip).
+2.  Selecione e transfira os ficheiros de que necessita. Existem dois pacotes de instalação do cliente: um para Windows de 64 bits (Microsoft Rights Management sharing application x64.zip) e outro para Windows de 32 bits (Microsoft Rights Management sharing application x86.zip).
 
-3.  Extract the files from the compressed installation packages, for example, by double-clicking them. Then copy the extracted files to a network location that client computers can access.
+3.  Extraia os ficheiros dos pacotes de instalação comprimidos, por exemplo, fazendo duplo clique neles. Em seguida, copie os ficheiros extraídos para uma localização na rede à qual os computadores clientes consigam aceder.
 
-The setup packages for the RMS sharing application supports different deployment scenarios and includes the following:
+Os pacotes de configuração da aplicação de partilha RMS suportam diferentes cenários de implementação e incluem o seguinte:
 
-|Description|Deployment scenario|
-|---------------|-----------------------|
-|Microsoft Online Sign-In Assistant|Required for the following:<br /><br />-   Office 2010 and Windows Azure RMS|
-|Hotfix for Office (KB 2596501)|Required for the following:<br /><br />-   Office 2010 and Windows Azure RMS|
-|Hotfix for Cryptographic Mode 2 (KB 2627273)|Required for the following:<br /><br />-   Office 2010 and Windows Azure RMS|
-|AD RMS Client and the RMS sharing application|Required for the following:<br /><br />-   Office 2013 and Windows Azure RMS<br />-   Office 2010 and Windows Azure RMS<br />-   Office 2013 and Active Directory RMS<br />-   Office 2010 and Active Directory RMS<br />-   Upgrade of the RMS sharing application|
-|Office add-in for the ribbon|Required for the following:<br /><br />-   Office 2013 and Windows Azure RMS<br />-   Office 2013 and Active Directory RMS<br />-   Office 2010 and Active Directory RMS<br />-   Upgrade of the RMS sharing application|
-|Windows Azure Active Directory Rights Management preparation tool|Required for the following:<br /><br />-   Office 2010 and Windows Azure RMS|
+|Descrição|Cenário de implementação|
+|-------------|----------------------------|
+|Assistente de Início de Sessão do Microsoft Online|Necessário para os seguintes:<br /><br />-   Office 2010 e Windows Azure RMS|
+|Correção para Office (KB 2596501)|Necessária para os seguintes:<br /><br />-   Office 2010 e Windows Azure RMS|
+|Correção para Modo Criptográfico 2 (KB 2627273)|Necessária para os seguintes:<br /><br />-   Office 2010 e Windows Azure RMS|
+|Cliente de AD RMS e a aplicação de partilha RMS|Necessários para os seguintes:<br /><br />-   Office 2013 e Windows Azure RMS<br />-   Office 2010 e Windows Azure RMS<br />-   Office 2013 e Active Directory RMS<br />-   Office 2010 e Active Directory RMS<br />-   Atualização da aplicação de partilha RMS|
+|Suplemento do Office para o friso|Necessário para os seguintes:<br /><br />-   Office 2013 e Windows Azure RMS<br />-   Office 2013 e Active Directory RMS<br />-   Office 2010 e Active Directory RMS<br />-   Atualização da aplicação de partilha RMS|
+|Ferramenta de preparação da Gestão de Direitos do Active Directory do Microsoft Azure|Necessária para os seguintes:<br /><br />-   Office 2010 e Windows Azure RMS|
 > [!NOTE]
-> For the **Office 2010 and Windows Azure RMS** scenario, you might be using Windows Azure RMS, or you might be using Active Directory RMS but want to securely send documents to people in another company who use Windows Azure RMS.
+> No cenário do **Office 2010 e do Windows Azure RMS**, pode estar a utilizar o Microsoft Azure RMS, ou o Active Directory RMS, mas pretender enviar documentos de forma segura a pessoas de outra empresa que utilizam o Microsoft Azure RMS.
 > 
-> When you install and run the Windows Azure Active Directory Rights Management preparation tool to support Office 2010, it does two things:
+> Quando instala e executa a ferramenta de preparação da Gestão de Direitos do Active Directory do Microsoft Azure para suportar o Office 2010, esta efetua dois procedimentos:
 > 
-> -   It edits the registry to support the RMS sharing application.
-> -   It “bootstraps” the user, which means the computer contacts the AD RMS server or Windows Azure RMS and obtains the certificates that the computer and user need to use RMS.
+> -   Edita o registo para suportar a aplicação de partilha RMS.
+> -   Faz “arrancar” o utilizador, o que significa que o computador contacta o servidor AD RMS ou o Microsoft Azure RMS e obtém os certificados de que o computador e o utilizador necessitam para utilizar RMS.
 
-Use the following procedures to identify the commands required to deploy the RMS sharing application for these deployment scenarios:
+Utilize o procedimento seguinte para identificar os comandos necessários para implementar a aplicação de partilha RMS para estes cenários de implementação:
 
--   Office 2013 and Windows Azure RMS
+-   Office 2013 e Windows Azure RMS
 
--   Office 2010 and Windows Azure RMS
+-   Office 2010 e Windows Azure RMS
 
--   Office 2013 or Office 2010 and Active Directory RMS
+-   Office 2013 ou Office 2010 e Active Directory RMS
 
--   Upgrade the RMS sharing application
+-   Atualização da aplicação de partilha RMS
 
-The examples in the commands assume that you have copied the downloaded and extracted files to a network share that client computers access by using **\\server5\apps\rms** and that the client computers already have a folder named **C:\Log files** where you store application installation log files. For each installation, you choose the name of the installation log file, but it must have a .log file extension.
+Os exemplos contidos nos comandos partem do princípio de que copiou os ficheiros transferidos e extraídos para uma partilha de rede à qual os computadores clientes acedem através do **\\server5\apps\rms** e de que os computadores clientes já têm uma pasta denominada **C:\Log files**, na qual guarda os ficheiros de registo da instalação da aplicação. Para cada instalação, tem de escolher o nome do ficheiro de registo da instalação, mas tem de ter a extensão de nome de ficheiro .log.
 
 > [!IMPORTANT]
-> Before you deploy the RMS sharing application, you must package the required commands in these procedures so that they can install in the machine context for all users, and install with local administrator privileges. You can then deploy the package to computers by using your standard application deployment mechanism, such as Group Policy, or System Center Configuration Manager.
+> Antes de implementar a aplicação de partilha RMS, tem de empacotar os comandos necessários nestes procedimentos, para que os mesmos possam instalar no contexto do computador para todos os utilizadores, bem como instalar com privilégios de administrador local. Em seguida, pode implementar o pacote nos computadores, através do seu mecanismo de implementação de aplicações padrão, como a Política de Grupo ou o System Center Configuration Manager.
 > 
-> The exception is the Windows Azure Active Directory Rights Management preparation tool: This must run once for each user on the computer, and the tool must run with elevated privileges to successfully edit the registry. There are different ways to achieve this, including asking users to run the command (for example, a link in an email message or a link on the help desk portal) or you can add it to their logon script. If you cannot use the runas command because users do not have a local administrator account, there are deployment tools that can automatically elevate a command, according to rules that you specify.
+> A exceção é a ferramenta de preparação da Gestão de Direitos do Active Directory do Microsoft Azure: Esta ferramenta tem de ser utilizada uma vez para cada utilizador do computador e de ser executada com privilégios elevados para editar o Registo com êxito. Existem formas diferentes de o fazer, incluindo pedir aos utilizadores para executarem o comando (por exemplo, uma ligação numa mensagem de e-mail ou uma ligação no portal do suporte técnico) ou pode adicioná-la ao respetivo script de início de sessão. Se não puder utilizar o comando runas porque os outros utilizadores não têm uma conta de administrador local, existem ferramentas de implementação que podem elevar automaticamente um comando, de acordo com as regras que especificar.
 
-##### To deploy the RMS sharing application for Office 2013 and Windows Azure RMS
+##### Para implementar a aplicação de partilha RMS para Office 2013 e Windows Azure RMS
 
-1.  Install the AD RMS Client and the RMS sharing application by using the following commands:
+1.  Instale o Cliente do AD RMS e a aplicação de partilha RMS com os comandos seguintes:
 
-    -   For 64-bit Windows: x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "&lt;log file path and name&gt;"
+    -   Para Windows de 64 bits: x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "&lt;caminho e nome do ficheiro de registo&gt;"
 
         ```
         x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         X86\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
+    Por exemplo: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
 
-2.  Install the Office add-in by using the following commands:
+2.  Instale o suplemento do Office com os comandos seguintes:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "<log file path and name>"
         ```
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x86\Setup.msi" /L*v "<log file path and name>"
         ```
 
     > [!NOTE]
-    > To complete the installation, the computer must restart. You can initiate an automatic restart by using a command such as shutdown /i.
+    > Para concluir a instalação, o computador tem de ser reiniciado. Pode utilizar um comando como shutdown /i para iniciar um reinício automático.
 
-    For example: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsoffice.log"`
+    Por exemplo: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsoffice.log"`
 
-##### To deploy the RMS sharing application for Office 2010 and Windows Azure RMS
+##### Para implementar a aplicação de partilha RMS para Office 2010 e Windows Azure RMS
 
-1.  Install the Microsoft Online Sign-In Assistant by using the following commands:
+1.  Instale o Assistente de Início de Sessão no Microsoft Online com os comandos seguintes:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\msoidcli_64bit.msi" /L*v "<log file path and name >"
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\msoidcli_64bit.msi" /L*v "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\msoidcli_64bit.msi" /L*v "C:\Log files\assistant.log"`
+    Por exemplo: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\msoidcli_64bit.msi" /L*v "C:\Log files\assistant.log"`
 
-2.  Install the Office hotfix by using the following commands:
+2.  Instale a correção do Office com os comandos seguintes:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
         ```
         x64\office2010-kb2596501-fullfile-x64-glb.exe /norestart /quiet /log:"<log file path and name >"
         ```
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
         ```
         x86\office2010-kb2596501-fullfile-x86-glb.exe /norestart /quiet /log:"<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\x64\office2010-kb2596501-fullfile-x64-glb.exe /norestart /quiet /log:"C:\Log files\kb2596501install.log"`
+    Por exemplo: `\\server5\apps\rms\x64\office2010-kb2596501-fullfile-x64-glb.exe /norestart /quiet /log:"C:\Log files\kb2596501install.log"`
 
-3.  Install the Cryptographic Mode 2 hotfix by using the following commands:
+3.  Instale a correção do Modo Criptográfico 2 com os comandos seguintes:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
         ```
         wusa.exe /norestart /quiet "x64\Windows6.1-KB2627273-v4-x64.msu" /log:"<log file path and name >"
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         wusa.exe /norestart /quiet "x86\Windows6.1-KB2627273-v4-x86.msu" /log:"<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\wusa.exe /norestart /quiet "x64\Windows6.1-KB2627273-v4-x64.msu" /log:"C:\Log files\kb267273.log"`
+    Por exemplo: `\\server5\apps\rms\wusa.exe /norestart /quiet "x64\Windows6.1-KB2627273-v4-x64.msu" /log:"C:\Log files\kb267273.log"`
 
-4.  Install the AD RMS Client and the RMS sharing application by using the following command:
+4.  Instale o Cliente do AD RMS e a aplicação de partilha RMS com o comando seguinte:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
         ```
         x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name >"
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         X86\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
+    Por exemplo: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
 
-5.  Install the Office add-in by using the following commands:
+5.  Instale o suplemento do Office com os comandos seguintes:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "<log file path and name>"
         ```
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x86\Setup.msi" /L*v "<log file path and name>"
         ```
 
     > [!NOTE]
-    > To complete the installation, the computer must restart. You can initiate an automatic restart by using a command such as shutdown /i.
+    > Para concluir a instalação, o computador tem de ser reiniciado. Pode utilizar um comando como shutdown /i para iniciar um reinício automático.
 
-    For example: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsoffice.log"`
+    Por exemplo: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsoffice.log"`
 
-6.  Install the Windows Azure Active Directory Rights Management preparation tool by adding the following command to logon scripts:
+6.  Instale a ferramenta de preparação da Gestão de Direitos do Active Directory do Microsoft Azure, adicionando o comando seguinte aos scripts de início de sessão:
 
     > [!IMPORTANT]
-    > To run this command successfully, users must have local administrator privileges.
+    > Para executar este comando com êxito, os utilizadores têm de ter privilégios de administrador local.
 
-    -   For Windows 8, 64-bit:
+    -   Para Windows 8, de 64 bits:
 
         ```
         x64\aadrmprep.exe /initiateMe /logfile "<log file path and name>"
         ```
 
-    -   For Windows 8, 32-bit:
+    -   Para Windows 8, de 32 bits:
 
         ```
         X86\aadrmprep.exe /initiateMe /logfile "<log file path and name>"
         ```
 
-    -   For Windows 7, 64-bit:
+    -   Para Windows 7, de 64 bits:
 
         ```
         x64\win7\aadrmprep.exe /initiateMe /logfile "<log file path and name>"
         ```
 
-    -   For Windows 7, 32-bit:
+    -   Para Windows 7, de 32 bits:
 
         ```
         X86\win7\aadrmprep.exe /initiateMe /logfile "<log file path and name>"
         ```
 
     > [!NOTE]
-    > This command might prompt the user to enter their Windows Azure credentials. If the computer is not joined to a domain, the user will be prompted. If the computer is joined to a domain, the tool might be able to use cached credentials.
+    > Este comando pode pedir ao utilizador para introduzir as respetivas credenciais do Windows Azure. Se o computador não for adicionado a um domínio, será pedido ao utilizador que o faça. Se o computador tiver sido adicionado a um domínio, a ferramenta pode conseguir utilizar as credenciais em cache.
 
-    For example: `\\server5\apps\rms\x64\aadrmprep.exe /initiateMe /logfile "C:\Log files\aadrmprepinstall.log"`
+    Por exemplo: `\\server5\apps\rms\x64\aadrmprep.exe /initiateMe /logfile "C:\Log files\aadrmprepinstall.log"`
 
-##### To deploy the RMS sharing application for Office 2013 or Office 2010 and Active Directory RMS
+##### Para implementar a aplicação de partilha RMS para Office 2013 ou Office 2010 e Active Directory RMS
 
-1.  Install the AD RMS Client and the RMS sharing application by using the following commands:
+1.  Instale o Cliente do AD RMS e a aplicação de partilha RMS através dos comandos seguintes:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
         ```
         x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         X86\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
+    Por exemplo: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
 
-2.  Install the Office add-in by using the following commands:
+2.  Instale o suplemento do Office com os comandos seguintes:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "<log file path and name>"
         ```
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x86\Setup.msi" /L*v "<log file path and name>"
         ```
 
     > [!NOTE]
-    > To complete the installation, the computer must restart. You can initiate an automatic restart by using a command such as shutdown /i.
+    > Para concluir a instalação, o computador tem de ser reiniciado. Pode utilizar um comando como shutdown /i para iniciar um reinício automático.
 
-    For example: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsofficeinstall.log"`
+    Por exemplo: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsofficeinstall.log"`
 
-##### To upgrade the RMS sharing application
+##### Para atualizar a aplicação de partilha RMS
 
-1.  Install the AD RMS Client and the RMS sharing application by using the following command:
+1.  Instale o Cliente do AD RMS e a aplicação de partilha RMS com o comando seguinte:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
         ```
         x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         X86\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
+    Por exemplo: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
 
-2.  Install the Office add-in by using the following commands:
+2.  Instale o suplemento do Office com os comandos seguintes:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "<log file path and name>"
         ```
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x86\Setup.msi" /L*v "<log file path and name>"
         ```
 
     > [!NOTE]
-    > To complete the installation, the computer must restart. You can initiate an automatic restart by using a command such as shutdown /i.
+    > Para concluir a instalação, o computador tem de ser reiniciado. Pode utilizar um comando como shutdown /i para iniciar um reinício automático.
 
-    For example: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsofficeinstall.log"`
+    Por exemplo: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsofficeinstall.log"`
 
-#### <a name="BKMK_verifyscripted"></a>Verifying installation success
-You can use the installation log files to verify a successful installation.
+#### <a name="BKMK_verifyscripted"></a>Verificar se a instalação teve êxito
+Pode utilizar os ficheiros de registo da instalação para verificar se esta foi realizada com êxito.
 
-###### To verify installation success for the Microsoft Online Sign-In Assistant
+###### Para verificar o êxito da instalação do Assistente de Início de Sessão no Microsoft Online
 
--   To verify success, search for the following text in the installation log file: **Installation success or error status: 0**
+-   Para confirmar se foi bem-sucedida, procure o texto seguinte no ficheiro de registo da instalação: **Êxito da instalação ou estado de erro: 0**
 
-    Example lines from a successful installation:
+    Linhas de exemplo de uma instalação com êxito:
 
-    **MSI (s) (9C:88) [18:49:04:007]: Product: Microsoft RMS Office Addins -- Installation completed successfully.**
+    **MSI (s) (9C:88) [18:49:04:007]: Produto: Suplementos do Office do Microsoft RMS -- A instalação foi concluída com êxito.**
 
-    **MSI (s) (9C:88) [18:49:04:007]: Windows Installer installed the product. Product Name: Microsoft RMS Office Addins. Product Version: 1.0.7. Product Language: 1033. Manufacturer: Microsoft. Installation success or error status: 0.**
+    **MSI (s) (9C:88) [18:49:04:007]: O Windows Installer instalou o produto. Nome do Produto: Suplementos do Office do Microsoft RMS Versão do Produto: 1.0.7. Idioma do Produto: 1033. Fabricante: Microsoft. Êxito da instalação ou estado de erro: 0.**
 
-###### To verify installation success for the hotfix for Office
+###### Para verificar o êxito da instalação da correção do Office
 
--   To verify success, search for either of the following text strings in the installation log file:
+-   Para verificar o êxito, procure uma das cadeias de texto seguintes no ficheiro de registo da instalação:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
-        -   **office2010-kb2596501-fullfile-x64-glb.exe exited with status SUCCESS**
+        -   **office2010-kb2596501-fullfile-x64-glb.exe saiu com o estado SUCESSO**
 
-        -   **office2010-kb2596501-fullfile-x64-glb.exe exited with status NOTAPPLICABLE**
+        -   **office2010-kb2596501-fullfile-x64-glb.exe saiu com o estado NÃO APLICÁVEL**
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
-        -   **office2010-kb2596501-fullfile-x86-glb.exe exited with status SUCCESS**
+        -   **office2010-kb2596501-fullfile-x86-glb.exe saiu com o estado ÊXITO**
 
-        -   **office2010-kb2596501-fullfile-x86-glb.exe exited with status NOTAPPLICABLE**
+        -   **office2010-kb2596501-fullfile-x86-glb.exe saiu com o estado NÃO APLICÁVEL**
 
-###### To verify installation success for the hotfix for Cryptographic Mode 2
+###### Para verificar o êxito da instalação da correção do Modo Criptográfico 2
 
--   To verify success, search for either of the following text strings in the installation log file:
+-   Para verificar o êxito, procure uma das cadeias de texto seguintes no ficheiro de registo da instalação:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
-        -   **Windows6.1-KB2627273-v4-x64.msu exited with status SUCCESS**
+        -   **Windows6.1-KB2627273-v4-x64.msu saiu com o estado ÊXITO**
 
-        -   **Windows6.1-KB2627273-v4-x64.msu exited with status NOTAPPLICABLE**
+        -   **Windows6.1-KB2627273-v4-x64.msu saiu com o estado NÃO APLICÁVEL**
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
-        -   **Windows6.1-KB2627273-v4-x86.msu exited with status SUCCESS**
+        -   **Windows6.1-KB2627273-v4-x86.msu saiu com o estado ÊXITO**
 
-        -   **Windows6.1-KB2627273-v4-x86.msu exited with status NOTAPPLICABLE**
+        -   **Windows6.1-KB2627273-v4-x86.msu saiu com o estado NÃO APLICÁVEL**
 
-###### To verify installation success for the AD RMS Client and the RMS sharing application
+###### Para verificar o êxito da instalação do Cliente de AD RMS e da aplicação de partilha RMS
 
--   To verify success, search for the following text in the installation log file: **Installation success or error status: 0**
+-   Para confirmar se foi bem-sucedida, procure o texto seguinte no ficheiro de registo da instalação: **Êxito da instalação ou estado de erro: 0**
 
-    Example lines from a successful installation:
+    Linhas de exemplo de uma instalação com êxito:
 
-    **MSI (s) (F0:B8) [14:19:57:854]: Product: Active Directory Rights Management Services Client 2.1 -- Installation completed successfully.**
+    **MSI (s) (F0:B8) [14:19:57:854]: Produto: Cliente 2.1 dos Serviços de Gestão de Direitos do Active Directory -- A instalação foi concluída com êxito.**
 
-    **MSI (s) (F0:B8) [14:19:57:854]: Windows Installer installed the product. Product Name: Active Directory Rights Management Services Client 2.1. Product Version: 1.0.1179.1. Product Language: 1033. Manufacturer: Microsoft Corporation. Installation success or error status: 0.**
+    **MSI (s) (F0:B8) [14:19:57:854]: O Windows Installer instalou o produto. Nome do Produto: Cliente 2.1 dos Serviços de Gestão de Direitos do Active Directory. Versão do Produto: 1.0.1179.1. Idioma do Produto: 1033. Fabricante: Microsoft Corporation. Êxito da instalação ou estado de erro: 0.**
 
-###### To verify installation success for the Office add-in
+###### Para verificar o êxito da instalação do suplemento do Office
 
--   To verify success, search for the following text in the installation log file: **Installation success or error status: 0**
+-   Para confirmar se foi bem-sucedida, procure o texto seguinte no ficheiro de registo da instalação: **Êxito da instalação ou estado de erro: 0**
 
-    Example lines from a successful installation:
+    Linhas de exemplo de uma instalação com êxito:
 
-    **MSI (s) (9C:88) [18:49:04:007]: Product: Microsoft RMS Office Addins -- Installation completed successfully.**
+    **MSI (s) (9C:88) [18:49:04:007]: Produto: Suplementos do Office do Microsoft RMS -- A instalação foi concluída com êxito.**
 
-    **MSI (s) (9C:88) [18:49:04:007]: Windows Installer installed the product. Product Name: Microsoft RMS Office Addins. Product Version: 1.0.7. Product Language: 1033. Manufacturer: Microsoft. Installation success or error status: 0.**
+    **MSI (s) (9C:88) [18:49:04:007]: O Windows Installer instalou o produto. Nome do Produto: Suplementos do Office do Microsoft RMS Versão do Produto: 1.0.7. Idioma do Produto: 1033. Fabricante: Microsoft. Êxito da instalação ou estado de erro: 0.**
 
-###### To verify installation success for the Windows Azure Active Directory Rights Management preparation tool
+###### Para verificar o êxito da instalação da ferramenta de preparação da Gestão de Direitos do Active Directory do Microsoft Azure
 
--   To verify success, search for the following text in the installation log file: **aadrmprep.exe exited with status SUCCESS**
+-   Para confirmar se foi bem-sucedida, procure o texto seguinte no ficheiro de registo da instalação: **aadrmprep.exe saiu com o estado ÊXITO**
 
     > [!NOTE]
-    > Sometimes, this installation can run twice; the first occurrence fails and the second is successful.
+    > Por vezes, esta instalação pode ser executada duas vezes; a primeira ocorrência falha e a segunda é concluída com êxito.
 
-If you want to manually check the registry changes that this tool makes, they are as follows:
+Se pretender verificar manualmente as alterações ao registo introduzidas por esta ferramenta, são as seguintes:
 
 -   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDRM\Federation]
 
@@ -646,48 +645,48 @@ If you want to manually check the registry changes that this tool makes, they ar
 
 -   [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\MSDRM\ServiceLocation\Activation]
 
-    @="&lt;certification url&gt;"
+    @="&lt;url de certificação&gt;"
 
 -   [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\14.0\Common\DRM]
 
     DefaultUser="&lt;default_user&gt;"
 
-#### <a name="BKMK_uninstallscripted"></a>Uninstall commands
-Not all of the installation commands that are required for these deployments support an uninstallation command. You can uninstall the AD RMS client and the sharing application, and you can uninstall the Office add-in. Use the following commands to uninstall these elements.
+#### <a name="BKMK_uninstallscripted"></a>Comandos de desinstalação
+Nem todos os comandos de instalação que são necessários para estas implementações suportam um comando de desinstalação. Pode desinstalar o cliente do AD RMS e a aplicação de partilha, bem como o suplemento do Office. Utilize os comandos seguintes para desinstalar estes elementos.
 
-###### To uninstall the AD RMS Client and the RMS sharing application
+###### Para desinstalar o Cliente do AD RMS e a aplicação de partilha RMS
 
--   Use the following commands:
+-   Utilize os comandos seguintes:
 
-    -   For 64-bit Windows:
+    -   Para Windows de 64 bits:
 
         ```
         x64\setup_ipviewer.exe /uninstall /quiet
         ```
 
-    -   For 32-bit Windows:
+    -   Para Windows de 32 bits:
 
         ```
         x86\setup_ipviewer.exe /uninstall /quiet
         ```
 
-###### To uninstall the Office add-in
+###### Para desinstalar o suplemento do Office
 
--   Use the following commands:
+-   Utilize os comandos seguintes:
 
-    -   For 64-bit version of Office:
+    -   Para a versão de 64 bits do Office:
 
         ```
         msiexec /x \x64\Setup[64].msi /quiet
         ```
 
-    -   For 32-bit version of Office:
+    -   Para a versão de 32 bits do Office:
 
         ```
         msiexec /x \x86\Setup.msi /quiet
         ```
 
-## See Also
-[Microsoft Rights Management sharing application download (http://go.microsoft.com/fwlink/?LinkId=303970)](http://go.microsoft.com/fwlink/?LinkId=303970)
- [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
+## Consultar Também
+[Transferência da aplicação de partilha Microsoft Rights Management (http://go.microsoft.com/fwlink/?LinkId=303970)](http://go.microsoft.com/fwlink/?LinkId=303970)
+ [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
 

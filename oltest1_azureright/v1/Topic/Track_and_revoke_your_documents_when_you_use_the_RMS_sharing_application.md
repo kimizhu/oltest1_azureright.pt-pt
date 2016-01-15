@@ -3,85 +3,84 @@ description: na
 keywords: na
 title: Track and revoke your documents when you use the RMS sharing application
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61f349ce-bdd2-45c1-acc5-bc83937fb187
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Track and revoke your documents when you use the RMS sharing application
-After you have protected your documents by using the RMS sharing application, if your organization is using Azure Rights Management rather than Active Directory Rights Management Services, you can track how people are using your protected documents. If necessary, you can also revoke access to these documents when you want to stop sharing them. To do this, you use the **document tracking site**, which you can access from Windows computers, Mac computers, and even from tablets and phones.
+# Monitorizar e revogar os seus documentos ao utilizar a aplica&#231;&#227;o de partilha RMS
+Após ter protegido os documentos utilizando a aplicação de partilha RMS, se a sua organização utilizar o Azure Rights Management, em vez de serviços de gestão de direitos do Active Directory, pode controlar a forma como as pessoas a utilizarem os documentos protegidos. Se necessário, também pode revogar o acesso a estes documentos quando pretender parar de partilhá-los. Para tal, utilize o **documento controlo do site**, que pode aceder a partir de computadores Windows, computadores Mac e até mesmo a partir de telemóveis e tablets.
 
 > [!TIP]
-> Two minute video: [Azure RMS Document Tracking and Revocation](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)
+> Vídeo de dois minutos: [Controlo de documento do Azure RMS e de revogação.](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)
 
-When you access this site, sign in to track your documents. Providing your organization has a [subscription that supports document tracking and revocation](https://technet.microsoft.com/dn858608.aspx) and you are assigned a license for this subscription, you can then see who tried to open the files that you protected and whether they were successful (they were successfully authenticated) or not. Each time they tried to access the document, and their location at the time. In addition:
+Ao aceder a este site, inicie sessão para controlar os seus documentos. Fornecer a sua organização tiver um [subscrição que suporta o controlo de documento e revogação](https://technet.microsoft.com/dn858608.aspx) e lhe foi atribuída uma licença para esta subscrição, em seguida, pode ver quem tentou abrir os ficheiros que protegeu e se o fizeram com êxito (se foram autenticados com êxito) ou não. Cada vez que tentaram aceder o documentos e a respetiva localização no momento. Além disso:
 
--   If you need to stop sharing a document: Click **Revoke access**, note the period of time that the document will continue to be available, and decide whether to let people know that you’re revoking access to the document you previously shared, and provide a customized message.
+-   Se precisar de parar de partilhar um documento: Clique em **revogar o acesso**, tenha em atenção o período de tempo que o documento continuará a estar disponíveis e decidir se pretende que saibam que está a revogar acesso ao documento previamente partilhado e fornece uma mensagem personalizada.
 
--   If you want to export to Excel: Click **Open in Excel**, so that you can then modify the data, and create your own views and graphs.
+-   Se pretender exportar para o Excel: Clique em **Abrir no Excel**, para que, em seguida, pode modificar os dados e criar as suas próprias vistas e gráficos.
 
--   If you want to configure email notifications: Click **Settings** and select how and whether to be emailed when the document is accessed.
+-   Se pretender configurar notificações por e-mail: Clique em **definições** e selecione como e se deve ser enviado por correio eletrónico quando o documento seja acedido.
 
--   If you have questions or want to provide feedback about the document tracking site: Click the Help icon to access the [FAQ for Document Tracking](http://go.microsoft.com/fwlink/?LinkId=523977).
+-   Se tiver dúvidas ou pretender fornecer comentários sobre o documento de controlo do site: Clique no ícone de ajuda para aceder a [Perguntas mais frequentes para controlar o documento](http://go.microsoft.com/fwlink/?LinkId=523977).
 
-## Using Office to access the document tracking site
+## Utilizar o Office para aceder ao site de monotorização de documentos
 
--   For the Office applications, Word, Excel, and PowerPoint: On the **Home** tab, in the **RMS** group, click **Share Protected**, and then click **Track Usage**.
+-   Para o Office aplicações, Word, Excel e PowerPoint: No **base** separador o **RMS** grupo, clique em **partilhar protegido**, e, em seguida, clique em **controlar a utilização**.
 
     ![](../Image/ADRMS_MSRMSApp_OfficeToolbarTrackUsage.png)
 
--   For Outlook: On the **Home** tab, in the  **RMS** group, click **Track Usage**:
+-   Para o Outlook: No **base** separador o  **RMS** grupo, clique em **controlar a utilização**:
 
     ![](../Image/ADRMS_MSRMSApp_OutlookTrackUsage.png)
 
-If you do not see these options for RMS, it’s likely that either the RMS sharing application is not installed on your computer, the latest version isn’t installed, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+Se não vir estas opções de RMS, é provável que a aplicação de partilha RMS não está instalada no seu computador, a versão mais recente não esteja instalada, ou que o computador tem de ser reiniciado para concluir a instalação. Para obter mais informações sobre como instalar a aplicação de partilha, consulte o artigo [Transferir e instalar a aplicação de partilha Rights Management](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-### Other ways to track and revoke your documents
-In addition to tracking your documents on Windows computers by using Office applications, you can also use these alternatives:
+### Outras formas de monitorizar e revogar os seus documentos
+Para além de controlar os seus documentos em computadores Windows através da utilização de aplicações do Office, também pode utilizar estes alternativas:
 
--   **Using a web browser**: This method works for all supported devices.
+-   **Utilizando um web browser**: Este método funciona para todos os dispositivos suportados.
 
--   **Using File Explorer**: This method works for Windows computers.
+-   **Utilizando o Explorador de ficheiros**: Este método funciona para computadores Windows.
 
--   **Using an Outlook email message**: This method works for Windows computers.
+-   **Utilizar uma mensagem de correio eletrónico do Outlook**: Este método funciona para computadores Windows.
 
-##### Using a web browser to access the doc tracking site
+##### Utilizar um browser para aceder ao site de controlo do documento
 
--   Using a supported browser, go to the [document tracking site](http://go.microsoft.com/fwlink/?LinkId=529562).
+-   Utilizando um browser suportado, vá para o [documento controlo do site](http://go.microsoft.com/fwlink/?LinkId=529562).
 
-    Supported browsers: We recommend using Internet Explorer that is at least version 10, but you can use any of following browsers to use the document tracking site:
+    Browsers suportados: É recomendável utilizar o Internet Explorer que é, pelo menos, versão 10, mas pode utilizar qualquer um dos seguintes browsers para utilizar o site de monotorização de documentos:
 
-    -   Internet Explorer: At least version 10
+    -   Internet Explorer: Pelo menos versão 10
 
-    -   Internet Explorer 9 with at least MS12-037: Cumulative Security Update for Internet Explorer: June 12, 2012
+    -   Internet Explorer 9 com a MS12-037: Atualização de segurança cumulativa para o Internet Explorer: 12 de Junho de 2012
 
-    -   Mozilla Firefox: At least version 12
+    -   Mozilla Firefox: Pelo menos versão 12
 
-    -   Apple Safari 5: At least version 5
+    -   Apple Safari 5: Pelo menos versão 5
 
-    -   Google Chrome: At least version 18
+    -   Google Chrome: Pelo menos versão 18
 
-##### Using File Explorer to access the doc tracking site
+##### Utilizar o Explorador de ficheiros para aceder o sites de monotorização de documentos
 
--   Right-click the file, select **Protect with RMS**, and then select **Track Usage**:
+-   Com o botão direito no ficheiro, selecione **proteger com RMS**, e, em seguida, selecione **controlar a utilização**:
 
     ![](../Image/ADRMS_MSRMSApp_ExplorerTrackUsage.png)
 
-##### Using an Outlook email message to access the doc tracking site
+##### Utilizar uma mensagem de e-mail do Outlook para aceder ao site de controlo do documento
 
--   In an email message, in the **Message** tab, in the  **RMS** group, click **Share Protected**, and then click **Track Usage**:
+-   Numa mensagem de correio eletrónico, no **mensagem** separador o  **RMS** grupo, clique em **partilhar protegido**, e, em seguida, clique em **controlar a utilização**:
 
     ![](../Image/ADRMS_MSRMSApp_OutlookMessageTrackUsage.png)
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Exemplos e outras instruções
+Para obter exemplos de como pode utilizar a aplicação e instruções sobre como proceder de partilha Rights Management, consulte as secções seguintes a partir do Guia do utilizador aplicação partilha Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Exemplos para utilizar a aplicação de partilha RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Consultar Também
+[Guia de utilizador de aplicação partilha do Rights Management](../Topic/Rights_Management_sharing_application_user_guide.md)
 

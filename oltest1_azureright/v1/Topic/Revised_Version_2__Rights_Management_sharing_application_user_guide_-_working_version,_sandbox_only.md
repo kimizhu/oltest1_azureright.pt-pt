@@ -6,44 +6,43 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: 5f341ddf-bdff-4a96-8aa0-9aeb4b81c63c
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Revised Version 2: Rights Management sharing application user guide - working version, sandbox only
-The Microsoft Rights Management (RMS) sharing application for Windows helps you keep important documents and pictures safe from people who shouldn’t see them, even if you email them or save them to another device. You can also use this application to open and use files that other people have protected by using the same Rights Management technology.
+# Vers&#227;o Revista 2: Guia do utilizador da aplica&#231;&#227;o de partilha Rights Management - vers&#227;o funcional, apenas sandbox
+A aplicação de partilha Microsoft Rights Management (RMS) para Windows ajuda a proteger documentos e imagens importantes de pessoas que não os deveriam ver, mesmo se os enviar por e-mail ou os guardar noutro dispositivo. Também pode utilizar esta aplicação para abrir e utilizar ficheiros que tenham sido protegidos por terceiros utilizando a mesma tecnologia de Rights Management.
 
-All you need is a computer that runs at least Windows 7, and a local administrator account to install the RMS sharing application. Then download and install this free application from Microsoft.
+Só precisa de um computador que execute, pelo menos, o Windows 7, e uma conta de administrador local para instalar a aplicação de partilha RMS. Em seguida, transfira e instale esta aplicação gratuita da Microsoft.
 
-If you have questions that are not answered by this guide, see [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Caso haja questões que não sejam abordadas neste guia, consulte [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## <a name="BKMK_SharingExamples"></a>Here are just some examples of how you might use the RMS sharing application, to help protect your files.
+## <a name="BKMK_SharingExamples"></a>Seguem-se alguns exemplos de como pode utilizar a aplicação de partilha RMS para ajudar a proteger os seus ficheiros.
 
-|I want to ….|How to do this|
-|----------------|------------------|
-|**… safely share financial information with somebody I trust who is outside my organization**<br /><br />You work with a partner company and want to email them an Excel spreadsheet that contains projected sales figures. You want them to be able to view the figures but not change them.|You use the **Share Protected** button on the ribbon in Excel, type the email addresses of the two people that you work with in the partner company, select **Viewer** on the slider, and click **Send**.<br /><br />When the email arrives at the partner company, only the recipients in the email can view the spreadsheet and they cannot save, edit, print, or forward it.<br /><br />---<br /><br />Step-by-step: [Protect a file that you share by email by using the Rights Management sharing application](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
-|**… safely send a document by email to somebody who uses an iOS device**<br /><br />You want to email a highly confidential Word document to a coworker, who you know, regularly checks email on their iOS device.|You use File Explorer to right-click the file, and select Share Protected. In the RMS sharing application, you select the **Allow consumption on all devices** option, and send the file as an attachment to your coworker.<br /><br />The recipient receives the email on their iOS device, clicks the link in the email that tells them how to download the sharing application, installs the version for iOS devices, and then views the document.<br /><br />---<br /><br />Step-by-step: [Protect a file that you share by email by using the Rights Management sharing application](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
-|**… read an attachment I’ve received in an email message that has a securely shared file attachment but I can’t read it because my company doesn’t use Rights Management**<br /><br />The email sender is somebody who you trust because you’ve done business with them in the past and you suspect that they might be sending you information about a potential new business opportunity.|You follow the instructions in the email and click the link to sign up for Microsoft Rights Management. Microsoft confirms that your organization does not have a subscription to Office 365, sends you an email to complete the free signup process, and you sign in with your new account. You click the second link in the email to install the Rights Management sharing app and can then open the email attachment to read about the new business opportunity.<br /><br />---<br /><br />Step-by-step: [View and use files that have been protected by Rights Management](../Topic/View_and_use_files_that_have_been_protected_by_Rights_Management.md).|
-|**… protect company-confidential files on my laptop so they can’t be accessed by people outside my company**<br /><br />You travel a lot and use your laptop to access and update files in a folder that must be secured against unauthorized access.|You have the RMS sharing application installed on your laptop. You use File Explorer to protect the files by using a template, which quickly protects the files. If your laptop is stolen, you have peace of mind that nobody outside your company can access these documents.<br /><br />---<br /><br />Step-by-step: [Protect a file on a device &#40;protect in-place&#41; by using the Rights Management sharing application](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
+|Pretendo…|Como efetuar este procedimento|
+|-------------|----------------------------------|
+|**… partilhar em segurança informações financeiras com uma pessoa em quem confio fora da minha organização**<br /><br />Trabalha com uma empresa parceira e pretende enviar um e-mail com uma folha de cálculo do Excel que contém números de vendas estimados. Pretende que consigam ver os números, mas não alterá-los.|Utilize o botão **Partilhar Protegido** no friso do Excel, escreva os endereços de e-mail das duas pessoas com quem trabalha na empresa parceira, selecione **Visualizador** no controlo de deslize e clique em **Enviar**.<br /><br />Quando o e-mail for entregue à empresa parceira, apenas os destinatários no e-mail podem ver a folha de cálculo e não podem guardar, editar, imprimir ou reencaminhá-la.<br /><br />---<br /><br />Passo-a-passo: [Proteger um ficheiro para partilhar por e-mail ao utilizar a aplicação de partilha Rights Management](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
+|**… enviar um documento por e-mail de forma segura a uma pessoa que utiliza um dispositivo iOS**<br /><br />Pretende enviar por e-mail um documento do Word altamente confidencial a um colega que sabe que verifica regularmente o e-mail num dispositivo iOS.|Utilize o Explorador de Ficheiros para clicar com o botão direito do rato no ficheiro, e selecione Partilhar Protegido. Na aplicação de partilha RMS, selecione a opção **Permitir consumo em todos os dispositivos** e envie o ficheiro ao seu colega em anexo.<br /><br />O destinatário recebe o e-mail no dispositivo iOS, clica na ligação do e-mail que o informa como transferir a aplicação de partilha, instala a versão para dispositivos iOS e, por fim, visualiza o documento.<br /><br />---<br /><br />Passo-a-passo: [Proteger um ficheiro para partilhar por e-mail ao utilizar a aplicação de partilha Rights Management](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
+|**... ler um anexo que recebi numa mensagem de e-mail que tem um anexo de ficheiro partilhado de forma segura, mas não consigo porque a minha empresa não utiliza o Rights Management**<br /><br />O remetente do e-mail é uma pessoa em quem confia, porque fez negócio com ela anteriormente e suspeita que lhe está a enviar informações sobre uma potencial nova oportunidade de negócio.|Siga as instruções no e-mail e clique na ligação para inscrever-se no Microsoft Rights Management. A Microsoft confirma que a sua organização não tem uma subscrição do Office 365, envia-lhe um e-mail para concluir o processo de inscrição gratuito, e inicia sessão com a sua nova conta. Clique na segunda ligação no e-mail para instalar a aplicação de partilha Rights Management e poderá, então, abrir o anexo do e-mail para verificar a nova oportunidade de negócio.<br /><br />---<br /><br />Passo-a-passo: [Ver e utilizar ficheiros que foram protegidos por Rights Management](../Topic/View_and_use_files_that_have_been_protected_by_Rights_Management.md).|
+|**... proteger ficheiros confidenciais da empresa no meu portátil, para que pessoas exteriores à empresa não lhes possam aceder**<br /><br />Viaja muito e utiliza o portátil para aceder e atualizar ficheiros numa pasta que tem de estar protegida contra acesso não autorizado.|Tem a aplicação de partilha RMS instalada no portátil. Utilize o Explorador de Ficheiros para proteger os ficheiros utilizando um modelo, que protege rapidamente os ficheiros. Caso o portátil seja roubado, pode ter a certeza de que ninguém fora da sua empresa pode aceder a estes documentos.<br /><br />---<br /><br />Passo-a-passo: [Proteger um ficheiro num dispositivo &#40;proteger no local&#41; utilizando a aplicação de partilha Rights Management](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
 
-## <a name="BKMK_SharingInstructions"></a>What do you want to do?
+## <a name="BKMK_SharingInstructions"></a>O que pretende fazer?
 > [!NOTE]
-> For more technical information, such as supported file types and how to install this application on an enterprise network, see the [Rights Management sharing application administrator guide](../Topic/Rights_Management_sharing_application_administrator_guide.md).
+> Para mais informações técnicas, tal como os tipos de ficheiro suportados e como instalar esta aplicação numa rede empresarial, consulte o [Guia partilha Rights Management aplicação administrador](../Topic/Rights_Management_sharing_application_administrator_guide.md).
 
--   [Download and install the sharing application](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419481%28v=ws.10%29.aspx)
+-   [Transferir e instalar a aplicação de partilha](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419481%28v=ws.10%29.aspx)
 
--   [Protect a file on a device (protect in-place)](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419482%28v=ws.10%29.aspx)
+-   [Proteger um ficheiro num dispositivo (proteger no local)](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419482%28v=ws.10%29.aspx)
 
--   [Protect a file that you share by email](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419483%28v=ws.10%29.aspx)
+-   [Proteger um ficheiro para partilhar por e-mail](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419483%28v=ws.10%29.aspx)
 
--   [View and use files that have been protected](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419489%28v=ws.10%29.aspx)
+-   [Ver e utilizar ficheiros que foram protegidos](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419489%28v=ws.10%29.aspx)
 
--   [Remove protection from a file](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419488%28v=ws.10%29.aspx)
+-   [Remover a proteção de um ficheiro](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419488%28v=ws.10%29.aspx)
 
--   [Use keyboard shortcuts](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419487%28v=ws.10%29.aspx)
+-   [Utilizar atalhos de teclado](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419487%28v=ws.10%29.aspx)
 
--   [Specify settings in the dialog box](http://sandboxtechnetstage.redmond.corp.microsoft.com/library/dn419484%28v=ws.10%29.aspx)
+-   [Especificar definições na caixa de diálogo](http://sandboxtechnetstage.redmond.corp.microsoft.com/en-us/library/dn419484%28v=ws.10%29.aspx)
 
-## See Also
-[Microsoft Rights Management sharing application download](http://go.microsoft.com/fwlink/?LinkId=303970)
- [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
+## Consultar Também
+[Transferência da aplicação de partilha Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970)
+ [FAQ da Aplicação de Partilha Microsoft Rights Management para Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
 

@@ -3,74 +3,73 @@ description: na
 keywords: na
 title: RMS Client Deployment Notes
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03cc8c6f-3b63-4794-8d92-a5df4cdf598f
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# RMS Client Deployment Notes
-The  Rights Management Service client (RMS client) version 2 is also known as the MSIPC client. It is software for Windows computers that communicates with Microsoft Rights Management services on-premises or in the cloud to help protect access to and usage of information as it flows through applications and devices, within the boundaries of your organization, or outside  those managed boundaries. In addition to shipping with the [Rights Management sharing application for Windows](https://technet.microsoft.com/library/dn919648.aspx), the RMS client is  available [as an optional download](http://www.microsoft.com/download/details.aspx?id=38396) that can, with acknowledgment and acceptance of its license agreement, be freely distributed with  third-party software so that clients can  protect and consume content that has been  protected by Rights Management services.
+# Notas de implementa&#231;&#227;o do cliente do RMS
+A versão do cliente (cliente RMS) do serviço de gestão de direitos 2 também é conhecido como o cliente MSIPC. Este é o software para computadores com Windows que comunica com o Microsoft Rights Management services no local ou na nuvem para o ajudar a proteger o acesso e utilização de informações como flua através de aplicações e dispositivos, dentro dos limites da sua organização ou fora dos geridos limites. Para além de envio com o [aplicações para Windows de partilha Rights Management](https://technet.microsoft.com/library/dn919648.aspx), o cliente RMS está disponível [como uma transferência opcional](http://www.microsoft.com/download/details.aspx?id=38396) que pode, com o reconhecimento e a aceitação do respetivo acordo de licença, ser distribuído gratuitamente com o software de terceiros para que os clientes possam proteger e consumir conteúdo que foi protegido por serviços de gestão de direitos.
 
-This topic includes the following sections:
+Este tópico inclui as secções seguintes:
 
--   [Redistributing the RMS Client](#BKMK_RedistributeInstaller)
+-   [Redistribuição do RMS](#BKMK_RedistributeInstaller)
 
--   [Installing the RMS Client](#BKMK_InstallClient)
+-   [Instalar o cliente RMS](#BKMK_InstallClient)
 
--   [Questions and Answers About the RMS Client](#BKMK_QA)
+-   [Perguntas e respostas sobre o cliente RMS](#BKMK_QA)
 
--   [RMS Client Settings](#BKMK_Settings)
+-   [Definições de cliente do RMS](#BKMK_Settings)
 
--   [AD RMS Only: Limiting the RMS Client to Use Trusted AD RMS Servers](#BKMK_UsingTrustedServers)
+-   [Apenas AD RMS: O cliente RMS para utilizar a limitação fidedigna servidores do AD RMS](#BKMK_UsingTrustedServers)
 
--   [RMS Service Discovery](#BKMK_ServiceDiscovery)
+-   [Deteção do serviço de RMS](#BKMK_ServiceDiscovery)
 
-## <a name="BKMK_RedistributeInstaller"></a>Redistributing the RMS Client
-The RMS client can be freely redistributed and bundled with other applications and IT solutions. If you are an application developer or solution provider and want to redistribute the  RMS client, you have two options:
+## <a name="BKMK_RedistributeInstaller"></a>Redistribuição do RMS
+O cliente RMS pode ser livremente redistribuído e incluído com outras aplicações e soluções de TI. Se for um programador da aplicação ou o fornecedor de soluções e pretende redistribuir o cliente RMS, tem duas opções:
 
--   Recommended: Embed the RMS client installer in your application installation and run it in silent mode (the **/quiet** switch, detailed in the next section).
+-   Recomendada: Incorporar o instalador do cliente de RMS na instalação da aplicação e executá-lo em modo silencioso (o **/quiet** comutador, detalhada na secção seguinte).
 
--   Make the RMS client a prerequisite for your application. With this option, you might need to provide users with additional instructions for them to obtain, install, and update their computers with the client before they can use your application.
+-   Se o cliente RMS um pré-requisito para a sua aplicação. Com esta opção, poderá ter de fornecer aos utilizadores com instruções adicionais que lhes obter, instalar e atualizar os respetivos computadores com o cliente para que possam utilizar a aplicação.
 
-## <a name="BKMK_InstallClient"></a>Installing the RMS Client
-The RMS client is contained in an installer executable file named **setup_msipc_***&lt;arch&gt;***.exe**, where *&lt;arch&gt;* is either **x86** (for 32-bit client computers) or **x64** (for 64-bit client computers). The 64-bit (x64) installer package installs both a 32-bit runtime executable for compatibility with 32-bit applications that run on a 64-bit operating system installation, as well as a 64-bit runtime executable for supporting native 64-bit applications. The 32-bit (x86) installer will not run on a 64-bit Windows installation.
+## <a name="BKMK_InstallClient"></a>Instalar o cliente RMS
+O cliente RMS está contido num ficheiro executável instalador denominado **setup_msipc_***&lt; arch &gt;***.exe**, onde *&lt; arch &gt;* está **x86** (para computadores de cliente de 32 bits) ou **x64** (para computadores de cliente de 64 bits). O pacote de instalador de 64 bits (x64) instala tanto um runtime de 32 bits executável para compatibilidade com aplicações de 32 bits que são executadas numa instalação de sistema operativo de 64 bits, bem como um runtime de 64 bits executável para suportar aplicações de 64 bits nativas. O instalador de 32 bits (x86) não serão executados numa instalação de Windows de 64 bits.
 
 > [!NOTE]
-> You need elevated privileges to install the RMS client, such as a member of the Administrators group on the local computer.
+> Precisa de privilégios elevados para instalar o cliente de RMS, como um membro do grupo Administradores no computador local.
 
-You can install the  RMS client by using either of the following installation methods:
+Pode instalar o cliente RMS, utilizando qualquer um dos seguintes métodos de instalação:
 
--   **Silent mode.** By using the **/quiet** switch as part of the command-line options, you can silently install the  RMS client on computers. The following  example  shows a silent mode installation for the  RMS client on a 64-bit client computer:
+-   **Modo silencioso.** Utilizando o **/quiet** mudar como parte das opções da linha de comandos, silenciosamente pode instalar o cliente RMS em computadores. O exemplo seguinte mostra uma instalação em modo silencioso, para o cliente RMS num computador cliente de 64 bits:
 
     ```
     setup_msipc_x64.exe /quiet
     ```
 
--   **Interactive mode.** Alternately, you can install the  RMS client by using the GUI-based setup program that's provided by the  RMS Client  Installation Wizard. To do this, double-click the  RMS client installer package (**setup_msipc_***&lt;arch&gt;***.exe**) in the folder to which it was copied or downloaded on your local computer.
+-   **Modo interativo.** Em alternativa, pode instalar o cliente RMS utilizando o programa de configuração baseada em GUI fornecida pelo Assistente de instalação de cliente RMS. Para tal, faça duplo clique no pacote de instalador do cliente RMS (**setup_msipc_***&lt; arch &gt;***.exe**) na pasta para o qual foi copiado ou transferido no seu computador local.
 
-## <a name="BKMK_QA"></a>Questions and Answers About the RMS Client
-The following section contains frequently asked questions about the RMS client and the answers to them.
+## <a name="BKMK_QA"></a>Perguntas e respostas sobre o cliente RMS
+A secção seguinte contém as perguntas mais frequentes sobre o cliente RMS e as respostas às mesmas.
 
-### Which operating systems support the RMS client?
-The RMS client is supported with the following operating systems:
+### Que sistemas operativos suportam o cliente RMS?
+O cliente RMS é suportado com os seguintes sistemas operativos:
 
-|Windows Server Operating System|Windows Client Operating System|
-|-----------------------------------|-----------------------------------|
+|Sistema operativo Windows Server|Sistema operativo cliente Windows|
+|------------------------------------|-------------------------------------|
 |Windows Server 2012 R2|Windows 8.1|
 |Windows Server 2012|Windows 8|
-|Windows Server 2008 R2|Windows 7 with minimum of SP1|
-|Windows Server 2008 (AD RMS only)|Windows Vista with minimum of SP2 (AD RMS only)|
+|Windows Server 2008 R2|Windows 7 com o mínimo de SP1|
+|Windows Server 2008 (apenas para o AD RMS)|Windows Vista com mínima do SP2 (apenas para o AD RMS)|
 
-### Which processors or platforms support the  RMS client?
-The  RMS client is supported on x86 and x64 computing platforms.
+### Que processadores ou plataformas suportam o cliente RMS?
+O cliente RMS é suportado em x86 e x64 plataformas de computação.
 
-### Where is the  RMS client installed?
-By default, the RMS client is installed in %ProgramFiles%\Active Directory Rights Management Services Client 2.&lt;minor version number&gt;.
+### Onde está instalado o cliente RMS?
+Por predefinição, o cliente RMS está instalado em %ProgramFiles%\Active Directory Rights Management serviços cliente 2. &lt; número da versão secundárias &gt;.
 
-### What files  are associated with the RMS client software?
-The following files  are installed as part of the  RMS client software:
+### Os ficheiros estão associados com o software de cliente RMS?
+Os ficheiros seguintes estão instalados como parte do software de cliente do RMS:
 
 -   Msipc.dll
 
@@ -80,161 +79,161 @@ The following files  are installed as part of the  RMS client software:
 
 -   MSIPCEvents.man
 
-In addition to these files, the RMS client also installs multilingual user interface (MUI) support files in 44 languages. To verify the languages supported, run the RMS client installation and when the installation is complete, review the contents of the multilingual support folders under the default path.
+Para além destes ficheiros, o cliente RMS também instala ficheiros de suporte do utilizador multilingue interface (MUI) em 44 idiomas. Para verificar os idiomas suportados, execute a instalação de cliente RMS e quando a instalação estiver concluída, reveja os conteúdos das pastas de suporte multilingue no caminho predefinido.
 
-### Is the RMS client included by default when I install a supported operating system?
-No. This version of the  RMS client ships as an optional download that can be installed separately on computers running supported versions of the Microsoft Windows operating system.
+### É o cliente RMS incluído por predefinição quando instalo um sistema operativo suportado?
+Não. Esta versão do cliente RMS é fornecido como uma transferência opcional que pode ser instalada separadamente nos computadores que executem versões suportadas do sistema operativo Microsoft Windows.
 
-### Is the RMS client automatically updated by Microsoft Update?
-If you installed this RMS client by using the silent installation option, the RMS client  inherits your current Microsoft Update settings. If you installed the RMS client by using the GUI-based setup program, the RMS client installation wizard  prompts you to enable Microsoft Update.
+### O cliente RMS é automaticamente atualizado através do Microsoft Update?
+Se tiver instalado o cliente RMS utilizando a opção de instalação automática, o cliente RMS herda as definições atuais do Microsoft Update. Se tiver instalado o cliente RMS utilizando o programa de configuração baseada em GUI, o Assistente de instalação de cliente RMS pede-lhe para ativar o Microsoft Update.
 
-## <a name="BKMK_Settings"></a>RMS Client Settings
-The following section contains settings information about the RMS client. This information might be helpful if you have problems with applications or services that use the RMS client.
+## <a name="BKMK_Settings"></a>Definições de cliente do RMS
+A secção seguinte contém informações sobre as definições sobre o cliente RMS. Esta informação pode ser útil se tiver problemas com aplicações ou serviços que utilizam o cliente RMS.
 
 > [!NOTE]
-> Some settings depend on whether the RMS-enlightened application runs as a client mode application (such as Microsoft Word and Outlook, or the RMS sharing application), or server mode application  (such as SharePoint and Exchange).  In the following tables, these settings are identified as **Client Mode** and **Server Mode**, respectively.
+> Algumas definições só estão disponíveis se aplicações suportadas por RMS é executado como uma aplicação de modo de cliente (tal como o Microsoft Word e Outlook ou aplicação de partilha RMS) ou a aplicação de modo de servidor (tal como o SharePoint e do Exchange).  Nas seguintes tabelas, estas definições são identificadas como **modo cliente** e **modo servidor**, respetivamente.
 
-### Where the RMS Client Stores Licenses on Client Computers
-The RMS client stores licenses on the local disk and also caches some  information in the Windows registry.
+### Onde os arquivos de cliente RMS licenças em computadores cliente
+O cliente RMS armazena licenças no disco local e também coloca em cache algumas informações no registo do Windows.
 
-|Description|Client Mode Paths|Server Mode Paths|
-|---------------|---------------------|---------------------|
-|License store location|%localappdata%\Microsoft\MSIPC|%allusersprofile%\Microsoft\MSIPC\Server\*&lt;SID&gt;*\|
-|Template store location|%localappdata%\Microsoft\MSIPC\Templates|%allusersprofile%\Microsoft\MSIPC\Server\Templates\*&lt;SID&gt;*\|
-|Registry location|HKEY_CURRENT_USER<br /> \Software<br /> \Classes<br /> \Local Settings<br /> \Software<br /> \Microsoft<br /> \MSIPC|HKEY_CURRENT_USER<br /> \Software<br /> \Microsoft<br /> \MSIPC<br /> \Server<br /> \*&lt;SID&gt;*|
+|Descrição|Caminhos do modo cliente|Caminhos do modo servidor|
+|-------------|----------------------------|-----------------------------|
+|Localização do arquivo de licenças|%localappdata%\Microsoft\MSIPC|%ALLUSERSPROFILE%\Microsoft\MSIPC\Server\*&lt; SID &gt;*\|
+|Localização do arquivo de modelo|%localappdata%\Microsoft\MSIPC\Templates|%ALLUSERSPROFILE%\Microsoft\MSIPC\Server\Templates\*&lt; SID &gt;*\|
+|Localização do registo|HKEY_CURRENT_USER<br /> \Software<br /> \Classes<br /> \Local definições<br /> \Software<br /> \Microsoft<br /> \MSIPC|HKEY_CURRENT_USER<br /> \Software<br /> \Microsoft<br /> \MSIPC<br /> \Server<br /> \*&lt; SID &gt;*|
 > [!NOTE]
-> *&lt;SID&gt;* is the secure identifier (SID) for the account under which the server application is running. For example, if the application is running under the built-in Network Service account,    replace *&lt;SID&gt;* with the value of the well-known SID for that account (S-1-5-20).
+> *&lt; SID &gt;* é o identificador de segurança (SID) para a conta sob a qual a aplicação de servidor está em execução. Por exemplo, se a aplicação estiver em execução sob a conta de serviço de rede incorporada, substitua *&lt; SID &gt;* com o valor do SID mais conhecido dessa conta (S-1-5-20).
 
-### Windows Registry Settings for the RMS Client
-You can use Windows registry keys to set or modify some RMS client configurations. For example, as an administrator for RMS-enlightened applications that communicate with AD RMS servers, you might want to update the enterprise service location (override the AD RMS server that is currently selected for publishing) depending on the client computer's current location within your Active Directory topology. Or, you might  want to enable  RMS tracing at the client computer, to help troubleshoot a problem with an RMS-enlightened application. Use the following table to identify the registry settings that you can change for the RMS client.
+### Definições de registo do Windows para o cliente RMS
+Pode utilizar as chaves de registo do Windows para definir ou modificar algumas configurações de cliente do RMS. Por exemplo, enquanto administrador para aplicações suportadas por RMS que comunicam com servidores AD RMS, pode querer atualizar a localização de serviço de empresa (ignorar o AD RMS server que está selecionado atualmente para publicação) consoante a localização atual do computador cliente na sua topologia do Active Directory. Em alternativa, pode querer ativar o rastreio de RMS do computador cliente, para ajudar a resolver um problema com uma aplicação suportadas por RMS. Utilize a tabela seguinte para identificar as definições de registo que podem ser alteradas para o cliente RMS.
 
-|Task|Settings|
-|--------|------------|
-|AD RMS only: To update the enterprise service location for a client computer|Update the following registry keys:<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification<br />REG_SZ: default<br /><br />**Value:**&lt;http or https&gt;:// *RMS_Cluster_Name*/_wmcs/Certification<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing<br />REG_SZ: default<br /><br />**Value:** &lt;http or https&gt;:// *RMS_Cluster_Name*/_wmcs/Licensing|
-|To enable and disable tracing|Update the following registry key:<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC<br />REG_DWORD: Trace<br /><br />**Value:** 1 to enable tracing, 0 to disable tracing (default)|
-|To change the frequency in days to refresh templates|The following registry values specify how often templates  will be refreshed on the user’s computer if the TemplateUpdateFrequencyInSeconds value is not set.  If neither of these values are set, the default refresh interval for applications using the RMS client  (version 1.0.1784.0) to download templates is 1 day. Versions prior to this have a default value of every 7 days.<br /><br />**Client Mode:**<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />REG_DWORD: TemplateUpdateFrequency<br /><br />**Value:** An integer value that specifies the number of days (minimum of 1) between downloads.<br /><br />**Server Mode:**<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt;SID&gt;*<br />REG_DWORD: TemplateUpdateFrequency<br /><br />**Value:** An integer value that specifies the number of days  (minimum of 1) between downloads.|
-|To change the frequency in seconds to refresh templates<br /><br />Important: If this is specified, the value to refresh templates in days is ignored. Specify one or the other,  not both.|The following registry values specify how often templates  will be refreshed on the user’s computer. If this value or the value to change the frequency in days (TemplateUpdateFrequency) is not set,  the default refresh interval for applications using the RMS client (version 1.0.1784.0) to download templates is 1 day. Versions prior to this have a default value of every 7 days.<br /><br />**Client Mode:**<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />REG_DWORD: TemplateUpdateFrequencyInSeconds<br /><br />**Value:** An integer value that specifies the number of seconds (minimum of 1) between downloads.<br /><br />**Server Mode:**<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt;SID&gt;*<br />REG_DWORD: TemplateUpdateFrequencyInSeconds<br /><br />**Value:** An integer value that specifies the number of seconds   (minimum of 1) between downloads.|
-|AD RMS only: To  download templates immediately at the next publishing request|During testing and evaluations, you might want the RMS client to download templates as soon as possible. To do this, remove the following registry key and the RMS client will download templates immediately at the next publishing request rather than wait for the time specified by the TemplateUpdateFrequency registry setting:<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\&lt;Server Name&gt;\Template<br /><br />**Note**: &lt;Server Name&gt; could have both external (corprights.contoso.com) and internal (corprights) URLs and therefore two different entries.|
-|AD RMS only: To enable support  for federated authentication|If the RMS client computer connects to an AD RMS cluster by using a federated trust, you must configure the federation home realm.<br /><br />HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />REG_SZ: FederationHomeRealm<br /><br />**Value:** The value of this registry entry is the uniform resource identifier (URI) for the federation service (for example, "https://fs-01.contoso.com").|
-|AD RMS only: To  support partner federation servers that require forms-based authentication for user input|By default, the  RMS client operates in silent mode and user input is not required. Partner federation servers, however, might be configured to require user input such as by way of forms-based authentication. In this case, you must configure the RMS client     ignore  silent mode so that the federated authentication form appears in a browser window and the user is promoted for authentication.<br /><br />HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />REG_DWORD: EnableBrowser<br /><br />**Note**: If the federation server is configured to use forms-based authentication, this key is required. If the federation server is configured to use Windows integrated authentication, this key is not required.|
-|AD RMS only: To  block ILS service consumption|By default, the RMS client enables consuming content protected by the ILS service but you can configure the client to block this service by setting the following registry key. If this registry key is set to block the ILS service, any attempts to open and consume content protected by the ILS service will return the following error:<br />HRESULT_FROM_WIN32(ERROR_ACCESS_DISABLED_BY_POLICY)<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />REG_DWORD: **DisablePassportCertification**<br /><br />**Value:** 1 to block ILS consumption, 0 to allow ILS consumption (default)|
+|Tarefa|Definições|
+|----------|--------------|
+|Apenas AD RMS: Para atualizar a localização de serviço da empresa para um computador cliente|Atualize as seguintes chaves de registo:<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification<br />    REG_SZ: predefinido<br />    **Valor:**&lt; http ou https &gt; :// *RMS_Cluster_Name*/_wmcs/certificação<br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing<br />    REG_SZ: predefinido<br />    **Valor:** &lt; http ou https &gt; :// *RMS_Cluster_Name*/_wmcs/Licensing|
+|Para ativar e desativar o rastreio|Atualize a chave de registo seguinte:<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC<br />    REG_DWORD: Rastreio<br />    **Valor:** 1 para ativar o rastreio, 0 para desativar o rastreio (predefinição)|
+|Para alterar a frequência em dias para atualizar os modelos|Os seguintes valores de registo especifique a frequência modelos serão atualizados no computador do utilizador se o valor de TemplateUpdateFrequencyInSeconds não está definido.  Se nenhum destes valores são definido, o intervalo de atualização predefinido para aplicações utilizando o cliente RMS (versão 1.0.1784.0) para transferir modelos é de 1 dia. As versões em versões anteriores de ter um valor predefinido de todos os 7 dias.<br /><br />**Modo cliente:**<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />    REG_DWORD: TemplateUpdateFrequency<br />    **Valor:** Um valor inteiro que especifica o número de dias (mínimo de 1) entre transferências.<br /><br />**Modo servidor:**<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt; SID &gt;*<br />    REG_DWORD: TemplateUpdateFrequency<br />    **Valor:** Um valor inteiro que especifica o número de dias (mínimo de 1) entre transferências.|
+|Para alterar a frequência em segundos para atualizar os modelos **Important:** Se este for especificado, o valor para atualizar os modelos em dias é ignorado. Especifique um ou outro, não ambos.|Os seguintes valores de registo especifique a frequência modelos serão atualizados no computador do utilizador. Se este valor ou o valor para alterar a frequência nos dias (TemplateUpdateFrequency) não estiver definido, o intervalo de atualização predefinido para aplicações utilizando o cliente RMS (versão 1.0.1784.0) para transferir modelos é de 1 dia. As versões em versões anteriores de ter um valor predefinido de todos os 7 dias.<br /><br />**Modo cliente:**<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />    REG_DWORD: TemplateUpdateFrequencyInSeconds<br />    **Valor:** Um valor inteiro que especifica o número de segundos (mínimo de 1), entre as transferências.<br /><br />**Modo servidor:**<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt; SID &gt;*<br />    REG_DWORD: TemplateUpdateFrequencyInSeconds<br />    **Valor:** Um valor inteiro que especifica o número de segundos (mínimo de 1), entre as transferências.|
+|Apenas AD RMS: Para transferir modelos imediatamente no pedido de publicação seguinte|Durante o teste e avaliações, poderá pretender que o cliente RMS para transferir modelos com a brevidade possível. Para tal, remova a seguinte chave de registo e o cliente RMS irá transferir modelos imediatamente no pedido de publicação seguinte, em vez de aguardar na hora especificada pela definição de registo TemplateUpdateFrequency:<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\ &lt; nome do servidor &gt; \Template **Note:** &lt; nome do servidor &gt; pode ter externos (corprights.contoso.com) e URLs de internos (corprights) e, por conseguinte, duas entradas diferentes.|
+|Apenas AD RMS: Para ativar o suporte para autenticação federada|Se o computador de cliente RMS estiver ligado a um cluster do AD RMS, utilizando uma confiança federada, tem de configurar o realm inicial da Federação.<br /><br />-   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />    REG_SZ: FederationHomeRealm<br />    **Valor:** O valor desta entrada de registo é o uniform resource identifier (URI) para o serviço de Federação (por exemplo, "https://fs-01.contoso.com").|
+|Apenas AD RMS: Para suportar servidores de Federação parceiros que exigem autenticação baseada em formulários para intervenção do utilizador|Por predefinição, o cliente RMS funciona em modo silencioso e não é necessária a intervenção do utilizador. Servidores de Federação parceiros, no entanto, poderão ser configurados para exigir a intervenção do utilizador, por exemplo, através da autenticação baseada em formulários. Neste caso, tem de configurar o cliente RMS ignorar modo silencioso, para que o formulário de autenticação federada, é apresentado numa janela do browser e o utilizador seja promovido para autenticação.<br /><br />-   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />    REG_DWORD: EnableBrowser **Note:** Se o servidor de Federação estiver configurado para utilizar a autenticação baseada em formulários, esta chave é necessária. Se o servidor de Federação estiver configurado para utilizar a autenticação integrada do Windows, esta chave não é necessária.|
+|Apenas AD RMS: Para bloquear o consumo de serviço ILS|Por predefinição, o cliente RMS ativa consumo conteúdo protegido pelo serviço ILS mas também pode configurar o cliente para bloquear este serviço definindo a seguinte chave de registo. Se esta chave de registo é definida para bloquear o serviço ILS, todas as tentativas para abrir e consumir conteúdo protegido pelo serviço ILS irão devolver o seguinte erro:<br />hresult_from_win32 (error_access_disabled_by_policy)<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />    REG_DWORD: **DisablePassportCertification**<br />    **Valor:** 1 para bloquear o consumo de ILS, 0 para permitir o consumo de ILS (predefinição)|
 
-### Managing Template Distribution for the RMS Client
-Templates make it easy for users and administrators to quickly apply Rights Management protection and the RMS client automatically downloads templates from its RMS servers or service If you put the  templates in the following folder location, the RMS client will not download any templates from its default location and instead, download the templates that you have put in this folder. The RMS client might continue to download templates from other available RMS servers.
+### Gerir a distribuição de modelos para o cliente RMS
+Modelos tornam mais fácil para os utilizadores e administradores para aplicar rapidamente a proteção de gestão de direitos e o cliente RMS transfere automaticamente modelos do respetivo servidores RMS ou o serviço se colocar os modelos na seguinte localização de pasta, o cliente RMS não transferirá qualquer modelo a partir da localização predefinida e transferir em vez disso, os modelos que tem de colocar nesta pasta. O cliente RMS poderá continuar a transferir modelos a partir de outros servidores de RMS disponíveis.
 
-**Client Mode:** %localappdata%\Microsoft\MSIPC\UnmanagedTemplates
+**Modo cliente:** %localappdata%\Microsoft\MSIPC\UnmanagedTemplates
 
-**Server Mode:** %allusersprofile%\Microsoft\MSIPC\Server\UnmanagedTemplates\*&lt;SID&gt;*
+**Modo servidor:** %allusersprofile%\Microsoft\MSIPC\Server\UnmanagedTemplates\*&lt; SID &gt;*
 
-When you use this folder, there is no special naming convention required except that the templates should be issued by the RMS server or service and they must have the  .xml file name extension. For example, Contoso-Confidential.xml or Contoso-ReadOnly.xml are valid names.
+Quando utiliza esta pasta, não existe nenhuma convenção de nomenclatura especial necessária, exceto que os modelos devem ser emitidos pelo servidor RMS ou o serviço e tem de ter a extensão de nome de ficheiro. XML. Por exemplo, Contoso-CONFIDENTIAL. XML ou Contoso-ReadOnly são os nomes válidos.
 
-## <a name="BKMK_UsingTrustedServers"></a>AD RMS Only: Limiting the RMS Client to Use Trusted AD RMS Servers
-The RMS client can be limited to using only specific trusted AD RMS servers by making the following changes to the Windows registry on local computers.
+## <a name="BKMK_UsingTrustedServers"></a>Apenas AD RMS: O cliente RMS para utilizar a limitação fidedigna servidores do AD RMS
+O cliente RMS pode ser limitado à utilização apenas específicos servidores AD RMS fidedignos efetuando as seguintes alterações para o registo do Windows nos computadores locais.
 
-**To enable limiting RMS client to use only trusted AD RMS servers**
+**Para ativar a limitação de RMS cliente para utilizar apenas servidores AD RMS de fidedignos**
 
 -   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\TrustedServers\
     REG_DWORD: AllowTrustedServersOnly
 
-    **Value:** If a non-zero value is specified, the RMS client will trust only the specified servers that are configured in the TrustedServers list and the  Azure  Rights Management service.
+    **Valor:** Se não for especificado um valor diferente de zero, o cliente RMS confiará apenas nos servidores especificados que estejam configurados na lista de TrustedServers e o serviço Azure Rights Management.
 
-**To add members to the list of trusted AD RMS servers**
+**Para adicionar membros à lista de servidores AD RMS fidedignos**
 
 -   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\TrustedServers\
-    REG_SZ: *&lt;URL_or_HostName&gt;*
+    REG_SZ: *&lt; URL_or_HostName &gt;*
 
-    **Value:** The string values added in this registry key location can be either DNS domain name format (for example, **adrms.contoso.com**) or full URLs to trusted AD RMS servers (for example, **https://adrms.contoso.com**). If a specified URL starts with **https://**,  the RMS client will use SSL or TLS to contact   the specified AD RMS server.
+    **Valor:** Os valores de cadeias adicionados nesta localização da chave de registo podem ter um formato de nome de domínio DNS (por exemplo, **adrms.contoso.com**) ou completas URLs para servidores AD RMS fidedignos (por exemplo, **https://adrms.contoso.com**). Se um URL especificado for iniciado com **https://**,  o cliente RMS irá utilizar SSL ou TLS para contactar o servidor AD RMS especificado.
 
-## <a name="BKMK_ServiceDiscovery"></a>RMS Service Discovery
-RMS service discovery lets the RMS client check which RMS server or service to communicate with before  protecting content. Service discovery might also happen when the RMS client consumes protected content, but this is less likely to happen because   the policy attached to the content  contains   the preferred RMS server or service and only if that is unsuccessful does the client then run service discovery.
+## <a name="BKMK_ServiceDiscovery"></a>Deteção do serviço de RMS
+Deteção do serviço de RMS permite que o cliente RMS verificar qual servidor RMS ou o serviço para comunicar com antes de proteger conteúdo. Deteção do serviço também poderá acontecer se o cliente RMS consumir conteúdo protegido, mas é menos provável acontecer porque a política anexada ao conteúdo contém o serviço ou o servidor preferencial do RMS e apenas se que não for bem-sucedida o cliente, em seguida, executa a deteção do serviço.
 
-Service discovery first looks for an on-premises version of Rights Management (AD RMS). If that is unsuccessful, service discovery automatically looks for the cloud version of Rights Management (Azure RMS).
+Deteção do serviço de procura pela primeira vez uma versão no local do Rights Management (AD RMS). Se não for bem-sucedida, deteção de serviço de procura automaticamente a versão de nuvem do Rights Management (RMS do Azure).
 
-To perform service discovery for an on-premises deployment, the RMS client checks the following:
+Para efetuar a deteção de serviço para uma implementação no local, o cliente RMS verifica o seguinte:
 
-1.  The Windows registry on the local computer: If service discovery settings are configured in the registry, these settings are tried first.  By default, these settings are not configured in the registry.
+1.  O registo do Windows no computador local: Se as definições de deteção de serviço estiverem configuradas no registo, estas definições são experimentadas em primeiro lugar.  Por predefinição, estas definições não estão configuradas no registo.
 
-2.  Active Directory Domain Services: A domain-joined computer queries Active Directory for a service connection point (SCP). If an SCP is registered, the URL of the RMS server is returned to the RMS client to use.
+2.  Serviços de domínio do Active Directory: Um computador associado a um domínio consulta o Active Directory para um ponto de ligação de serviço (SCP). Se está registado um SCP, é devolvido o URL do servidor do RMS para o cliente RMS para utilizar.
 
-### AD RMS Only: Enabling Server-Side Service Discovery by Using Active Directory
-If your account has  sufficient privileges (Enterprise Admins and  local administrator for the AD RMS server), you can automatically register a a service connection point (SCP) when you install the AD RMS root cluster server. If a SCP already exists in the forest, you must first delete the existing SCP before you can register  a new one.
+### Apenas AD RMS: Ativar a deteção de serviços do lado do servidor através da utilização do Active Directory
+Se a sua conta tem privilégios suficientes (Admins de empresa e um administrador local para o servidor AD RMS), pode registar automaticamente um um ponto de ligação de serviço (SCP) quando instala o servidor de cluster de raiz AD RMS. Se já existir um SCP na floresta, primeiro deve eliminar o SCP existente antes de pode registar um novo.
 
-You can register and delete an SCP after AD RMS is installed by using the following procedure. Before you start, make sure that your account has the required privileges (Enterprise Admins and  local administrator for the AD RMS server).
+Pode registar e eliminar um SCP depois de AD RMS estiver instalado utilizando o procedimento seguinte. Antes de começar, certifique-se de que a conta tem os privilégios necessários (Admins de empresa e um administrador local para o servidor AD RMS).
 
-##### To enable AD RMS service discovery by registering an SCP in Active Directory
+##### Para ativar a deteção de serviço do AD RMS ao registar um SCP no Active Directory
 
-1.  Open the Active Directory Management Services console at the AD RMS server:
+1.  Abra a consola de serviços de gestão do Active Directory no servidor do AD RMS:
 
-    -   If you are using Windows Server 2008 R2 or Windows Server 2008, click **Start**, click **Administrative Tools**, and then click **Active Directory Rights Management Services**.
+    -   Se estiver a utilizar o Windows Server 2008 R2 ou Windows Server 2008, clique em **Iniciar**, clique em **Ferramentas administrativas**, e, em seguida, clique em **Serviços de gestão de direitos do Active Directory**.
 
-    -   If you are using Windows Server 2012 R2 or Windows Server 2012,  in Server Manager, click **Tools**, and then click **Active Directory Rights Management Services**.
+    -   Se estiver a utilizar Windows Server 2012 R2 ou Windows Server 2012, no Gestor de servidor, clique em **ferramentas**, e, em seguida, clique em **Serviços de gestão de direitos do Active Directory**.
 
-2.  In the AD RMS console right-click the AD RMS cluster, and then click **Properties**.
+2.  Na consola do AD RMS com o botão direito do cluster do AD RMS e, em seguida, clique em **Propriedades**.
 
-3.  Click the **SCP** tab.
+3.  Clique na **SCP** separador.
 
-4.  Select the **Change SCP** check box.
+4.  Selecione o **Alterar SCP** caixa de verificação.
 
-5.  Select the **Set SCP to current certification cluster** option, and then click **OK**.
+5.  Selecione o **Definir SCP para o cluster de certificação atual** opção e, em seguida, clique em **OK**.
 
-### Enabling Client-Side Service Discovery by Using the Windows Registry
-As an alternative to using an SCP or where an SCP does not exist, you can configure the registry on the client computer so that the RMS client can locate its AD RMS server.
+### Ativar a deteção de serviços do lado do cliente, utilizando o registo do Windows
+Como alternativa à utilização de um SCP ou onde não existe um SCP, pode configurar o registo no computador cliente para que o cliente RMS possa localizar o servidor AD RMS.
 
-##### To enable client-side AD RMS service discovery by using the Windows registry
+##### Para ativar a deteção de serviço de AD RMS do lado do cliente, utilizando o registo do Windows
 
-1.  Open the Windows registry editor, Regedit.exe:
+1.  Abra o editor de registo do Windows, Regedit.exe:
 
-    -   On the client computer, in the Run window, type **regedit**, and then press ENTER to open the Registry Editor.
+    -   No computador cliente, na janela executar, escreva **regedit**, e, em seguida, prima ENTER para abrir o Editor de registo.
 
-2.  In the Registry Editor, navigate to **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC**.
+2.  No Editor de registo, navegue para **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC**.
 
     > [!IMPORTANT]
-    > If you are running a 32-bit application on a 64-bit computer, the path will be as follows: 
+    > Se estiver a executar uma aplicação de 32 bits num computador de 64 bits, o caminho será da seguinte forma: 
     > **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\MSIPC**
 
-3.  To create the ServiceLocation subkey, right-click **MSIPC**, point to **New**, click **Key**, and then type **ServiceLocation**.
+3.  Para criar a subchave ServiceLocation, com o botão direito **MSIPC**, aponte para **novo**, clique em **chave**, e, em seguida, escreva **ServiceLocation**.
 
-4.  To create the EnterpriseCertification subkey, right-click **ServiceLocation**, point to **New**, click **Key**, and then type **EnterpriseCertification**.
+4.  Para criar a subchave EnterpriseCertification, com o botão direito **ServiceLocation**, aponte para **novo**, clique em **chave**, e, em seguida, escreva **EnterpriseCertification**.
 
-5.  To set the enterprise certification URL, double-click the **(Default)** value, under the **EnterpriseCertification** subkey, and when the **Edit String** dialog box appears,  for **Value data**, type &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Certification, and then click **OK**.
+5.  Para definir o URL de certificação da empresa, faça duplo clique a **(predefinição)** valor no **EnterpriseCertification** subchave e quando o **Editar cadeia** aparece a caixa de diálogo, para **dados do valor**, tipo &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Certification, e, em seguida, clique em **OK**.
 
-6.  To create the EnterprisePublishing subkey, right-click **ServiceLocation**, point to **New**, click **Key**, and then type EnterprisePublishing.
+6.  Para criar a subchave EnterprisePublishing, com o botão direito **ServiceLocation**, aponte para **novo**, clique em **chave**, e, em seguida, escreva EnterprisePublishing.
 
-7.  To set the enterprise publishing URL, double-click **(Default)** , under the **EnterprisePublishing** subkey, and when the **Edit String** dialog box appears, type for **Value data** the following &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Licensing, and then click **OK**.
+7.  Para definir a empresa URL de publicação, faça duplo clique em **(predefinição)** , no **EnterprisePublishing** subchave e quando o **Editar cadeia** aparece a caixa de diálogo, escreva para **dados do valor** seguintes &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Licensing, e, em seguida, clique em **OK**.
 
-8.  Close the Registry Editor.
+8.  Feche o Editor de registo.
 
-If the RMS client can't find an SCP by querying Active Directory and it's not specified in the registry, service discovery calls for AD RMS will fail.
+Se o cliente RMS não é possível localizar um SCP através da consulta do Active Directory e não está especificado no registo, chamadas de deteção de serviço para o AD RMS irão falhar.
 
-### Redirecting Licensing Server Traffic
-In some cases, you might need to redirect traffic during service discovery, for example, when two organizations are merged and the old licensing server in one organization is retired and clients need to be redirected to a new licensing server. Or, you migrate from AD RMS to Azure RMS. To enable licensing redirection, use the following procedure.
+### Redirecionar o tráfego do servidor de licenciamento
+Em alguns casos, poderá ser necessário redirecionar o tráfego durante a deteção de serviço, por exemplo, quando duas organizações são fundidas e o servidor de licenciamento antigo na uma organização estiver retirado e os clientes que devem ser redirecionado para um novo servidor de licenciamento. Em alternativa, migrar do AD RMS para o Azure RMS. Para ativar o redirecionamento do licenciamento, utilize o procedimento seguinte.
 
-##### To enable RMS licensing redirection by using the Windows registry
+##### Para ativar RMS licenciamento redirecionamento utilizando o registo do Windows
 
-1.  Open the Windows registry editor, Regedit.exe:
+1.  Abra o editor de registo do Windows, Regedit.exe:
 
-    -   On the client computer, in the Run window, type **regedit**, and then press ENTER to open the Registry Editor.
+    -   No computador cliente, na janela executar, escreva **regedit**, e, em seguida, prima ENTER para abrir o Editor de registo.
 
-2.  In the Registry Editor, navigate to one of the following:
+2.  No Editor de registo, navegue até um dos seguintes procedimentos:
 
-    -   For 64-bit version of Office on x64 platform: HKLM\SOFTWARE\Microsoft\MSIPC\Servicelocation
+    -   Para a versão de 64 bits do Office em x64 plataforma: HKLM\SOFTWARE\Microsoft\MSIPC\Servicelocation
 
-    -   For 32-bit version of Office on x64 platform: HKLM\SOFTWARE\Wow6432Node\Microsoft\MSIPC\Servicelocation
+    -   Para a versão de 32 bits do Office em x64 plataforma: HKLM\SOFTWARE\Wow6432Node\Microsoft\MSIPC\Servicelocation
 
-3.  Create a LicensingRedirection subkey, by right-clicking **Servicelocation**, point to **New**, click **Key**, and then type **LicensingRedirection**.
+3.  Criar uma subchave LicensingRedirection, clicando com o **Servicelocation**, aponte para **novo**, clique em **chave**, e, em seguida, escreva **LicensingRedirection**.
 
-4.  To set the licensing redirection, right-click the **LicensingRedirection** subkey, select **New**, and then select **String value**.  For **Name**, specify the previous server licensing URL and for **Value** specify the new server licensing URL.
+4.  Para configurar o redirecionamento do licenciamento, com o botão direito do **LicensingRedirection** subchave, selecione **novo**, e, em seguida, selecione **valor de cadeia**.  Para **nome**, especifique o URL de licenciamento do servidor anterior e para **valor** especificar o URL de licenciamento do servidor novo.
 
-    For example, to redirect licensing from a server at Contoso.com to one at Fabrikam.com, you might enter the following values:
+    Por exemplo, para redirecionar licenciamento a partir de um servidor de Contoso.com, para uma de cada Fabrikam.com, poderá introduzir os seguintes valores:
 
-    **Name:**`https://contoso.com/_wmcs/licensing`
+    **Nome:** `https://contoso.com/_wmcs/licensing`
 
-    **Value:**`https://fabrikam.com/_wmcs/licensing`
+    **Valor:** `https://fabrikam.com/_wmcs/licensing`
 
     > [!NOTE]
-    > If the old licensing server has both intranet and extranet URLs specified then a new name and value mapping has to be set for both of these URLs under the LicensingRedirection key.
+    > Se tiver o antigo servidor de licenciamento de intranet e extranet URLs especificado, em seguida, um novo nome e mapeamento de valor tem de ser definido para os dois URL sob a chave LicensingRedirection.
 
-5.  Repeat the previous step for all servers that need to be redirected.
+5.  Repita o passo anterior para todos os servidores que necessitam de ser redirecionados.
 
-6.  Close the Registry Editor.
+6.  Feche o Editor de registo.
 

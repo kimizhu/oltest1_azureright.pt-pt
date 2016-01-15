@@ -3,240 +3,233 @@ description: na
 keywords: na
 title: Configuring Custom Templates for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1775d8d0-9a59-42c8-914f-ce285b71ac1c
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Configuring Custom Templates for Azure Rights Management
-After you have activated Azure Rights Management (Azure RMS), users are automatically able to use two default templates that make it easy for them to apply policies to sensitive files that restrict access to authorized users in your organization. These two templates have the following rights policy restrictions:
+# Configurar modelos personalizados para o Azure Rights Management
+Depois de ter ativado o Azure Rights Management (RMS) do Azure, os utilizadores são automaticamente capazes de utilizar dois modelos de predefinição que tornam mais fácil para os mesmos aplicar políticas de ficheiros confidenciais que restringir o acesso a utilizadores autorizados na sua organização. Estes dois modelos de tem as seguintes restrições de política de direitos:
 
--   Read-only viewing for the protected content
+-   Visualização de só de leitura para o conteúdo protegido
 
-    -   Display name: **&lt;organization name&gt; - Confidential View Only**
+    -   Nome a apresentar: **&lt; nome da organização &gt; - apenas visualização confidencial**
 
-    -   Specific permission: View Content
+    -   Permissão específicos: Visualização de conteúdo
 
--   Read or Modify permissions for the protected content
+-   Ler ou modificar permissões para o conteúdo protegido
 
-    -   Display name: **&lt;organization name&gt; - Confidential**
+    -   Nome a apresentar: **&lt; nome da organização &gt; - confidencial**
 
-    -   Specific permissions: View Content, Save File, Edit Content, View Assigned Rights, Allow Macros, Forward, Reply, Reply All
+    -   Permissões específicas: Ver o conteúdo, guarde o ficheiro, editar o conteúdo, veja direitos atribuídos, permitir que as Macros, reencaminhar, responder, responder a todos
 
-In addition, the [RMS sharing application](http://technet.microsoft.com/library/dn339006.aspx) lets users define their own set of permissions. And, for the Outlook client and Outlook Web Access, users can select the **Do Not Forward** option for email messages.
+Além disso, o [aplicação de partilha RMS](http://technet.microsoft.com/library/dn339006.aspx) permite aos utilizadores definir o seu próprio conjunto de permissões. E, para o cliente do Outlook e Outlook Web Access, os utilizadores podem selecionar o **não reencaminhar** opção para mensagens de correio eletrónico.
 
-For many organizations, the default templates might be sufficient. But if you want to create your own custom rights policy templates, you can do so. Reasons for creating a custom template include the following:
+Para muitas organizações, os modelos predefinidos poderão ser suficientes. Mas se pretender criar seus próprios direitos personalizados modelos de política, pode fazê-lo. Motivos para a criação de um modelo personalizado incluem o seguinte:
 
--   You want a template to grant rights to a subset of users in the organization rather than all users.
+-   Um modelo para conceder direitos para um subconjunto de utilizadores na organização em vez de todos os utilizadores que pretende.
 
--   You want only a subset of users to be able to see and select a template (departmental template) from applications, rather than all users in the organization see and can select the template.
+-   Pretende apenas um subconjunto de permitir que os utilizadores consigam ver e selecionar um modelo (departamental modelo) a partir de aplicações, em vez de todos os utilizadores na organização veem e pode selecionar o modelo.
 
--   You want to define a custom right for a template, such as View and Edit, but not Copy and Print.
+-   Pretende definir um personalizado para a direita para um modelo, tal como ver e editar, mas não copiar e imprimir.
 
--   You want to configure additional options in a template that include an expiration date and whether the content can be accessed without an Internet connection.
+-   Se pretender configurar opções adicionais num modelo que incluem uma data de validade e se o conteúdo pode ser acedido sem uma ligação à Internet.
 
-For users to be able to select a custom template that contains settings such as these, you must first create a custom template, configure it, and then publish it.
+Para permitir que os utilizadores selecionar um modelo personalizado que contém definições como estas, tem primeiro de criar um modelo personalizado, configurá-lo e, em seguida, publicá-lo.
 
-Use the following sections to help you configure and use custom templates:
+Utilize as secções seguintes para o ajudar a configurar e utilizar modelos personalizados:
 
--   [How to create, configure, and publish a custom template](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToConfigureCustomTemplates)
+-   [Como criar, configurar e publicar um modelo personalizado](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToConfigureCustomTemplates)
 
--   [How to copy a template](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates)
+-   [Como copiar um modelo](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates)
 
--   [How to remove (archive) templates](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToArchiveTemplates)
+-   [Como remover modelos (arquivo)](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToArchiveTemplates)
 
--   [Refreshing templates for users](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates)
+-   [Atualizar Modelos para utilizadores](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates)
 
--   [Windows PowerShell reference](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_PowerShellTemplates)
+-   [Referência do Windows PowerShell](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_PowerShellTemplates)
 
-## <a name="BKMK_HowToConfigureCustomTemplates"></a>How to create, configure, and publish a custom template
-You create and manage custom templates in the Azure classic portal. You can do this directly from the Azure classic portal, or you can sign in to the Office 365 admin center, and choose the **advanced features** for Rights Management, which then redirects you to the Azure classic portal.
+## <a name="BKMK_HowToConfigureCustomTemplates"></a>Como criar, configurar e publicar um modelo personalizado
+Criar e gerir modelos personalizados no Portal de gestão do Azure. Pode fazê-lo diretamente a partir do portal de gestão do Azure, ou pode iniciar sessão no Centro de administração do Office 365 e escolha o **funcionalidades avançadas** para a gestão de direitos, que, em seguida, redireciona para o portal de gestão do Azure.
 
-Use the following procedures to create, configure, and publish custom templates for Rights Management.
+Utilize os procedimentos seguintes para criar, configurar e publicar modelos personalizados para o Rights Management.
 
-#### To create a custom template
+#### Para criar um modelo personalizado
 
-1.  Depending on whether you sign in to the Office 365 admin center, or the Azure classic portal, do one of the following:
+1.  Dependendo se iniciar sessão Centro de administração do Office 365, ou no Portal do Azure, efetue um dos seguintes procedimentos:
 
-    -   From the [Office 365 admin center](https://portal.office.com/):
+    -   A partir de [Centro de administração do Office 365](https://portal.office.com/):
 
-        1.  In the left pane, click **service settings**.
+        1.  No painel da esquerda, clique em **definições do serviço**.
 
-        2.  From the **service settings** page, click **rights management**.
+        2.  A partir de **definições do serviço** página, clique em **Gestão de direitos de**.
 
-        3.  In the **Protect your information** section, click **Manage**.
+        3.  No **proteger as suas informações** secção, clique em **Gerir**.
 
-        4.  In the **rights management** section, click **advanced features**.
+        4.  No **Gestão de direitos de** secção, clique em **funcionalidades avançadas**.
 
             > [!NOTE]
-            > If you haven’t activated Rights Management, first click **activate** and confirm your action. For more information, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
+            > Se ainda não tiver ativado a gestão de direitos, primeiro clique **Ativar** e confirme a ação. Para obter mais informações, consulte o artigo [Ativar o Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
             > 
-            > If you haven’t clicked **advanced features** before, after Rights Management is activated, follow the on-screen instructions to get a free Azure subscription that’s required to access the Azure classic portal.
+            > Se ainda não clicou em **funcionalidades avançadas** antes, depois do Rights Management está ativado, siga no ecrã instruções para obter uma subscrição gratuita do Azure que seja necessário para aceder ao Portal do Azure.
 
-            Clicking **advanced features** loads the Azure classic portal, where you can manage **RIGHTS MANAGEMENT** for your organization's Azure Active Directory.
+            Ao clicar em **funcionalidades avançadas** carrega o portal do Azure, onde pode gerir **RIGHTS MANAGEMENT** para o Azure Active Directory da sua organização.
 
-    -   From the [Azure classic portal](http://go.microsoft.com/fwlink/p/?LinkID=275081):
+    -   A partir de [Portal do Azure](http://go.microsoft.com/fwlink/p/?LinkID=275081):
 
-        1.  In the left pane, click **ACTIVE DIRECTORY**.
+        1.  No painel da esquerda, clique em **do Active Directory**.
 
-        2.  From the **active directory** page, click **RIGHTS MANAGEMENT**.
+        2.  A partir de **do Active Directory** página, clique em **RIGHTS MANAGEMENT**.
 
-        3.  Select the directory to manage for Rights Management.
+        3.  Selecione o diretório para gerir para gestão de direitos.
 
-        4.  If you have not already activated Rights Management, click **ACTIVATE** and confirm your action.
+        4.  Se já não tiver ativado a gestão de direitos, clique em **ATIVAR** e confirme a ação.
 
             > [!NOTE]
-            > For more information, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
+            > Para obter mais informações, consulte o artigo [Ativar o Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
 
-2.  Create a new template:
+2.  Crie um novo modelo:
 
-    -   In the Azure classic portal, from the **Get started with Rights Management** quick start page, click **Create a new rights policy template**.
+    -   No portal do Azure, a partir de **começar com o Rights Management** rápida começar a página, clique em **criar um novo modelo de política de direitos**.
 
-        If you do not immediately see this page after following the instructions for Office 365, use the navigation instructions, above,  for the Azure classic portal.
+        Se não visualizar imediatamente esta página depois de seguir as instruções para o Office 365, utilize as instruções de navegação, acima, para o portal do Azure.
 
-3.  On the **Add a new rights policy template** page, choose a language in which you will type the template name and description that users will see (you can add more languages later). Then type a unique name and a description, and click the Complete button.
+3.  No **Adicionar um novo modelo de política de direitos** página, selecione um idioma no qual irá escrever o nome do modelo e a descrição que será visto pelos utilizadores (pode adicionar mais idiomas mais tarde). Em seguida, escreva um nome exclusivo e uma descrição e clique no botão concluído.
 
-From the **Get started with Rights Management** quick start page, now click **Manage your rights policy templates**. You will see your newly created template added to the list of templates, with a status of **Archived**. At this stage, the template is created but not configured, and is not visible to users.
+A partir de **começar com o Rights Management** rápida começar a página, agora, clique em **Gestão de modelos de política de direitos**. Verá o modelo criado recentemente adicionado à lista de modelos, com o estado de **Archived**. Nesta fase, o modelo é criado, mas não configurado e não é visível para os utilizadores.
 
-#### To configure and publish a custom template
+#### Para configurar e publicar um modelo personalizado
 
-1.  Select your newly created template from the **TEMPLATES** page in the Azure classic portal.
+1.  Selecione o seu modelo criado recentemente a partir de **modelos** página no Portal de gestão do Azure.
 
-2.  From the **Your template has been added** quick start page, click **Get started** from step 1, **Configure rights for users and groups,** then click **GET STARTED NOW** or **ADD**, and then select the users and groups who will have rights to use the content that is protected by the new template.
-
-    > [!NOTE]
-    > The users or groups that you select must have an email address. In a production environment, this will nearly always be the case but in a simple testing environment, you might need to add email addresses to user accounts or groups.
-
-    As a best practice, use groups rather than users, which simplifies management of the templates. If you have Active Directory on-premises and are synchronizing to Azure AD, you can use mail-enabled groups that are either security groups or distribution groups. However, if you want to grant rights to all users in the organization, it will be more efficient to copy one of the default templates rather than specify multiple groups. For more information, see the [How to copy a template](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates) section in this topic.
-
-    > [!TIP]
-    > You can later add users from outside your organization to the template by using the [Windows PowerShell module for Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx) and using one of the following methods:
-    > 
-    > -   **Use a rights definition object to update a template**:    Specify the external email addresses and their rights in a rights definition object, which you then use to update your template. You specify the rights definition object by using the [New-AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx) cmdlet to create a variable and then supply this variable to the  -RightsDefinition parameter with the [Set-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx) cmdlet to modify an existing template. However, if you're adding these users to an existing template, you will also need to define rights definition objects for the existing groups in the templates and not just the new, external users.
-    > -   **Export, edit, and import the updated template**:Use the [Export-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx) cmdlet to export the template to a file that you can edit to add the external email addresses of these users and their rights to the existing groups and rights. Then use the [Import-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx) cmdlet to import this change back into Azure RMS.
-
-3.  Click the Next button, and then assign one of the listed rights to your selected users and groups.
-
-    Use the displayed description for more information about each right (and for custom rights). More detailed  information is also available in [Configuring Usage Rights for Azure Rights Management](../Topic/Configuring_Usage_Rights_for_Azure_Rights_Management.md). However, applications that support RMS might vary in how they implement these rights. Consult their documentation and do your own testing with the applications that users use to check the behavior before you deploy the template for users. To make this template visible to only administrators for this testing, make this template a departmental template (step 6).
-
-4.  If you selected **Custom**, click the Next button, and then select those custom rights.
-
-    Although you can use any combination of the individual rights available, in some applications, some rights might have dependencies on other individual rights. When this is the case, the dependent rights are automatically selected for you.
-
-    > [!TIP]
-    > Consider adding the **Copy and Extract Content** right and grant this to selected administrators or personnel in other roles that have responsibilities for information recovery. Granting this right lets them remove protection if needed, from files and emails that will be protected by using this template. This ability to remove protection at the template level provides more fine-grained control than using the super user feature.
-
-5.  Click the Complete button.
-
-6.  If you want the template to be visible to only a subset of users when they see a list of templates in applications: Click **SCOPE** to configure this as a departmental template, and click **GET STARTED NOW**. Otherwise, go to step 9.
-
-    More information about departmental templates: By default, all users in your Azure directory see all the published templates and they can then select them from applications when they want to protect content. If you want specific users only to see some of the published templates, you must scope the templates to these users. Then, only these users will be able to select these templates. Other users that you do not specify will not see the templates and therefore, cannot select them. This technique can make choosing the correct template easier for users, especially when you create templates that are designed to be used by specific groups or departments. Users then see only the templates that are designed for them.
-
-    For example, you’ve created a template for the Human Resources department that applies the Read-only permission to members of the Finance department. So that only members of the Human Resources department can apply this template when they use the Rights Management sharing application, you scope the template to the email-enabled group named HumanResources. Then, only members of this group see and can apply this template.
-
-7.  On the **TEMPLATE VISIBILITY** page, select the users and groups who will be able to see and select the template from the RMS-enlightened applications. As before, as a best practice, use groups rather than users, and the groups or users you select must have an email address.
-
-8.  Click the Next button, and decide whether you need to configure application compatibility for your departmental template. If you do, click **APPLICATION COMPATIBILITY**, select the check box, and click **Complete**.
-
-    Why might you need to configure application compatibility? Not all applications can support departmental templates. To do so, the application must first authenticate with the RMS service before downloading the templates. If the authentication process does not occur, by default, none of the departmental templates are downloaded. You can override this behavior by specifying that all the departmental templates should download, by configuring application compatibility and selecting the **Show this template to all users when the applications do not support user identity** check box.
-
-    For example, if you do not configure application compatibility for the departmental template in our Human Resources example, only users in the Human Resources department see the departmental template when they use the RMS sharing application, but no users see the departmental template when they use Outlook Web Access (OWA) from Exchange Server 2013 because Exchange OWA and Exchange ActiveSync do not currently support departmental templates. If you override this default behavior by configuring application compatibility, only users in the Human Resources department see the departmental template when they use the RMS sharing application, but all users see the departmental template when they use Outlook Web Access (OWA). If users use OWA or Exchange ActiveSync from Exchange Online, either all users will see the departmental templates or no users will see the department templates, based on the template status (archival or published) in Exchange Online.
-
-    Office 2016 natively supports departmental templates, and so does Office 2013 with the latest  Office updates ([KB 3054853](https://support.microsoft.com/kb/3054853)).
+2.  A partir do **o modelo foi adicionado** rápida começar a página, clique em **começar** no passo 1, **configurar os direitos dos utilizadores e grupos,** em seguida, clique em **começar agora** ou **Adicionar**, e, em seguida, selecione os utilizadores e grupos que irão têm direitos para utilizar o conteúdo que é protegido pelo modelo de novo.
 
     > [!NOTE]
-    > If you have applications that don’t yet natively support departmental templates, you can use a custom RMS template download script or other tools to deploy these templates to the local RMS client folder. Then, these applications will correctly display the departmental templates to only the users and groups that you selected for the template scope:
+    > Os utilizadores ou grupos que selecionou tem de ter um endereço de e-mail. Num ambiente de produção, este será quase sempre as maiúsculas e minúsculas mas num ambiente de teste simple, poderá ter de adicionar endereços de correio eletrónico para as contas de utilizador ou grupos.
+
+    Como melhor prática, utilize grupos em vez de utilizadores, o que simplifica a gestão dos modelos. Se tiver do Active Directory no local e estão a sincronizar para o Azure AD, pode utilizar os grupos com capacidade de correio que são grupos de segurança ou os grupos de distribuição. No entanto, se pretende conceder direitos para todos os utilizadores na organização, irá ser mais eficiente para copiar um dos modelos predefinidos, em vez de especificar vários grupos. Para obter mais informações, consulte o [Como copiar um modelo](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates) deste tópico.
+
+    > [!TIP]
+    > Mais tarde pode adicionar utilizadores a partir de fora da sua organização para o modelo utilizando o [módulo do Windows PowerShell para o Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx) e utilizar um dos seguintes métodos:
     > 
-    > -   For Office 2010, the client folder is **%localappdata%\Microsoft\DRM\Templates**.
-    > -   From a client computer that has downloaded all the templates, you can copy and then paste the template files to other computers.
+    > -   **Exportação, edite e importar o modelo atualizado**:  Este é o método mais simples para adicionar utilizadores externos a um modelo existente que inclui a outros grupos. Utilize o [exportação AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx) cmdlet para exportar o modelo a um. Ficheiro CSV que podem ser editados para adicionar os endereços de e-mail externo destes utilizadores e os respetivos direitos sobre os grupos existentes e direitos. Em seguida, utilize o [importação AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx) cmdlet para importar esta alteração de volta para o Azure RMS.
+    > -   **Utilizar um objeto de definição de direitos para atualizar um modelo**:    Especifique os endereços de e-mail externo e os respetivos direitos de um objeto de definição de direitos, que, em seguida, utilizar para atualizar o seu modelo. Especificar o objeto de definição de direitos, utilizando o [Novo AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx) cmdlet para criar uma variável e, em seguida, fornecer esta variável para o parâmetro - RightsDefinition com o [AadrmTemplateProperty conjunto](https://msdn.microsoft.com/library/azure/dn727076.aspx) cmdlet para modificar um modelo existente. No entanto, se estiver a adicionar estes utilizadores para um modelo existente, também terá de definir os objetos de definição de direitos para os grupos existentes nos modelos e não apenas os utilizadores externos, novo.
+
+3.  Clique no botão seguinte e, em seguida, atribua uma das indicadas direitos seus selecionada de utilizadores e grupos.
+
+    Utilize a descrição apresentada para obter mais informações sobre cada direito (e para direitos personalizados). Informações mais detalhadas também estão disponíveis no [Configuração de direitos de utilização para o Azure Rights Management](../Topic/Configuring_Usage_Rights_for_Azure_Rights_Management.md). No entanto, as aplicações que suportam RMS poderão variar em como implementem estes direitos. Consulte a respetiva documentação e o seu próprio teste com as aplicações que os utilizadores utilizam para verificar o comportamento antes de implementar o modelo para os utilizadores. Para tornar este modelo é visível para apenas os administradores para este teste, tornar este modelo de um modelo departamental (passo 6).
+
+4.  Se tiver selecionado **personalizado**, clique no botão seguinte e, em seguida, selecione esses direitos personalizados.
+
+    Apesar de poder utilizar qualquer combinação dos direitos individuais disponíveis, algumas aplicações, alguns direitos podem ter dependências nos outros direitos individuais. Quando for este o caso, os direitos dependentes são automaticamente selecionados por si.
+
+    > [!TIP]
+    > Considere adicionar o **copiar e extrair conteúdo** com o botão direito e conceder esta a administradores selecionados ou técnico nas outras funções que tenham responsabilidades para recuperação de informações. Conceder este direito permite-lhes a remover a proteção se necessário, a partir dos ficheiros e mensagens de correio eletrónico que serão protegidas utilizando este modelo. Esta capacidade para remover a proteção ao nível do modelo fornece mais controlo detalhado ao utilizar a funcionalidade de utilizador super.
+
+5.  Clique no botão concluído.
+
+6.  Se pretender que o modelo para estar visíveis para apenas um subconjunto de utilizadores quando poderão ver uma lista de modelos de aplicações: Clique em **âmbito** para configurar esta opção como um modelo de departamentos e clique em **começar agora**. Caso contrário, avance para o passo 9.
+
+    Mais informações sobre modelos departamentais: Por predefinição, todos os utilizadores do Azure Active veem todos os modelos publicados e podem, em seguida, selecioná-los a partir de aplicações quando pretendem a proteger conteúdo. Se pretender que os utilizadores específicos apenas para ver alguns dos modelos publicados, deve definir o âmbito de modelos para estes utilizadores. Em seguida, apenas estes utilizadores será possível selecionar estes modelos. Outros utilizadores que não forem especificados não verá os modelos e por isso, não é possível selecioná-las. Esta técnica pode fazer com que escolher o modelo correto mais fácil para os utilizadores, especialmente quando cria modelos que são concebidos para serem utilizados por grupos específicos ou departamentos. Os utilizadores, em seguida, ver apenas os modelos que foram concebidos para os mesmos.
+
+    Por exemplo, criou um modelo para o departamento de recursos humanos que se aplica a permissão só de leitura para os membros departamento financeiro. Para que apenas os membros do departamento de recursos humanos podem aplicar este modelo quando estiverem a utilizar a aplicação de partilha Rights Management, o âmbito o modelo para o grupo de ativar o correio eletrónico denominada HumanResources. Em seguida, apenas os membros deste grupo Consulte o artigo e pode aplicam este modelo.
+
+7.  No **modelo visibilidade** página, selecione os utilizadores e grupos que vão conseguir ver e selecionar o modelo a partir de aplicações suportadas por RMS. Como anteriormente, como melhor prática, utilize grupos em vez de utilizadores e grupos ou utilizadores que selecionar tem de ter um endereço de e-mail.
+
+8.  Clique no botão seguinte e decidir se precisa de configurar a compatibilidade de aplicação para o modelo departamental. Se o fizer, clicar em **compatibilidade APLICACIONAL**, selecione a caixa de verificação e clique em **concluída**.
+
+    Por que razão poderá é necessário configurar compatibilidade aplicacional? Nem todas as aplicações podem suportar modelos departamentais. Para tal, a aplicação tem primeiro de autenticar com o serviço de RMS antes de transferir os modelos. Se o processo de autenticação não ocorrer, por predefinição, nenhum dos modelos departamentais são transferidos. Pode substituir este comportamento, especificando que todos os modelos departamentais deverá ser transferido, configurando a compatibilidade de aplicação e selecionar o **Mostrar este modelo para todos os utilizadores quando as aplicações não suportam a identidade do utilizador** caixa de verificação.
+
+    Por exemplo, se não configurar compatibilidade de aplicação para o modelo departamental no nosso exemplo de recursos humanos, apenas os utilizadores do departamento de recursos humanos veem o modelo departamental quando utilizarem a aplicação de partilha RMS, mas nenhum utilizador ver o modelo departamental quando utilizarem o Outlook Web Access (OWA) do Exchange Server 2013 porque OWA do Exchange e do Exchange ActiveSync não atualmente suportam modelos departamentais. Se substituir este comportamento predefinido ao configurar a compatibilidade de aplicação, apenas os utilizadores do departamento de recursos humanos consulte o modelo departamental quando utilizarem a aplicação de partilha RMS, mas todos os utilizadores veem o modelo departamental quando utilizarem o Outlook Web Access (OWA). Se os utilizadores utilizam o Outlook Web App ou do Exchange ActiveSync do Exchange Online, todos os utilizadores irão ver os modelos de departamentos ou não os utilizadores não verão os modelos de departamento, com base no estado de modelo (arquivo ou publicado) no Exchange Online.
+
+    > [!NOTE]
+    > Se tiver aplicações que ainda não suportem nativamente departamentais modelos, pode utilizar um [script de transferência do modelo de RMS personalizado](http://go.microsoft.com/fwlink/?LinkId=524506) ou outras ferramentas para implementar estes modelos na pasta de cliente RMS local. Em seguida, estas aplicações apresentará corretamente os modelos departamentais apenas para os utilizadores e grupos que selecionou para o âmbito do modelo:
     > 
-    > You can [download the custom RMS template script from the Microsoft Connect site](http://go.microsoft.com/fwlink/?LinkId=524506). If you see an error when you click this link, you probably haven't registered on Microsoft Connect.   To register:
+    > -   Para o Office 2010, a pasta do cliente é **%localappdata%\Microsoft\DRM\Templates**.
+    > -   A partir de um computador cliente que tenha transferido todos os modelos, pode copiar e, em seguida, cole os ficheiros de modelo para outros computadores.
     > 
-    > 1.  Go to the [Microsoft Connect site](http://www.connect.microsoft.com) and sign in with your Microsoft Account.
-    > 2.  Click **Directory**, and select the **View Connect products currently not accepting feedback** category.
-    > 3.  Search for **Rights Management Services**, and for the **Microsoft RMS Enterprise Features** program, click **Join**.
+    > Office 2016 suporta nativamente departamentais modelos e, por isso faz o Office 2013 com as atualizações mais recentes do Office ([KB 3054853](https://support.microsoft.com/kb/3054853)).
 
-9. Click **CONFIGURE** and add additional languages that users use, together with the name and description of this template in that language. When you have multi-language users, it’s important to add each language that they use, and supply a name and description in that language. Users will then see the name and description of the template in the same language as their client operating system, which ensures they understand the policy applied to a document or email message. If there is no match with their client operating system, the name and description that they see falls back to the language and description that you defined when you first created the template.
+9. Clique em **configurar** e adicionar outros idiomas de que os utilizadores a utilizar, juntamente com o nome e descrição deste modelo nesse idioma. Quando tiver utilizadores multilíngue, é importante adicionar cada idioma que utilizar e fornecer um nome e descrição nesse idioma. Os utilizadores verão, em seguida, o nome e descrição do modelo no mesmo idioma como respetivo sistema operativo de cliente, que garante que compreender a política aplicada a uma mensagem de correio eletrónico ou documento. Se não existir nenhuma correspondência com o respetivo sistema operativo do cliente, o nome e descrição Verão reverterá para o idioma e a descrição que foi por si definido quando é criado pela primeira vez o modelo.
 
-    Then check whether you want to make any changes to the following settings:
+    Em seguida, selecione se pretende efetuar quaisquer alterações para as seguintes definições:
 
-    |Setting|More information|
-    |-----------|--------------------|
-    |**content expiration**|Define a date or number of days for this template when files that are protected by the template should not open. You can specify a date or specify a number of days starting from the time that the protection is applied to the file.<br /><br />When you specify a date, it is effective midnight, in your current time zone.|
-    |**offline access**|Use this setting to balance any security requirements that you have against the requirement that users must be able to open protected files when they don’t have an Internet connection.<br /><br />If you specify that content is not available without an Internet connection or that content is only available for a specified number of days, when that threshold is reached, users must be re-authenticated and their access is logged. When this happens, if their credentials are not cached, users are prompted to sign in before they can open the file.<br /><br />In addition to re-authentication, the policy and the user group membership is re-evaluated. This means that users could experience different access results for the same file if there are changes in the policy or group membership from when they last accessed the file.|
+    |Definição|Obter mais informações|
+    |-------------|--------------------------|
+    |**expiração de conteúdos**|Defina uma data ou número de dias para este modelo ao não deverá abrir ficheiros que estão protegidos pelo modelo. Pode especificar uma data ou especificar um número de dias, começando a partir do momento em que a proteção é aplicada ao ficheiro.<br /><br />Quando especificar uma data, é Efetivo meia-noite, no seu fuso horário atual.|
+    |**acesso offline**|Utilize esta definição para balancear a quaisquer requisitos de segurança que pode ter contra o requisito de que os utilizadores têm de conseguir abrir ficheiros protegidos quando que não tenham uma ligação à Internet.<br /><br />Se especificar que conteúdo não está disponível sem uma ligação à Internet ou que o conteúdo só está disponível para um número especificado de dias, quando esse foi atingido o limiar, os utilizadores têm de ser novamente autenticados e os respetivos acesso está registado. Quando isto acontecer, se as respetivas credenciais não estão em cache, são pedido aos utilizadores que iniciem sessão antes de que podem abrir o ficheiro.<br /><br />Além da autenticação, é a avaliação da política e a associação ao grupo de utilizador. Isto significa que os utilizadores foi experiência resultados de acesso diferente para o mesmo ficheiro, se existirem alterações na associação política ou grupo a partir do quando estes acedida pela última vez o ficheiro.|
 
-10. When you are confident that the template is configured appropriately for your users, click **PUBLISH** to make the template visible for users, and then click **SAVE**.
+10. Quando tiver a certeza de que o modelo está configurado corretamente para os seus utilizadores, clique em **publicar** tornar o modelo visíveis para os utilizadores e, em seguida, clique em **Guardar**.
 
-11. Click the Back button in the classic portal to return to the **TEMPLATES** page, where your template now has an updated status of **Published**.
+11. Clique no botão anterior no Portal de gestão para voltar para o **modelos** página, onde o seu modelo tem agora um Estado atualizado da **publicada**.
 
-To make any changes to your template, select it, and then use the quick start steps again. Or, select one of the following options:
+Para efetuar quaisquer alterações ao seu modelo, selecioná-la e, em seguida, utilize os passos de início rápido novamente. Em alternativa, selecione uma das seguintes opções:
 
--   To add more users and groups, and define the rights for those users and groups: Click **RIGHTS**, then click **ADD**.
+-   Para adicionar mais utilizadores e grupos e definir os direitos para esses utilizadores e grupos: Clique em **direitos**, em seguida, clique em **Adicionar**.
 
--   To remove users or groups that you previously selected: Click **RIGHTS**, select the user or group from the list, and then click **DELETE**.
+-   Para remover utilizadores ou grupos que selecionou anteriormente: Clique em **direitos**, selecione o utilizador ou grupo da lista e, em seguida, clique em **Eliminar**.
 
--   To change which users can see the templates to select them from applications: Click **SCOPE**, then click **ADD** or **DELETE**, or **APPLICATION COMPATIBILITY**.
+-   Para alterar quais os utilizadores podem ver os modelos para os selecionar a partir de aplicações: Clique em **âmbito**, em seguida, clique em **Adicionar** ou **Eliminar**, ou **compatibilidade APLICACIONAL**.
 
--   To make the template no longer visible to all users: Click **CONFIGURE**, click **ARCHIVE**, and then click **SAVE**.
+-   Para que o modelo já não é visível para todos os utilizadores: Clique em **configurar**, clique em **arquivo**, e, em seguida, clique em **Guardar**.
 
--   To make other configuration changes: Click **CONFIGURE**, make your changes, and then click **SAVE**.
+-   Para efetuar outras alterações de configuração: Clique em **configurar**, efetue as alterações pretendidas e, em seguida, clique em **Guardar**.
 
 > [!WARNING]
-> When you make changes to a template that was previously saved, clients will not see those changes to the template until templates are refreshed on their computers. For more information, see the [Refreshing templates for users](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates) section in this topic.
+> Quando fizer alterações a um modelo que foi guardado anteriormente, os clientes não irão ver essas alterações para o modelo até que os modelos são atualizados nos respetivos computadores. Para obter mais informações, consulte o [Atualizar Modelos para utilizadores](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates) deste tópico.
 
-## <a name="BKMK_HowToCopyTemplates"></a>How to copy a template
-If you want to create a new template that has very similar settings to an existing template, select the original template on the **TEMPLATES** page, click **COPY**, specify a unique name, and make the changes that you need.
+## <a name="BKMK_HowToCopyTemplates"></a>Como copiar um modelo
+Se pretender criar um novo modelo que tenha definições muito semelhantes a um modelo existente, selecione o modelo original no **modelos** página, clique em **cópia**, especifique um nome exclusivo e efetue as alterações que precisa.
 
 > [!IMPORTANT]
-> When you copy a template, the **Published** or **Archived** status is also copied. So if you copy a published template, its immediate status will be published, unless you change it.
+> Quando copiar um modelo, o **publicada** ou **Archived** estado é também copiado. Para se copiar um modelo publicado, o estado dela imediato será publicado, a menos que pode alterá-lo.
 
-You can copy custom templates and the default templates. As a best practice, copy one of the default templates instead of creating a new custom template if you want the template to grant rights to all users in your organization. This method means that you don’t have to create or select multiple groups to specify all users. In this scenario however, be sure to specify a new name and description for the copied template for additional languages.
+Pode copiar modelos personalizados e modelos predefinidos. Como melhor prática, copie um dos modelos predefinidos em vez de criar um novo modelo personalizado, se pretender que o modelo para conceder direitos para todos os utilizadores na sua organização. Este método significa que não tenha de criar ou selecionar vários grupos para especificar todos os utilizadores. Neste cenário no entanto, certifique-se especificar um novo nome e uma descrição para o modelo copiado para idiomas adicionais.
 
-## <a name="BKMK_HowToArchiveTemplates"></a>How to remove (archive) templates
-The default templates cannot be deleted, but they can be archived so that users do not see them.
+## <a name="BKMK_HowToArchiveTemplates"></a>Como remover modelos (arquivo)
+Não não possível eliminar modelos predefinidos, mas podem ser arquivados para que os utilizadores não veem-los.
 
-Similarly, if you have published a custom template and no longer want users to be able to see it, you can edit the template and choose **ARCHIVE** and **SAVE** from the **CONFIGURE** page. Or, you can select it from the **TEMPLATES** page and select **ARCHIVE**.
+Do mesmo modo, se tiver publicado um modelo personalizado e já não pretender que os utilizadores possam vê-lo, pode editar o modelo e escolher **arquivo** e **Guardar** a partir de **configurar** página. Em alternativa, pode selecionar a partir do **modelos** página e selecione **arquivo**.
 
-Because you cannot edit the default templates, to archive these templates, you must use the **ARCHIVE** option from the **TEMPLATES** page. You cannot archive the Outlook **Do Not Forward** option.
+Porque não é possível editar modelos predefinidos, para arquivar estes modelos, tem de utilizar o **arquivo** opção a partir de **modelos** página. Não é possível arquivar o Outlook **não reencaminhar** opção.
 
-#### To remove a default template
+#### Para remover um modelo predefinido
 
--   From the **TEMPLATES** page, select the default template, and click **ARCHIVE**.
+-   A partir de **modelos** página, selecione o modelo predefinido e clique em **arquivo**.
 
-The status changes from **Published** to **Archived**. If you change your mind, select the template and click **PUBLISH**.
+O estado é alterado de **publicada** para **Archived**. Se mudar de ideias, selecione o modelo e clique em **publicar**.
 
-## <a name="BKMK_RefreshingTemplates"></a>Refreshing templates for users
-When you use Azure RMS, templates are automatically downloaded to client computers so that users can select them from their applications. However, you might need to take additional steps if you make changes to the templates:
+## <a name="BKMK_RefreshingTemplates"></a>Atualizar Modelos para utilizadores
+Quando utiliza o Azure RMS, modelos são automaticamente transferidos para computadores cliente para que os utilizadores possam selecioná-las as suas aplicações. No entanto, poderá ter de efetuar passos adicionais se fizer alterações aos modelos de:
 
-|Application or service|How templates are refreshed after changes|
-|--------------------------|---------------------------------------------|
-|Exchange Online|Manual configuration required to refresh templates.<br /><br />For the configuration steps, expand the following section, [Exchange Online only: How to configure Exchange to download changed custom templates](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_ExchangeOnlineTemplatesUpdate).|
-|Office 365|Automatically refreshed  – no additional steps required.|
-|Office 2016 and Office 2013<br /><br />RMS sharing application for Windows|Automatically refreshed – on a schedule:<br /><br />For these later versions of Office: The default refresh interval  is every 7 days.<br /><br />For the RMS sharing application for Windows: Starting with version 1.0.1784.0, the default refresh interval is every 1 day. Prior versions have a default refresh interval of every 7 days.<br /><br />To force a refresh sooner than this schedule, expand the following section, [Office 2016, Office 2013, and RMS sharing application for Windows: How to force a refresh for a changed custom template](#BKMK_Office2013ForceUpdate).|
-|Office 2010|Refreshed when users log on.<br /><br />To force a refresh, ask or force users to log off and log back on again. Or, see the following section, [Office 2010 only: How to force a refresh for a changed custom template](#BKMK_Office2010ForceUpdate).|
-For mobile devices that use the RMS sharing application, templates are automatically downloaded (and refreshed if necessary) without additional configuration required.
+|Aplicação ou um serviço|Como os modelos são atualizados depois das alterações|
+|---------------------------|---------------------------------------------------------|
+|Exchange Online|Configuração manual necessária para atualizar os modelos.<br /><br />Para obter os passos de configuração, expanda a secção seguinte, [Exchange Online apenas: Como configurar o Exchange para transferir alterado modelos personalizados](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_ExchangeOnlineTemplatesUpdate).|
+|Office 365|Atualizados automaticamente – não existem passos adicionais necessários.|
+|2016 do Office e Office 2013<br /><br />Aplicação para o Windows de partilha RMS|Atualizados automaticamente – com base numa agenda:<br /><br />-   Para obter estas versões posteriores do Office: O intervalo de atualização predefinido é de 7 dias.<br />-   Para a aplicação de partilha RMS para Windows: A partir da versão 1.0.1784.0, o intervalo de atualização predefinido é a cada 1 dia. As versões anteriores têm uma predefinição atualizar o intervalo de intervalos de 7 dias.<br /><br />Para forçar uma atualização mais cedo do que esta agenda, expanda a secção seguinte, [2016 do Office, Office 2013 e aplicações para Windows de partilha RMS: Como forçar uma atualização para um modelo personalizado alterado](#BKMK_Office2013ForceUpdate).|
+|Office 2010|Atualizados quando os utilizadores iniciar sessão.<br /><br />Para forçar uma atualização, solicite ou forçar utilizadores a terminar sessão e iniciar sessão novamente novamente. Ou, consulte a secção seguinte, [Apenas para o Office 2010: Como forçar uma atualização para um modelo personalizado alterado](#BKMK_Office2010ForceUpdate).|
+Para dispositivos móveis que utilizam a aplicação de partilha RMS, modelos são automaticamente transferidos (e atualizados se for necessário) sem ser necessária configuração adicional.
 
-### <a name="BKMK_ExchangeOnlineTemplatesUpdate"></a>Exchange Online only: How to configure Exchange to download changed custom templates
-If you have already configured Information Rights Management (IRM) for Exchange Online, custom templates will not download for users until you make the following changes by using Windows PowerShell in Exchange Online.
+### <a name="BKMK_ExchangeOnlineTemplatesUpdate"></a>Exchange Online apenas: Como configurar o Exchange para transferir alterado modelos personalizados
+Se já tiver configurado a gestão de direitos de informação (IRM) para o Exchange Online, modelos personalizados não transferirá para utilizadores até que efetue as seguintes alterações utilizando o Windows PowerShell no Exchange Online.
 
 > [!NOTE]
-> For more information about how to use Windows PowerShell in Exchange Online, see [Using PowerShell with Exchange Online](https://technet.microsoft.com/library/jj200677%28v=exchg.160%29.aspx).
+> Para obter mais informações sobre como utilizar o Windows PowerShell no Exchange Online, consulte o artigo [através do PowerShell com o Exchange Online](https://technet.microsoft.com/library/jj200677%28v=exchg.160%29.aspx).
 
-You must do this procedure each time you change a template.
+Tem de efetuar este procedimento sempre que alterar um modelo.
 
-##### To update templates for Exchange Online
+##### Atualizar Modelos para o Exchange Online
 
-1.  Using Windows PowerShell in Exchange Online, connect to the service:
+1.  Com o Windows PowerShell no Exchange Online, ligar ao serviço:
 
-    1.  Supply your Office 365 user name and password:
+    1.  Forneça o nome de utilizador do Office 365 e a palavra-passe:
 
         ```
         $Cred = Get-Credential
         ```
 
-    2.  Connect to the Exchange Online service by running the following two commands:
+    2.  Ligar ao serviço do Exchange Online, executando os seguintes dois comandos:
 
         ```
         $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $Cred -Authentication Basic –AllowRedirection
@@ -246,148 +239,148 @@ You must do this procedure each time you change a template.
         Import-PSSession $Session
         ```
 
-2.  Use the [Import-RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200724%28v=exchg.160%29.aspx) cmdlet to re-import your trusted publishing domain (TPD) from Azure RMS:
+2.  Utilize o [importação RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200724%28v=exchg.160%29.aspx) cmdlet para voltar a importar o domínio de publicação fidedigno (TPD) a partir do Azure RMS:
 
     ```
     Import-RMSTrustedPublishingDomain -Name "<TPD name>" -RefreshTemplates -RMSOnline
     ```
-    For example, if your TPD name is **RMS Online - 1** (a typical name for many organizations), enter: **Import-RMSTrustedPublishingDomain -Name "RMS Online - 1" -RefreshTemplates -RMSOnline**
+    Por exemplo, se o nome TPD for **do RMS Online - 1** (nome típico para muitas organizações), introduza: **Import-RMSTrustedPublishingDomain -Name "RMS Online - 1" -RefreshTemplates -RMSOnline**
 
     > [!NOTE]
-    > To verify your TPD name, you can use the [Get-RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200707%28v=exchg.160%29.aspx) cmdlet.
+    > Para verificar o seu nome TPD, pode utilizar o [Get-RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200707%28v=exchg.160%29.aspx) cmdlet.
 
-3.  To confirm that the templates have imported successfully, wait a few minutes and then run the [Get-RMSTemplate](http://technet.microsoft.com/library/dd297960%28v=exchg.160%29.aspx) cmdlet and set the Type to All. For example:
+3.  Para confirmar que os modelos importou com êxito, aguarde alguns minutos e, em seguida, execute o [Get-RMSTemplate](http://technet.microsoft.com/library/dd297960%28v=exchg.160%29.aspx) cmdlet e definir o tipo a todos. Por exemplo:
 
     ```
     Get-RMSTemplate -TrustedPublishingDomain "RMS Online - 1" -Type All
     ```
     > [!TIP]
-    > It's useful to keep a copy of the output so that you can easily copy the template names or GUIDs if you later archive a template.
+    > É útil manter uma cópia da saída para que pode facilmente copiar os nomes de modelo ou GUIDs se é um modelo de arquivar mais tarde.
 
-4.  For each imported template that you want to be available in the Outlook Web App, you must use the [Set-RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) cmdlet and set the Type to Distributed:
+4.  Para cada modelo importado que pretende que sejam disponibilizados no Outlook Web App, tem de utilizar o [conjunto RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) cmdlet e definir o tipo como distribuídas:
 
     ```
     Set-RMSTemplate -Identity "<name  or GUID of the template>" -Type Distributed
     ```
-    Because Outlook Web Access caches the UI for 24 hours, users might not see the new template for up to a day.
+    Porque o Outlook Web Access coloca em cache da IU para 24 horas, os utilizadores não poderão ver o novo modelo para até por dia.
 
-In addition, if you archive a template (custom or default) and use Exchange Online with Office 365, users will continue to see the archived templates if they use the Outlook Web App or mobile devices that use the Exchange ActiveSync Protocol.
+Além disso, se se arquivam um modelo (personalizado ou predefinido) e utilize o Exchange Online com o Office 365, os utilizadores irão continuar a ver os modelos arquivados se utilizarem o Outlook Web App ou os dispositivos móveis que utilizam o protocolo do Exchange ActiveSync.
 
-So that users no longer see these templates, connect to the service by using Windows PowerShell in Exchange Online, and then use the [Set-RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) cmdlet by running the following command:
+Para que os utilizadores já não veem estes modelos, ligar ao serviço, utilizando o Windows PowerShell no Exchange Online e, em seguida, utilize o [conjunto RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) cmdlet executando o seguinte comando:
 
 ```
 Set-RMSTemplate -Identity "<name or GUID of the template>" -Type Archived
 ```
 
-### <a name="BKMK_Office2013ForceUpdate"></a>Office 2016,  Office 2013, and RMS sharing application for Windows: How to force a refresh for a changed custom template
-By editing the registry on the computers running Office 2016, Office 2013, or the Rights Management (RMS) sharing application for Windows, you can change the automatic schedule so that changed templates are refreshed on computers more frequently than their default value. You can also force an immediate refresh by deleting the existing data in a registry value.
+### <a name="BKMK_Office2013ForceUpdate"></a>2016 do Office, Office 2013 e aplicações para Windows de partilha RMS: Como forçar uma atualização para um modelo personalizado alterado
+Ao editar o registo nos computadores a executar o Office 2016, Office 2013 ou de partilha Rights Management (RMS) aplicações para Windows, pode alterar o agendamento automático para que os modelos alterados são atualizados em computadores com mais frequência do que o respetivo valor predefinido. Pode também forçar uma atualização imediata, eliminando os dados existentes um valor de registo.
 
 > [!WARNING]
-> If you use the Registry Editor incorrectly, you might cause serious problems that might require you to reinstall the operating system. Microsoft cannot guarantee that you can solve problems that result from using the Registry Editor incorrectly. Use the Registry Editor at your own risk.
+> Se a utilização incorreta do Editor de registo poderá causar problemas graves que obriguem à reinstalação do sistema operativo. A Microsoft não garante que consiga resolver os problemas resultantes da utilização incorreta do Editor de registo. Utilize o Editor de registo por sua própria conta e risco.
 
-##### To change the automatic schedule
+##### Para alterar o agendamento automático
 
-1.  Using a registry editor, create and set one of the following registry values:
+1.  Utilizando um editor de registo, criar e definir um dos seguintes valores de registo:
 
-    -   To set an update frequency in days (minimum of 1 day):  Create a new registry value named **TemplateUpdateFrequency** and define an integer value for the data, which specifies the frequency in days to download any changes to a downloaded template. Use the following table to locate the registry path to create this new registry value.
+    -   Para definir uma frequência de atualização em dias (mínimo de 1 dia):  Crie um novo valor de registo com o nome **TemplateUpdateFrequency** e definir um valor inteiro para os dados, que especifica a frequência em dias para transferir alterações a um modelo transferido. Utilize a tabela seguinte para localizar o caminho do registo para criar este novo valor de registo.
 
-        |Registry path|Type|Value|
-        |-----------------|--------|---------|
+        |Caminho do registo|Tipo|Valor|
+        |----------------------|--------|---------|
         |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC|REG_DWORD|TemplateUpdateFrequency|
 
-    -   To set an update frequency in seconds (minimum of 1 second):  Create a new registry value named **TemplateUpdateFrequencyInSeconds** and define an integer value for the data, which specifies the frequency in seconds to download any changes to a downloaded template. Use the following table to locate the registry path to create this new registry value.
+    -   Para definir uma frequência de atualização em segundos (mínimo de 1 segundo):  Crie um novo valor de registo com o nome **TemplateUpdateFrequencyInSeconds** e definir um valor inteiro para os dados, que especifica a frequência em segundos para transferir alterações a um modelo transferido. Utilize a tabela seguinte para localizar o caminho do registo para criar este novo valor de registo.
 
-        |Registry path|Type|Value|
-        |-----------------|--------|---------|
+        |Caminho do registo|Tipo|Valor|
+        |----------------------|--------|---------|
         |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC|REG_DWORD|TemplateUpdateFrequencyInSeconds|
 
-    Make sure that you create and set one of these registry values, not both. If both are present, **TemplateUpdateFrequency** is ignored.
+    Certifique-se de que pode cria e configurar um destes valores de registo, não ambos. Se ambos estiverem presentes, **TemplateUpdateFrequency** é ignorada.
 
-2.  If you want to force an immediate refresh of the templates, go to the next procedure. Otherwise, restart your Office applications and instances of File Explorer now.
+2.  Se pretender forçar uma atualização imediata dos modelos, avance para o procedimento seguinte. Caso contrário, reinicie as suas aplicações do Office e instâncias do Explorador de ficheiros agora.
 
-##### To force an immediate refresh
+##### Para forçar uma atualização imediata
 
-1.  Using a registry editor, delete the data for the **LastUpdatedTime** value. For example, the data might display **2015-04-20T15:52**; delete 2015-04-20T15:52 so that no data is displayed. Use the following table to locate the registry path to delete this registry value data.
+1.  Utilizando um editor de registo, eliminar os dados para o **LastUpdatedTime** valor. Por exemplo, poderão apresentar os dados **2015-04-20T15:52**; eliminar 2015-04-20T15:52 para que os dados não são apresentados. Utilize a tabela seguinte para localizar o caminho do registo para eliminar estes dados de valor de registo.
 
-    |Registry path|Type|Value|
-    |-----------------|--------|---------|
-    |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\&lt;MicrosoftRMS_FQDN&gt;\Template|REG_SZ|LastUpdatedTime|
+    |Caminho do registo|Tipo|Valor|
+    |----------------------|--------|---------|
+    |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\ &lt; MicrosoftRMS_FQDN &gt; \Template|REG_SZ|LastUpdatedTime|
     > [!TIP]
-    > In the registry path, *&lt;MicrosoftRMS_FQDN&gt;* refers to your Microsoft RMS service FQDN. If you want to verify this value:
+    > No caminho de registo, *&lt; MicrosoftRMS_FQDN &gt;* refere-se ao seu FQDN de serviço do Microsoft RMS. Se pretender verificar este valor:
     > 
-    > 1.  Run the [Get-AadrmConfiguration](https://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet for Azure RMS. If you haven’t already installed the Windows PowerShell module for Azure RMS, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
-    > 2.  From the output, identify the **LicensingIntranetDistributionPointUrl** value.
+    > 1.  Executar o [Get-AadrmConfiguration](https://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet para o Azure RMS. Se ainda não o tenha já instalado o módulo Windows PowerShell para o Azure RMS, consulte o artigo [Instalação do Windows PowerShell para o Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+    > 2.  A partir da saída, identificar a **LicensingIntranetDistributionPointUrl** valor.
     > 
-    >     For example: **LicensingIntranetDistributionPointUrl   : https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
-    > 3.  From the value, remove **https://** and **/_wmcs/licensing** from this string. The remaining value is your Microsoft RMS service FQDN. In our example, the Microsoft RMS service FQDN would be the following value:
+    >     Por exemplo: **LicensingIntranetDistributionPointUrl: https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
+    > 3.  O valor, remover **https://** e **/_wmcs/licenciamento** desta cadeia. O valor restante é o seu FQDN de serviço do Microsoft RMS. No nosso exemplo, o FQDN de serviço do Microsoft RMS seria o seguinte valor:
     > 
     >     **5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com**
 
-2.  Delete the following folder and all files it contains: **%localappdata%\Microsoft\MSIPC\Templates**
+2.  Elimine a pasta seguinte e todos os ficheiros que contém: **%localappdata%\Microsoft\MSIPC\Templates**
 
-3.  Restart your Office applications and instances of File Explorer.
+3.  Reinicie as suas aplicações do Office e instâncias do Explorador de ficheiros.
 
-### <a name="BKMK_Office2010ForceUpdate"></a>Office 2010 only: How to force a refresh for a changed custom template
-By editing the registry on the computers running Office 2010, you can set a value so that changed templates are refreshed on computers without waiting for users to log off and back on. You can also force an immediate refresh by deleting the existing data in a registry value.
+### <a name="BKMK_Office2010ForceUpdate"></a>Apenas para o Office 2010: Como forçar uma atualização para um modelo personalizado alterado
+Ao editar o registo nos computadores a executar o Office 2010, pode definir um valor para que os modelos alterados são atualizados em computadores sem aguardar por utilizadores terminar a sessão e uma segurança. Pode também forçar uma atualização imediata, eliminando os dados existentes um valor de registo.
 
 > [!WARNING]
-> If you use the Registry Editor incorrectly, you might cause serious problems that might require you to reinstall the operating system. Microsoft cannot guarantee that you can solve problems that result from using the Registry Editor incorrectly. Use the Registry Editor at your own risk.
+> Se a utilização incorreta do Editor de registo poderá causar problemas graves que obriguem à reinstalação do sistema operativo. A Microsoft não garante que consiga resolver os problemas resultantes da utilização incorreta do Editor de registo. Utilize o Editor de registo por sua própria conta e risco.
 
-##### To change the update frequency
+##### Para alterar a frequência de atualização
 
-1.  Using a registry editor, create a new registry value named **UpdateFrequency** and define an integer value for the data, which specifies the frequency in days to download any changes to a downloaded template. Use the following table to locate the registry path to create this new registry value.
+1.  Utilizando um editor de registo, crie um novo valor de registo com o nome **UpdateFrequency** e definir um valor inteiro para os dados, que especifica a frequência em dias para transferir alterações a um modelo transferido. Utilize a tabela seguinte para localizar o caminho do registo para criar este novo valor de registo.
 
-    |Registry path|Type|Value|
-    |-----------------|--------|---------|
+    |Caminho do registo|Tipo|Valor|
+    |----------------------|--------|---------|
     |HKEY_CURRENT_USER\Software\Microsoft\MSDRM\TemplateManagement|REG_DWORD|UpdateFrequency|
 
-2.  If you want to force an immediate refresh of the templates, go to the next procedure. Otherwise, restart your Office applications now.
+2.  Se pretender forçar uma atualização imediata dos modelos, avance para o procedimento seguinte. Caso contrário, reinicie as aplicações do Office agora.
 
-##### To force an immediate refresh
+##### Para forçar uma atualização imediata
 
-1.  Using a registry editor, delete the data for the **LastUpdatedTime** value. For example, the data might display **2015-04-20T15:52**; delete 2015-04-20T15:52 so that no data is displayed. Use the following table to locate the registry path to delete this registry value data.
+1.  Utilizando um editor de registo, eliminar os dados para o **LastUpdatedTime** valor. Por exemplo, poderão apresentar os dados **2015-04-20T15:52**; eliminar 2015-04-20T15:52 para que os dados não são apresentados. Utilize a tabela seguinte para localizar o caminho do registo para eliminar estes dados de valor de registo.
 
-    |Registry path|Type|Value|
-    |-----------------|--------|---------|
+    |Caminho do registo|Tipo|Valor|
+    |----------------------|--------|---------|
     |HKEY_CURRENT_USER\Software\Microsoft\MSDRM\TemplateManagement|REG_SZ|lastUpdatedTime|
 
-2.  Delete the following folder and all files it contains: **%localappdata%\Microsoft\MSIPC\Templates**
+2.  Elimine a pasta seguinte e todos os ficheiros que contém: **%localappdata%\Microsoft\MSIPC\Templates**
 
-3.  Restart your Office applications.
+3.  Reinicie as aplicações do Office.
 
-## <a name="BKMK_PowerShellTemplates"></a>Windows PowerShell reference
-Everything that you can do in the Azure classic portal to create and manage templates, you can do from the command line, by using Windows PowerShell. In addition, you can export and import templates, so that you can copy templates between tenants or perform bulk edits of complex properties in templates, such as multilingual names and descriptions.
+## <a name="BKMK_PowerShellTemplates"></a>Referência do Windows PowerShell
+Tudo o que pode fazer no Portal de gestão do Azure para criar e gerir modelos, que pode fazer a partir da linha de comandos, utilizando o Windows PowerShell. Além disso, pode exportar e importar modelos, para que possa copiar modelos entre inquilinos ou efetuar edições em massa de propriedades complexas nos modelos, tais como nomes multilingues e descrições.
 
-You can also use export and import to back up and restore your custom templates, As a best practice, regularly back up your custom templates, so that if you make a change that was not intended, you can easily revert to a previous version.
+Pode também utilizar exportar e importar uma cópia de segurança e restaurar os modelos personalizados, como melhor prática, regularmente uma cópia de segurança seus modelos personalizados, para que se fizer uma alteração que não era destinada, pode facilmente reverter para uma versão anterior.
 
 > [!IMPORTANT]
-> To use Windows PowerShell to create and manage Azure RMS rights policy templates, you must have at least version 2.0.0.0 of the [Windows PowerShell module for Azure RMS](http://go.microsoft.com/fwlink/?LinkId=257721).
+> Para utilizar o Windows PowerShell para criar e gerir modelos de política de direitos do Azure RMS, tem de ter, pelo menos, versão 2.0.0.0 do [módulo do Windows PowerShell para o Azure RMS](http://go.microsoft.com/fwlink/?LinkId=257721).
 > 
-> If you have previously installed this Windows PowerShell module, run the following command in a PowerShell window to check the version number: `(Get-Module aadrm -ListAvailable).Version`
+> Se tiver instalado anteriormente este módulo do Windows PowerShell, execute o seguinte comando numa janela do PowerShell para verificar o número da versão: `(Get-Module aadrm -ListAvailable).Version`
 
-For installation instructions, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+Para instruções de instalação, consulte o artigo [Instalação do Windows PowerShell para o Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-The cmdlets that support creating and managing templates:
+Os cmdlets que suporta a criação e gestão de modelos:
 
--   [Add-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727075.aspx)
+-   [AadrmTemplate adicionar](https://msdn.microsoft.com/library/azure/dn727075.aspx)
 
--   [Export-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx)
+-   [Exportação AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx)
 
 -   [Get-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727079.aspx)
 
 -   [Get-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727081.aspx)
 
--   [Import-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx)
+-   [Importar AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx)
 
--   [New-AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx)
+-   [Novo AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx)
 
--   [Remove-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727082.aspx)
+-   [Remover AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727082.aspx)
 
--   [Set-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx)
+-   [Conjunto AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx)
 
-## Next steps
-After you’ve configured custom templates for Azure Rights Management, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) to check whether there are other configuration steps that you might want to do before you roll out [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] to users and administrators. If there are no other configuration steps that you need to do, see [Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) for operational guidance to support a successful deployment for your organization.
+## Próximos passos
+Após configurar a modelos personalizados para o Azure Rights Management, utilize o [Plano de implementação do Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) para verificar se existem outros passos de configuração que pode querer fazer antes de ser realizadas [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] para utilizadores e administradores. Se não existirem sem outros passos de configuração que precisa de fazer, consulte o artigo [Utilizar o Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) para obter orientações sobre operacional suportar uma implementação efetuada com êxito para a sua organização.
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Consultar Também
+[Configurar a gestão de direitos do Azure](../Topic/Configuring_Azure_Rights_Management.md)
 

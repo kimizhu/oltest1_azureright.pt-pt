@@ -3,59 +3,58 @@ description: na
 keywords: na
 title: Configuring Usage Rights for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97ddde38-b91b-42a5-8eb4-3ce6ce15393d
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Configuring Usage Rights for Azure Rights Management
-When you set protection on files or emails by using Azure Rights Management (Azure RMS) and you do not use a template, you must configure the usage rights yourself. In addition, when you configure custom templates for Azure RMS, you select the usage rights that will then be automatically applied when the template is selected by users, administrators, or configured services. For example, in the Azure  classic portal you can select roles that configure a logical grouping of usage rights, or you can configure the individual rights.
+# Configura&#231;&#227;o de direitos de utiliza&#231;&#227;o para o Azure Rights Management
+Quando definir a proteção em ficheiros ou mensagens de correio eletrónico utilizando o Azure Rights Management (RMS do Azure) e não utiliza um modelo, terá de configurar os direitos de utilização-la sozinho. Além disso, quando configurar os modelos personalizados para o Azure RMS, selecione os direitos de utilização que serão, em seguida, automaticamente aplicados quando está selecionado o modelo por utilizadores, os administradores, ou configurados serviços. Por exemplo, no portal do Azure pode selecionar as funções que configurar um agrupamento lógico de direitos de utilização, ou pode configurar os direitos individuais.
 
-Use this topic to help you configure the usage rights you want for the application you’re using and understand how these rights are interpreted by applications.
+Utilize este tópico para o ajudar a configurar os direitos de utilização que pretende para a aplicação que estiver a utilizar e compreender como estes direitos são interpretados por aplicações.
 
-## Usage Rights and Descriptions
-The following table lists and describes the usage rights that Rights Management supports, and how they are used and interpreted. In this table, the **Common name** is typically how you might see the usage right displayed or referenced, as a more friendly version of the single-word value that is used in the code (the **Encoding in policy** value). The **API Constant or Value** is the SDK name for an MSIPC API call, used when you write an RMS-enlightened application that checks for a usage right, or adds a usage right to a policy.
+## Direitos de utilização e as descrições
+A tabela seguinte apresenta e descreve os direitos de utilização que suporta a gestão de direitos e como são utilizadas e interpretados. Nesta tabela, o **nome comum** é, geralmente, que poderá ver a utilização da direita apresentado ou referenciada, como uma versão mais amigável do word único valor que é utilizado no código (o **codificação na política** valor). O **constante de API ou valor** é o nome SDK para uma chamada de MSIPC API utilizada quando escreve uma aplicação suportadas por RMS que verifica a existência de um direita de utilização ou adiciona uma utilização da direita para a uma política.
 
-|Common name|Encoding in policy|Description|Implementation in Office custom rights|Name in the Azure  classic portal|Name in AD RMS templates|API constant or value|Additional information|
-|---------------|----------------------|---------------|------------------------------------------|-------------------------------------|----------------------------|-------------------------|--------------------------|
-|Edit Content, Edit|DOCEDIT|Allows the user to modify, rearrange, format or filter the content inside the application. It does not grant the right to save the edited copy.|As part of the **Change** and **Full Control** options.|**Edit Content**|**Edit**|Not applicable|In Office applications, this right also allows the user to save the document.|
-|Save|EDIT|Allows the user to save the document in its current location.|As part of the **Change** and **Full Control** options.|**Save File**|**Save**|IPC_GENERIC_WRITEL"EDIT"|In Office applications, this right also allows the user to modify the document.|
-|Comment|COMMENT|Enables the option to add annotations or comments to the content.|Not implemented|Not implemented|Not implemented|IPC_GENERIC_COMMENTL"COMMENT"|This right is available in the SDK, is available as an ad-hoc policy in the RMS Protection module for Windows PowerShell, and has been implemented in some software vendor applications. However, it is not widely used and is not currently supported by Office applications.|
-|Save As, Export|EXPORT|Enables the option to save the content to a different file name (Save As). Depending on the application, the file might be saved without protection.|As part of the **Change** and **Full Control** options.|**Export Content (Save As)**|**Export (Save As)**|IPC_GENERIC_EXPORTL"EXPORT"|This right also allows the user to perform other export options in applications, such as **Send to OneNote**.|
-|Forward|FORWARD|Enables the option to forward an email message and to add recipients to the **To** and **Cc** lines.|Denied when using the **Do Not Forward** standard policy.|**Forward**|**Forward**|IPC_EMAIL_FORWARDL"FORWARD"|Does not allow the forwarder to grant rights to other users as part of the forward action.|
-|Full Control|OWNER|Grants all rights to the document and all available actions can be performed.|As the **Full Control** custom option.|**Full Control**|**Full Control**|IPC_GENERIC_ALLL"OWNER"|Includes the ability to remove protection.|
-|Print|PRINT|Enables the options to print the content.|As the **Print Content** option in custom permissions. Not a per-recipient setting.|**Print**|**Print**|IPC_GENERIC_PRINTL"PRINT|No additional information|
-|Reply|REPLY|Enables the Reply option in an email client, without allowing changes in the **To** or **Cc** lines.|Not applicable|**Reply**|**Reply**|IPC_EMAIL_REPLY|No additional information|
-|Reply All|REPLYALL|Enables the **Reply All** option in an email client, but doesn’t allow the user to add recipients to the **To** or **Cc** lines.|Not applicable|**Reply All**|**Reply All**|IPC_EMAIL_REPLYALLL"REPLYALL"|No additional information|
-|View, Open, Read|VIEW|Allows the user to open the document and see the content.|As the **Read** custom policy, **View** option.|**View Content**|**View**|IPC_GENERIC_READL"VIEW"|No additional information|
-|Copy|EXTRACT|Enables options to copy data from the document into the same or another document.|As the **Allow users with Read access to copy content** custom policy option.|**Copy and Extract content**|**Extract**|IPC_GENERIC_EXTRACTL"EXTRACT"|In some applications it also allows the whole document to be saved in unprotected form.|
-|View Rights|VIEWRIGHTSDATA|Allows the user to see the policy that is applied to the document.|Not implemented|**View Assigned Rights**|**View Rights**|IPC_READ_RIGHTSL"VIEWRIGHTSDATA"|Ignored by some applications.|
-|Change Rights|EDITRIGHTSDATA|Allows the user to change the policy that is applied to the document. Includes including removing protection.|Not implemented|**Change Rights**|**Edit Rights**|IPC_WRITE_RIGHTSL"EDITRIGHTSDATA"|No additional information|
-|Allow Macros|OBJMODEL|Enables the option to run macros or perform other programmatic or remote access to the content in a document.|As the **Allow Programmatic Access** custom policy option. Not a per-recipient setting.|**Allow Macros**|**Allow Macros**|Not applicable|No additional information|
+|Nome comum|Codificação de política|Descrição|Implementação no direitos personalizados do Office|O nome no portal do Azure|Atribua o nome modelos de AD RMS|Constante de API ou valor|Informações adicionais|
+|--------------|---------------------------|-------------|------------------------------------------------------|-----------------------------|------------------------------------|-----------------------------|--------------------------|
+|Edite conteúdos, editar|DOCEDIT|Permite ao utilizador modificar, reorganizar, formatar ou filtrar o conteúdo dentro da aplicação. -Lo que não conceda o direito de guardar a cópia editada.|Como parte de **alteração** e **controlo total** opções.|**Editar conteúdo**|**Editar**|Não aplicável|Nas aplicações do Office, este direito também permite ao utilizador guardar o documento.|
+|Guardar|EDITAR|Permite ao utilizador guardar o documento na sua localização atual.|Como parte de **alteração** e **controlo total** opções.|**Guarde o ficheiro**|**Guardar**|IPC_GENERIC_WRITEL "EDITAR"|Nas aplicações do Office, este direito também permite ao utilizador modificar o documento.|
+|Comentário|COMENTÁRIO|Ativa a opção Adicionar comentários ou anotações para o conteúdo.|Não implementado|Não implementado|Não implementado|IPC_GENERIC_COMMENTL "COMENTÁRIO"|Este direito está disponível no SDK, está disponível como uma política ad-hoc no módulo proteção RMS para o Windows PowerShell e tenha sido implementado no algumas aplicações de fornecedor de software. No entanto, não é amplamente utilizado e não é atualmente suportado por aplicações do Office.|
+|Guardar como, exportar|EXPORTAR|Ativa a opção Guardar o conteúdo para um nome de ficheiro diferente (Guardar como). Dependendo da aplicação, o ficheiro poderão ser guardado sem proteção.|Como parte de **alteração** e **controlo total** opções.|**Exportar conteúdo (Guardar como)**|**Exportação (Guardar como)**|IPC_GENERIC_EXPORTL "EXPORTAÇÃO"|Este direito também permite ao utilizador efetuar outras opções de exportação em aplicações, tais como **Enviar para o OneNote**.|
+|Reencaminhar|REENCAMINHAR|Ativa a opção para reencaminhar uma mensagem de correio eletrónico e adicionar os destinatários a **para** e **Cc** linhas.|Negado ao utilizar o **não reencaminhar** política padrão.|**Reencaminhar**|**Reencaminhar**|IPC_EMAIL_FORWARDL "REENCAMINHAR"|Não permitir que o reencaminhador conceder direitos para outros utilizadores como parte da ação reencaminhar.|
+|Controlo total|PROPRIETÁRIO|Concede todos os direitos para o documento e podem ser efetuadas a todas as ações disponíveis.|Como o **controlo total** opção personalizado.|**Controlo total**|**Controlo total**|IPC_GENERIC_ALLL "PROPRIETÁRIO"|Inclui a capacidade para remover a proteção.|
+|Imprimir|IMPRIMIR|Permite que as opções imprimir o conteúdo.|Como o **Imprimir conteúdo** opção na permissões personalizadas. Não é uma definição de por destinatário.|**Imprimir**|**Imprimir**|IPC_GENERIC_PRINTL "IMPRIMIR|Não existem informações adicionais|
+|Resposta|RESPOSTA|Ativa a opção de resposta no cliente de e-mail, sem permitir alterações a **para** ou **Cc** linhas.|Não aplicável|**Resposta**|**Resposta**|IPC_EMAIL_REPLY|Não existem informações adicionais|
+|Responder a todos|REPLYALL|Permite a **responder a todos** opção um cliente de e-mail, mas não permitir que o utilizador adicionar destinatários para o **para** ou **Cc** linhas.|Não aplicável|**Responder a todos**|**Responder a todos**|IPC_EMAIL_REPLYALLL "REPLYALL"|Não existem informações adicionais|
+|Vista, abrir, leitura|VISTA|Permite ao utilizador abrir o documento e ver o conteúdo.|Como o **leitura** política personalizada, **vista** opção.|**Visualização de conteúdo**|**Vista**|IPC_GENERIC_READL "VISTA"|Não existem informações adicionais|
+|Copiar|EXTRAIR|Permite que as opções copiar dados do documento para o mesmo livro ou de outro documento.|Como o **Permitir que os utilizadores com acesso de leitura copiar o conteúdo** opção política personalizada.|**Copiar e extrair conteúdo**|**Extrair**|IPC_GENERIC_EXTRACTL "EXTRAIR"|Em algumas aplicações também permite a todo o documento seja guardado no formulário não protegido.|
+|Direitos de vista|VIEWRIGHTSDATA|Permite ao utilizador ver a política que é aplicada ao documento.|Não implementado|**Vista direitos atribuídos**|**Direitos de vista**|IPC_READ_RIGHTSL "VIEWRIGHTSDATA"|Ignorado pelo algumas aplicações.|
+|Direitos de alteração|EDITRIGHTSDATA|Permite ao utilizador alterar a política é aplicada ao documento. Inclui incluindo remover a proteção.|Não implementado|**Direitos de alteração**|**Editar direitos**|IPC_WRITE_RIGHTSL "EDITRIGHTSDATA"|Não existem informações adicionais|
+|Permitir que as Macros|OBJMODEL|Ativa a opção executar macros ou efetuar outro acesso programático ou remoto ao conteúdo num documento.|Como o **Permitir acesso programático** opção política personalizada. Não é uma definição de por destinatário.|**Permitir que as Macros**|**Permitir que as Macros**|Não aplicável|Não existem informações adicionais|
 
-## Rights included in permissions  levels
-Some applications group usage rights together into permissions levels, to make it easier to select usage rights that are typically used together. These permisisons levels help to abstract a level of complexity from users, so they can choose options that are role-based.  For example, **Reviewer** and **Co-Author**. Although these options often show users a summary of the rights, they might not include every right that is listed in the previous table.
+## Direitos incluídos nos níveis de permissões
+Algumas aplicações agrupam direitos de utilização em níveis de permissões, para facilitar a selecione direitos de utilização que são normalmente utilizados em conjunto. Estes níveis de permisisons ajudá-lo para abstrair um nível de complexidade dos utilizadores, pelo que podem escolher as opções de baseada em funções.  Por exemplo, **Revisor** e **Cocriar**. Embora frequentemente estas opções mostram aos utilizadores um resumo dos direitos, estes podem não incluir todas as direita que se encontra listada na tabela anterior.
 
-Use the following table for a list of these permissions levels and a complete list of the rights that they contain.
+Utilize a tabela seguinte para obter uma lista destes níveis de permissões e uma lista completa dos direitos que contêm.
 
-|Permissions Level|Applications|Rights included (common name)|
-|---------------------|----------------|---------------------------------|
-|Viewer|Azure classic portal<br /><br />Rights Management sharing application for Windows|View, Open, Read<br /><br />Reply<br /><br />Reply All|
-|Reviewer|Azure classic portal<br /><br />Rights Management sharing application for Windows|View, Open, Read<br /><br />Save<br /><br />Edit Content, Edit<br /><br />Reply [footnote 1]<br /><br />Reply All [footnote 1]<br /><br />Forward [footnote 1]|
-|Co-Author|Azure classic portal<br /><br />Rights Management sharing application for Windows|View, Open, Read<br /><br />Save<br /><br />Edit Content, Edit<br /><br />Copy<br /><br />View Rights<br /><br />Change Rights<br /><br />Allow Macros<br /><br />Save As, Export<br /><br />Print<br /><br />Reply [footnote 1]<br /><br />Reply All [footnote 1]<br /><br />Forward [footnote 1]|
-|Co-Owner|Azure classic portal<br /><br />Rights Management sharing application for Windows|View, Open, Read<br /><br />Save<br /><br />Edit Content, Edit<br /><br />Copy<br /><br />View Rights<br /><br />Change Rights<br /><br />Allow Macros<br /><br />Save As, Export<br /><br />Print<br /><br />Reply [footnote 1]<br /><br />Reply All [footnote 1]<br /><br />Forward [footnote 1]<br /><br />Full Control|
-Footnote 1: Not applicable to the Rights Management sharing application for Windows
+|Nível de permissões|Aplicações|Direitos incluídos (nome comum)|
+|-----------------------|--------------|-----------------------------------|
+|Visualizador|Portal do Azure<br /><br />Aplicações para Windows de partilha Rights Management|Vista, abrir, leitura<br /><br />Resposta<br /><br />Responder a todos|
+|Revisor|Portal do Azure<br /><br />Aplicações para Windows de partilha Rights Management|Vista, abrir, leitura<br /><br />Guardar<br /><br />Edite conteúdos, editar<br /><br />Reply<sup>*</sup><br /><br />Responder a todos<sup>*</sup><br /><br />Reencaminhar<sup>*</sup>|
+|Cocriar|Portal do Azure<br /><br />Aplicações para Windows de partilha Rights Management|Vista, abrir, leitura<br /><br />Guardar<br /><br />Edite conteúdos, editar<br /><br />Copiar<br /><br />Direitos de vista<br /><br />Direitos de alteração<br /><br />Permitir que as Macros<br /><br />Guardar como, exportar<br /><br />Imprimir<br /><br />Reply<sup>*</sup><br /><br />Responder a todos<sup>*</sup><br /><br />Reencaminhar<sup>*</sup>|
+|Coproprietário|Portal do Azure<br /><br />Aplicações para Windows de partilha Rights Management|Vista, abrir, leitura<br /><br />Guardar<br /><br />Edite conteúdos, editar<br /><br />Copiar<br /><br />Direitos de vista<br /><br />Direitos de alteração<br /><br />Permitir que as Macros<br /><br />Guardar como, exportar<br /><br />Imprimir<br /><br />Reply<sup>*</sup><br /><br />Responder a todos<sup>*</sup><br /><br />Reencaminhar<sup>*</sup><br /><br />Controlo total|
+<sup>*</sup> Não aplicável para a aplicação partilha Rights Management para Windows
 
-## Rights included in the default templates
-The rights that are included with the default templates are as follows:
+## Direitos incluídos nos modelos predefinidos
+Os direitos que estão incluídos os modelos predefinidos são os seguintes:
 
-|Display Name|Rights included (common name)|
-|----------------|---------------------------------|
-|&lt;organization name&gt; - Confidential View Only|View, Open, Read|
-|&lt;organization name&gt; - Confidential|View, Open, Read<br /><br />Save<br /><br />Edit Content, Edit<br /><br />View Rights<br /><br />Allow Macros<br /><br />Forward<br /><br />Reply<br /><br />Reply All|
+|Nome a apresentar|Direitos incluídos (nome comum)|
+|---------------------|-----------------------------------|
+|&lt; nome da organização &gt; - apenas visualização confidencial|Vista, abrir, leitura|
+|&lt; nome da organização &gt; - confidencial|Vista, abrir, leitura<br /><br />Guardar<br /><br />Edite conteúdos, editar<br /><br />Direitos de vista<br /><br />Permitir que as Macros<br /><br />Reencaminhar<br /><br />Resposta<br /><br />Responder a todos|
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Consultar Também
+[Configurar a gestão de direitos do Azure](../Topic/Configuring_Azure_Rights_Management.md)
 

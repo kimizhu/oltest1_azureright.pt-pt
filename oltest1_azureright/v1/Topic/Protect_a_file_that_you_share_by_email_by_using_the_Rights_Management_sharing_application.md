@@ -3,79 +3,78 @@ description: na
 keywords: na
 title: Protect a file that you share by email by using the Rights Management sharing application
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4c1cd1d3-78dd-4f90-8b37-dcc9205a6736
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Protect a file that you share by email by using the Rights Management sharing application
-When you protect a file that you share by email, it creates a new version of the original file. The original file remains unprotected and the new version is protected and automatically attached to an email that you then send.
+# Proteger um ficheiro para partilhar por e-mail ao utilizar a aplica&#231;&#227;o de partilha Rights Management
+Quando protege um ficheiro para partilhar por correio eletrónico, cria uma nova versão do ficheiro original. O ficheiro original mantém-se desprotegido e a nova versão é protegida e automaticamente anexada a uma mensagem de e-mail que, em seguida, enviar.
 
-In some cases (for files that are created by Microsoft Word, Excel, and PowerPoint), the RMS sharing application creates two versions of the file that it attaches to the email message. The second version of the file has a **.ppdf** file name extension and it is a PDF shadow copy of the file. This version of the file ensures that recipients can always read the file, even if they don’t have the same application installed that you used to create it. This is often the case when people read their email on mobile devices, and want to view their email attachments. All they need to open the file, is the RMS sharing application. Then, they can read the attached file, but they won’t be able to change it until they open the other version of the file by using an application that supports RMS.
+Em alguns casos (para os ficheiros que são criados pela Microsoft Word, Excel e PowerPoint), a aplicação de partilha RMS cria duas versões do ficheiro, anexando-a mensagem de correio eletrónico. A segunda versão do ficheiro tem um **. ppdf** extensão de nome de ficheiro que é uma cópia sombra de volumes em PDF do ficheiro. Esta versão do ficheiro garante que os destinatários podem sempre ler o ficheiro, mesmo que não tenham a mesma aplicação instalada que utilizou para criá-la. Isto é, muitas vezes, as maiúsculas e minúsculas, quando as pessoas leem os e-mails em dispositivos móveis e pretende ver os respetivos anexos de correio eletrónico. Tudo o que precisam para abrir o ficheiro, é a aplicação de partilha RMS. Em seguida, poderão ler o ficheiro anexado, mas não poderão alterá-lo até abrirem a outra versão do ficheiro, utilizando uma aplicação que suporte RMS.
 
-If your organization uses Azure RMS, you can keep track of the files that you protect by sharing:
+Se a sua organização utiliza o Azure RMS, pode manter um registo de ficheiros que protege ao partilhar:
 
--   Select an option to receive emails when somebody tries to open these protected attachments. Each time the file is accessed, you will be notified who tried to open the file and when, and whether they were successful (they were successfully authenticated) or not.
+-   Selecione uma opção para receber e-mails quando alguém tentar abrir estes anexos protegidos. Sempre que o ficheiro for acedido, será notificado quem tentou abrir o ficheiro e quando e se o fizeram com êxito (se foram autenticados com êxito) ou não.
 
--   Use the documentation tracking site. You can even stop sharing the file, by revoking access to it in the document tracking site. For more information, see [Track and revoke your documents when you use the RMS sharing application](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).
+-   Utilize a documentação do controlo do site. Ainda pode parar de partilhar o ficheiro, por revogação do acesso ao mesmo no site de controlo do documento. Para obter mais informações, consulte o artigo [Monitorizar e revogar os seus documentos ao utilizar a aplicação de partilha RMS](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).
 
-## Using Outlook: To protect a file that you share by email
+## Utilizar o Outlook: Para proteger um ficheiro para partilhar por e-mail
 
-1.  Create your email message and attach the file. Then, on the **Message** tab, in the **RMS** group, click **Share Protected** and then click **Share Protected** again:
+1.  Crie a mensagem de correio eletrónico e anexar o ficheiro. Em seguida, no **mensagem** separador o **RMS** grupo, clique em **partilhar protegido** e, em seguida, clique em **partilhar protegido** novamente:
 
     ![](../Image/ADRMS_MSRMSApp_SP_OutlookToolbar.png)
 
-    If you do not see this button, it’s likely that either the RMS sharing application is not installed on your computer, the latest version isn’t installed, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+    Se não vir este botão, é provável que a aplicação de partilha RMS não está instalada no seu computador, a versão mais recente não esteja instalada, ou que o computador tem de ser reiniciado para concluir a instalação. Para obter mais informações sobre como instalar a aplicação de partilha, consulte o artigo [Transferir e instalar a aplicação de partilha Rights Management](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-2.  Specify the options that you want for this file in the [share protected dialog box](http://technet.microsoft.com/library/dn574738.aspx), and then click **Send Now**.
+2.  Especifique as opções que pretende para este ficheiro no [partilhar a caixa de diálogo protegida](http://technet.microsoft.com/library/dn574738.aspx), e, em seguida, clique em **Enviar agora**.
 
-### Other ways to protect a file that you share by email
-In addition to sharing a protected file by using Outlook, you can also use these alternatives:
+### Outras formas de proteger um ficheiro para partilhar por e-mail
+Para além de partilhar um ficheiro protegido utilizando o Outlook, também pode utilizar estes alternativas:
 
--   From File Explorer: This method works for all files.
+-   A partir do Explorador de ficheiros: Este método funciona para todos os ficheiros.
 
--   From an Office application: This method works for applications that the RMS sharing application supports by using the Office add-in so that you see the **RMS** group on the ribbon.
+-   A partir de uma aplicação do Office: Este método funciona para as aplicações que a aplicação de partilha RMS suporta, utilizando o suplemento do Office, de modo a **RMS** grupo no Friso.
 
-##### Using File Explorer or an Office application: To protect a file that you share by email
+##### Utilizar o Explorador de ficheiros ou uma aplicação do Office: Para proteger um ficheiro para partilhar por e-mail
 
-1.  Use one of the following options:
+1.  Utilize uma das seguintes opções:
 
-    -   For File Explorer: Right-click the file, select **Protect with RMS**, and then select **Share Protected**:
+    -   No Explorador de ficheiros: Com o botão direito no ficheiro, selecione **proteger com RMS**, e, em seguida, selecione **partilhar protegido**:
 
         ![](../Image/ADRMS_MSRMSApp_ShareProtectedMenu.png)
 
-    -   For the Office applications, Word, Excel, and PowerPoint: Make sure that you have saved the file first. Then, on the **Home** tab, in the **RMS** group, click **Share Protected** and then click **Share Protected** again:
+    -   Para o Office aplicações, Word, Excel e PowerPoint: Certifique-se de que guardou o ficheiro pela primeira vez. Em seguida, no **base** separador o **RMS** grupo, clique em **partilhar protegido** e, em seguida, clique em **partilhar protegido** novamente:
 
         ![](../Image/ADRMS_MSRMSApp_SP_OfficeToolbar.png)
 
-    If you do not see these options for protection, it’s likely that either the RMS sharing application is not installed on your computer, the latest version isn’t installed, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+    Se não vir estas opções de proteção, é provável que a aplicação de partilha RMS não está instalada no seu computador, a versão mais recente não esteja instalada, ou que o computador tem de ser reiniciado para concluir a instalação. Para obter mais informações sobre como instalar a aplicação de partilha, consulte o artigo [Transferir e instalar a aplicação de partilha Rights Management](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-2.  Specify the options that you want for this file in the [share protected dialog box](http://technet.microsoft.com/library/dn574738.aspx), and then click **Send**.
+2.  Especifique as opções que pretende para este ficheiro no [partilhar a caixa de diálogo protegida](http://technet.microsoft.com/library/dn574738.aspx), e, em seguida, clique em **Enviar**.
 
-3.  You might quickly see a dialog box to tell you that the file is being protected, and then you see an email message created for you that tells the recipients that the attachments are protected with Microsoft RMS, and that they must sign in. When they click the link to sign in, they see instructions and links to ensure that they can open your protected attachment.
+3.  Poderá ver momentaneamente uma caixa de diálogo para lhe indicar que o ficheiro está a ser protegido e, em seguida, verá uma mensagem de correio eletrónico criada para indicar os destinatários que são protegidos os anexos com Microsoft RMS e que deve iniciar sessão. Quando clicar na ligação para iniciar sessão, consulte as instruções e ligações para se certificar de que podem abrir o anexo protegido.
 
-    Example:
+    Exemplo:
 
     ![](../Image/ADRMS_MSRMSApp_EmailMessage.PNG)
 
-    Are you wondering: [What’s the .ppdf file that’s automatically created?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)
+    Tem dúvidas sobre: [O que é o ficheiro. ppdf criado automaticamente?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)
 
-4.  Optional: You can change anything that you want in this email message. For example, you can add to or change the subject or text in the message.
+4.  Opcional: Pode alterar tudo o que pretender nesta mensagem de correio eletrónico. Por exemplo, pode adicionar ou alterar o assunto ou o texto da mensagem.
 
     > [!WARNING]
-    > Although you can add or remove people from this email message, this does not change the permissions for the attachment that you specified in the **share protected** dialog box. If you want to change those permissions, for example, give a new person permissions to open the file, close the email message without saving or sending it, and return to step 1.
+    > Embora possa adicionar ou remover pessoas desta mensagem de correio eletrónico, isto não altera as permissões para o anexo que especificou no **partilha protegida** caixa de diálogo. Se pretender alterar estas permissões, por exemplo, atribuir permissões para abrir o ficheiro, feche a mensagem de correio eletrónico sem a guardar ou enviá-lo a uma pessoa nova e volte ao passo 1.
 
-5.  Send the email message.
+5.  Envie a mensagem de correio eletrónico.
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Exemplos e outras instruções
+Para obter exemplos de como pode utilizar a aplicação e instruções sobre como proceder de partilha Rights Management, consulte as secções seguintes a partir do Guia do utilizador aplicação partilha Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Exemplos para utilizar a aplicação de partilha RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Consultar Também
+[Guia de utilizador de aplicação partilha do Rights Management](../Topic/Rights_Management_sharing_application_user_guide.md)
 

@@ -6,36 +6,35 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: ab7855fa-3cd2-4b64-98c8-387af23c0334
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Welcome to Microsoft RMS!
-You’re probably reading this because someone sent you a protected document and you clicked the sign in link in the email message, or your favorite search engine sent you here.
+# Bem-vindo ao Microsoft RMS!
+Provavelmente, está a ler este documento porque alguém lhe enviou um documento protegido e clicou na ligação na mensagem de e-mail ou o seu motor de busca favorito enviou-o para este documento.
 
-Microsoft Rights Management (RMS) helps the sender of a document protect it from people who do not need to see it, or should not see it. The sender specifies who can access the document, and what they can do with it (for example, view only, print, etc).
+O Microsoft Rights Management (RMS) ajuda o remetente de um documento a protegê-lo de terceiros que não necessitam de o ler ou não o devem ler. O remetente especifica quem pode aceder ao documento e o que podem fazer (por exemplo, apenas ver, imprimir, etc.).
 
-## Quick start
-To view a protected document, you must sign in and have a supported application:
+## Guia de Introdução
+Para ver um documento protegido, tem de inscrever-se e ter uma aplicação suportada:
 
-1.  Sign in [here](https://portal.aadrm.com/) to get a free RMS account. If your company already has RMS, we’ll let you know.
+1.  Inscreva-se [aqui](https://portal.aadrm.com/) para obter uma conta RMS gratuita. Se a empresa já tiver RMS, nós informamos.
 
-2.  Download the RMS application for your device by selecting the right icon on [this page](http://portal.aadrm.com/home/download). For Windows computers, you must be a local administrator (current limitation).
+2.  Transfira a aplicação RMS para o seu dispositivo, selecionando o ícone à direita [nesta página](http://portal.aadrm.com/home/download). Para computadores Windows, tem de ser o administrador local (limitação atual).
 
-That’s it. You’re now ready to open protected files. Just go back to the original email and open the attachment.
+E é tudo. Agora está pronto para abrir ficheiros protegidos. Volte ao e-mail original e abra o anexo.
 
 > [!NOTE]
-> In your email, you might see two files of the same name. They are the same except that one of them is a protected PDF file (.ppdf file name extension) that you can open on all platforms when you use our free RMS sharing application. To open the protected Office file, you must use an application that supports RMS. Currently, this means Office 2013 or Office 2010 running on Windows. Future versions of Office on mobile platforms will support RMS. Keep informed about updates via [@TheRMSGuy](https://twitter.com/TheRMSGuy).
+> No e-mail, pode ver dois ficheiros com o mesmo nome. São iguais, com a exceção de que um deles é um ficheiro PDF protegido (extensão de nome de ficheiro .ppdf) que pode abrir em todas as plataformas quando utiliza a nossa aplicação de partilha RMS gratuita. Para abrir o ficheiro do Office protegido, tem de utilizar uma aplicação que suporte RMS. Atualmente, isto significa o Office 2013 ou o Office 2010 executados no Windows. As versões futuras do Office em plataformas móveis irão suportar RMS. Mantenha-se informado sobre as atualizações através de [@TheRMSGuy](https://twitter.com/TheRMSGuy).
 
-## Want more help?
+## Precisa de mais ajuda?
 
--   Our [desktop](http://technet.microsoft.com/dn467883) and [mobile](http://technet.microsoft.com/dn451248) application FAQs
+-   As nossas FAQ da aplicação para [ambiente de trabalho](http://technet.microsoft.com/en-us/dn467883) e [dispositivo móvel](http://technet.microsoft.com/en-us/dn451248)
 
--   Our general web site: [www.microsoft.com/RMS](http://www.microsoft.com/RMS)
+-   O nosso site geral: [www.microsoft.com/RMS](http://www.microsoft.com/RMS)
 
--   Our blog site: [http://blogs.technet.com/b/rms](http://blogs.technet.com/b/rms)
+-   O nosso site de blogue: [http://blogs.technet.com/b/rms](http://blogs.technet.com/b/rms)
 
--   Our Twitter feed: [https://twitter.com/TheRMSGuy](https://twitter.com/TheRMSGuy) (low volume, on-topic posts only)
+-   O nosso feed do Twitter: [https://twitter.com/TheRMSGuy](https://twitter.com/TheRMSGuy) (baixo volume, apenas publicações sobre tópicos)
 
-## Protecting your own documents
-Windows users can also send protected documents for free. It’s quite simple. To learn more, check out our [user guide](http://technet.microsoft.com/library/dn574735%28v=ws.10%29.aspx).
+## Proteger os seus próprios documentos
+Os utilizadores do Windows também podem enviar documentos protegidos gratuitamente. É muito simples. Para saber mais, consulte o nosso [guia do utilizador](http://technet.microsoft.com/library/dn574735%28v=ws.10%29.aspx).
 

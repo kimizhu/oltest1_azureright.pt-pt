@@ -3,62 +3,61 @@ description: na
 keywords: na
 title: View and use files that have been protected by Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5fa4666-6906-405a-9e0c-2c52d4cd27c8
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# View and use files that have been protected by Rights Management
-When the [Rights Management (RMS) sharing application is installed on your computer](https://technet.microsoft.com/library/dn574734%28v=ws.10%29.aspx), you view a protected file by simply double-clicking it. The file might be an attachment in an email message, or you might see it when you use File Explorer.
+# Ver e utilizar ficheiros que foram protegidos por Rights Management
+Quando o [Rights Management (RMS) a aplicação de partilha está instalado no seu computador](https://technet.microsoft.com/library/dn574734%28v=ws.10%29.aspx), ver um ficheiro protegido por um duplo clique. O ficheiro pode ser um anexo numa mensagem de e-mail ou poderá vê-lo ao utilizar o Explorador de ficheiros.
 
 > [!NOTE]
-> Before you can view the protected file, RMS must first confirm that you are authorized to view the file, which it does by checking your user name and password. In some cases, this might be cached and you will not see a prompt that asks for your credentials. In other cases, you will be prompted to supply your credentials.
+> Antes de poder visualizar o ficheiro protegido, RMS tem primeiro de confirmar que está autorizado a ver o ficheiro, o que faz verificando o seu nome de utilizador e palavra-passe. Em alguns casos, isto poderá estar em cache e não verá uma linha de comandos que lhe pede para as suas credenciais. Noutros casos, será solicitado que forneça as credenciais.
 > 
-> If your organization does not use either Azure Rights Management (Azure RMS) or AD RMS, you can apply for a free account that will accept your credentials so that you can open files that are protected by using RMS:
+> Se a sua organização não utilizar o Azure Rights Management (RMS do Azure) nem o AD RMS, pode aplicar uma conta gratuita que aceitará as credenciais para que pode abrir ficheiros que estão protegidos utilizando o RMS:
 > 
-> -   To apply for this account, click the link to apply for [RMS for individuals](http://go.microsoft.com/fwlink/?LinkId=309469).
+> -   Para aplicar para esta conta, clique na ligação para aplicar para [RMS para indivíduos](http://go.microsoft.com/fwlink/?LinkId=309469).
 > 
->     When you sign up, use your company email address rather than a personal email address. If you are signing up because you were emailed a protected attachment, use the same email address that was used to send you the email message.
-> -   For more information, see [RMS for Individuals and Windows Azure Rights Management](http://technet.microsoft.com/library/dn592127.aspx).
+>     Quando se inscreve, utilize o seu endereço de e-mail da empresa em vez de um endereço de e-mail pessoal. Caso esteja a inscrever porque recebeu um anexo protegido, utilize o mesmo endereço de e-mail que foi utilizado para enviar a mensagem de e-mail.
+> -   Para obter mais informações, consulte o artigo [RMS para indivíduos e gestão de direitos do Windows Azure](http://technet.microsoft.com/library/dn592127.aspx).
 
-## <a name="BKMK_ViewPFILE"></a>To view a protected file
-By using File Explorer or the email message that contains the attachment, double-click the protected file, and enter your credentials if prompted to do so.
+## <a name="BKMK_ViewPFILE"></a>Para ver um ficheiro protegido
+Ao utilizar o Explorador de ficheiros ou a mensagem de correio eletrónico que contém o anexo, faça duplo clique no ficheiro protegido e introduza as suas credenciais, se lhe for pedido para fazê-lo.
 
-If you see two versions of the file but with different file name extensions, open the file that has a .ppdf file extension only if the other file does not open. If you cannot open the .ppdf version either, first install the [RMS sharing application](http://technet.microsoft.com/library/dn574734.aspx), which knows how to open files that have a .ppdf file name extension.
+Se vir duas versões do ficheiro, mas com extensões de nome de ficheiro diferente, abra o ficheiro que tem uma extensão de ficheiro. ppdf apenas se o outro ficheiro não abrir. Se optar por não é possível abrir a versão. ppdf, primeiro de instalar o [aplicação de partilha RMS](http://technet.microsoft.com/library/dn574734.aspx), que sabe como abrir ficheiros que tenham uma extensão de nome de ficheiro. ppdf.
 
 > [!NOTE]
-> For more information, see “[What’s the .ppdf file that’s automatically created?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)”.
+> Para obter mais informações, consulte "[O que é o ficheiro. ppdf criado automaticamente?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)".
 
-How the file opens depends on how it was protected, which you can tell by looking at the file name extension. In each case, opening the file might be audited and remains audited as long as it is protected. In addition, if the file was sent as an email attachment, the sender might be notified by email each time you open the file.
+Como o ficheiro abre depende de como foi protegido, que pode confirmar observando a extensão de nome de ficheiro. Cada caso, abrir o ficheiro pode ser auditado e permanece auditado desde que esteja protegido. Além disso, se o ficheiro foi enviado como anexo de correio eletrónico, o remetente poderá ser notificado por correio eletrónico sempre que abre o ficheiro.
 
-|File name extension and protection|More information|
-|--------------------------------------|--------------------|
-|The file has a **.pfile** file name extension.<br /><br />The file was generically protected.|When you open the file, you see a **protected file** dialog box from the sharing application that tells you who protected the file and that you are expected to honor the co-owner permissions. Click **Open** to read the file.<br /><br />![](../Image/ADRMS_MSRMSApp_PfilePermission.png)|
-|The file has a **.ppdf** file name extension or is a protected text or image file (such as **.ptxt** or **.pjpg**).<br /><br />The file has been natively protected as a read-only copy.|The file opens by using the viewer that installs with the RMS sharing application. This file is read-only, even if you save it to another location or rename it.|
-|Other file name extensions.<br /><br />The file has been natively protected.|The file opens by using the application that is associated with the original file name extension, and a restriction banner is displayed at the top of the file. The banner might display the permissions that are applied to the file, or it might provide a link to display them. For example, you might see the following where you must click **Permission is currently restricted** to see the actual permissions that are applied to the file and the people that can access it:<br /><br />![](../Image/ADRMS_MSRMSApp_RestrictedAccess.png)|
-For a complete list of file name extensions that Rights Management supports, see the [Supported file types and file name extensions](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes) sections in the  [Rights Management sharing application administrator guide](../Topic/Rights_Management_sharing_application_administrator_guide.md). If your file name extension is not listed, use a web search to see if it is a file name extension that is supported by another application.
+|Extensão de nome de ficheiro e proteção|Obter mais informações|
+|-------------------------------------------|--------------------------|
+|O ficheiro tem um **. pfile** extensão de nome de ficheiro.<br /><br />O ficheiro foi protegido genericamente.|Quando abrir o ficheiro, verá um **ficheiro protegido** caixa de diálogo a partir da aplicação de partilha que indica quem protegeu o ficheiro e que é esperado que respeite as permissões de coproprietário. Clique em **Abrir** para ler o ficheiro.<br /><br />![](../Image/ADRMS_MSRMSApp_PfilePermission.png)|
+|O ficheiro tem um **. ppdf** extensão de nome de ficheiro ou é um ficheiro de texto ou de imagem protegido (tais como **. ptxt** ou **. pjpg**).<br /><br />O ficheiro foi protegido nativamente como uma cópia só de leitura.|O ficheiro abre utilizando o Visualizador que instala com a aplicação de partilha RMS. Este ficheiro é só de leitura, mesmo se guardá-lo para outra localização ou mude o nome.|
+|Outras extensões de nome de ficheiro.<br /><br />O ficheiro foi protegido nativamente.|O ficheiro abre utilizando a aplicação que está associada a extensão de nome de ficheiro original e uma faixa de restrição é apresentada na parte superior do ficheiro. A faixa pode mostrar as permissões que são aplicadas ao ficheiro, ou pode disponibilizar uma ligação para mostrá-las. Por exemplo, poderá ver o seguinte em que tem de clicar em **permissão está atualmente restrita** para ver as permissões reais que são aplicadas ao ficheiro e as pessoas que consegue aceder-lhe:<br /><br />![](../Image/ADRMS_MSRMSApp_RestrictedAccess.png)|
+Para obter uma lista completa das extensões de nome de ficheiro que Rights Management suporta, consulte o [Tipos de ficheiro suportados e extensões de nome de ficheiro](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes) secções a  [Guia partilha Rights Management aplicação administrador](../Topic/Rights_Management_sharing_application_administrator_guide.md). Se a extensão de nome de ficheiro não estiver listado, utilize uma pesquisa web para ver se é uma extensão de nome de ficheiro que é suportada por outra aplicação.
 
 > [!NOTE]
-> If, after confirming that the file is protected by Rights Management, and the file does not open, download and use the [RMS Analyzer tool](https://www.microsoft.com/en-us/download/details.aspx?id=46437). Follow the instructions in the tool to check for problems on your computer that might prevent a protected document from opening.
+> Se, depois de confirmar que o ficheiro está protegido por Rights Management e o ficheiro não abre, transferir e utilizar o [ferramenta Analisador de RMS](https://www.microsoft.com/en-us/download/details.aspx?id=46437). Siga as instruções na ferramenta para verificar a existência de problemas no seu computador que poderá impedir que um documento protegido abertura.
 
-## <a name="BKMK_UserDefined"></a>To use files that have been protected (for example, edit and print the file)
-If, after opening the protected file,  you want to do more than just read it (for example, edit, copy, and print it):
+## <a name="BKMK_UserDefined"></a>Para utilizar ficheiros que foram protegidos (por exemplo, editar e imprimir o ficheiro)
+Se, depois de abrir o ficheiro protegido, que pretende mais do que apenas lê-la (por exemplo, editar, copiar e imprimi-lo):
 
-|File name extension|Instructions|
-|-----------------------|----------------|
-|The file has a **.pfile** file name extension.|Save the opened file and give it a new file name extension that is associated with the application that you want to use.<br /><br />For example, if a file was protected by using the file name document.vsdx.pfile, view the file and in File Explorer, save the file as document.vsdx.<br /><br />The new file is no longer protected. If you want to protect it, you must do this manually. For instructions, see [Protect a file on a device &#40;protect in-place&#41; by using the Rights Management sharing application](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
-|The file has a **.ppdf** file name extension or is a protected text or image file (such as **.ptxt** or **.pjpg**).|You can only view the file and if you rename or move it, the protection remains with the file.|
-|Other file name extensions.|Your device must have an application that understands Rights Management to use these files. These applications are called RMS-enlightened applications. Applications from Office 2016, Office 2013,  and Office 2010 (such as Word, Excel, PowerPoint, and Outlook) are examples of applications that are enlightened for Rights Management. But applications that do not come from Microsoft, such as other software companies and your own line-of-business applications, might also be enlightened for Rights Management.<br /><br />Applications that are enlightened for Rights Management know how to open files that have been protected by other Rights Management enlightened applications. They also persist the protection that is applied to them, even if you edit the file or save it to another file name or another location. These applications let you use the file according to the permissions that are currently applied to the file, so that if you have permissions to use the file, you can do so. For example, you might be able to edit the file but not print it.|
+|Extensão de nome de ficheiro|Instruções|
+|--------------------------------|--------------|
+|O ficheiro tem um **. pfile** extensão de nome de ficheiro.|Guarde o ficheiro aberto e conceda-lhe uma nova extensão de nome de ficheiro que esteja associada com a aplicação que pretende utilizar.<br /><br />Por exemplo, se um ficheiro foi protegido utilizando o nome de ficheiro documento.vsdx.pfile, visualize o ficheiro e no Explorador de ficheiros, guarde o ficheiro como vsdx.<br /><br />O novo ficheiro já não está protegido. Se pretender protegê-lo, tem de fazer isto manualmente. Para obter instruções, consulte o artigo [Proteger um ficheiro num dispositivo &#40;proteger no local&#41; utilizando a aplicação de partilha Rights Management](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
+|O ficheiro tem um **. ppdf** extensão de nome de ficheiro ou é um ficheiro de texto ou de imagem protegido (tais como **. ptxt** ou **. pjpg**).|Só pode visualizar o ficheiro e se mudar o nome ou movê-lo, a proteção permanece com o ficheiro.|
+|Outras extensões de nome de ficheiro.|O dispositivo tem de ter uma aplicação que suporte o Rights Management para utilizar estes ficheiros. Estas aplicações chamam-se aplicações suportadas por RMS. As aplicações do Office 2016, Office 2013 e Office 2010 (como o Word, Excel, PowerPoint e Outlook) são exemplos de aplicações que são suportadas por Rights Management. Mas as aplicações que não são da Microsoft, tais como outras empresas de software e as suas próprias aplicações de linha de negócio, poderão também ser suportadas por Rights Management.<br /><br />Aplicações suportadas por aplicações que são suportadas por Rights Management conseguem abrir ficheiros que foram protegidos por outros Rights Management. Também mantêm a proteção que lhes foi aplicada, mesmo se editar o ficheiro ou guardá-lo para outro nome de ficheiro ou noutra localização. Estas aplicações permitem-lhe utilizar o ficheiro de acordo com as permissões aplicadas atualmente ao ficheiro, para que se tiver permissões para utilizar o ficheiro, pode fazê-lo. Por exemplo, poderá editar o ficheiro, mas não imprimi-lo.|
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Exemplos e outras instruções
+Para obter exemplos de como pode utilizar a aplicação e instruções sobre como proceder de partilha Rights Management, consulte as secções seguintes a partir do Guia do utilizador aplicação partilha Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Exemplos para utilizar a aplicação de partilha RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Consultar Também
+[Guia de utilizador de aplicação partilha do Rights Management](../Topic/Rights_Management_sharing_application_user_guide.md)
 

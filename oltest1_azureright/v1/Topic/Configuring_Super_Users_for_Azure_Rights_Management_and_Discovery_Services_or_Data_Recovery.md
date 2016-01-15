@@ -3,59 +3,58 @@ description: na
 keywords: na
 title: Configuring Super Users for Azure Rights Management and Discovery Services or Data Recovery
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: acb4c00b-d3a9-4d74-94fe-91eeb481f7e3
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Configuring Super Users for Azure Rights Management and Discovery Services or Data Recovery
-The super user feature of Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS) ensures that authorized people and services can always read and inspect the data that Azure RMS protects for your organization. And if necessary, remove the protection or change the protection that was previously applied. A super user always has full owner rights for all use licenses that was granted by the organization’s RMS tenant. This ability is sometimes referred to as “reasoning over data” and is a crucial element in maintaining control of your organization’s data. For example, you would use this feature for any of the following scenarios:
+# Configurar utilizadores Super para o Azure Rights Management e os servi&#231;os de dete&#231;&#227;o ou recupera&#231;&#227;o de dados
+A funcionalidade de utilizador super do Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (RMS do Azure) assegura que as pessoas autorizadas e os serviços podem sempre ler e inspecionar os dados que o Azure RMS protege para a sua organização. E se for necessário, remova a proteção ou alterar a proteção que estava anteriormente aplicada. Um utilizador super sempre tem direitos de proprietário completa para todas as licenças de utilização que lhe foi atribuído ao inquilino de RMS da sua organização. Esta capacidade é por vezes referida como "reasoning através de dados" e é um elemento fundamental mantém o controlo de dados da sua organização. Por exemplo, utilizaria esta funcionalidade para qualquer um dos seguintes cenários:
 
--   An employee leaves the organization and you need to read the files that they protected.
+-   Um empregado deixar a organização e precisa de ler os ficheiros que estão protegidos.
 
--   An IT administrator needs to remove the current protection policy that was configured for files and apply a new protection policy.
+-   Administrador de TI tem de remover a política de proteção atual que foi configurada para ficheiros e aplicar uma nova política de proteção.
 
--   Exchange Server needs to index mailboxes for search operations.
+-   Exchange Server tem de caixas de correio do índice para operações de pesquisa.
 
--   You have existing IT services for data loss prevention (DLP) solutions, content encryption gateways (CEG), and anti-malware products that need to inspect files that are already protected.
+-   Tem de serviços de TI existentes para soluções de (DLP) de prevenção de perda de dados, os gateways de encriptação de conteúdo (CEG) e produtos de software antimalware que necessitam para inspecionar os ficheiros que já estão protegidos.
 
--   You need to bulk decrypt files for auditing, legal, or other compliance reasons.
+-   É necessário em massa desencriptar ficheiros de auditoria, legais ou outros motivos de conformidade.
 
-By default, the super user feature is not enabled, and no users are assigned this role. It is enabled for you automatically if you configure the Rights Management connector for Exchange, and it is not required for standard services that run Exchange Online, SharePoint Online, or SharePoint Server.
+Por predefinição, a funcionalidade de utilizador super não está ativada e, sem utilizadores são atribuídos esta função. -É ativado para si automaticamente se configurar o conector de gestão de direitos para o Exchange e não é necessária relativas a serviços padrão que executam o Exchange Online, SharePoint Online ou no SharePoint Server.
 
-If you need to manually enable the super user feature, use the Windows PowerShell cmdlet [Enable-AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629400.aspx), and then assign users (or service accounts) as needed by using the [Add-AadrmSuperUser](https://msdn.microsoft.com/library/azure/dn629411.aspx) cmdlet. You can have one or multiple super users for your organization, but you must add individual users; groups are not supported.
+Se precisar de ativar manualmente a funcionalidade de utilizador super, utilize o cmdlet do Windows PowerShell [Ativar AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629400.aspx), e, em seguida, atribua utilizadores (ou contas de serviço), conforme necessário, utilizando o [Adicionar AadrmSuperUser](https://msdn.microsoft.com/library/azure/dn629411.aspx) cmdlet. Pode ter um ou vários utilizadores super para a sua organização, mas tem de adicionar os utilizadores individuais. grupos não são suportados.
 
 > [!NOTE]
-> If you have not yet installed the Windows PowerShell module for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+> Se ainda não instalou o módulo do Windows PowerShell para [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], consulte o artigo [Instalação do Windows PowerShell para o Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-Security best practices for the super user feature:
+Melhores práticas de segurança para a funcionalidade de utilizador super:
 
--   Restrict and monitor the administrators who are assigned a global administrator for your Office 365 or Azure RMS tenant, or who are  assigned the GlobalAdministrator role by using the [Add-AadrmRoleBasedAdministrator](https://msdn.microsoft.com/library/azure/dn629417.aspx) cmdlet. These users can enable the super user feature and assign users (and themselves) as super users, and potentially decrypt all files that your organization protects.
+-   Restrinja e monitorize os administradores que são atribuídos um administrador global do seu inquilino do Office 365 ou do Azure RMS ou que estão atribuídos a função GlobalAdministrator utilizando o [Adicionar AadrmRoleBasedAdministrator](https://msdn.microsoft.com/library/azure/dn629417.aspx) cmdlet. Estes utilizadores podem ativar a funcionalidade de utilizador super e atribuir utilizadores (e próprios) como utilizadores super e desencriptar potencialmente todos os ficheiros que protege a sua organização.
 
--   To see which users and service accounts are assigned as super users, use the [Get-AadrmSuperUser cmdlet](https://msdn.microsoft.com/library/azure/dn629408.aspx).  Like all administration actions, enabling or disabling the super feature, and adding or removing super users are logged and can be audited by using the [Get-AadrmAdminLog](https://msdn.microsoft.com/library/azure/dn629430.aspx) command. When super users decrypt files, this action is logged and can be audited with [usage logging](https://technet.microsoft.com/library/dn529121.aspx).
+-   Para ver quais os utilizadores e contas de serviço são atribuídas como super utilizadores, utilize o [cmdlet Get-AadrmSuperUser](https://msdn.microsoft.com/library/azure/dn629408.aspx).  Como todas as ações de administração, ativar ou desativar a funcionalidade super e adicionar ou remover utilizadores super são registados e pode ser auditada, utilizando o [Get-AadrmAdminLog](https://msdn.microsoft.com/library/azure/dn629430.aspx) comando. Quando os utilizadores super desencriptar ficheiros, esta ação é iniciada e pode ser auditada com [registo utilização](https://technet.microsoft.com/library/dn529121.aspx).
 
--   If you do not need the super user feature for everyday services, enable the feature only when you need it, and disable it again by using the [Disable-AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629428.aspx) cmdlet.
+-   Se não tiver a funcionalidade de utilizador super para serviços diárias, ativar a funcionalidade apenas quando precisar dele e desativá-lo novamente utilizando o [desativar AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629428.aspx) cmdlet.
 
-The following log extract shows some example entries from using the Get-AadrmAdminLog cmdlet . In this example, the administrator for Contoso Ltd confirms that the super user feature is disabled, adds Richard Simone as a super user, checks that Richard is the only super user configured for Azure RMS, and then enables the super user feature so that Richard can now decrypt some files that were protected by an employee who has now left the company.
+A extrair registo seguinte mostra algumas entradas de exemplo a partir do utilizando o cmdlet Get-AadrmAdminLog. Neste exemplo, o administrador da Contoso Lda. confirma que a funcionalidade de utilizador super está desativada, adiciona Fernando Simone como um utilizador super, verifica se o Rodrigo é o utilizador só super configurado para o Azure RMS e, em seguida, ativa a funcionalidade de utilizador super para que o Fernando agora pode desencriptar alguns ficheiros que foram protegidos por um empregado que ainda tem agora a empresa.
 
 `2015-08-01T18:58:20	admin@contoso.com	GetSuperUserFeatureState	Passed	Disabled`
 `2015-08-01T18:59:44	admin@contoso.com	AddSuperUser -id rsimone@contoso.com	Passed	True`
 `2015-08-01T19:00:51	admin@contoso.com	GetSuperUser	Passed	rsimone@contoso.com`
 `2015-08-01T19:01:45	admin@contoso.com	SetSuperUserFeatureState -state Enabled	Passed	True`
 
-## <a name="BKMK_RMSProtectionModule"></a>Scripting options for super users
-Often, somebody who is assigned a super user for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] will need to remove protection from multiple files, in multiple locations. While it’s possible to do this manually, it’s more efficient (and often more reliable) to script this. To do so, [download the RMS Protection Tool](http://www.microsoft.com/en-us/download/details.aspx?id=47256). Then, use the  [Unprotect-RMSFile](https://msdn.microsoft.com/library/azure/mt433200.aspx) cmdlet, and [Protect-RMSFile](https://msdn.microsoft.com/library/azure/mt433201.aspx)   cmdlet as required.
+## <a name="BKMK_RMSProtectionModule"></a>Opções de script para utilizadores super
+Muitas vezes, uma pessoa em quem é atribuído um utilizador super para [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] terá de remover a proteção de vários ficheiros, em várias localizações. Embora seja possível para o fazer manualmente, é mais eficaz (e, muitas vezes, mais fiável) para este script. Para fazê-lo, [Transfira a ferramenta de proteção RMS](http://www.microsoft.com/en-us/download/details.aspx?id=47256). Em seguida, utilize o  [Unprotect-RMSFile](https://msdn.microsoft.com/library/azure/mt433200.aspx) cmdlet, e [proteger RMSFile](https://msdn.microsoft.com/library/azure/mt433201.aspx)   cmdlet conforme necessário.
 
 > [!IMPORTANT]
-> Although the RMS Protection tool is designed for super users to bulk unprotect files for recovery purposes, the current version of the tool does not support user authentication for Azure RMS. Until this limitation is resolved, you must use a service principal account to authenticate with Azure RMS before you can remove protection from files.  For more information and instructions, see [about_RMSProtection_AzureRMS](https://msdn.microsoft.com/library/azure/mt433202.aspx).
+> Embora a ferramenta de proteção RMS foi concebida para utilizadores super em massa desproteger ficheiros para fins de recuperação, a versão atual da ferramenta não suporta a autenticação de utilizador para o Azure RMS. Até que esta limitação for resolvida, tem de utilizar uma conta principal do serviço para autenticar com o Azure RMS antes de poder remover proteção a partir dos ficheiros.  Para mais informações e instruções, consulte o artigo [about_RMSProtection_AzureRMS](https://msdn.microsoft.com/library/azure/mt433202.aspx).
 
-For more information about these cmdlets, see [RMS Protection Cmdlets](https://msdn.microsoft.com/library/azure/mt433195.aspx).
+Para mais informações sobre estes cmdlets, consulte o artigo [RMS proteção Cmdlets](https://msdn.microsoft.com/library/azure/mt433195.aspx).
 
 > [!NOTE]
-> The RMSProtection Windows PowerShell module that ships with the RMS Protection Tool is different from and supplements the main [Windows PowerShell module for Azure Rights Management](https://technet.microsoft.com/library/jj585027.aspx). It supports both Azure RMS and AD RMS.
+> O módulo de RMSProtection Windows PowerShell que é fornecido com a ferramenta de proteção RMS é diferente do e complementam principal [módulo do Windows PowerShell para o Azure Rights Management](https://technet.microsoft.com/library/jj585027.aspx). Suporta Azure RMS e AD RMS.
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Consultar Também
+[Configurar a gestão de direitos do Azure](../Topic/Configuring_Azure_Rights_Management.md)
 

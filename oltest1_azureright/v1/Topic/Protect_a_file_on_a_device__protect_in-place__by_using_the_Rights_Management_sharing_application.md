@@ -3,51 +3,50 @@ description: na
 keywords: na
 title: Protect a file on a device (protect in-place) by using the Rights Management sharing application
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33920329-5247-4f6c-8651-6227afb4a1fa
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Protect a file on a device (protect in-place) by using the Rights Management sharing application
-When you protect a file in-place, it replaces the original, unprotected file. You can then leave the file where it is, copy it to another folder or device, or share the folder that it is in and the file will remain protected. You could also attach the protected file to an email message, although the recommended way to share a protected file by email is directly from File Explorer or an Office application (see [Protect a file that you share by email by using the Rights Management sharing application](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md)).
+# Proteger um ficheiro num dispositivo (proteger no local) utilizando a aplica&#231;&#227;o de partilha Rights Management
+Quando protege um ficheiro no local, este substitui o ficheiro original, que está desprotegido. Em seguida, pode deixar o ficheiro onde se encontra, copiá-la para outra pasta ou dispositivo ou partilhar a pasta que está a ser e o ficheiro permanece protegido. Também é possível anexar o ficheiro protegido a uma mensagem de correio eletrónico, embora a forma recomendada para partilhar um ficheiro protegido por e-mail seja diretamente a partir do Explorador de ficheiros ou uma aplicação do Office (consulte [Proteger um ficheiro para partilhar por e-mail ao utilizar a aplicação de partilha Rights Management](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md)).
 
 > [!TIP]
-> If you see any errors when you try to protect files, refer to [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+> Se vir algum erro quando tenta proteger ficheiros, consulte a [FAQ do Microsoft Rights Management partilha de aplicações para Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## To protect a file on a device (protect in-place)
+## Para proteger um ficheiro num dispositivo (proteger no local)
 
-1.  In File Explorer, select a file to protect. Right-click, select **Protect with RMS**, and then select **Protect in-place**. For example:
+1.  No Explorador de ficheiros, selecione um ficheiro a proteger. Clique o botão direito, selecione **proteger com RMS**, e, em seguida, selecione **proteger no local**. Por exemplo:
 
     ![](../Image/ADRMS_MSRMSApp_SP_CompanyDefined.png)
 
     > [!NOTE]
-    > If you do not see the **Protect with RMS** option, it’s likely that either the RMS sharing application is not installed on your computer, or your computer must be restarted to complete the installation. For more information about how to install the RMS sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+    > Se não vir o **proteger com RMS** opção, é provável que a aplicação de partilha RMS não está instalada no seu computador, ou que o computador tem de ser reiniciado para concluir a instalação. Para obter mais informações sobre como instalar a aplicação de partilha RMS, consulte o artigo [Transferir e instalar a aplicação de partilha Rights Management](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-2.  Do one of the following:
+2.  Efetue um dos seguintes procedimentos:
 
-    -   Select a policy template: These are predefined permissions that typically restrict access and usage to people in your organization. For example, if your organization name is "Contoso, Ltd", you might see **Contoso, Ltd - Confidential View Only**. If this is the first time you have protected a file on this computer, you will first need to select **Company-defined Protection** to download the templates.
+    -   Selecione um modelo de política: Estas são permissões predefinidas que normalmente restringem o acesso e a utilização a pessoas na sua organização. Por exemplo, se o nome de organização for "Contoso, Lda.", poderá ver **Contoso, Lda. - apenas visualização confidencial**. Se esta for a primeira vez que protege um ficheiro neste computador, primeiro terá de selecionar **proteção definida pela empresa** para transferir os modelos.
 
-        The next time you click the **Protect in-place** option, you will see up to 10 templates to choose from. If there are more than 10 templates available and the one you want isn’t displayed, click **Company-defined Protection** to download and see all the templates.
+        Da próxima vez que clicar a **proteger no local** opção, irá ver até 10 modelos à escolha. Se existirem mais de 10 modelos disponíveis e aquele que pretende não for apresentada, clique em **proteção definida pela empresa** para transferir e ver todos os modelos.
 
-        When you select a policy template, you can also protect multiple files and a folder. When you select a folder, all the files in that folder are automatically selected for protection but new files that you create in that folder will not be automatically protected.
+        Quando seleciona um modelo de política, também pode proteger vários ficheiros e uma pasta. Quando seleciona uma pasta, todos os ficheiros nessa pasta são selecionados automaticamente para proteção, mas os novos ficheiros que criar nessa pasta não serão automaticamente protegidos.
 
-    -   Select **Custom Permissions**: Choose this option if the templates don’t provide the level of protection that you need  or you want to explicitly set the protection options yourself. Specify the options that you want for this file in the [add protection dialog box](http://technet.microsoft.com/library/dn574738.aspx), and then click **Apply**.
+    -   Selecione **permissões personalizadas**: Escolha esta opção se os modelos não fornecerem o nível de proteção que necessita ou pretende definir explicitamente as opções de proteção. Especifique as opções que pretende para este ficheiro no [proteção caixa de diálogo Adicionar](http://technet.microsoft.com/library/dn574738.aspx), e, em seguida, clique em **aplicar**.
 
-3.  You might quickly see a dialog box to tell you that the file is being protected, and the focus then returns to File Explorer. The selected file or files are now protected. In some cases (when adding protection changes the file name extension), the original file in File Explorer is replaced with a new file that has the Rights Management protection lock icon. For example:
+3.  Poderá ver momentaneamente uma caixa de diálogo indica que o ficheiro está a ser protegido e, em seguida, devolve o foco para o Explorador de ficheiros. O ficheiro ou ficheiros selecionados estão agora protegidos. Em alguns casos (quando a adição de proteção altera a extensão de nome de ficheiro), o ficheiro original no Explorador de ficheiros é substituído por um novo ficheiro que tenha o ícone de cadeado de proteção do Rights Management. Por exemplo:
 
     ![](../Image/ADRMS_MSRMSApp_Pfile.png)
 
-If you later need to remove protection from a file, see [Remove protection from a file by using the Rights Management sharing application](../Topic/Remove_protection_from_a_file_by_using_the_Rights_Management_sharing_application.md).
+Se mais tarde necessitar de remover a proteção de um ficheiro, consulte o artigo [Remover a proteção de um ficheiro, utilizando a aplicação de partilha Rights Management](../Topic/Remove_protection_from_a_file_by_using_the_Rights_Management_sharing_application.md).
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Exemplos e outras instruções
+Para obter exemplos de como pode utilizar a aplicação e instruções sobre como proceder de partilha Rights Management, consulte as secções seguintes a partir do Guia do utilizador aplicação partilha Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Exemplos para utilizar a aplicação de partilha RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [O que pretende fazer?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Consultar Também
+[Guia de utilizador de aplicação partilha do Rights Management](../Topic/Rights_Management_sharing_application_user_guide.md)
 

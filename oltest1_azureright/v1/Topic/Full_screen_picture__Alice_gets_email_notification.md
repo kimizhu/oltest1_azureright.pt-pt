@@ -3,15 +3,14 @@ description: na
 keywords: na
 title: Full screen picture: Alice gets email notification
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f642a2e-58ad-44ab-9f81-f890d15380f9
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: nofollow
 ---
-# Full screen picture: Alice gets email notification
+# Imagem de ecr&#227; inteiro: Alice obt&#233;m notifica&#231;&#227;o por correio eletr&#243;nico
 ![](../Image/AzRMS_StoryboardEmaill4.PNG)
 
-Back to [Azure RMS in action: Safely share attachments with mobile users](http://technet.microsoft.com/library/jj585026.aspx).
+Voltar ao [Azure RMS em ação: Partilhar de forma segura anexos com utilizadores móveis](http://technet.microsoft.com/library/jj585026.aspx).
 
